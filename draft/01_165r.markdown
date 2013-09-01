@@ -1,0 +1,1 @@
+`Product.update_all({discontinued: true}, {id: params[:product_ids]})`
