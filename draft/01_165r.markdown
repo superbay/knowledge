@@ -1,4 +1,26 @@
-`Product.update_all({discontinued: true}, {id: params[:product_ids]})`
+### update_all vs update
+
+```ruby
+Product.update(params[:products].keys, params[:products].values)
+    47: def update_multiple
+    48:   Product.update(params[:products].keys, params[:products].values)
+ => 49:   binding.pry
+    50:   redirect_to products_path
+    51: end
+
+[1] pry(#<ProductsController>)> params[:products]
+=> {"1"=>
+  {"name"=>"First Product",
+   "price"=>"10.98",
+   "category_id"=>"1",
+   "discontinued"=>"0"},
+ "2"=>
+  {"name"=>"Coffee Table",
+   "price"=>"279.99",
+   "category_id"=>"1",
+   "discontinued"=>"0"}}
+```
+
 
 
 ```ruby
