@@ -28,3 +28,32 @@ Product.update_all({discontinued: true}, {id: params[:product_ids]})
 ```
 
 two hash, first to be updated, second is the query
+
+
+### how to use virtual attribute
+
+```ruby
+class Product < ActiveRecord::Base
+  belongs_to :category
+  attr_accessible :name, :price, :discontinued, :category_id, :price_modification
+  validates_numericality_of :price
+
+  attr_reader :price_modification
+
+  def price_modification=(new_price)
+    @price_modification = new_price
+    if new_price.to_s.ends_with? "%"
+      self.price += (price * (new_price.to_d/100)).round(2)
+    else
+      self.price = new_price
+    end
+  end
+end
+```
+
+```ruby
+<div class="field">
+  <%= f.label :price_modification %><br />
+  <%= f.text_field :price_modification %>
+</div>
+```
