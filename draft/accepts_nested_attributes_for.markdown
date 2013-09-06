@@ -10,3 +10,6 @@ end
 The attribute writer is named after the association, which means that in the following example, two new methods are added to your model:
 
 author_attributes=(attributes) and pages_attributes=(attributes).
+
+
+[reference](http://api.rubyonrails.org/classes/ActiveRecord/NestedAttributes/ClassMethods.html)
