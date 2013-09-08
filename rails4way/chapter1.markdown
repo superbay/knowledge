@@ -19,7 +19,8 @@ bundle package
 #configuration
 config.eager_load=false
 
-
+#Raiseanerroronpageloadiftherearependingmigrations
+2 config.active_record.migration_error=:page_load
 
 ```
 
