@@ -27,3 +27,7 @@ config.eager_load=false
 ```ruby
 config.action_controller.perform_caching = true # for testing in development mode
 ```
+```ruby
+match'products/:id'=>'products#show',via::get
+
+```
