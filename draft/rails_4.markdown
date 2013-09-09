@@ -43,3 +43,11 @@ gem 'rails',     github: 'rails/rails'
 gem 'arel',      git: 'git@github.com:rails/arel.git'
 
 ```
+
+### lambda scope
+
+```ruby
+class Article < ActiveRecord::Base
+  scope :sorted, -> { order(:name) }
+end
+```
