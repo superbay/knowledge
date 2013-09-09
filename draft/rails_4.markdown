@@ -33,3 +33,13 @@ class ArticlesController < ApplicationController
     end
 end
 ```
+
+### Gemfile git && github
+
+```ruby
+source 'https://rubygems.org'
+
+gem 'rails',     github: 'rails/rails'
+gem 'arel',      git: 'git@github.com:rails/arel.git'
+
+```
