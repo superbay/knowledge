@@ -1,3 +1,5 @@
+### strong parameters & patch methods 
+
 ```ruby
 
 class ArticlesController < ApplicationController
