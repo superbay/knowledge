@@ -14,10 +14,11 @@ rails g resource activity user:belongs_to action trackable:belongs_to trackable_
 ```
 brew services list
 
-```
-
    cleanup Get rid of stale services and unused plists
    list    List all services managed by `brew services`
    restart Gracefully restart selected service
    start   Start selected service
    stop    Stop selected service
+```
+
+
