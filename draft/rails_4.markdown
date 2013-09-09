@@ -51,3 +51,11 @@ class Article < ActiveRecord::Base
   scope :sorted, -> { order(:name) }
 end
 ```
+
+### html.ruby
+
+```ruby
+
+content_tag(:h1, "Edit") + render("form")
+
+```
