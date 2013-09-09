@@ -70,3 +70,10 @@ end
 resources :articles, concerns: :commentable
 resources :photos, concerns: :commentable
 ```
+
+```ruby
+get 'foo', to: 'articles#index', constraints: {protocol: "https", subdomain: "test"}
+
+ app.foo_url
+#=> "https://test.example.com/foo"
+```
