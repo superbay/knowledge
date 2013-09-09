@@ -59,3 +59,14 @@ end
 content_tag(:h1, "Edit") + render("form")
 
 ```
+
+### routes && concern
+
+```ruby
+#config/routes.rb
+concern :commentable do
+  resources :comments    
+end
+resources :articles, concerns: :commentable
+resources :photos, concerns: :commentable
+```
