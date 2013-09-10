@@ -1,4 +1,22 @@
 ### regular expression
+
+group
+
+```ruby
+>> s = 'Where [0] is [1] pancakes [2] house?'
+=> "Where [0] is [1] pancakes [2] house?"
+>> a = %w{a b c}
+=> ["a", "b", "c"]
+
+>> s.gsub(/\[(\d+)\]/) { a[$1.to_i] }
+=> "Where a is b pancakes c house?"
+
+>> s.gsub(/\[(\d+)\]/) { |m| a[m[1].to_i] }
+=> "Where a is b pancakes c house?"
+
+>> s.gsub(/\[(?<num>\d+)\]/) { |m| a[m['num'].to_i] }
+=> "Where a is a pancakes a house?"
+```
 verify url
 ```ruby
 require 'uri'
