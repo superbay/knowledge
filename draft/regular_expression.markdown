@@ -1,5 +1,5 @@
 ### regular expression
-
+verify url
 ```ruby
 require 'uri'
   def tracking_url(summary, date)
