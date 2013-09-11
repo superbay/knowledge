@@ -1,12 +1,14 @@
 ### Ruby Loops - while, for, until, break, redo and retry
 
-
+```ruby
 while conditional [do]
    code
 end
+```
+
 Executes code while conditional is true. A while loop's conditional is separated from code by the reserved word do, a newline, backslash \, or a semicolon ;.
 
-Example:
+```ruby
 #!/usr/bin/ruby
 
 $i = 0
@@ -16,27 +18,35 @@ while $i < $num  do
    puts("Inside the loop i = #$i" )
    $i +=1
 end
+```
+
 This will produce following result:
 
-Inside the loop i = 0
-Inside the loop i = 1
-Inside the loop i = 2
-Inside the loop i = 3
-Inside the loop i = 4
-Ruby while modifier:
+> Inside the loop i = 0
+> Inside the loop i = 1
+> Inside the loop i = 2
+> Inside the loop i = 3
+> Inside the loop i = 4
+
+#### Ruby while modifier:
+
+
 Syntax:
+```ruby
 code while condition
 
-OR
+#OR
 
 begin 
   code 
 end while conditional
+```
 Executes code while conditional is true.
 
 If a while modifier follows a begin statement with no rescue or ensure clauses, code is executed once before conditional is evaluated.
 
 Example:
+```ruby
 #!/usr/bin/ruby
 
 $i = 0
@@ -45,13 +55,16 @@ begin
    puts("Inside the loop i = #$i" )
    $i +=1
 end while $i < $num
+```
+
 This will produce following result:
 
-Inside the loop i = 0
-Inside the loop i = 1
-Inside the loop i = 2
-Inside the loop i = 3
-Inside the loop i = 4
+> Inside the loop i = 0
+> Inside the loop i = 1
+> Inside the loop i = 2
+> Inside the loop i = 3
+> Inside the loop i = 4
+
 Ruby until Statement:
 until conditional [do]
    code
