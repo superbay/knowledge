@@ -30,12 +30,13 @@ def find_consecutive_runs2(list =  [1, 2, 3, 5, 10, 9, 8, 9, 10, 11, 7] )
 end
 
 
-def find_consecutive_runs3(list =  [1, 2, 3, 5, 10, 9, 8, 9, 10, 11, 7] )
+def find_consecutive_runs3(list =  [1, 2, 3, 4, 10, 9, 8, 9, 10, 11, 7] )
   rs = []
   counter = 0
+  pointer = 0
   0.upto(list.length).each do |i|
-    next if i == 0 || rs.include?(i)
-    i.upto(list.length).each do |j|
+    next if i == 0 || i < pointer
+    pointer = i.upto(list.length).each do |j|
       if counter >= 0 && list[j] == list[j - 1] + 1  
         counter += 1 
         rs << j - 2 if counter >= 2
@@ -44,7 +45,7 @@ def find_consecutive_runs3(list =  [1, 2, 3, 5, 10, 9, 8, 9, 10, 11, 7] )
         rs << j - 2 if counter <= -2
       else
         counter = 0
-        break
+        break j
       end
     end
   end
