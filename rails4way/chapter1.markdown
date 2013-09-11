@@ -31,3 +31,16 @@ config.action_controller.perform_caching = true # for testing in development mod
 match'products/:id'=>'products#show',via::get
 
 ```
+
+### backtrace silencer
+
+```ruby
+#Youcanaddbacktracesilencersforlibrariesthatyou'reusingbut
+#don'twishtoseeinyourbacktraces.
+Rails.backtrace_cleaner.add_silencer{|line|line=~/my_noisy_library/}
+
+#Youcanalsoremoveallthesilencersifyou'retryingtodebuga
+#problemthatmightstemfromframeworkcode.
+Rails.backtrace_cleaner.remove_silencers!
+
+```
