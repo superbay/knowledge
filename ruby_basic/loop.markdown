@@ -271,7 +271,7 @@ for i in 1..5
    retry if some_condition # restart from i == 1
 end
 #Example:
-```ruby
+
 #!/usr/bin/ruby
 
 for i in 1..5
