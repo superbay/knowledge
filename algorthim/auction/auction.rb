@@ -1,7 +1,7 @@
 module Auction
   class Item
     attr_accessor :name, :reserved_price, :status, :sold_price, :bid_list, :current_win
-    def initializer(name, reserved_price)
+    def initialize(name, reserved_price)
       self.name = name
       self.reserved_price = reserved_price
       self.status = 'ready'
@@ -9,10 +9,10 @@ module Auction
   end
 
   class Auction
-    attr_accessor :items
-    def initializer(item)
-      return 'sold item' if item.status == 'sold'
-      self.items << item
+    attr_accessor :ready_items, :sold_items
+    def initialize(items)
+      return 'include sold item' if items.status == 'sold'
+      self.ready_items = items
     end
 
     def start_bid(item, bid)
@@ -28,7 +28,7 @@ module Auction
 
   class Bid
     attr_accessor :bidder_name, :price
-    def initializer(name, price)
+    def initialize(name, price)
       self.bidder_name = name
       self.price = price
     end
