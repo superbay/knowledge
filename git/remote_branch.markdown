@@ -16,7 +16,7 @@ git pull origin refs/heads/feature/annotations
 
 #### add and delete remote tag
 
-```shell
+```ruby
 git push origin head:newbranch_name 
 git push origin head:feature/newbranch_name   
 
