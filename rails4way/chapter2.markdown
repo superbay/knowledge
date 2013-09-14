@@ -22,3 +22,9 @@ match'products/:id'=>'products#show',via:[:get, :post, :patch]
 match'products'=>'products#index',via::any
 
 ```
+
+
+```ruby
+get":id"=>"products#show"
+match'products/:id'=>'products#show'
+```
