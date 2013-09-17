@@ -48,4 +48,5 @@ Rails.backtrace_cleaner.remove_silencers!
 ```ruby
 #Configuresensitiveparameterswhichwillbefilteredfromthelogfile.
 Rails.application.config.filter_parameters+=[:password]
+config.assets.precompile += %w( administration.css )
 ```
