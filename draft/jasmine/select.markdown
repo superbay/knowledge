@@ -1,6 +1,6 @@
 ### test select method
 
-```jquery
+```javascript
   describe('.initStyle', function() {
     it('intial the annotation style and pin style', function() {
       loadFixtures('annotation.html');
