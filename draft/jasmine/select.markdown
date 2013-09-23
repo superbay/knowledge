@@ -15,6 +15,34 @@
   });
 ```
 
+
+#### function
+
+```javascript
+  bw_image.initStyle = function(annotation_container, image_menu) {
+      var annotation_style_select = image_menu.find('.annotation_style_select');
+      var pin_style_select = image_menu.find('.pin_style_select'); 
+      annotation_style_select.val(annotation_container.data('skin'));
+      var all_annotation_style = 'light-opaque light-transparent dark-opaque dark-transparent'; 
+      annotation_style_select.bind('change', function(){
+          annotation_container.removeClass(all_annotation_style).addClass(this.value).attr('data-skin', this.value);
+      });
+
+      var all_pin_style = 'icons-blue_pin icons-red_pin'; 
+      if (annotation_container.length != 0) {
+        pin_style_select.val(annotation_container.data('pin_icon'));
+      } else {
+        //default pin style to red_pin
+        pin_style_select.val('icons-red_pin');
+      }
+
+      pin_style_select.bind('change', function(){
+          $('.pin').removeClass(all_pin_style).addClass(this.value);
+          annotation_container.attr('data-pin_icon', this.value);
+      });
+  };
+```
+
 #### hints
 
 [origin jasmine link](https://github.com/pivotal/jasmine) <br/>
