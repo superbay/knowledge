@@ -14,3 +14,8 @@
     });
   });
 ```
+
+#### hints
+
+[origin jasmine link](https://github.com/pivotal/jasmine)
+[feature of fixture](https://github.com/velesin/jasmine-jquery)
