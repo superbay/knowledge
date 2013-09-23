@@ -17,5 +17,5 @@
 
 #### hints
 
-[origin jasmine link](https://github.com/pivotal/jasmine)
+[origin jasmine link](https://github.com/pivotal/jasmine) <br/>
 [feature of fixture](https://github.com/velesin/jasmine-jquery)
