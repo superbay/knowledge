@@ -43,6 +43,28 @@
   };
 ```
 
+#### fixture
+
+```html
+<!--spec/javascripts/fixtures/annotation.html-->
+<div class='annotation_container' data-skin='light-transparent' data-pin_icon='icons-red_pin'>
+</div>
+
+<div class='image_menu'>
+  <select class='annotation_style_select'>
+    <option>light-transparent</option>
+  </select>
+  <select class='pin_style_select'>
+    <option value='icons-red_pin'>Red</option>
+    <option value='icons-blue_pin'>Blue</option>
+  </select>
+</div>
+
+<div class='pin'>
+
+</div>
+```
+
 #### hints
 
 [origin jasmine link](https://github.com/pivotal/jasmine) <br/>
