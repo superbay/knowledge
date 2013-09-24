@@ -1,3 +1,7 @@
-### unicorn & deploy
+#### unicorn & deploy
 
-1. [from recipes](http://recipes.sinatrarb.com/p/deployment/nginx_proxied_to_unicorn?#article)
+ [from recipes](http://recipes.sinatrarb.com/p/deployment/nginx_proxied_to_unicorn?#article)
+
+
+#### basic and digest
+ [from recipes](http://recipes.sinatrarb.com/p/deployment/nginx_proxied_to_unicorn?#article)
