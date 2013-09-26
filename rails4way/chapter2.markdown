@@ -1,5 +1,21 @@
 ### route
 
+
+#### named routes
+
+```ruby
+get 'help' => 'help#index', as: 'help'
+```
+
+Argument Sugar
+
+```ruby
+get "auction/:auction_id/item/:id" => "items#show", as: "item"  
+
+#you’d be able to call it like
+link_to "Auctionof#{item.name}", item_path(auction, item)
+```
+
 ```ruby
 get'items/list/*specs',controller:'items',action:'list'
 
