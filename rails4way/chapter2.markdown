@@ -1,3 +1,8 @@
+```ruby
+get"/hello",to:proc{|env|[200,{},["Helloworld"]]}
+```
+
+
 ### route
 
 ```ruby
