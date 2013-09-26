@@ -1,14 +1,19 @@
 ### route
 
 ```ruby
+get'items/list/*specs',controller:'items',action:'list'
+
+deflist
+ specs = params[:specs] # e.g, "base/books/fiction/dickens"
+end
+
 #protect records with id under 100
 get'records/:id'=>"records#protected",
 constraints: proc {|req| req.params[:id].to_i < 100 }
 
-
-
 #only allow users admin subdomain to do old-schoolrouting
 get':controller/:action/:id'=>:show,constraints:{subdomain:'admin'}
+
 get':controller/show/:id'=>:show,constraints:{:id=>/\d+/}
 get':controller/show/:id'=>:show_error
 # pay more attention to contrain reguler expression
