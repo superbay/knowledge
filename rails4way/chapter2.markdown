@@ -1,4 +1,9 @@
+
+### route
+
 ```ruby
+#only allow users admin subdomain to do old-schoolrouting
+get':controller/:action/:id'=>:show,constraints:{subdomain:'admin'}
 get':controller/show/:id'=>:show,constraints:{:id=>/\d+/}
 get':controller/show/:id'=>:show_error
 # pay more attention to contrain reguler expression
@@ -11,7 +16,6 @@ get"/hello",to:proc{|env|[200,{},["Helloworld"]]}
 ```
 
 
-### route
 
 ```ruby
 
