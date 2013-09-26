@@ -23,8 +23,17 @@ match'products'=>'products#index',via::any
 
 ```
 
-
 ```ruby
 get":id"=>"products#show"
 match'products/:id'=>'products#show'
+```
+
+```ruby
+def show
+  @product = Product.find(params[:id]) respond_to do |format|
+      format.html
+      format.json { render json: @product.to_json }
+      format.any
+  end 
+end
 ```
