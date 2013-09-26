@@ -30,14 +30,14 @@ get 'records/:id' => "records#protected", constraints: proc {|req| req.params[:i
 get ':controller/:action/:id' => :show, constraints: { subdomain: 'admin' }
 
 get ':controller/show/:id' => :show, constraints: { :id => /\d+/ }
-get':controller/show/:id'=>:show_error
+get ':controller/show/:id' => :show_error
 # pay more attention to contrain reguler expression
 # it would NOT match "foo32bar"
 
-get':controller/show/:id'=>:show,id:/\d+/
-get':controller/show/:id'=>:show_error
+get ':controller/show/:id' => :show, id: /\d+/
+get ':controller/show/:id' => :show_error
 
-get"/hello",to:proc{|env|[200,{},["Helloworld"]]}
+get "/hello", to: proc {|env| [200, {}, ["Helloworld"]] }
 ```
 
 
@@ -53,21 +53,21 @@ end
 regular
 
 ```ruby
-get'products/:id',to:'products#show'
+get 'products/:id', to: 'products#show'
 # equal
-get'products/:id'=>'products#show'
+get 'products/:id' => 'products#show'
 ```
 
 
 ```ruby
-match'products/:id'=>'products#show',via:[:get, :post, :patch]
-match'products'=>'products#index',via::any
+match 'products/:id' => 'products#show', via:[:get, :post, :patch]
+match 'products' => 'products#index', via::any
 
 ```
 
 ```ruby
-get":id"=>"products#show"
-match'products/:id'=>'products#show'
+get ":id" => "products#show"
+match 'products/:id' => 'products#show'
 ```
 
 ```ruby
