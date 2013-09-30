@@ -21,3 +21,8 @@ end
 ```ruby
 rake routes
 ```
+
+![screen shot 2013-09-29 at 11 04 33 pm](https://f.cloud.github.com/assets/83296/1234544/112cd0fc-297d-11e3-9e44-e05358abe3a9.png)
+
+
+
