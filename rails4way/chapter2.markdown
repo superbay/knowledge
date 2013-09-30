@@ -1,5 +1,15 @@
 ### route
 
+#### scope routes
+
+```ruby
+scope controller::auctions do
+  get 'auctions/new' => :new
+  get 'auctions/edit/:id' => :edit
+  post 'auctions/pause/:id' => :pause
+end
+```
+
 ```ruby
 link_to"Auctionof#{item.name}",item_path(item.id)
 ```
