@@ -3,6 +3,16 @@
 #### Building Constraints
 
 ```ruby
+class DateFormatConstraint 
+  def self.matches?(request)
+    request.params[:date] =~ /\A\d{4}-\d\d-\d\d\z/ # YYYY-MM-DD
+  end
+end
+#inroutes.rb
+constraints(DateFormatConstraint) do
+  get 'since/:date' => :since
+end
+
 scope path: '/auctions', controller::auctions do
   get 'new' => :new
   constraints id: /\d+/ do
