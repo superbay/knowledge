@@ -1,5 +1,9 @@
 ### route
 
+```ruby
+link_to"Auctionof#{item.name}",item_path(item.id)
+```
+
 
 #### named routes
 
