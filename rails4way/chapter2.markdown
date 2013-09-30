@@ -20,6 +20,15 @@ scope path: '/auctions', controller::auctionsdo
 end
 ```
 
+### Name Prefix
+
+```ruby
+
+scope: auctions, as: 'admin' do
+  get 'new' => :new, as: 'new_auction'
+end
+```
+
 ```ruby
 link_to"Auctionof#{item.name}",item_path(item.id)
 ```
