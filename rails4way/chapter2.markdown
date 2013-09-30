@@ -8,6 +8,7 @@ class DateFormatConstraint
     request.params[:date] =~ /\A\d{4}-\d\d-\d\d\z/ # YYYY-MM-DD
   end
 end
+
 #inroutes.rb
 constraints(DateFormatConstraint) do
   get 'since/:date' => :since
