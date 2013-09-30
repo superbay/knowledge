@@ -11,6 +11,14 @@ end
 ```
 
 ```ruby
+scope path: '/auctions', controller::auctionsdo
+  get 'new' => :new
+  get 'edit/:id' => :edit
+  post 'pause/:id' => :pause
+end
+```
+
+```ruby
 link_to"Auctionof#{item.name}",item_path(item.id)
 ```
 
