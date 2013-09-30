@@ -16,3 +16,8 @@ link_to "Delete", auction_path(auction), method: :delete
 form_for "auction", url: auction_path(auction), html: { method: :patch } do |f|
 end
 ```
+### sample
+
+```ruby
+rake routes
+```
