@@ -1,9 +1,9 @@
 ### route
 
-#### Building Constrain
+#### Building Constraints
 
 ```ruby
-scopepath: '/auctions', controller::auctions do
+scope path: '/auctions', controller::auctions do
   get 'new' => :new
   constraints id: /\d+/ do
     get 'edit/:id' => :edit
