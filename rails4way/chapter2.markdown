@@ -10,6 +10,8 @@ scope controller::auctions do
 end
 ```
 
+#### path prefix
+
 ```ruby
 scope path: '/auctions', controller::auctionsdo
   get 'new' => :new
