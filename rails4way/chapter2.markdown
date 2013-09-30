@@ -1,5 +1,17 @@
 ### route
 
+#### Building Constrain
+
+```ruby
+scopepath: '/auctions', controller::auctions do
+  get 'new' => :new
+  constraints id: /\d+/ do
+    get 'edit/:id' => :edit
+    post 'pause/:id' => :pause 
+  end
+end
+```
+
 #### scope routes
 
 ```ruby
