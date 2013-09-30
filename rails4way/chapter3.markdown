@@ -11,3 +11,8 @@ used jquery-ujs
 ```ruby
 link_to "Delete", auction_path(auction), method: :delete
 ```
+
+```ruby
+form_for "auction", url: auction_path(auction), html: { method: :patch } do |f|
+end
+```
