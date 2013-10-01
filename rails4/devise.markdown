@@ -22,4 +22,6 @@ end
 
 ```
 
+reference: https://github.com/plataformatec/devise#strong-parameters
+
 
