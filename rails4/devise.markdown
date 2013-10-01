@@ -9,6 +9,8 @@
     Unpermitted parameters: name, uid
     WARNING: Can't mass-assign protected attributes for User: password_confirmation
     app/models/user.rb:31:in `new_with_session'
+    
+Normal solution is add strong parameter permit, to application_controller or the exact controller    
 
 ```ruby
 
