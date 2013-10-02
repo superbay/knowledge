@@ -1,3 +1,27 @@
+### shallow
+
+```ruby
+
+resources :auctions, shallow: true do
+  resources :bids do
+    resources :comments
+  end
+end
+
+#same as 
+
+resources :auctions do
+  shallow do
+    resources :bids do
+      resources :comments
+    end
+  end
+end
+
+```
+
+
+
 ### restful
 
 ```ruby
@@ -13,7 +37,7 @@ link_to "Deletethisbid", [auction, bid], method: :delete
 
 auction = Auction.find(params[:auction_id] )
 bid = auction.bids.find(params[:id] ) #preventsauction/bidmismatch
-
+http://localhost:3000/auctions/5/bids/new
 ```
 
 how to use the nested resource
