@@ -8,6 +8,9 @@ end
 
 link_to "Seeallbids", auction_bids_path(auction)
 link_to "Deletethisbid", auction_bid_path(auction, bid), method: :delete
+#which easy for
+link_to "Deletethisbid", [auction, bid], method: :delete
+
 ```
 
 how to use the nested resource
