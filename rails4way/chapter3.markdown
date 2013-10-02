@@ -1,4 +1,13 @@
 ```ruby
+resources :projects, path_names: { new: 'nuevo', edit: 'cambiar' }
+
+
+GET /projects/nuevo(.:format)  projects#new 
+GET /projects/:id/cambiar(.:format)  projects#edit
+```
+
+
+```ruby
 resources :auctions do
   resources :bids do
     member do
