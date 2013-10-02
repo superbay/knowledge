@@ -7,6 +7,15 @@ resources :auctions do
     end
   end
 end
+
+resources :auctions do
+  resources :bids do
+    match :retract, via: [:get, :post], on: :member
+    match :terminate, via: [:get, :post], on: :collection
+  end
+end
+
+
 ```
 
 
