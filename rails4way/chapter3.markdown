@@ -24,6 +24,13 @@ concern :image_attachable do
 end
 ```
 
+```ruby
+resources :auctions, concerns: [:commentable, :image_attachable] do
+  resources :bids
+end
+resources :bids, concerns: :commentable
+```
+
 
 
 ### shallow
