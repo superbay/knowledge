@@ -11,6 +11,9 @@ link_to "Deletethisbid", auction_bid_path(auction, bid), method: :delete
 #which easy for
 link_to "Deletethisbid", [auction, bid], method: :delete
 
+auction = Auction.find(params[:auction_id] )
+bid = auction.bids.find(params[:id] ) #preventsauction/bidmismatch
+
 ```
 
 how to use the nested resource
