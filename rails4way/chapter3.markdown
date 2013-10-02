@@ -1,3 +1,18 @@
+```ruby
+resources :auctions do
+  resources :bids do
+    member do
+      get :retract
+      post :retract
+    end
+  end
+end
+```
+
+
+
+
+
 ### extra memerb
 
 ```ruby
