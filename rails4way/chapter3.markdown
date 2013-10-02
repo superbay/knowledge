@@ -1,3 +1,31 @@
+### concern in routes
+
+```ruby
+resources: auctions do
+  resources :bids
+  resources :comments
+  resources :image_attachments, only: :index
+end
+
+resources :bids do
+  resources :comments
+end
+```
+
+Could be write as
+
+```ruby
+concern :commentable do
+  resources :comments
+end
+
+concern :image_attachable do
+  resources :image_attachments, only: :index
+end
+```
+
+
+
 ### shallow
 
 ```ruby
