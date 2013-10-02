@@ -1,3 +1,20 @@
+### extra memerb
+
+```ruby
+resources :auctions do 
+  resources :bids do
+    member do
+      get :retract
+    end
+  end
+end
+
+link_to "Retract", retract_bid_path(auction, bid)
+link_to "Retract", retract_bid_path(auction, bid), method::post
+```
+
+
+
 ### concern in routes
 
 ```ruby
