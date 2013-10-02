@@ -5,7 +5,12 @@
 resources:auctions do
  resources :bids
 end
+
+link_to "Seeallbids", auction_bids_path(auction)
+link_to "Deletethisbid", auction_bid_path(auction, bid), method: :delete
 ```
+
+how to use the nested resource
 #### chart
 
 ![screen shot 2013-09-29 at 10 58 29 pm](https://f.cloud.github.com/assets/83296/1234530/46455bb6-297c-11e3-8e98-ab7021b110df.png)
