@@ -1,3 +1,18 @@
+### respond_to & respond_with 
+
+```ruby
+def index
+  @auctions = Auction.all 
+  respond_to do |format|
+    format.html
+    format.xml { render :xml => @auctions } 
+  end
+end
+```
+
+
+
+
 ```ruby
 resources :projects, path_names: { new: 'nuevo', edit: 'cambiar' }
 
