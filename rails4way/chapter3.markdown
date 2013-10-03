@@ -1,3 +1,13 @@
+#### Formated Named Routes
+
+```ruby
+link_to "XML version of this auction", auction_path(@auction, :xml)
+
+#This will generate the following HTML: 
+<a href="/auctions/1.xml"> XML version of this auction</a>
+```
+
+
 ### respond_to & respond_with 
 
 ```ruby
