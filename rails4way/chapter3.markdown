@@ -10,7 +10,17 @@ def index
 end
 ```
 
+And also could be define it together
 
+```ruby
+class AuctionsController < ApplicationController
+  respond_to :html, :xml, :json
+  def index
+    @auctions = Auction.all
+    respond_with(@auctions)
+  end
+end
+```
 
 
 ```ruby
