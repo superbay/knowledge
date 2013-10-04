@@ -1,5 +1,6 @@
 ## Rack and Rails
 
+![screen shot 2013-10-03 at 9 40 29 pm](https://f.cloud.github.com/assets/83296/1266773/0f2cd5ba-2c96-11e3-8309-7ec8bc909d63.png)
 
 
 ### What's Rack
