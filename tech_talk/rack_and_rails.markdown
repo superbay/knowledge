@@ -32,3 +32,4 @@ end
 
 1. http://southdesign.de/blog/rack.html
 2. [Official Rack Website](http://rack.github.io/) 
+3. [Rack Contrib](https://github.com/rack/rack-contrib)
