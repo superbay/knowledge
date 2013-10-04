@@ -85,20 +85,21 @@ interface:
 * Rack::TryStatic - Tries to match request to a static file
 * Rack::Printout - Prints the environment and the response per request
 
-=== Use
+#### How to Use
 
 Git is the quickest way to the rack-contrib sources:
-
+```
   git clone git://github.com/rack/rack-contrib.git
-
+```
 Gems are available too:
-
+```
   gem install rack-contrib
-
+```
 Requiring 'rack/contrib' will add autoloads to the Rack modules for all of the
 components included. The following example shows what a simple rackup
 (+config.ru+) file might look like:
 
+```ruby
   require 'rack'
   require 'rack/contrib'
 
@@ -108,7 +109,7 @@ components included. The following example shows what a simple rackup
   use Rack::MailExceptions
 
   run theapp
-
+```
 
 #### Resource
 
