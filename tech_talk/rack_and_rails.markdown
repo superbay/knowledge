@@ -67,6 +67,52 @@ RSpec.configure do |conf|
 end
 ```
 
+Action Dispatcher Middleware Stack
+----------------------------------
+
+Many of Action Dispatcher's internal components are implemented as Rack middlewares. `Rails::Application` uses `ActionDispatch::MiddlewareStack` to combine various internal and external middlewares to form a complete Rails Rack application.
+
+NOTE: `ActionDispatch::MiddlewareStack` is Rails equivalent of `Rack::Builder`, but built for better flexibility and more features to meet Rails' requirements.
+
+### Inspecting Middleware Stack
+
+Rails has a handy rake task for inspecting the middleware stack in use:
+
+```bash
+$ rake middleware
+```
+
+For a freshly generated Rails application, this might produce something like:
+
+```ruby
+use Rack::Sendfile
+use ActionDispatch::Static
+use Rack::Lock
+use #<ActiveSupport::Cache::Strategy::LocalCache::Middleware:0x000000029a0838>
+use Rack::Runtime
+use Rack::MethodOverride
+use ActionDispatch::RequestId
+use Rails::Rack::Logger
+use ActionDispatch::ShowExceptions
+use ActionDispatch::DebugExceptions
+use ActionDispatch::RemoteIp
+use ActionDispatch::Reloader
+use ActionDispatch::Callbacks
+use ActiveRecord::Migration::CheckPending
+use ActiveRecord::ConnectionAdapters::ConnectionManagement
+use ActiveRecord::QueryCache
+use ActionDispatch::Cookies
+use ActionDispatch::Session::CookieStore
+use ActionDispatch::Flash
+use ActionDispatch::ParamsParser
+use Rack::Head
+use Rack::ConditionalGet
+use Rack::ETag
+run MyApp::Application.routes
+```
+
+Purpose of each of this middlewares is explained in the [Internal Middlewares](#internal-middleware-stack) section.
+
 ### Contributed Rack Middleware and Utilities
 
 This package includes a variety of add-on components for Rack, a Ruby web server
