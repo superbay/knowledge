@@ -33,7 +33,7 @@ curl http://localhost:9292/hello.json
 
 ```
 
-= Contributed Rack Middleware and Utilities
+### Contributed Rack Middleware and Utilities
 
 This package includes a variety of add-on components for Rack, a Ruby web server
 interface:
