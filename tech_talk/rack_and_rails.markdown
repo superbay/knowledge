@@ -86,6 +86,17 @@ map '/assets' do
 end
 ```
 
+### MiniProfiler
+
+```ruby
+# A hook in your ApplicationController
+def authorize
+  if current_user.is_admin? 
+    Rack::MiniProfiler.authorize_request
+  end
+end
+```
+
 Action Dispatcher Middleware Stack
 ----------------------------------
 
@@ -220,3 +231,4 @@ components included. The following example shows what a simple rackup
 7. [Rack Doc](http://rack.rubyforge.org/doc/)
 8. [Rack API](http://rack.rubyforge.org/doc/SPEC.html)
 9. [Sprockets Rails](https://github.com/rails/sprockets-rails)
+10. [Rack mini profiler](https://github.com/MiniProfiler/rack-mini-profiler)
