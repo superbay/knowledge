@@ -111,7 +111,6 @@ use Rack::ETag
 run MyApp::Application.routes
 ```
 
-Purpose of each of this middlewares is explained in the [Internal Middlewares](#internal-middleware-stack) section.
 
 ### Contributed Rack Middleware and Utilities
 
