@@ -97,6 +97,11 @@ def authorize
 end
 ```
 
+### WebConsole
+
+
+![webconsole](http://img.youtube.com/vi/yKK5J01Dqts/0.jpg)
+
 Action Dispatcher Middleware Stack
 ----------------------------------
 
@@ -232,3 +237,4 @@ components included. The following example shows what a simple rackup
 8. [Rack API](http://rack.rubyforge.org/doc/SPEC.html)
 9. [Sprockets Rails](https://github.com/rails/sprockets-rails)
 10. [Rack mini profiler](https://github.com/MiniProfiler/rack-mini-profiler)
+11. [WebConsole](https://github.com/codegram/rack-webconsole)
