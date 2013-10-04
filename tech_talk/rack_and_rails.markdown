@@ -28,7 +28,7 @@ end
 ```
 
 ```ruby
-$ curl http://localhost:9292/hello.json
+curl http://localhost:9292/hello.json
 { message: "Hello!" }
 
 ```
@@ -39,3 +39,4 @@ $ curl http://localhost:9292/hello.json
 1. http://southdesign.de/blog/rack.html
 2. [Official Rack Website](http://rack.github.io/) 
 3. [Rack Contrib](https://github.com/rack/rack-contrib)
+4. [Rails Guides](http://guides.rubyonrails.org/rails_on_rack.html)
