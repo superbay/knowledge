@@ -1,5 +1,13 @@
 ## Rack and Rails
 
+
+
+### What's Rack
+
+a Ruby Webserver Interface
+
+Rack provides a minimal interface between webservers supporting Ruby and Ruby frameworks.
+
 ### Basic Rack
 
 ```ruby
@@ -18,4 +26,4 @@ end
 #### Resource
 
 1. http://southdesign.de/blog/rack.html
-2. 
+2. [Official Rack Website](http://rack.github.io/) 
