@@ -27,6 +27,12 @@ map '/hello.json' do
 end
 ```
 
+```ruby
+$ curl http://localhost:9292/hello.json
+{ message: "Hello!" }
+
+```
+
 
 #### Resource
 
