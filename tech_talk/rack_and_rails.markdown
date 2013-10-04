@@ -67,6 +67,12 @@ RSpec.configure do |conf|
 end
 ```
 
+### Sprockets & [Asset Pipeline](https://github.com/sstephenson/sprockets)
+
+> Sprockets is a Ruby library for compiling and serving web assets. It features declarative dependency management for JavaScript and CSS assets, as well as a powerful preprocessor pipeline that allows you to write assets in languages like CoffeeScript, Sass, SCSS and LESS.
+
+
+
 Action Dispatcher Middleware Stack
 ----------------------------------
 
@@ -200,3 +206,4 @@ components included. The following example shows what a simple rackup
 6. [Rack App From Scratch](http://railscasts.com/episodes/317-rack-app-from-scratch)
 7. [Rack Doc](http://rack.rubyforge.org/doc/)
 8. [Rack API](http://rack.rubyforge.org/doc/SPEC.html)
+9. [Sprockets Rails](https://github.com/rails/sprockets-rails)
