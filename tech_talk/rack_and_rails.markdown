@@ -44,7 +44,19 @@ end
 #Rails::Server inherits from Rack::Server and calls the Rack::Server#start
 ```
 
+### Sinatra & Rack
 
+```ruby
+require 'sinatra'
+
+use Rack::Auth::Basic do |username, password|
+  username == 'admin' and password == 'admin'
+end
+
+get '/protected' do
+  "You're welcome"
+end
+```
 
 ### Contributed Rack Middleware and Utilities
 
