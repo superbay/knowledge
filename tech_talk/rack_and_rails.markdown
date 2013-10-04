@@ -151,3 +151,4 @@ components included. The following example shows what a simple rackup
 2. [Official Rack Website](http://rack.github.io/) 
 3. [Rack Contrib](https://github.com/rack/rack-contrib)
 4. [Rails Guides](http://guides.rubyonrails.org/rails_on_rack.html)
+5. [Rails Middleware Walkthrough](http://railscasts.com/episodes/319-rails-middleware-walkthrough)
