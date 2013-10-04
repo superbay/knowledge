@@ -58,6 +58,15 @@ get '/protected' do
 end
 ```
 
+```ruby
+require 'rspec'
+require 'rack/test'
+
+RSpec.configure do |conf|
+  conf.include Rack::Test::Methods
+end
+```
+
 ### Contributed Rack Middleware and Utilities
 
 This package includes a variety of add-on components for Rack, a Ruby web server
