@@ -97,6 +97,8 @@ def authorize
 end
 ```
 
+![profiler](http://cdn.community-tracker.com/uploads/site_1/3272/full-mp.png)
+
 ### WebConsole
 
 
