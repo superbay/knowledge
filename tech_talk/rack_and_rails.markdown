@@ -33,6 +33,19 @@ curl http://localhost:9292/hello.json
 
 ```
 
+### Rails & Rack
+
+```ruby
+Rails::Server.new.tap do |server|
+  require APP_PATH
+  Dir.chdir(Rails.application.root)
+  server.start
+end
+#Rails::Server inherits from Rack::Server and calls the Rack::Server#start
+```
+
+
+
 ### Contributed Rack Middleware and Utilities
 
 This package includes a variety of add-on components for Rack, a Ruby web server
