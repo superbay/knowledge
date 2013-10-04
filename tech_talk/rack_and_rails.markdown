@@ -71,7 +71,20 @@ end
 
 > Sprockets is a Ruby library for compiling and serving web assets. It features declarative dependency management for JavaScript and CSS assets, as well as a powerful preprocessor pipeline that allows you to write assets in languages like CoffeeScript, Sass, SCSS and LESS.
 
+```ruby
 
+require 'sprockets'
+require 'coffee_script'
+require 'eco'
+require 'sass'
+
+map '/assets' do
+  environment = Sprockets::Environment.new
+  environment.append_path '/assets/javascripts'
+  environment.append_path '/assets/stylesheets'
+  run environment
+end
+```
 
 Action Dispatcher Middleware Stack
 ----------------------------------
