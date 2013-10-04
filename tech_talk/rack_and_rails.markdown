@@ -154,3 +154,4 @@ components included. The following example shows what a simple rackup
 5. [Rails Middleware Walkthrough](http://railscasts.com/episodes/319-rails-middleware-walkthrough)
 6. [Rack App From Scratch](http://railscasts.com/episodes/317-rack-app-from-scratch)
 7. [Rack Doc](http://rack.rubyforge.org/doc/)
+8. [Rack API](http://rack.rubyforge.org/doc/SPEC.html)
