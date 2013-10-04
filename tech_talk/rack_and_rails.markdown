@@ -6,6 +6,7 @@
 ### What's Rack
 
 > a Ruby Webserver Interface
+
 > Rack provides a minimal interface between webservers supporting Ruby and Ruby frameworks.
 
 -- Offical Rack Website
