@@ -18,6 +18,17 @@ redirect_to post_url(@post), status: 301
 redirect_to :atom, status: 302
 ```
 
+#### Flash message
+
+New to Rails 4, is the ability to register your own flash types by using the newActionController::Flash.add_- flash_types macro style method.
+
+```ruby
+classApplicationController
+  ...
+  add_flash_types :error
+end
+```
+
 ## Controller
 
 #### Rack
