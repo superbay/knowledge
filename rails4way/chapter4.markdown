@@ -1,4 +1,4 @@
-## View
+## Controller
 
 ```ruby
 render inline: "%span.foo#{@foo.name}", type: "haml"
@@ -29,7 +29,19 @@ classApplicationController
 end
 ```
 
-## Controller
+An action callback can take one of three forms: method reference (symbol), external class, or block.
+```ruby
+#external class
+class OutputCompressionActionCallback 
+  def self.after(controller)
+    controller.response.body = compress(controller.response.body) 
+  end
+end
+
+class NewspaperController < ActionController::Base
+  after_action OutputCompressionActionCallback
+end
+```
 
 #### Rack
 
