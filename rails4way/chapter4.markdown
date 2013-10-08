@@ -4,6 +4,7 @@
 render inline: "%span.foo#{@foo.name}", type: "haml"
 render text: 'Submission accepted',content_type: 'text/plain'
 render json: @projects, include: :tasks
+render json: @record, callback: 'update Records Display'
 ```
 
 ## Controller
