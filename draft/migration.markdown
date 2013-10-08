@@ -2,7 +2,7 @@
 
 
 ```bash
-rails generate model Product name:string description:text
+$ rails generate model Product name:string description:text
 $ rails generate migration AddUserRefToProducts user:references
 ```
 
@@ -27,3 +27,22 @@ end
 
 
 ```
+
+
+#### support type
+
+```bash
+$ rails generate migration AddDetailsToProducts price:decimal{5,2} supplier:references{polymorphic}
+```
+
+```ruby
+class AddDetailsToProducts < ActiveRecord::Migration
+  def change
+    add_column :products, :price, precision: 5, scale: 2
+    add_reference :products, :user, polymorphic: true, index: true
+  end
+end
+```
+
+
+
