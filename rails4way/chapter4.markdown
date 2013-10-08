@@ -1,3 +1,9 @@
+## View
+
+```ruby
+render inline: "%span.foo#{@foo.name}", type: "haml"
+```
+
 ## Controller
 
 #### Rack
