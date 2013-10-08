@@ -8,6 +8,12 @@ render json: @record, callback: 'update Records Display'
 render nothing: true, status: 401
 ```
 
+#### redirect_to
+
+```ruby
+redirect_to "http://www.rubyonrails.org"
+```
+
 ## Controller
 
 #### Rack
