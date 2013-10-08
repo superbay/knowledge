@@ -3,6 +3,7 @@
 ```ruby
 render inline: "%span.foo#{@foo.name}", type: "haml"
 render text: 'Submission accepted',content_type: 'text/plain'
+render json: @projects, include: :tasks
 ```
 
 ## Controller
