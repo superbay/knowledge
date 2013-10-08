@@ -61,5 +61,39 @@ remove_reference
 rename_table
 ```
 
+#### Reversible
+
+```ruby
+class ExampleMigration < ActiveRecord::Migration
+  def change
+    create_table :products do |t|
+      t.references :category
+    end
+ 
+    reversible do |dir|
+      dir.up do
+        #add a foreign key
+        execute <<-SQL
+          ALTER TABLE products
+            ADD CONSTRAINT fk_products_categories
+            FOREIGN KEY (category_id)
+            REFERENCES categories(id)
+        SQL
+      end
+      dir.down do
+        execute <<-SQL
+          ALTER TABLE products
+            DROP FOREIGN KEY fk_products_categories
+        SQL
+      end
+    end
+ 
+    add_column :users, :home_page_url, :string
+    rename_column :users, :email, :email_address
+  end
+end
+```
+  
+
 
 
