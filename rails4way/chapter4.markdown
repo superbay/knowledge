@@ -42,6 +42,14 @@ class NewspaperController < ActionController::Base
   after_action OutputCompressionActionCallback
 end
 ```
+inline method
+```ruby
+class WeblogController < ActionController::Base
+  before_action do
+    redirect_to new_user_session_path unless authenticated? 
+  end
+end
+```
 
 #### Rack
 
