@@ -51,6 +51,19 @@ class WeblogController < ActionController::Base
 end
 ```
 
+before filter chain order
+
+```ruby
+class ShoppingController < ActionController::Base 
+  before_action :verify_open_shop
+end
+
+class CheckoutController < ShoppingController
+  prepend_before_action :ensure_items_in_cart, :ensure_items_in_stock
+end
+```
+excute sequence: :ensure_items_in_cart, :ensure_items_in_- stock, :verify_open_shop
+
 #### Rack
 
 ```ruby
