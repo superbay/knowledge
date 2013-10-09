@@ -16,3 +16,11 @@ CREATE TABLE foo.items ();
 # remove the schema we just created
 DROP SCHEMA foo CASCADE;
 ```
+
+```ruby
+t = Tenant.create! subdomain: "cheese"
+c = t.connection
+c.execute("create schema tenant1")
+c.schema_search_path = "tenant1"
+load 'db/schema.rb'
+```
