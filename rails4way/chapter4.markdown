@@ -1,6 +1,20 @@
 ## Controller
 
 ```ruby
+class StreamingController < ApplicationController include ActionController::Live
+  # Streams about 180 MB of generated data to the browser.
+  def stream 
+    10_000_000.times do |i|
+      response.stream.write "This is line #{i}\n"
+    end
+  ensure
+    response.stream.close 
+  end
+end
+```
+
+
+```ruby
 render inline: "%span.foo#{@foo.name}", type: "haml"
 render text: 'Submission accepted',content_type: 'text/plain'
 render json: @projects, include: :tasks
