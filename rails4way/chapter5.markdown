@@ -1,5 +1,12 @@
 ## Active Record
 
+#### Serialized Attributes
+
+```ruby
+class User < ActiveRecord::Base
+  serialize :preferences, Hash
+end
+```
 
 
 
