@@ -8,7 +8,8 @@ class User < ActiveRecord::Base
 end
 ```
 
-migration
+### migration
+
 ```ruby
 add_column :users, :preferences, :text, default:"---{}"
 ```
