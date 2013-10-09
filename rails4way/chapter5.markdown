@@ -20,6 +20,12 @@ def preferences
 end
 ```
 
+```ruby
+class User < ActiveRecord::Base
+  store :preferences
+end
+```
+
 
 
 Enter text in [Markdown](http://daringfireball.net/projects/markdown/). Use the toolbar above, or click the **?** button for formatting help.
