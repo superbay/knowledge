@@ -1,6 +1,12 @@
 ## Controller
 
-### send_data
+#### send_file
+```ruby
+send_file '/path/to.jpg', type: 'image/jpeg', disposition: 'inline'
+```
+
+
+#### send_data
 
 ```ruby
 require 'RMagick'
