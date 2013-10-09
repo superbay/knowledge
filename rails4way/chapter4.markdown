@@ -1,5 +1,24 @@
 ## Controller
 
+### send_data
+
+```ruby
+require 'RMagick'
+
+class CaptchaController < ApplicationController
+
+  def image
+    # create an RMagic canvas and render difficult to read text on it
+    img = canvas.flatten_images
+    img.format = "JPG"
+
+    # send it to the browser
+    send_data img.to_blob, disposition: 'inline', type: 'image/jpg'
+  end
+end
+
+```
+
 ```ruby
 class StreamingController < ApplicationController include ActionController::Live
   # Streams about 180 MB of generated data to the browser.
