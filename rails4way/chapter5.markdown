@@ -1,5 +1,15 @@
 ## Active Record
 
+
+#### Set name manually
+
+```ruby
+class Client < ActiveRecord::Base
+  self.table_name = "CLIENT"
+  self.primary_key = "CLIENT_ID"
+end
+```
+
 #### Serialized Attributes
 
 ```ruby
