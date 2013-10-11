@@ -5,6 +5,7 @@
 ```ruby
 class LegacyProjectBase < ActiveRecord::Base 
   establish_connection :legacy_database 
+  #establish_connection adapter: 'sqlite3', database: ':memory:'
   self.abstract_class = true
 end
 ```
