@@ -1,5 +1,12 @@
 ## Active Record
 
+#### instance attributes
+
+```ruby
+>>  first_client.attributes 
+=> {"name" => "PaperJamPrinters", "code" => "PJP","id" => 1}
+```
+
 #### new record instance
 
 ```ruby
