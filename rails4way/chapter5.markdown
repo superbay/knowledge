@@ -1,5 +1,20 @@
 ## Active Record
 
+#### default attribute value
+
+```ruby
+class Specification < ActiveRecord::Base
+  def tolerance
+    self[:tolerance] || 'n/a'
+  end
+end
+
+class SillyFortuneCookie < ActiveRecord::Base
+  def message=(txt)
+    self[:message] = txt + ' in bed' 
+  end
+end
+```
 
 #### Set name manually
 
