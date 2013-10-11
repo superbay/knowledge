@@ -3,6 +3,10 @@
 #### Enhanced Eager and Lazy Loading
 
 ```ruby
+Client.eager_load( users: [:avatar, { timesheets: :billable_weeks }])
+```
+
+```ruby
 Client.includes(users: [:avatar, { timesheets: :billable_weeks }] )
 # clients has_many :users
 # User has_many :avatar
