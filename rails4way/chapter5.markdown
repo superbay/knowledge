@@ -1,5 +1,14 @@
 ## Active Record
 
+#### Establish_connection
+
+```ruby
+class LegacyProjectBase < ActiveRecord::Base 
+  establish_connection :legacy_database 
+  self.abstract_class = true
+end
+```
+
 #### Enhanced Eager and Lazy Loading
 
 ```ruby
