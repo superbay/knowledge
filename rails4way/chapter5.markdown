@@ -1,5 +1,18 @@
 ## Active Record
 
+
+#### StaleObjectError
+
+```ruby
+def update
+  timesheet = Timesheet.find(params[:id]) timesheet.update(params[:timesheet])
+  # redirect somewhere
+rescue ActiveRecord::StaleObjectError
+  flash[:error] = "Timesheet was modified while you were editing it." 
+  redirect_to [:edit, timesheet]
+end
+```
+
 #### Readonly Attributes
 
 ```ruby
