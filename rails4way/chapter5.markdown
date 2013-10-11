@@ -1,5 +1,18 @@
 ## Active Record
 
+#### Enhanced Eager and Lazy Loading
+
+```ruby
+clients = Client.includes(users: [:avatar])
+```
+
+#### Eager loading eliminate 'N+1'
+
+```ruby
+users = User.where(login: "mack").includes(:billable_weeks)
+users.first.billable_weeks.each{ |week| puts week}
+```
+
 #### Where
 
 ```ruby
