@@ -2,6 +2,14 @@
 
 #### default attribute value
 
+some trick to set default value by read and write
+
+```ruby
+def preferences
+  read_attribute(:preferences) || write_attribute(:preferences, {})
+end
+```
+
 ```ruby
 class Specification < ActiveRecord::Base
   def tolerance
