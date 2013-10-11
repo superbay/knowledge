@@ -1,5 +1,12 @@
 ## Active Record
 
+#### Where
+
+```ruby
+Message.where("subject LIKE: foo OR body LIKE :foo", foo:'%woah%')
+```
+where and like with prarameter
+
 
 #### StaleObjectError
 
