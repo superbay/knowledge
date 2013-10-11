@@ -1,5 +1,13 @@
 ## Active Record
 
+#### new record instance
+
+```ruby
+c = Client.new
+c.new_record?
+c.persisted?
+```
+
 #### default attribute value
 
 some trick to set default value by read and write
