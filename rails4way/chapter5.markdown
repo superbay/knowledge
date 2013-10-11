@@ -4,6 +4,7 @@
 
 ```ruby
 Client.eager_load( users: [:avatar, { timesheets: :billable_weeks }])
+Client.preload( users: [:avatar, { timesheets: :billable_weeks }])
 ```
 
 ```ruby
