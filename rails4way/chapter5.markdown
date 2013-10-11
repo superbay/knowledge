@@ -1,5 +1,21 @@
 ## Active Record
 
+#### Readonly Attributes
+
+```ruby
+class Customer < ActiveRecord::Base
+  attr_readonly :social_security_number
+end
+```
+
+
+#### updating by condition
+
+```ruby
+Project.update_all({manager:'RonCampbell'}, technology: 'Rails')
+Project.update_all("cost=cost*3", "lower(technology)LIKE'%microsoft%'")
+```
+
 #### instance attributes
 
 ```ruby
