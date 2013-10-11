@@ -3,6 +3,15 @@
 #### Enhanced Eager and Lazy Loading
 
 ```ruby
+Client.includes(users: [:avatar, { timesheets: :billable_weeks }] )
+# clients has_many :users
+# User has_many :avatar
+# User has_many :timesheets
+# Timesheet has_many billable_weeks
+```
+So, same level will be `Array`, lower one level will be `Hash`
+
+```ruby
 clients = Client.includes(users: [:avatar])
 ```
 
