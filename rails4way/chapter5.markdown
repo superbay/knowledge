@@ -3,6 +3,25 @@
 #### ActiveRecord::Store
 
 ```ruby
+class User < ActiveRecord::Base
+  store :settings, accessors: [ :color, :homepage ], coder: JSON
+end
+
+u = User.new(color: 'black', homepage: '37signals.com')
+u.color                          # Accessor stored attribute
+u.settings[:country] = 'Denmark' # Any attribute, even if not specified with an accessor
+
+# There is no difference between strings and symbols for accessing custom attributes
+u.settings[:country]  # => 'Denmark'
+u.settings['country'] # => 'Denmark'
+
+# Add additional accessors to an existing store through store_accessor
+class SuperUser < User
+  store_accessor :settings, :privileges, :servants
+end
+```
+
+```ruby
 classUser < ActiveRecord::Base
   store :preferences
 end
