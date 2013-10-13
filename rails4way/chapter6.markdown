@@ -1,5 +1,29 @@
 ## Active Record Migrations
 
+#### Migration Model
+
+```ruby
+class HashPasswordsOnUsers < ActiveRecord::Migration
+  class User < ActiveRecord::Base
+  end
+  def change 
+    reversible do |dir|
+      dir.up do
+        add_column :users, :hashed_password, :string
+        User.reset_column_information 
+        User.find_each do |user|
+          user.hashed_password = Digest::SHA1.hexdigest(user.password)
+          user.save! 
+        end
+        remove_column :users, :password 
+      end
+      dir.down { raise ActiveRecord::IrreversibleMigration } 
+    end
+  end
+end
+
+```
+
 #### belongs_to vs references
 
 ```ruby
