@@ -1,5 +1,13 @@
 ## Active Record
 
+#### ActiveRecord::Store
+
+```ruby
+classUser < ActiveRecord::Base
+  store :preferences
+end
+```
+
 #### Establish_connection
 
 ```ruby
