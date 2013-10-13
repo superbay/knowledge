@@ -1,5 +1,11 @@
 ## Active Record Migrations
 
+#### first or create
+
+```ruby
+Client.where(name:'Workbeast',code:'BEAST').first_or_create!
+```
+
 #### Migration Model
 
 ```ruby
