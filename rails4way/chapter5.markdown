@@ -1,5 +1,11 @@
 ## Active Record
 
+#### Connection with all the tables
+
+```ruby
+ActiveRecord::Base.connection.tables
+```
+
 #### excute mysql query directly
 
 ```ruby
