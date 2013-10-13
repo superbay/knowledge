@@ -1,5 +1,11 @@
 ## Active Record
 
+#### excute mysql query directly
+
+```ruby
+ActiveRecord::Base.connection.execute("showtables").values
+```
+
 #### ActiveRecord::Store
 
 ```ruby
