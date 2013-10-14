@@ -32,6 +32,7 @@ class Timesheet < ActiveRecord::Base
   #...
   belongs_to :post, -> { includes(:author) }
   has_many :pending_comments, -> { where(approved:true) }, class_name: 'Comment'
+  has_many :posts, -> { includes( [:author, {comments: {author::avatar}}]) }
 end
 ```
 
