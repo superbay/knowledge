@@ -6,6 +6,9 @@
 class Timesheet < ActiveRecord::Base
   has_many :unchangable_posts, class_name: "Post",
            before_add: :raise_exception
+  has_many :unchangable_posts, class_name: "Post",
+           before_add: ->(owner, record) { raise "Can't do it!" }
+
 private
   def raise_exception(object)
     raise "You can't add a post"
