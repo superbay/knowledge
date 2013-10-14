@@ -23,12 +23,15 @@ end
 #### belongs_to witch scope
 
 ```ruby
+
+
 class Timesheet < ActiveRecord::Base 
   belongs_to :approver,
     -> { where(approver: true) },
     class_name: 'User'
   #...
   belongs_to :post, -> { includes(:author) }
+  has_many :pending_comments, -> { where(approved:true) }, class_name: 'Comment'
 end
 ```
 
