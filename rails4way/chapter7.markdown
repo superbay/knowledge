@@ -16,6 +16,8 @@ class Timesheet < ActiveRecord::Base
   #...
 end
 ```
+will update User: timesheets_updated_at attributes while Timesheet updated
+
 
 ### Fine explain polymorphic
 
