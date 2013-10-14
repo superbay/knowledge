@@ -1,5 +1,21 @@
 ## Active Record Associations
 
+#### aggregation associations
+
+```ruby
+class User < ActiveRecord::Base
+  has_many :timesheets
+  has_many :billable_weeks, through: :timesheets
+end 
+
+class Timesheet < ActiveRecord::Base
+  belongs_to :user
+  has_many :billable_weeks, -> { include(:billing_code) }
+
+end
+
+```
+
 #### self referencial relation
 
 ```ruby
