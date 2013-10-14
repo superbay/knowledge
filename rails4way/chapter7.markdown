@@ -1,5 +1,18 @@
 ## Active Record Associations
 
+#### has_many relations with call_back
+
+```ruby
+class Timesheet < ActiveRecord::Base
+  has_many :unchangable_posts, class_name: "Post",
+           before_add: :raise_exception
+private
+  def raise_exception(object)
+    raise "You can't add a post"
+  end
+end
+```
+
 
 #### belongs_to witch scope
 
@@ -11,8 +24,6 @@ class Timesheet < ActiveRecord::Base
   #...
   belongs_to :post, -> { includes(:author) }
 end
-
-
 ```
 
 #### touch: true
