@@ -1,5 +1,26 @@
 ## Active Record Associations
 
+#### self referencial relation
+
+```ruby
+class CreateRelatedBillingCodes < ActiveRecord::Migration
+  def change
+    create_table :related_billing_codes, id: false do |t|
+      t.column :first_billing_code_id, :integer, null: false 
+      t.column :second_billing_code_id, :integer, null: false
+    end 
+  end
+end
+
+class BillingCode < ActiveRecord::Base
+  has_and_belongs_to_many :related,
+    join_table: 'related_billing_codes',
+    foreign_key: 'first_billing_code_id',
+    association_foreign_key: 'second_billing_code_id',
+    class_name: 'BillingCode'
+end
+```
+
 #### has_many relations with call_back
 
 ```ruby
