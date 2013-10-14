@@ -1,5 +1,17 @@
 ## Active Record Associations
 
+
+#### belongs_to witch scope
+
+```ruby
+class Timesheet < ActiveRecord::Base 
+  belongs_to :approver,
+    -> { where(approver: true) },
+    class_name: 'User'
+  #...
+end
+```
+
 #### touch: true
 
 Used to updated the corresponding foreign key to expire the relation cache
