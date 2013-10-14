@@ -1,5 +1,33 @@
 ## Active Record Associations
 
+### Fine explain polymorphic
+
+```ruby
+create_table :comments do |t|
+  t.text :body
+  t.references :subject, polymorphic: true
+  # references can be used as a shortcut for following two statements
+  # t.integer :subject_id
+  # t.string  :subject_type
+  t.timestamps
+end
+
+class Comment < ActiveRecord::Base
+  # two references attributes located, id && type used to find the relation
+  belongs_to :subject, polymorphic: true
+end
+
+class ExpenseReport < ActiveRecord::Base
+  belongs_to :user
+  has_many :comments, as: :subject
+end
+
+class Timesheet < ActiveRecord::Base
+  belongs_to :user
+  has_many :comments, as: :subject
+end
+```
+
 #### select
 
 ```ruby
