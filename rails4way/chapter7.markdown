@@ -9,6 +9,8 @@ class Timesheet < ActiveRecord::Base
            
   has_many :unchangable_posts, class_name: "Post",
            before_add: ->(owner, record) { raise "Can't do it!" }
+           
+  has_many :timesheets, inverse_of: :user
 
 private
   def raise_exception(object)
