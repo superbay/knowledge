@@ -1,5 +1,22 @@
 ## Active Record Associations
 
+#### touch: true
+
+Used to updated the corresponding foreign key to expire the relation cache
+```bash
+rails generate migration AddTimesheetsUpdatedAtToUsers timesheets_updated_at:datetime
+invoke active_record
+create db/migrate/20130413175038_add_timesheets_updated_at_to_users.rb
+```
+
+```ruby
+
+class Timesheet < ActiveRecord::Base
+  belongs_to :user, touch: :timesheets_updated_at 
+  #...
+end
+```
+
 ### Fine explain polymorphic
 
 ```ruby
