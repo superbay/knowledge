@@ -1,5 +1,11 @@
 ## Active Record Associations
 
+#### select
+
+```ruby
+user.timesheets.select(:submitted).to_a
+```
+
 #### relation build or create
 ```ruby
 user.timesheets.build(attributes)
