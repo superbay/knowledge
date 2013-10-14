@@ -20,11 +20,9 @@ end
 ```
 
 
-#### belongs_to witch scope
+#### belongs_to && has_many witch scope
 
 ```ruby
-
-
 class Timesheet < ActiveRecord::Base 
   belongs_to :approver,
     -> { where(approver: true) },
