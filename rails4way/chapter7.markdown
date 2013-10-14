@@ -9,7 +9,10 @@ class Timesheet < ActiveRecord::Base
     -> { where(approver: true) },
     class_name: 'User'
   #...
+  belongs_to:post,->{includes(:author)}
 end
+
+
 ```
 
 #### touch: true
