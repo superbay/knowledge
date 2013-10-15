@@ -1,5 +1,6 @@
 ## Active Record Associations
 
+
 #### aggregation associations
 
 ```ruby
@@ -13,8 +14,20 @@ class Timesheet < ActiveRecord::Base
   has_many :billable_weeks, -> { include(:billing_code) }
 
 end
-
 ```
+
+#### aggregation associations create
+
+```ruby
+ts2=quentin.timesheets.create
+ #<Timesheetid:2...>
+
+ts2.billable_weeks.create(start_date:1.week.ago)
+```
+
+create billiable_weeks with the relation ship
+
+#### aggregation associations create
 
 #### self referencial relation
 
