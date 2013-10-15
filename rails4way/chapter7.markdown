@@ -9,6 +9,19 @@ end
 ```
 using scope will combinate the user_name and account table
 
+```ruby
+#Or even multiple scope parameters. For example, making sure that a teacher can only #be on the schedule once per semester for a particular class.
+
+class TeacherSchedule < ActiveRecord::Base
+  validates_uniqueness_of :teacher_id, scope: [:semester_id, :class_id]
+end
+#It is also possible to limit the uniqueness constraint to a set of records matching #certain conditions. In this example archived articles are not being taken into #consideration when validating uniqueness of the title attribute:
+
+class Article < ActiveRecord::Base
+  validates_uniqueness_of :title, conditions: -> { where.not(status: 'archived') }
+end
+```
+
 
 #### aggregation associations
 
