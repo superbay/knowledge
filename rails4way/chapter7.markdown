@@ -1,5 +1,14 @@
 ## Active Record Associations
 
+#### the combatination validation
+
+```ruby
+class Person < ActiveRecord::Base
+  validates_uniqueness_of :user_name, scope: :account_id
+end
+```
+using scope will combinate the user_name and account table
+
 
 #### aggregation associations
 
