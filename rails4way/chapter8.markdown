@@ -3,7 +3,11 @@
 
 #### validation
 
+#### conditional validation
 
+```ruby
+validates_presence_of :approver, if: -> { approved? && !legacy? }
+```
 
 
 
