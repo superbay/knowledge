@@ -31,6 +31,8 @@ class Order < ActiveRecord::Base
 end
 ```
 
+will not work with through or polymorphic
+
 
 #### polymorphic associations
 
