@@ -128,7 +128,24 @@ class FriendLink < ActiveRecord::Base
 end
 ```
 
-#### 
+#### User and student teacher
+
+```ruby
+class User < ActiveRecord::Base
+  attr_accessible :name
+
+  has_many :student_links, foreign_key: :student_id, class_name: :StudentTeacherLink
+  has_many :students, through: :student_links
+  has_many :teacher_links, foreign_key: :teacher_id, class_name: :StudentTeacherLink
+  has_many :teachers, through: :teacher_links
+end
+
+class StudentTeacherLink < ActiveRecord::Base
+  attr_accessible :student_id, :teacher_id
+  belongs_to :teacher, foreign_key: :student_id, class_name: :User
+  belongs_to :student, foreign_key: :teacher_id, class_name: :User
+end
+```
 
 
 #### example of through with polymorphic
