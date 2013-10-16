@@ -3,6 +3,20 @@
 
 #### validation
 
+
+```ruby
+class EmailValidator < ActiveRecord::Validator 
+  def validate()
+    record.errors[:email] << "is not valid" unless
+    record.email =~ /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/
+  end 
+end
+
+class Account < ActiveRecord::Base
+  validates_with EmailValidator
+end
+```
+
 limit contrain lookup
 
 ```ruby
