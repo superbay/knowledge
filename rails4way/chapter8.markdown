@@ -3,6 +3,16 @@
 
 #### validation
 
+limit contrain lookup
+
+```ruby
+class Article < ActiveRecord::Base 
+  validates_uniqueness_of :title,
+    conditions: -> { where.not(published_at: nil) } 
+    #...
+end
+```
+
 combination validation
 
 ```ruby
