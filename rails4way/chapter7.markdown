@@ -1,5 +1,27 @@
 ## Active Record Associations
 
+#### association extension
+
+```ruby
+class Account < ActiveRecord::Base 
+  has_many :people do
+    def named(full_name)
+      first_name, last_name = full_name.split(" ", 2)
+      where(first_name: first_name, last_name: last_name).first_or_create
+    end 
+  end
+end
+```
+
+```ruby
+account = Account.first 
+person = account.people.named("DavidHeinemeierHansson") 
+person.first_name
+#=>"David"
+person.last_name 
+# => "Heinemeier Hansson"
+```
+
 #### has_one and has_many
 
 ```ruby
