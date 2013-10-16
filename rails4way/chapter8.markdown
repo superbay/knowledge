@@ -1,6 +1,17 @@
 ## Validations
 
+
 #### validation
+
+combination validation
+
+```ruby
+class Address < ActiveRecord::Base
+  validates_uniqueness_of :line_two, scope: [:line_one, :city, :zip]
+end
+# just like combination index. the uniqueness is not only line_two, but 4 together
+```
+
 
 customize validation
 
