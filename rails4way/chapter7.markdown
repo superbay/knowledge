@@ -80,6 +80,55 @@ class CreatePictures < ActiveRecord::Migration
   end
 end
 ```
+#### student and teacher many to many
+
+```ruby
+class Student < ActiveRecord::Base
+  attr_accessible :name
+  has_many :student_teacher_links
+  has_many :teachers, through: :student_teacher_links
+end
+
+class Teacher < ActiveRecord::Base
+  attr_accessible :name
+  has_many :student_teacher_links
+  has_many :students, through: :student_teacher_links
+end
+
+class StudentTeacherLink < ActiveRecord::Base
+  belongs_to :student
+  belongs_to :teacher
+  # attr_accessible :title, :body
+end
+```
+
+#### User self reference associations
+
+```ruby
+class User < ActiveRecord::Base
+  attr_accessible :name
+
+ has_many :friend_links 
+ has_many :friends, through: :friend_links
+
+ has_many :ofriend_links, foreign_key: :friend_id, class_name: :FriendLink
+ has_many :ofriends, through: :ofriend_links,  source: :user
+
+ def allfriends
+   friends + ofriends
+ end
+end
+
+
+class FriendLink < ActiveRecord::Base
+  attr_accessible :friend_id, :user_id
+
+  belongs_to :user
+  belongs_to :friend, class_name: :User
+end
+```
+
+#### 
 
 
 #### example of through with polymorphic
