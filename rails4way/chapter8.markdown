@@ -12,6 +12,10 @@ uniqueness: true
 validates:unwanted,absence:{message:"Youshouldn'thavesetthat"}
 #alias of validates_absence_of
 
+validates:terms,acceptance:{message:'Youmustacceptterms.'}
+# alias of validates_acceptance_of
+
+
 
 
 ```
