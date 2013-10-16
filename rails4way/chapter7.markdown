@@ -1,5 +1,25 @@
 ## Active Record Associations
 
+#### inverse_of
+
+solve the problem of keep two instance.
+
+```ruby
+class Customer < ActiveRecord::Base
+  has_many :orders
+end
+ 
+class Order < ActiveRecord::Base
+  belongs_to :customer
+end
+#will cause below problem
+c = Customer.first
+o = c.orders.first
+c.first_name == o.customer.first_name # => true
+c.first_name = 'Manny'
+c.first_name == o.customer.first_name # => false
+```
+
 #### polymorphic associations
 
 ```ruby
