@@ -1,5 +1,16 @@
 ## Active Record Associations
 
+#### has_one and has_many
+
+```ruby
+class User < ActiveRecord::Base
+  has_many :timesheets
+  has_one  :latest_sheet,
+    -> { order('created_at desc') },
+    class_name: 'Timesheet'
+end
+```
+
 #### inverse_of
 
 solve the problem of keep two instance.
