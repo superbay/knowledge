@@ -2,6 +2,20 @@
 
 
 #### validation
+Context can optionally be supplied to define which callbacks to test against (the context is defined on the validations using :on).
+```ruby
+
+class Person
+  include ActiveModel::Validations
+
+  attr_accessor :name
+  validates_presence_of :name, on: :new
+end
+
+person = Person.new
+person.valid?       # => true
+person.valid?(:new) # => false
+```
 
 #### with_options
 
