@@ -27,6 +27,19 @@ format: /[A-Za-z0-9]+/
 validates :gender, inclusion: %w(malefemale)
 # alias of validates_inclusion_of
 
+validates :username, length: 3..20
+# alias of validates_length_of
+
+validates :quantity, numericality: { message: 'Supplyanumber.' }
+# alias of validates_numericality_of
+
+validates :username, presence: { message: 'Howdoyouexpecttologin?' }
+# alias of validates_presence_of
+
+validates :quantity, uniqueness: { message: "You'reSOLonthatloginchoice,buddy!" }
+# alias of validates_uniqueness_of
+
+
 ```
 
 #### validation
