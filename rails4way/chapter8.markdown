@@ -3,6 +3,15 @@
 
 #### validation
 
+### validate while call back
+
+```ruby
+class Account < ActiveRecord::Base
+  validates_uniqueness_of :email, on: :create
+end
+```
+
+#### using ActiveRecord::Validator
 
 ```ruby
 class EmailValidator < ActiveRecord::Validator 
