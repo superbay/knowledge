@@ -9,6 +9,10 @@ format: { with: /[A-Za-z0-9]+/ },
 length: { minimum: 3 }, 
 uniqueness: true
 
+validates:unwanted,absence:{message:"Youshouldn'thavesetthat"}
+#alias of validates_absence_of
+
+
 
 ```
 
