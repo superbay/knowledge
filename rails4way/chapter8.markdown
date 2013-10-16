@@ -18,8 +18,14 @@ validates :terms, acceptance: { message: 'Youmustacceptterms.' }
 validates :email, confirmation: { message: 'Tryagain.' }
 # alias of validates_confirmation_of
 
+validates :username, exclusion: %w(adminsuperuser)
+# alias of validates_exclusion_of
 
+format: /[A-Za-z0-9]+/
+# alias of validates_format_of
 
+validates :gender, inclusion: %w(malefemale)
+# alias of validates_inclusion_of
 
 ```
 
