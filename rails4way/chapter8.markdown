@@ -17,6 +17,25 @@ person.valid?       # => true
 person.valid?(:new) # => false
 ```
 
+```ruby
+class Report < ActiveRecord::Base 
+  validates_presence_of :name, on: :publish
+end 
+
+class ReportsController < ApplicationController
+  expose(:report)
+  # POST /reports/1/publish
+  
+  def publish
+    if report.valid? :publish
+      redirect_to report, notice: "Report published" else
+      flash.now.alert = "Can't publish unnamed reports!"
+      render :show 
+    end
+  end 
+end
+```
+
 #### with_options
 
 ```ruby
