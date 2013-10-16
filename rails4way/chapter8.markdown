@@ -9,11 +9,14 @@ format: { with: /[A-Za-z0-9]+/ },
 length: { minimum: 3 }, 
 uniqueness: true
 
-validates:unwanted,absence:{message:"Youshouldn'thavesetthat"}
+validates :unwanted, absence: { message: "Youshouldn'thavesetthat" }
 #alias of validates_absence_of
 
-validates:terms,acceptance:{message:'Youmustacceptterms.'}
+validates :terms, acceptance: { message: 'Youmustacceptterms.' }
 # alias of validates_acceptance_of
+
+validates :email, confirmation: { message: 'Tryagain.' }
+# alias of validates_confirmation_of
 
 
 
