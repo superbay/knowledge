@@ -3,6 +3,17 @@
 
 #### validation
 
+#### with_options
+
+```ruby
+with_options if: :password_required? do |user| 
+  user.validates_presence_of :password 
+  user.validates_presence_of :password_confirmation 
+  user.validates_length_of :password, within: 4..40 
+  user.validates_confirmation_of :password
+end
+``
+
 #### conditional validation
 
 ```ruby
