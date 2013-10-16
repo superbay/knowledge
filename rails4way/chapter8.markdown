@@ -1,5 +1,16 @@
 ## Validations
 
+#### Short-form Validation
+
+```ruby
+validates:username,
+presence:true, 
+format: { with: /[A-Za-z0-9]+/ }, 
+length: { minimum: 3 }, 
+uniqueness: true
+
+
+```
 
 #### validation
 Context can optionally be supplied to define which callbacks to test against (the context is defined on the validations using :on).
