@@ -16,6 +16,22 @@ class Product < ActiveRecord::Base
 end
 ```
 
+1 ploymorhpic always with belongs_to
+2 belongs_to Model have type and id, which are imageable_type, imageable_id
+
+```ruby
+class CreatePictures < ActiveRecord::Migration
+  def change
+    create_table :pictures do |t|
+      t.string  :name
+      t.integer :imageable_id
+      t.string  :imageable_type
+      t.timestamps
+    end
+  end
+end
+```
+
 
 #### the combatination validation
 
