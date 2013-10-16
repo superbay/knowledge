@@ -2,6 +2,12 @@
 
 #### validation
 
+```ruby
+class Account < ActiveRecord::Base 
+  validates_length_of :username, within: 5..20
+end
+```
+
 inclusion vs exclusion
 
 ```ruby
