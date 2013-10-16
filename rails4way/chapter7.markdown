@@ -19,6 +19,18 @@ c.first_name == o.customer.first_name # => true
 c.first_name = 'Manny'
 c.first_name == o.customer.first_name # => false
 ```
+The way to solve the problem
+
+```ruby
+class Customer < ActiveRecord::Base
+  has_many :orders, inverse_of: :customer
+end
+ 
+class Order < ActiveRecord::Base
+  belongs_to :customer, inverse_of: :orders
+end
+```
+
 
 #### polymorphic associations
 
