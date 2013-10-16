@@ -32,6 +32,20 @@ class CreatePictures < ActiveRecord::Migration
 end
 ```
 
+can be simplified by reference
+
+```ruby
+class CreatePictures < ActiveRecord::Migration
+  def change
+    create_table :pictures do |t|
+      t.string :name
+      t.references :imageable, polymorphic: true
+      t.timestamps
+    end
+  end
+end
+```
+
 
 #### the combatination validation
 
