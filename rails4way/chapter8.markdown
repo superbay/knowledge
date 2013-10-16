@@ -38,8 +38,6 @@ validates :username, presence: { message: 'Howdoyouexpecttologin?' }
 
 validates :quantity, uniqueness: { message: "You'reSOLonthatloginchoice,buddy!" }
 # alias of validates_uniqueness_of
-
-
 ```
 
 #### validation
