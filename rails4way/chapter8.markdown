@@ -3,6 +3,10 @@
 
 #### validation
 
+
+
+
+
 ### validate while call back
 
 ```ruby
@@ -23,6 +27,22 @@ end
 
 class Account < ActiveRecord::Base
   validates_with EmailValidator
+end
+```
+
+
+more generic way to the field
+
+```ruby
+class EmailValidator < ActiveRecord::Validator 
+  def validate()
+    email_field = options[:attr] 
+    record.errors[email_field] << "is not valid" unless record.send(email_field) =~ /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/ 
+  end
+end
+
+class Account < ActiveRecord::Base 
+  validates_with EmailValidator, attr: :email
 end
 ```
 
