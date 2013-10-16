@@ -18,6 +18,7 @@ end
 
 1 ploymorhpic always with belongs_to
 2 belongs_to Model have type and id, which are imageable_type, imageable_id
+3 as in ActiveRecord always used while there is polymorphic
 
 ```ruby
 class CreatePictures < ActiveRecord::Migration
