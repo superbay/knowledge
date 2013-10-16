@@ -9,8 +9,6 @@
 validates_presence_of :approver, if: -> { approved? && !legacy? }
 ```
 
-
-
 ### validate while call back
 
 ```ruby
