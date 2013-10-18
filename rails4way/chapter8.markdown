@@ -1,7 +1,6 @@
 ## Validations
 
 ```ruby
-
 class ReportLikeValidator < ActiveModel::EachValidator
   def validate_each(record, attribute, value)
     unless value["Report"]
@@ -10,6 +9,9 @@ class ReportLikeValidator < ActiveModel::EachValidator
   end
 end
 
+class Report < ActiveRecord::Base
+  validates :name, report_like: true
+end
 ```
 
 #### Short-form Validation
