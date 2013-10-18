@@ -32,7 +32,7 @@ class Report < ActiveRecord::Base
 end
 
 ```
-
+#### validate class
 ```ruby
 class RandomlyValidator < ActiveModel::Validator
   def validate(record)
@@ -41,8 +41,8 @@ class RandomlyValidator < ActiveModel::Validator
     record.errors[:base] << "FAIL #3" unless third_hurdle(record)
   end
 private
-9
-10 def first_hurdle(record)
+
+  def first_hurdle(record)
 11 rand > 0.3
 12 end
 13
