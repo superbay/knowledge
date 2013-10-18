@@ -33,6 +33,8 @@ end
 
 ```
 
+```ruby
+
 #### Short-form Validation
 
 ```ruby
