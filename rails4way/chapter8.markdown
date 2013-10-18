@@ -26,6 +26,10 @@ class LikeValidator < ActiveModel::EachValidator
     end
   end
 end
+
+class Report < ActiveRecord::Base
+  validates :name, like: { with: "Report" }
+end
 ```
 
 #### Short-form Validation
