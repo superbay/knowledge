@@ -52,8 +52,8 @@ private
 
   def third_hurdle(record)
     rand > 0.9
-20 end
-21 end
+  end
+end
 
 end
 ```
