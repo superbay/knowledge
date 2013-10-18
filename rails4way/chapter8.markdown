@@ -35,8 +35,8 @@ end
 
 ```ruby
 class RandomlyValidator < ActiveModel::Validator
-2 def validate(record)
-3 record.errors[:base] << "FAIL #1" unless first_hurdle(record)
+  def validate(record)
+    record.errors[:base] << "FAIL #1" unless first_hurdle(record)
 4 record.errors[:base] << "FAIL #2" unless second_hurdle(record)
 5 record.errors[:base] << "FAIL #3" unless third_hurdle(record)
 6 end
