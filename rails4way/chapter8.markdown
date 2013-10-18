@@ -40,6 +40,7 @@ class RandomlyValidator < ActiveModel::Validator
     record.errors[:base] << "FAIL #2" unless second_hurdle(record)
     record.errors[:base] << "FAIL #3" unless third_hurdle(record)
   end
+end
 ```
 #### Short-form Validation
 
