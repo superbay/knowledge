@@ -1,5 +1,17 @@
 ## Validations
 
+```ruby
+
+class ReportLikeValidator < ActiveModel::EachValidator
+  def validate_each(record, attribute, value)
+    unless value["Report"]
+      record.errors.add(attribute, 'does not appear to be a Report')
+    end
+  end
+end
+
+```
+
 #### Short-form Validation
 
 ```ruby
