@@ -18,11 +18,11 @@ end
 class LikeValidator < ActiveModel::EachValidator
   def initialize(options)
     @with = options[:with]
-super
-end
-def validate_each(record, attribute, value)
-unless value[@with]
-record.errors.add(attribute, "does not appear to be like #{@with}")
+    super
+  end
+  def validate_each(record, attribute, value)
+    unless value[@with]
+      record.errors.add(attribute, "does not appear to be like #{@with}")
 end
 end
 end
