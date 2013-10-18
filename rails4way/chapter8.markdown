@@ -43,9 +43,9 @@ class RandomlyValidator < ActiveModel::Validator
 private
 
   def first_hurdle(record)
-11 rand > 0.3
-12 end
-13
+    rand > 0.3
+  end
+
 14 def second_hurdle(record)
 15 rand > 0.6
 16 end
