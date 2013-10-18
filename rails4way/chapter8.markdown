@@ -14,6 +14,10 @@ class Report < ActiveRecord::Base
 end
 ```
 
+```ruby
+
+```
+
 #### Short-form Validation
 
 ```ruby
