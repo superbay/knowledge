@@ -16,8 +16,8 @@ end
 
 ```ruby
 class LikeValidator < ActiveModel::EachValidator
-def initialize(options)
-@with = options[:with]
+  def initialize(options)
+    @with = options[:with]
 super
 end
 def validate_each(record, attribute, value)
