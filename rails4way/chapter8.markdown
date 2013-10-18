@@ -40,6 +40,21 @@ class RandomlyValidator < ActiveModel::Validator
     record.errors[:base] << "FAIL #2" unless second_hurdle(record)
     record.errors[:base] << "FAIL #3" unless third_hurdle(record)
   end
+private
+9
+10 def first_hurdle(record)
+11 rand > 0.3
+12 end
+13
+14 def second_hurdle(record)
+15 rand > 0.6
+16 end
+17
+18 def third_hurdle(record)
+19 rand > 0.9
+20 end
+21 end
+
 end
 ```
 #### Short-form Validation
