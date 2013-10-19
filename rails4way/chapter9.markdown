@@ -9,7 +9,7 @@ callbacks, single-table inheritance (STI), and polymorphic models.
 
 ```ruby
 class Timesheet < ActiveRecord::Base
-scope :submitted, -> { where(submitted: true) }
-scope :underutilized, -> { where('total_hours < 40') }
+  scope :submitted, -> { where(submitted: true) }
+  scope :underutilized, -> { where('total_hours < 40') }
 end
 ```
