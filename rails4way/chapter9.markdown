@@ -19,3 +19,13 @@ end
 
 ```
 
+
+#### define of scope
+
+```ruby
+scope:tardy,->{
+  joins(:timesheets). 
+  where("timesheets.submitted_at <= ?", 7.days.ago). 
+  group("users.id")
+}
+```
