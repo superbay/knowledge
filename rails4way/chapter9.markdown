@@ -28,4 +28,8 @@ scope:tardy,->{
   where("timesheets.submitted_at <= ?", 7.days.ago). 
   group("users.id")
 }
+
+# the actually sql script query is
+User.tardy.to_sql
+#=>"SELECT "users".* FROM "users" INNER JOIN "timesheets" ON "timesheets"."user_id" = "users"."id" WHERE (timesheets.submitted_at <= '2013-04-13 18:16:15.203293') GROUP BY users.id" # query formatted nicely for the book
 ```
