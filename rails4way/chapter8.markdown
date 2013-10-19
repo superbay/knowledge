@@ -11,13 +11,13 @@ describePostdo
 end
 
 describeUserdo
-9 it { should_not allow_value("blah").for(:email) }
-10 it { should_not allow_value("b lah").for(:email) }
-11 it { should allow_value("a@b.com").for(:email) }
-12 it { should allow_value("asdf@asdf.com").for(:email) }
-13 it { should ensure_length_of(:email).is_at_least(1).is_at_most(100) }
-14 it { should ensure_inclusion_of(:age).in_range(1..100) }
-15 end
+  it { should_not allow_value("blah").for(:email) }
+  it { should_not allow_value("b lah").for(:email) }
+  it { should allow_value("a@b.com").for(:email) }
+  it { should allow_value("asdf@asdf.com").for(:email) }
+  it { should ensure_length_of(:email).is_at_least(1).is_at_most(100) }
+  it { should ensure_inclusion_of(:age).in_range(1..100) }
+end
 ```
 
 ```ruby
