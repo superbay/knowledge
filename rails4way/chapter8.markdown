@@ -1,5 +1,11 @@
 ## Validations
 
+#### test validation
+
+```ruby
+
+```
+
 ```ruby
 class CompletelyLameTotalExample < ActiveRecord::Base 
   def validate
