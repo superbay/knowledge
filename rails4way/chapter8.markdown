@@ -1,9 +1,12 @@
 ## Validations
 
 ```ruby
-class CompletelyLameTotalExample < ActiveRecord::Base def validate
-if total != (attr1 + attr2 + attr3) errors[:total] << "The total doesn't add up!"
-end end
+class CompletelyLameTotalExample < ActiveRecord::Base 
+  def validate
+    if total != (attr1 + attr2 + attr3) 
+      errors[:total] << "The total doesn't add up!"
+    end 
+  end
 end
 ```
 
