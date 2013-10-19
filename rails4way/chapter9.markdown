@@ -17,6 +17,7 @@ classTimesheet < ActiveRecord::Base
   default_scope { where(status: "open") }
 end
 
+#### possible 
 Time sheet.unscoped.order("submitted_atDESC").to_a
 #=>[#<Timesheetid:2,status:"submitted">]
 ```
