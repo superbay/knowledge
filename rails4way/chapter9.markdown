@@ -1,6 +1,16 @@
 ## Advanced Active Record
 Active Record is a simple object-relational mapping (ORM) framework
 
+#### define of weather
+
+```ruby
+classBeethoven<ActiveRecord::Base before_destroy :last_words
+protected
+def last_words
+logger.info "Friends applaud, the comedy is over"
+end end
+```
+
 #### scope combination
 ```ruby
 scope :late, ->{ where("timesheet.submitted_at<=?", 7.days.ago) }
