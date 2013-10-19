@@ -10,6 +10,14 @@ scope :tardy, ->{
 }
 ```
 
+#### default scope
+
+```ruby
+classTimesheet < ActiveRecord::Base
+  default_scope { where(status: "open") }
+end
+```
+
 #### Advanced index
 
 callbacks, single-table inheritance (STI), and polymorphic models.
