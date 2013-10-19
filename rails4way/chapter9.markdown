@@ -1,6 +1,15 @@
 ## Advanced Active Record
 Active Record is a simple object-relational mapping (ORM) framework
 
+#### scope combination
+```ruby
+scope :late, ->{ where("timesheet.submitted_at<=?", 7.days.ago)}
+#Then we use our new late scope in tardy:
+scope :tardy, ->{ 
+  joins(:timesheets).group("users.id").merge(Timesheet.late)
+}
+```
+
 #### Advanced index
 
 callbacks, single-table inheritance (STI), and polymorphic models.
