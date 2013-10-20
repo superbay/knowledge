@@ -7,8 +7,9 @@ Active Record is a simple object-relational mapping (ORM) framework
 class Account < ActiveRecord::Base 
   before_destroy do
     self.update_attribute(:deleted_at, Time.zone.now)
-    false end
-... 
+    false 
+  end
+#... 
 end
 
 ```
