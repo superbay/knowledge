@@ -1,6 +1,9 @@
 ## Advanced Active Record
 Active Record is a simple object-relational mapping (ORM) framework
 
+#### Paranoia with before destroy
+
+
 #### geo call back example
 
 ```ruby
