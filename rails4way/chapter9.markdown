@@ -23,7 +23,8 @@ protected
     self.latitude = result.first
     self.longitude = result.last else
     errors[:base] << "Geocoding failed. Please check address."
-    false end
+    false 
+  end
 end
 end
 
