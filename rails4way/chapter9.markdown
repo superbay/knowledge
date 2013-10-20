@@ -4,10 +4,11 @@ Active Record is a simple object-relational mapping (ORM) framework
 #### Callback Class
 
 ```ruby
-classMarkDeleted
-def self.before_destroy(model)
+class MarkDeleted
+   def self.before_destroy(model)
      model.update_attribute(:deleted_at, Time.zone.now)
-false end
+     false 
+   end
 end
 ```
 
