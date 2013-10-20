@@ -1,6 +1,13 @@
 ## Advanced Active Record
 Active Record is a simple object-relational mapping (ORM) framework
 
+
+```ruby
+classCreditCard<ActiveRecord::Base before_validation on: :create do
+    # Strip everything in the number except digits
+self.number = number.gsub(/[^0-9]/, "") end
+end
+
 #### call back list
 
 ```ruby
