@@ -1,7 +1,7 @@
 ## Advanced Active Record
 Active Record is a simple object-relational mapping (ORM) framework
 
-#### one line 
+#### one-lines 
 
 ```ruby
 class Account < ActiveRecord::Base
