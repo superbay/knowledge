@@ -8,8 +8,12 @@ escribe '#after_create' do
   let(:auditable) { double() }
   let(:log) { double() }
   let(:content) { 'foo' }
-it 'audits a model was created' do auditable.should_receive(:inspect).and_return(content) log.should_receive(:created).and_return(content) Auditor.new(log).after_create(auditable)
-end end
+  it 'audits a model was created' do 
+    auditable.should_receive(:inspect).and_return(content)
+    log.should_receive(:created).and_return(content)
+    Auditor.new(log).after_create(auditable)
+  end 
+end
 ```
 
 ```ruby
