@@ -1,6 +1,16 @@
 ## Advanced Active Record
 Active Record is a simple object-relational mapping (ORM) framework
 
+```ruby
+classActiveRecord::Base
+def self.acts_as_audited(audit_log=DEFAULT_AUDIT_LOG)
+    auditor = Auditor.new(audit_log)
+    after_create auditor
+    after_update auditor
+    after_destroy auditor
+end end
+```
+
 #### Callback Class
 
 ```ruby
