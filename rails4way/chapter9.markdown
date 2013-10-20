@@ -1,14 +1,22 @@
 ## Advanced Active Record
 Active Record is a simple object-relational mapping (ORM) framework
 
+#### one line 
+
+```ruby
+class Account < ActiveRecord::Base
+  before_destroy { self.update_attribute(:deleted_at, Time.now); false }
+en
+
 #### define of weather
 
 ```ruby
-classBeethoven<ActiveRecord::Base before_destroy :last_words
+class Beethoven < ActiveRecord::Base before_destroy :last_words
 protected
-def last_words
-logger.info "Friends applaud, the comedy is over"
-end end
+  def last_words
+    logger.info "Friends applaud, the comedy is over"
+  end 
+end
 ```
 
 #### scope combination
