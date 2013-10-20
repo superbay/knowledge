@@ -26,8 +26,8 @@ protected
     else
       errors[:base] << "Geocoding failed. Please check address."
       false 
+    end
   end
-end
 end
 
 ```
