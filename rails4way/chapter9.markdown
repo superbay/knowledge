@@ -19,11 +19,13 @@ protected
   end 
   
   def geolocate
-    result = Geocoder.coordinates(to_s) if result.present?
-    self.latitude = result.first
-    self.longitude = result.last else
-    errors[:base] << "Geocoding failed. Please check address."
-    false 
+    result = Geocoder.coordinates(to_s) 
+    if result.present?
+      self.latitude = result.first
+      self.longitude = result.last 
+    else
+      errors[:base] << "Geocoding failed. Please check address."
+      false 
   end
 end
 end
