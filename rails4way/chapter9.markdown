@@ -6,7 +6,7 @@ Active Record is a simple object-relational mapping (ORM) framework
 ```ruby
 class Account < ActiveRecord::Base
   before_destroy { self.update_attribute(:deleted_at, Time.now); false }
-en
+end
 
 #### define of weather
 
