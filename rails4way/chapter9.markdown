@@ -3,6 +3,16 @@ Active Record is a simple object-relational mapping (ORM) framework
 
 #### Paranoia with before destroy
 
+```ruby
+class Account < ActiveRecord::Base 
+  before_destroy do
+    self.update_attribute(:deleted_at, Time.zone.now)
+    false end
+... 
+end
+
+```
+
 
 #### geo call back example
 
