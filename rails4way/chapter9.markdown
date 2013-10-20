@@ -1,6 +1,19 @@
 ## Advanced Active Record
 Active Record is a simple object-relational mapping (ORM) framework
 
+#### call back list
+
+```ruby
+• before_validation 
+• after_validation 
+• before_save
+• around_save
+• before_create #(for new records) and before_update (for existing records) 
+• around_create #(for new records) and around_update (for existing records) 
+• after_create #(for new records) and after_update (for existing records)
+• after_save
+```
+
 #### call back
 
 will not trigger call back
