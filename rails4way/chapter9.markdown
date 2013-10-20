@@ -3,7 +3,7 @@ Active Record is a simple object-relational mapping (ORM) framework
 
 #### call back
 
-will not 
+will not trigger call back
 ```
 • decrement
 • decrement_counter • delete
