@@ -1,6 +1,23 @@
 ## Advanced Active Record
 Active Record is a simple object-relational mapping (ORM) framework
 
+#### call back
+
+will not 
+```
+• decrement
+• decrement_counter • delete
+• delete_all
+• increment
+• increment_counter • toggle
+• touch
+• update_column
+• update_columns
+• update_all
+• update_counters
+
+```
+
 #### one-lines 
 
 ```ruby
