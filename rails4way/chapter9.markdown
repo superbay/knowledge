@@ -12,11 +12,19 @@ class Address < ActiveRecord::Base
     [street, city, state, country].compact.join(', ')
   end
 protected
-  def geocode
+  def geocode1
     result = Geocoder.coordinates(to_s) 
     self.latitude = result.first 
     self.longitude = result.last
   end 
+  
+  def geolocate
+    result = Geocoder.coordinates(to_s) if result.present?
+    self.latitude = result.first
+    self.longitude = result.last else
+    errors[:base] << "Geocoding failed. Please check address."
+    false end
+end
 end
 
 ```
