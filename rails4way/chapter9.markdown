@@ -1,6 +1,18 @@
 ## Advanced Active Record
 Active Record is a simple object-relational mapping (ORM) framework
 
+#### Calculation Methods
+
+```ruby
+Person.calculate(:count, :all) # The same as Person.count
+# SELECT AVG(age) FROM people
+Person.average(:age)
+# Selects the minimum age for everyone with a last name other than 'Drake'
+Person.where.not(last_name: 'Drake').minimum(:age)
+# Selects the minimum age for any family without any minors
+Person.having('min(age) > 17').group(:last_name).minimum(:age)
+```
+
 #### Test 
 
 ```ruby
