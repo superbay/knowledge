@@ -3,9 +3,18 @@ Active Record is a simple object-relational mapping (ORM) framework
 
 #### Single Table Inheritance(STI)
 ```ruby
+class Timesheet < ActiveRecord::Base
+  def billable_hours_outstanding
+    if submitted?
+      billable_weeks.map(&:total_hours).sum
+    else
+      0
+    end
+  end
 
-  def self.billable_hours_outstanding_for(user) user.timesheets.map(&:billable_hours_outstanding).sum
-end 
+  def self.billable_hours_outstanding_for(user) 
+    user.timesheets.map(&:billable_hours_outstanding).sum
+  end 
 end
 ```
 
