@@ -18,6 +18,12 @@ class Timesheet < ActiveRecord::Base
 end
 ```
 
+If there is requirement of paid then, We 
+
+```ruby
+
+```
+
 #### Calculation Methods
 
 ```ruby
