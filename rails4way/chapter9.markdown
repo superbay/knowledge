@@ -43,6 +43,14 @@ billable_weeks.map(&:total_hours).sum end
 end
 ```
 
+While there is new requirement
+
+```ruby
+classPaidTimesheet<Timesheet def billable_hours_outstanding
+billable_weeks.map(&:total_hours).sum - paid_hours end
+end
+```
+
 #### Calculation Methods
 
 ```ruby
