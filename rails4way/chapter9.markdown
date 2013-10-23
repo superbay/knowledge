@@ -13,6 +13,8 @@ Person.where.not(last_name: 'Drake').minimum(:age)
 Person.having('min(age) > 17').group(:last_name).minimum(:age)
 ```
 
+`where.not` is a new usage, and the `Person.having.group.minimum` also not use all
+
 #### Test 
 
 ```ruby
