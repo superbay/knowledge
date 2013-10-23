@@ -65,6 +65,12 @@ Then, automaticly have this:
 >>d=DraftTimesheet.create >>d.type =>'DraftTimesheet'
 ```
 
+and
+
+```ruby
+>>Timesheet.first =>#<DraftTimesheet:0x2212354...>
+```
+
 #### Calculation Methods
 
 ```ruby
