@@ -21,7 +21,13 @@ end
 If there is requirement of paid then, We 
 
 ```ruby
-
+def billable_hours_outstanding
+  if submitted? && not paid?
+    billable_weeks.map(&:total_hours).sum
+  else
+    0
+  end
+end
 ```
 
 #### Calculation Methods
