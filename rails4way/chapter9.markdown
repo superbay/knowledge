@@ -51,6 +51,20 @@ billable_weeks.map(&:total_hours).sum - paid_hours end
 end
 ```
 
+still need:
+
+```ruby
+classAddTypeToTimesheet<ActiveRecord::Migration def change
+add_column :timesheets, :type, :string end
+end
+```
+
+Then, automaticly have this:
+
+```ruby
+>>d=DraftTimesheet.create >>d.type =>'DraftTimesheet'
+```
+
 #### Calculation Methods
 
 ```ruby
