@@ -1,6 +1,14 @@
 ## Advanced Active Record
 Active Record is a simple object-relational mapping (ORM) framework
 
+#### Single Table Inheritance(STI)
+```ruby
+
+  def self.billable_hours_outstanding_for(user) user.timesheets.map(&:billable_hours_outstanding).sum
+end 
+end
+```
+
 #### Calculation Methods
 
 ```ruby
