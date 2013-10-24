@@ -282,6 +282,12 @@ and
 =>#<DraftTimesheet:0x2212354...>
 ```
 
+#### exception & Legacy database
+
+
+
+
+
 #### Calculation Methods
 
 ```ruby
