@@ -1,7 +1,20 @@
 ## Advanced Active Record
 Active Record is a simple object-relational mapping (ORM) framework
 
-#### the PostgresSQL index
+#### PostgreSQL 
+
+```ruby
+class AddTagsToArticles < ActiveRecord::Migration
+  def change
+    change_table :articles do |t| 
+      t.string :tags, array: true
+    end 
+  end
+end
+#ALTERTABLE"articles"ADDCOLUMN"tags"charactervarying(255)[]
+```
+
+#### the PostgreSQL index
 
 ```ruby
 add_index :photos, :properties, using: :gin 
