@@ -75,13 +75,16 @@ end
 Then, automaticly have this:
 
 ```ruby
->>d=DraftTimesheet.create >>d.type =>'DraftTimesheet'
+>> d = DraftTimesheet.create
+>> d.type 
+=> 'DraftTimesheet'
 ```
 
 and
 
 ```ruby
->>Timesheet.first =>#<DraftTimesheet:0x2212354...>
+>> Timesheet.first
+=>#<DraftTimesheet:0x2212354...>
 ```
 
 #### Calculation Methods
