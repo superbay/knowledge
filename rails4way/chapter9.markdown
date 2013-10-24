@@ -15,6 +15,17 @@ class CreateNetworkAddresses < ActiveRecord::Migration
 end
 ```
 
+#### Range Attributes
+
+```ruby
+• daterange 
+• int4range 
+• int8range 
+• numrange 
+• tsrange
+• tstzrange
+```
+
 #### PostgreSQL 
 
 ```ruby
