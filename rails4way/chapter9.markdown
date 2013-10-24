@@ -29,7 +29,9 @@ end
 #### Json type attributes
 
 ```ruby
-add_column:users,:preferences,:json
+add_column: users, :preferences, :json
+user = User.create(preferences: { color: "blue" } )
+```
 
 
 
