@@ -17,3 +17,6 @@ ctags --extra=+f --exclude=.git --exclude=log --exclude=coverage --exclude=publi
 ```bash
 sudo ln -s /usr/bin/ack-grep /usr/local/bin/ack  
 ```
+
+
+[origin_link](http://hlee.iteye.com/blog/1488865)
