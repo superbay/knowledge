@@ -65,8 +65,10 @@ end
 still need:
 
 ```ruby
-classAddTypeToTimesheet<ActiveRecord::Migration def change
-add_column :timesheets, :type, :string end
+class AddTypeToTimesheet < ActiveRecord::Migration 
+  def change
+    add_column :timesheets, :type, :string 
+  end
 end
 ```
 
