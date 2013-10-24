@@ -9,6 +9,10 @@ class AddHstoreExtension < ActiveRecord::Migration
     enable_extension "hstore" 
   end
 end
+
+classAddPropertiesToPhotos<ActiveRecord::Migration change_table :photos do |t|
+t.hstore :properties end
+end
 ```
 
 #### Non-persisted Models
