@@ -1,6 +1,16 @@
 ## Advanced Active Record
 Active Record is a simple object-relational mapping (ORM) framework
 
+#### PostgreSQL enhancements
+
+```ruby
+class AddHstoreExtension < ActiveRecord::Migration
+  def change
+    enable_extension "hstore" 
+  end
+end
+```
+
 #### Non-persisted Models
 
 ```ruby
