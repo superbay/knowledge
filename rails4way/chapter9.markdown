@@ -1,6 +1,18 @@
 ## Advanced Active Record
 Active Record is a simple object-relational mapping (ORM) framework
 
+#### Modifying Active Record at Runtime
+
+```ruby
+classAccount<ActiveRecord::Base ...
+  protected
+  def after_find
+    singleton = class << self; self; end
+    singleton.class_eval(config)
+  end 
+end
+```
+
 #### Single Table Inheritance(STI)
 ```ruby
 class Timesheet < ActiveRecord::Base
