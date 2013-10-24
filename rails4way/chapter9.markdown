@@ -32,12 +32,19 @@ end
 #### Single Table Inheritance way
 
 ```ruby
-classTimesheet<ActiveRecord::Base # non-relevant code ommitted
-def self.billable_hours_outstanding_for(user) user.timesheets.map(&:billable_hours_outstanding).sum
-end end
-classDraftTimesheet<Timesheet def billable_hours_outstanding
-0
-end end
+class Timesheet < ActiveRecord::Base 
+  # non-relevant code ommitted
+  def self.billable_hours_outstanding_for(user)   
+    user.timesheets.map(&:billable_hours_outstanding).sum
+  end 
+end
+
+class DraftTimesheet < Timesheet
+  def billable_hours_outstanding
+    0
+  end
+end
+
 classSubmittedTimesheet<Timesheet def billable_hours_outstanding
 billable_weeks.map(&:total_hours).sum end
 end
