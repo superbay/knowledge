@@ -26,6 +26,13 @@ end
 • tstzrange
 ```
 
+#### Json type attributes
+
+```ruby
+add_column:users,:preferences,:json
+
+
+
 #### PostgreSQL 
 
 ```ruby
