@@ -32,13 +32,13 @@ Photo.where("properties@>'aperture=>f/1.4'")
 Photo.where("properties?:key",key:'aperture')
 
 #Allphotosthatdonothaveakey'aperture'inproperties
-13 Photo.where("notproperties?:key",key:'aperture')
-14
-15 #Allphotosthatcontainsallkeys'aperture'and'shutter_speed'
-16 Photo.where("properties?&ARRAY[:keys]",keys:%w(apertureshutter_speed))
-17
-18 #Allphotosthatcontainsanyofthekeys'aperture'or'shutter_speed'
-19 Photo.where("properties?|ARRAY[:keys]",keys:%w(apertureshutter_speed))
+Photo.where("notproperties?:key",key:'aperture')
+
+#Allphotosthatcontainsallkeys'aperture'and'shutter_speed'
+Photo.where("properties?&ARRAY[:keys]",keys:%w(apertureshutter_speed))
+
+#Allphotosthatcontainsanyofthekeys'aperture'or'shutter_speed'
+Photo.where("properties?|ARRAY[:keys]",keys:%w(apertureshutter_speed))
 ```
 
 
