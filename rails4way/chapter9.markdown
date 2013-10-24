@@ -4,12 +4,17 @@ Active Record is a simple object-relational mapping (ORM) framework
 ### Immutability
 
 ```ruby
-classExpense<ActiveRecord::Base def cost
-@cost ||= Money.new(cents || 0, currency || Money.default_currency) end
-def cost=(cost)
-self[:cents] = cost.cents self[:currency] = cost.currency.to_s
-cost
-end end
+class Expense < ActiveRecord::Base 
+  def cost
+    @cost ||= Money.new(cents || 0, currency || Money.default_currency) 
+  end
+  
+  def cost=(cost)
+    self[:cents] = cost.cents 
+    self[:currency] = cost.currency.to_s
+    cost
+  end 
+end
 ```
 
 #### Modifying Active Record at Runtime
