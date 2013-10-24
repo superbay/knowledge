@@ -1,6 +1,16 @@
 ## Advanced Active Record
 Active Record is a simple object-relational mapping (ORM) framework
 
+#### the PostgresSQL index
+
+```ruby
+add_index :photos, :properties, using: :gin 
+#or
+add_index :photos, :properties, using: :gist
+```
+GIN and GiST indexes support queries with @>, ?, ?& and ?| operators.
+
+
 #### PostgreSQL enhancements
 
 ```ruby
