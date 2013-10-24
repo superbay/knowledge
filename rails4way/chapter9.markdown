@@ -29,13 +29,12 @@ class CreateExpenses < ActiveRecord::Migration
   end
 end
 
->> expense=Expense.create(cost:Money.new(1000,"USD")) 
->> cost=expense.cost
+>> expense = Expense.create(cost: Money.new(1000,"USD")) 
+>> cost = expense.cost
 >> cost.cents
 => 1000
 >> expense.currency 
-=>"USD"
-
+=> "USD"
 ```
 
 #### Modifying Active Record at Runtime
