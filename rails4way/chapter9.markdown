@@ -283,7 +283,9 @@ and
 ```
 
 #### exception & Legacy database
+Finally, legacy database constraints may require a different name in the database for the type column. In this case, you can set the new column name using the class setter method inheritance_column in the base class. For the Timesheet example, we could do the following:
 
+```
 
 
 
