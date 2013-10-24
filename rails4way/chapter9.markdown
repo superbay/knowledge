@@ -3,6 +3,8 @@ Active Record is a simple object-relational mapping (ORM) framework
 
 ### Immutability
 
+It’s also important to treat value objects as immutable. Don’t allow them to be changed after creation. Instead, create a new object instance with the new value instead. Active Record will not persist value objects that have been changed through means other than the writer method on the parent object.
+
 ```ruby
 class Expense < ActiveRecord::Base 
   def cost
