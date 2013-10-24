@@ -1,6 +1,24 @@
 ## Advanced Active Record
 Active Record is a simple object-relational mapping (ORM) framework
 
+#### Non-persisted Models
+
+```ruby
+class Contact
+  extend ActiveModel::Naming extend ActiveModel::Translation include ActiveModel::Conversion include ActiveModel::Validations
+attr_accessor :name, :email, :message
+validates :name, presence: true validates :email,
+    format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/ },
+presence: true
+validates :message, length: {maximum: 1000}, presence: true
+def initialize(attributes = {}) attributes.each do |name, value|
+send("#{name}=", value) end
+end
+def persisted? false
+end end
+
+```
+
 ### Immutability
 
 It’s also important to treat value objects as immutable. Don’t allow them to be changed after creation. Instead, create a new object instance with the new value instead. Active Record will not persist value objects that have been changed through means other than the writer method on the parent object.
