@@ -1,6 +1,18 @@
 ## Advanced Active Record
 Active Record is a simple object-relational mapping (ORM) framework
 
+#### other PostgreSQL type
+
+```ruby
+class CreateNetworkAddresses < ActiveRecord::Migration 
+  def change
+create_table :network_addresses do |t| t.inet :inet_address
+t.cidr :cidr_address
+t.macaddr :mac_address
+end end
+end
+```
+
 #### PostgreSQL 
 
 ```ruby
