@@ -10,8 +10,10 @@ class AddHstoreExtension < ActiveRecord::Migration
   end
 end
 
-classAddPropertiesToPhotos<ActiveRecord::Migration change_table :photos do |t|
-t.hstore :properties end
+class AddPropertiesToPhotos < ActiveRecord::Migration
+  change_table :photos do |t|
+    t.hstore :properties 
+  end
 end
 ```
 
