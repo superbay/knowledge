@@ -19,6 +19,22 @@ class Expense < ActiveRecord::Base
 end
 ```
 
+```ruby
+classCreateExpenses<ActiveRecord::Migration def change
+create_table :expenses do |t| t.integer :cents
+t.string :currency
+end end
+end
+
+>> expense=Expense.create(cost:Money.new(1000,"USD")) 
+>> cost=expense.cost
+>> cost.cents
+=> 1000
+>> expense.currency 
+=>"USD"
+
+```
+
 #### Modifying Active Record at Runtime
 
 ```ruby
