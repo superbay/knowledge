@@ -14,6 +14,14 @@ end
 #ALTERTABLE"articles"ADDCOLUMN"tags"charactervarying(255)[]
 ```
 
+#### Search in array
+
+```ruby
+Article.where("'rails'=ANY(tags)")
+#Alternatively, the ALL method searches for arrays where all values in the array equal the value specified.
+Article.where("'rails'=ALL(tags)")
+```
+
 #### the PostgreSQL index
 
 ```ruby
