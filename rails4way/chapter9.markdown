@@ -17,6 +17,31 @@ class AddPropertiesToPhotos < ActiveRecord::Migration
 end
 ```
 
+#### query hstore
+
+```ruby
+#Non-Indexedquerytofindallphotosthathaveakey'aperture'witha
+#valueoff/1.4
+Photo.where("properties->:key=:value",key:'aperture',value:'f/1.4')
+
+#Indexedquerytofindallphotosthathaveakey'aperture'withavalue
+6 #off/1.4
+7 Photo.where("properties@>'aperture=>f/1.4'")
+8
+9 #Allphotosthathaveakey'aperture'inproperties
+10 Photo.where("properties?:key",key:'aperture')
+11
+12 #Allphotosthatdonothaveakey'aperture'inproperties
+13 Photo.where("notproperties?:key",key:'aperture')
+14
+15 #Allphotosthatcontainsallkeys'aperture'and'shutter_speed'
+16 Photo.where("properties?&ARRAY[:keys]",keys:%w(apertureshutter_speed))
+17
+18 #Allphotosthatcontainsanyofthekeys'aperture'or'shutter_speed'
+19 Photo.where("properties?|ARRAY[:keys]",keys:%w(apertureshutter_speed))
+```
+
+
 #### Non-persisted Models
 
 ```ruby
