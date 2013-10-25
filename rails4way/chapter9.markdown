@@ -196,7 +196,9 @@ classAccount<ActiveRecord::Base ...
 end
 ```
 
-[STI](../tech_talk/single_table_inheritance.markdown)
+### Single Table Inheritance(STI)
+
+[Read in detail](../tech_talk/single_table_inheritance.markdown)
 
 
 #### Calculation Methods
