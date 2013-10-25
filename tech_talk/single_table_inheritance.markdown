@@ -5,14 +5,15 @@
 
 
 
-Single table inheritance
+[Single table inheritance](http://api.rubyonrails.org/classes/ActiveRecord/Base.html)
 
 Active Record allows inheritance by storing the name of the class in a column that by default is named “type” (can be changed by overwriting Base.inheritance_column). This means that an inheritance looking like this:
-
+```ruby
 class Company < ActiveRecord::Base; end
 class Firm < Company; end
 class Client < Company; end
 class PriorityClient < Client; end
+```
 When you do Firm.create(name: "37signals"), this record will be saved in the companies table with type = “Firm”. You can then fetch this row again using Company.where(name: '37signals').first and it will return a Firm object.
 
 
