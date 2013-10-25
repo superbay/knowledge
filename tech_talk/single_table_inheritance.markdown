@@ -32,6 +32,8 @@ def billable_hours_outstanding
   end
 end
 ```
+
+That latest change is a clear violation of the open-closed principle,5 which urges you to write code that is open for extension, but closed for modification. We know that we violated the principle, because we were forced to change the billable_hours_outstanding method to accommodate the new Timesheet status. Though it may not seem like a large problem in our simple example, consider the amount of conditional code that will end up in the Timesheet class once we start having to implement functionality such as paid_hours and unsubmitted_hours.
 #### Single Table Inheritance way
 
 ```ruby
