@@ -4,7 +4,7 @@
 ```ruby
 
 class Article
-  attributes_accessor :type
+  attr_accessible: :type
   Types = {
     :story        => 1,
     :column       => 2,
