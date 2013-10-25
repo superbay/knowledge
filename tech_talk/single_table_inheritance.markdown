@@ -2,7 +2,9 @@
 
 
 ```ruby
+
 class Article
+  attributes_accessor :type
   Types = {
     :story        => 1,
     :column       => 2,
