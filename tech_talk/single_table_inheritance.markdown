@@ -1,26 +1,6 @@
 ### What's STI
 
-origin desgin
 
-```ruby
-
-class Article
-  #attr_accessible: :type
-  as_enum :type, Types, :column => 'type_enum', :whiny => false
-
-  Types = {
-    :story        => 1,
-    :column       => 2,
-    :interview    => 3,
-    :compound_doc => 4,
-    :review       => 5,
-    :graphic      => 6,
-    :blog         => 7,
-    :slideshow    => 8,
-    :photo_essay  => 9
-  }
-end  
-```
 
 
 
@@ -108,6 +88,30 @@ and
 ```ruby
 >> Timesheet.first
 =>#<DraftTimesheet:0x2212354...>
+```
+
+#### Real Case
+
+origin desgin
+
+```ruby
+
+class Article
+  #attr_accessible: :type
+  as_enum :type, Types, :column => 'type_enum', :whiny => false
+
+  Types = {
+    :story        => 1,
+    :column       => 2,
+    :interview    => 3,
+    :compound_doc => 4,
+    :review       => 5,
+    :graphic      => 6,
+    :blog         => 7,
+    :slideshow    => 8,
+    :photo_essay  => 9
+  }
+end  
 ```
 
 #### exception & Legacy database
