@@ -1,6 +1,23 @@
 ### What's STI
 
 
+```ruby
+class Article
+  Types = {
+    :story        => 1,
+    :column       => 2,
+    :interview    => 3,
+    :compound_doc => 4,
+    :review       => 5,
+    :graphic      => 6,
+    :blog         => 7,
+    :slideshow    => 8,
+    :photo_essay  => 9
+  }
+end  
+```
+
+
 
 #### Single Table Inheritance(STI)
 ```ruby
