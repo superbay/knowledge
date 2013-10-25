@@ -121,7 +121,7 @@ Finally, legacy database constraints may require a different name in the databas
 
 ```ruby
 classTimesheet<ActiveRecord::Base
-2 self.inheritance_column = 'object_type'
-3 end
+  self.inheritance_column = 'object_type'
+end
 ```
 
