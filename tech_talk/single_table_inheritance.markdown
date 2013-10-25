@@ -4,7 +4,9 @@
 ```ruby
 
 class Article
-  attr_accessible: :type
+  #attr_accessible: :type
+  as_enum :type, Types, :column => 'type_enum', :whiny => false
+
   Types = {
     :story        => 1,
     :column       => 2,
