@@ -1,6 +1,12 @@
 ## Advanced Active Record
 Active Record is a simple object-relational mapping (ORM) framework
 
+#### UUID type attribute
+
+```ruby
+add_column :table_name, :unique_identifier, :uuid
+```
+
 #### other PostgreSQL type
 
 ```ruby
