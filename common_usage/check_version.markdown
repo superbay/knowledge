@@ -6,3 +6,10 @@ cat /etc/issue
 cat /etc/issue.net
 
 ```
+
+#### check particular lib version
+
+```bash
+ldconfig -v | grep -i mysql
+
+```
