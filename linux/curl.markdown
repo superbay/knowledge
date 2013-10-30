@@ -22,6 +22,6 @@ unset http_proxy
 or 
 
 ```bash
-curl --noproxy
+curl --noproxy 127.0.0.1
 
 ```
