@@ -27,6 +27,21 @@ then, the place to call it
 
 #### instance variables
 
+#### assigns
+Want to see everything that comes across the controller-view boundary? Throw = `debug(assigns)` into your template and take a look at the output. The assigns attribute is essentially internal to Rails and you should not use it directly in your production code.
+
+#### flash.now
+
+```ruby
+classReportController<ActionController::Base def create
+if report.save
+flash.notice = "#{report.title} has been created." redirect_to report_path(report)
+else
+flash.now.alert = "#{@post.title} could not be created."
+render :new end
+end end
+```
+
 
 
 
