@@ -46,6 +46,12 @@ class ReportController < ActionController::Base
 end
 ```
 
+#### partial collection
+
+```ruby
+partial:'entry',collection:@entries
+```
+
 
 
 
