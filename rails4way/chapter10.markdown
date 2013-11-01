@@ -53,5 +53,11 @@ partial:'entry',collection:@entries
 ```
 
 
+#### partial counter
+
+```ruby
+end
+
+
 
 
