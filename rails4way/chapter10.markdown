@@ -33,13 +33,17 @@ Want to see everything that comes across the controller-view boundary? Throw = `
 #### flash.now
 
 ```ruby
-classReportController<ActionController::Base def create
-if report.save
-flash.notice = "#{report.title} has been created." redirect_to report_path(report)
-else
-flash.now.alert = "#{@post.title} could not be created."
-render :new end
-end end
+class ReportController < ActionController::Base
+  def create
+    if report.save
+      flash.notice = "#{report.title} has been created."
+      redirect_to report_path(report)
+    else
+      flash.now.alert = "#{@post.title} could not be created."
+      render :new 
+    end
+  end 
+end
 ```
 
 
