@@ -64,5 +64,7 @@ There’s another variable set for collection-rendered partials that doesn’t g
 end
 
 ```
-
+```ruby
+error_message_on(object, method, *options)
+```
 
