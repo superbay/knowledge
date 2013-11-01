@@ -56,8 +56,13 @@ partial:'entry',collection:@entries
 #### partial counter
 
 ```ruby
+There’s another variable set for collection-rendered partials that doesn’t get much attention. It’s a 0-indexed counter variable that tracks the number of times the partial has gotten rendered. It’s useful for rendering numbered lists of things. The name of the variable is the name of the partial, plus _counter.
+```ruby
+=div_for(entry)do
+#{entry_counter}:#{entry.description} #{distance_of_time_in_words_to_now entry.created_at} ago
+
 end
 
-
+```
 
 
