@@ -1,7 +1,8 @@
 ## Action View
 
 ```ruby
-=form_for@persondo|form| = form.error_messages .text-field
+= form_for @person do |form| 
+  = form.error_messages .text-field
     = form.label :name, "Name"
     = form.text_field :name
     
