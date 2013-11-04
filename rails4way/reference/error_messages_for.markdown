@@ -4,13 +4,13 @@ def error_messages_for(*params)
   options = params.extract_options!.symbolize_keys
   
   objects = Array.wrap(options.delete(:object) || params).map do |object| 
-    object = instance_variable_get("@#{object}") unless object.
-      respond_to?(:to_model)
+    object = instance_variable_get("@#{object}") unless object.respond_to?(:to_model)
     object = convert_to_model(object)
-if object.class.respond_to?(:model_name)
-options[:object_name] ||= object.class.model_name.human.downcase
-end
-object
+    
+    if object.class.respond_to?(:model_name)
+      options[:object_name] ||= object.class.model_name.human.downcase
+    end
+    object
 end
   objects.compact!
   count = objects.inject(0) {|sum, object| sum + object.errors.count }
