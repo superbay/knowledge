@@ -1,8 +1,10 @@
 ```ruby
 
 def error_messages_for(*params)
-options = params.extract_options!.symbolize_keys
-objects = Array.wrap(options.delete(:object) || params).map do |object| object = instance_variable_get("@#{object}") unless object.
+  options = params.extract_options!.symbolize_keys
+  
+  objects = Array.wrap(options.delete(:object) || params).map do |object| 
+    object = instance_variable_get("@#{object}") unless object.
       respond_to?(:to_model)
     object = convert_to_model(object)
 if object.class.respond_to?(:model_name)
