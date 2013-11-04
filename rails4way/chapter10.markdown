@@ -7,6 +7,9 @@
     = form.text_field :name
 ```
 
+#### reference learn error message
+
+[error_messages_for]()
 
 #### yeild
 
