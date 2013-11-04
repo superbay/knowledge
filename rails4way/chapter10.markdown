@@ -5,7 +5,6 @@
   = form.error_messages .text-field
     = form.label :name, "Name"
     = form.text_field :name
-    
 ```
 
 
