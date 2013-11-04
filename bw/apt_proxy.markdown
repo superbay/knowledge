@@ -8,3 +8,5 @@ Acquire::socks::proxy "socks://username:password@proxyserver:port/";
 ```
 Save it. You are done.
 
+check the [origin source](http://askubuntu.com/questions/77449/how-to-configure-proxy-authentication-to-work-with-ubuntu-software-center)
+
