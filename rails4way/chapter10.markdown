@@ -9,7 +9,7 @@
 
 #### reference learn error message
 
-[error_messages_for]()
+[error_messages_for](reference/error_messages_for.markdown)
 
 #### yeild
 
