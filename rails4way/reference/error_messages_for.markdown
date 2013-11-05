@@ -11,10 +11,12 @@ def error_messages_for(*params)
       options[:object_name] ||= object.class.model_name.human.downcase
     end
     object
-end
+  end
+  
   objects.compact!
   count = objects.inject(0) {|sum, object| sum + object.errors.count }
-unless count.zero?
+
+  unless count.zero?
 html = {}
 [:id, :class].each do |key|
 if options.include?(key)
