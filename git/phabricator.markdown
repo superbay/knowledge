@@ -29,7 +29,23 @@ and it also delete the current branch
 make sure below issue done, before arc land
 
 ```bash
+branch.develop.remote=origin
+branch.develop.merge=refs/heads/develop
+branch.feature/quiz.remote=origin
+branch.feature/quiz.merge=refs/heads/feature/quiz
 
+#If you often merge with the same branch, you may want to
+#use something like the following in your configuration file:
+
+    [branch "feature/quiz"]
+    remote = <nickname>
+    merge = <remote-ref>
+
+    [remote "<nickname>"]
+    url = <url>
+    fetch = <refspec>
+
+#See git-config(1) for details.
 ```
 
 
