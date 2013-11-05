@@ -97,6 +97,34 @@ class User
     joins(:profile).where('profile.email = ?', email) unless email.nil?
   end
 end
+```
+
+```ruby
+wheres = [:id, :email].map{|key| params.has_key?(key) ? {key => params[key]} : {} }\
+                      .inject({}){|hash, injected| hash.merge!(injected)}
+
+@users = User.where(wheres).limit(10)
+
+#user.rb
+scope :by_status, lambda { |status| where(:status => status) unless status.blank? }
+
+# If you need to execute a block of code you can use the following syntax
+scope :by_status, (lambda do |status|
+where(:active => status) unless status.blank?
+end)
+
+
+#Active users
+pry(main)> User.by_status(1)
+SELECT `users`.* FROM `users` WHERE `users`.`active` = 1
+
+#Inactive users
+pry(main)> User.by_status(0)
+SELECT `users`.* FROM `users` WHERE `users`.`active` = 0
+
+#All users
+pry(main)> User.by_status(nil)
+SELECT `users`.* FROM `users`
 
 
 ```
