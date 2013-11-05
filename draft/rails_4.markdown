@@ -85,6 +85,22 @@ Client.by_category(category).by_district(district)
 
 ```
 
+and
+
+```ruby
+class User
+  scope :by_age, lambda do |age|
+    joins(:profile).where('profile.age = ?', age) unless age.nil?
+  end
+  scope :by_name, lambda{ |name| where(name: name) unless name.nil? }
+  scope :by_email, lambda do |email|
+    joins(:profile).where('profile.email = ?', email) unless email.nil?
+  end
+end
+
+
+```
+
 ### html.ruby
 
 ```ruby
