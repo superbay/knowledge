@@ -48,6 +48,8 @@ branch.feature/quiz.merge=refs/heads/feature/quiz
 #See git-config(1) for details.
 ```
 
+and also make sure, land branch do not have changed code no push
+
 
 ```ruby
 `git checkout -b 'sponsor' '1dbab27e1cd866a1f508917505d8d81603621e97'`
