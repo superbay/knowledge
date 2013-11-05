@@ -17,20 +17,20 @@ def error_messages_for(*params)
   count = objects.inject(0) {|sum, object| sum + object.errors.count }
 
   unless count.zero?
-html = {}
-[:id, :class].each do |key|
-if options.include?(key)
-value = options[key]
-html[key] = value unless value.blank?
-else
-html[key] = 'error_explanation' end
-end
+    html = {}
+    [:id, :class].each do |key|
+      if options.include?(key)
+        value = options[key]
+        html[key] = value unless value.blank?
+      else
+        html[key] = 'error_explanation' 
+      end
+    end
     options[:object_name] ||= params.first
-    I18n.with_options :locale => options[:locale],
-All About Helpers 300
-
-:scope => [:activerecord, :errors, :template] do |locale| header_message = if options.include?(:header_message)
-options[:header_message] else
+    
+    I18n.with_options :locale => options[:locale], :scope => [:activerecord, :errors, :template] do |locale| 
+      header_message = if options.include?(:header_message)
+        options[:header_message] else
         locale.t :header, :count => count,
           :model => options[:object_name].to_s.gsub('_', ' ')
 end
