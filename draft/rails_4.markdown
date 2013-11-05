@@ -68,6 +68,23 @@ class User < ActiveRecord::Base
 end
 ```
 
+some more scope
+
+```ruby
+class Client
+  scope :by_category, (lambda do |category_id|
+    where(category_id: category_id) unless category_id.nil?
+  end)
+  scope :by_district, (lambda do |district_id|
+    where(district_id: district_id) unless district_id.nil?
+  end)
+end
+
+#if district 是nil就会返回全部
+Client.by_category(category).by_district(district)
+
+```
+
 ### html.ruby
 
 ```ruby
