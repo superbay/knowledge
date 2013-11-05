@@ -43,9 +43,13 @@ def error_messages_for(*params)
       end.join.html_safe
       
       contents = ''
-      contents << content_tag(options[:header_tag] || :h2, header_message) unless header_message.blank? contents << content_tag(:p, message) unless message.blank? contents << content_tag(:ul, error_messages)
-content_tag(:div, contents.html_safe, html) end
-else
-''
-end end
+      contents << content_tag(options[:header_tag] || :h2, header_message) unless header_message.blank? 
+      contents << content_tag(:p, message) unless message.blank? 
+      contents << content_tag(:ul, error_messages)
+      content_tag(:div, contents.html_safe, html) 
+    end
+  else
+    ''
+  end 
+end
 ```
