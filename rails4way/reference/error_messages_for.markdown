@@ -30,17 +30,20 @@ def error_messages_for(*params)
     
     I18n.with_options :locale => options[:locale], :scope => [:activerecord, :errors, :template] do |locale| 
       header_message = if options.include?(:header_message)
-        options[:header_message] else
-        locale.t :header, :count => count,
-          :model => options[:object_name].to_s.gsub('_', ' ')
-end
+        options[:header_message] 
+      else
+        locale.t :header, :count => count, :model => options[:object_name].to_s.gsub('_', ' ')
+      end
+      
       message = options.include?(:message) ? options[:message] : locale.t(:body)
-error_messages = objects.sum do |object| object.errors.full_messages.map do |msg|
-content_tag(:li, msg) end
-end.join.html_safe
+      error_messages = objects.sum do |object| 
+        object.errors.full_messages.map do |msg|
+          content_tag(:li, msg) ]
+        end
+      end.join.html_safe
+      
       contents = ''
-      contents << content_tag(options[:header_tag] ||
-:h2, header_message) unless header_message.blank? contents << content_tag(:p, message) unless message.blank? contents << content_tag(:ul, error_messages)
+      contents << content_tag(options[:header_tag] || :h2, header_message) unless header_message.blank? contents << content_tag(:p, message) unless message.blank? contents << content_tag(:ul, error_messages)
 content_tag(:div, contents.html_safe, html) end
 else
 ''
