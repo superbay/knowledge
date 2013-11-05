@@ -50,6 +50,22 @@ gem 'arel',      git: 'git@github.com:rails/arel.git'
 class Article < ActiveRecord::Base
   scope :sorted, -> { order(:name) }
 end
+
+class User < ActiveRecord::Base
+  # Added scopes and associations for fetching account information using status
+  has_many :accounts_with, class_name: 'Account' do 
+    def status(flag)
+      proxy_association.owner.accounts_with.where(["status= ?", flag])
+    end
+  end
+  has_many :active_accounts, class_name: 'Account', conditions: {status: 'active'}
+  scope :accounts_with_status , ->(flag){ joins(:accounts).where(["accounts.stauts= :status", status: flag])}#["accounts.status= ?", flag]) }
+
+  #has_many :recent_accounts, class_name: 'Account', conditions: ->{["created_at < :time", time: 10.days.ago]}.call
+  
+  # Validations for User
+  validates_with UserValidator#, on: :create && :update
+end
 ```
 
 ### html.ruby
