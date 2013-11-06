@@ -1,5 +1,28 @@
 ## Action View
 
+### form creation
+
+will generate those things
+
+```ruby
+form("post")
+#<formaction='/posts/create'method='post'>
+#  <p>
+#    <label for="post_title">Title</label><br />
+#    <input id="post_title" name="post[title]" size="30" type="text"
+#      value="Hello World" />
+#  </p>
+#  <p>
+#    <label for="post_body">Body</label><br />
+#    <textarea cols="40" id="post_body" name="post[body]" rows="20"></textarea>
+#  </p>
+#  <input name="commit" type="submit" value="Create" />
+#</form>
+
+```
+
+### form_for
+
 ```ruby
 = form_for @person do |form| 
   = form.error_messages .text-field
