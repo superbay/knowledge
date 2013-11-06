@@ -18,7 +18,6 @@ form("post")
 #  </p>
 #  <input name="commit" type="submit" value="Create" />
 #</form>
-
 ```
 
 ### automatic form generate 
