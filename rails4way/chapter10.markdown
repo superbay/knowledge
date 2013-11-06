@@ -32,7 +32,6 @@ form("entry",:action=>"sign", :input_block => Proc.new { |record, column|
 #    type="text" /><br />
 #  <input name="commit" type="submit" value="Sign" />
 #</form>
-
 ```
 
 add content to form
