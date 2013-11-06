@@ -21,7 +21,7 @@ form("post")
 
 ```
 
-### form generate 
+### automatic form generate 
 
 ```ruby
 form("entry",:action=>"sign", :input_block => Proc.new { |record, column|
@@ -35,6 +35,7 @@ form("entry",:action=>"sign", :input_block => Proc.new { |record, column|
 #</form>
 
 ```
+
 
 ### form_for
 
