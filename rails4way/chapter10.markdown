@@ -46,6 +46,14 @@ form("entry",:action=>"sign")do|form|
 end
 ```
 
+input
+
+```ruby
+input("post", "title") 
+#=><input id="post_title" name="post[title]" size="30"
+# type="text" value="HelloWorld"/>
+```
+
 ### form_for
 
 ```ruby
