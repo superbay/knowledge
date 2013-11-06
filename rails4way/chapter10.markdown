@@ -36,6 +36,15 @@ form("entry",:action=>"sign", :input_block => Proc.new { |record, column|
 
 ```
 
+add content to form
+
+```ruby
+
+form("entry",:action=>"sign")do|form|
+  form << content_tag("b", "Department")
+  form << collection_select("department", "id", @departments, "id", "name")
+end
+```
 
 ### form_for
 
