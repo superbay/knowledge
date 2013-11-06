@@ -21,6 +21,21 @@ form("post")
 
 ```
 
+### form generate 
+
+```ruby
+form("entry",:action=>"sign", :input_block => Proc.new { |record, column|
+  "#{column.human_name}: #{input(record, column.name)}<br />"
+})
+
+#<form action="/entries/sign"method="post">
+#  <input id="entry_message" name="entry[message]" size="30"
+#    type="text" /><br />
+#  <input name="commit" type="submit" value="Sign" />
+#</form>
+
+```
+
 ### form_for
 
 ```ruby
