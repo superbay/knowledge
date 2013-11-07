@@ -1,5 +1,20 @@
 ## Action View
 
+
+### custom validation error display
+
+```ruby
+module ActionView
+  class Base
+    cattr_accessor :field_error_proc
+    @@field_error_proc = Proc.new{ |html_tag, instance|
+      "<div class=\"field_with_errors\">#{html_tag}</div>".html_safe
+    }
+  end
+end
+```
+
+
 ### form creation
 
 will generate those things
