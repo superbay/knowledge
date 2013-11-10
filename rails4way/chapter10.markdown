@@ -1,6 +1,12 @@
 ## Action View
 
 
+```ruby
+javascript_include_tag"xmlhr"
+#=><scriptsrc="/assets/xmlhr.js?1284139606"></script>
+```
+
+
 ### custom validation error display
 
 ```ruby
