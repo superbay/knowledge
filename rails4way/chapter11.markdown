@@ -1,6 +1,19 @@
 ## About Helper
 
 
+#### stylesheet_link_tag(*sources)
+
+```ruby
+stylesheet_link_tag"style"
+#=><linkhref="/stylesheets/style.css"media="screen"
+# rel="Stylesheet"type="text/css"/>
+
+stylesheet_link_tag"style",media:"all"
+#=><linkhref="/stylesheets/style.css"media="all"
+# rel="Stylesheet"type="text/css"/>
+
+```
+
 
 #### javascript_include_tag(*sources)
 
