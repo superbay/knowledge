@@ -21,6 +21,19 @@ image_tag("rails.png")
 #=> <imgalt="Rails" src= "http://assets.example.com/images/rails.png?1230601161"/>
 ```
 
+#### asset Host advance
+
+```ruby
+config.action_controller.asset_host = Proc.new do |source|
+  if source.starts_with?('/images')
+
+    'http://images.example.com'
+  else
+    'http://assests.example.com'
+  end
+end
+```
+
 
 #### stylesheet_link_tag(*sources)
 
