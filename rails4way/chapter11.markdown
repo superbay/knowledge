@@ -34,6 +34,27 @@ config.action_controller.asset_host = Proc.new do |source|
 end
 ```
 
+#### advance assets according to request and source
+
+```ruby
+ActionController::Base.asset_host = Proc.new do |source, request|
+  if request.ssl?
+    "#{request.protocol}#{request.host_with_port}"
+  else
+    "#{request.protocol}assets.example.com"
+  end
+end
+
+```
+
+Here also the way to test this function via console:
+
+```ruby
+config.action_controller.asset_host = AssetHostingWithMinimumSsl.new(
+  "http://asset%d.example.com", "https://asset1.example.com"
+)
+```
+
 
 #### stylesheet_link_tag(*sources)
 
