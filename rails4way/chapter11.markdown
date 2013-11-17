@@ -14,6 +14,13 @@ video_tag("trail.m4v", size: "16x10", poster: "screenshot.png")
 # poster="/images/screenshot.png" />
 ```
 
+then the image_tag and the stylesheet_link_tag will change accordingly
+
+```ruby
+image_tag("rails.png")
+#=> <imgalt="Rails" src= "http://assets.example.com/images/rails.png?1230601161"/>
+```
+
 
 #### stylesheet_link_tag(*sources)
 
