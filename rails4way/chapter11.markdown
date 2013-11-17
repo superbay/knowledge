@@ -1,5 +1,13 @@
 ## About Helper
 
+#### video_tag
+
+```ruby
+video_tag("trail.m4v", size: "16x10", poster: "screenshot.png")
+# => <video src="/videos/trailer.m4v" width="16" height="10"
+# poster="/images/screenshot.png" />
+```
+
 
 #### stylesheet_link_tag(*sources)
 
