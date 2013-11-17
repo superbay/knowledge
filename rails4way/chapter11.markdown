@@ -1,5 +1,11 @@
 ## About Helper
 
+#### Using Asset Hosts
+
+```ruby
+config.action_controller.asset_host= "assets.example.com"
+```
+
 #### video_tag
 
 ```ruby
