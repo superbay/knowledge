@@ -1,5 +1,13 @@
 ## About Helper
 
+
+#### content_for && content_for?
+
+```ruby
+-content_for: navigation_sidebar do
+  = link_to 'Detail Page', item_detail_path(item)
+```
+
 #### AtomFeedHelper
 
 ```ruby
