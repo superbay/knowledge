@@ -8,6 +8,15 @@
   = link_to 'Detail Page', item_detail_path(item)
 ```
 
+
+according which content, yield with different class name
+
+```ruby
+%body{class: content_for?(:right_col) ? 'one-column' : 'two-column'} 
+  = yield
+  = yield :right_col
+```
+
 #### AtomFeedHelper
 
 ```ruby
