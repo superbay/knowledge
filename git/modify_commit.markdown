@@ -45,3 +45,9 @@ git filter-branch --index-filter \
   
 git filter-branch --tree-filter 'rm filename' HEAD  
 ```
+
+#### find and remove
+
+```ruby
+find . -name *.DS_Store -type f -exec git-rm {} \;
+```
