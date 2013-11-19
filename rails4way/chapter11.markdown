@@ -1,6 +1,14 @@
 ## About Helper
 
 
+```ruby
+date_select("post", "written_on")
+date_select("post", "written_on",start_year:1995, use_month_numbers: true, discard_day: true, include_blank: true)
+date_select("post","written_on",order:[:day,:month,:year]) date_select("user", "birthday", order: [:month, :day])
+
+```
+
+
 #### content_for && content_for?
 
 ```ruby
