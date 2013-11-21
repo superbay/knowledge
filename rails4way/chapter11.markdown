@@ -1,5 +1,24 @@
 ## About Helper
 
+
+
+#### Resource-oriented Style
+
+```ruby
+= form_for post do |f|
+# will be equivalent to
+= form_for post, as: :post, url: post_path(post), method: :patch, html: { class: "edit_post", id: "edit_post_45" } do |f|
+
+
+= form_for(Post.new) do |f|
+#expands to
+= form_for post, as: :post, url: posts_path, html: { class: "new_post", id: "new_post" } do |f|
+
+```
+
+
+
+
 #### date_select and time_select
 
 
