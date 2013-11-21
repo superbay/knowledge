@@ -3,6 +3,13 @@
 #### using app
 
 ```ruby
->> app.class
+app.class
 #=> ActionDispatch::Integration::Session
+```
+
+#### route path
+
+```ruby
+app.project_path(Project.first)
+=> "/projects/130349783-with-attachments"
 ```
