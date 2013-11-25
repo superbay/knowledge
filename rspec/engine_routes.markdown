@@ -48,3 +48,14 @@ config.include Module.new {
 [reference](http://stackoverflow.com/questions/11587463/all-routing-examples-fail-for-a-rails-3-2-engine-with-rspec-2-10)
 
 
+
+```ruby
+describe "test controller routing" do
+  routes { Testy::Engine.routes }
+  # ...
+end
+
+# similar
+before(:each) { @routes = Testy::Engine.routes }
+```
+
