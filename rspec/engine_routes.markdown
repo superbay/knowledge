@@ -59,3 +59,12 @@ end
 before(:each) { @routes = Testy::Engine.routes }
 ```
 
+
+more related:
+
+```ruby
+# spec_helper.rb
+RSpec.configure do |config|
+  config.include MyEngine::Engine.routes.url_helpers
+end
+```
