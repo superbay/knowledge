@@ -69,4 +69,12 @@ RSpec.configure do |config|
 end
 ```
 
+```ruby
+#spec/spec_helper.rb
+RSpec.configure do |config|
+ # other code
+ config.before(:each) { @routes = MyEngine::Engine.routes }
+end
+```
+
 [more reference](http://stackoverflow.com/questions/7691594/how-to-test-routes-in-a-rails-3-1-mountable-engine)
