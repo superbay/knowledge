@@ -68,3 +68,5 @@ RSpec.configure do |config|
   config.include MyEngine::Engine.routes.url_helpers
 end
 ```
+
+[more reference](http://stackoverflow.com/questions/7691594/how-to-test-routes-in-a-rails-3-1-mountable-engine)
