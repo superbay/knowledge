@@ -72,3 +72,10 @@ app.method(:get).source_location
 
 ```
 
+
+#### bundle with proxy
+
+```bash
+http_proxy=http://yourproxy.com bundle install
+```
+
