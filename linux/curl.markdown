@@ -25,3 +25,8 @@ or
 curl --noproxy 127.0.0.1
 
 ```
+
+
+```bash
+export PATH=$PATH:/local/usr/ruby192/bin
+```
