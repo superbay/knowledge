@@ -1,7 +1,7 @@
 ### setup new user
 
 
-```base
+```ruby
 adduser ken
 #add user and group
 
