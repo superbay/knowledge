@@ -38,7 +38,7 @@ LANG = “en_US.UTF-8″
 ```ruby
 sudo locale-gen en_US.UTF-8
 ```
-
+[reference local ](http://stackoverflow.com/questions/2499794/how-can-i-fix-a-locale-warning-from-perl)
 
 Just add the user to the sudo group:
 
