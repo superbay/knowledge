@@ -9,7 +9,7 @@ adduser ken sudo
 #added ken to sudo list
 
 userdel -r ken
-
+#delete user and group
 ```
 
 
