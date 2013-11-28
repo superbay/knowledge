@@ -35,6 +35,9 @@ LC_ALL = “en_US.UTF-8″,
 LANG = “en_US.UTF-8″
 ```
 
+```ruby
+sudo locale-gen en_US.UTF-8
+```
 
 
 Just add the user to the sudo group:
