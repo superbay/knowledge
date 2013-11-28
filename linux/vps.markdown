@@ -12,6 +12,29 @@ userdel -r ken
 #delete user and group
 ```
 
+#### During setup ramnode
+
+```ruby
+#can not install aptitude
+sudo apt-get update
+sudo apt-get upgrade
+
+#debconf: unable to initialize frontend: Dialog
+apt-get install dialog
+
+
+
+```
+
+
+```
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+LANGUAGE = “en_US.UTF-8″,
+LC_ALL = “en_US.UTF-8″,
+LANG = “en_US.UTF-8″
+```
+
 
 
 Just add the user to the sudo group:
