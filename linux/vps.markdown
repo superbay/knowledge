@@ -3,7 +3,10 @@
 
 ```base
 adduser ken
+#add user and group
+
 adduser ken sudo
+#added ken to sudo list
 
 userdel -r ken
 
