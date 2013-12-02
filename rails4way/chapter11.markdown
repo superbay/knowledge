@@ -4,7 +4,10 @@
 #### select && options
 
 ```ruby
-=select(:post, :person_id, Person.all.collect {|p| [ p.name, p.id ] }, { include_blank: true })
+= select(:post, :person_id, Person.all.collect {|p| [ p.name, p.id ] }, { include_blank: true })
+collection_select(object, method, collection, value_method, text_method, options = {}, html_options = {})
+
+option_groups_from_collection_for_select(@continents,:countries, :continent_name, :country_id, :country_name, @selected_country.id)
 
 ```
 
