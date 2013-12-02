@@ -1,6 +1,12 @@
 ## About Helper
 
 
+#### select && options
+
+```ruby
+=select(:post, :person_id, Person.all.collect {|p| [ p.name, p.id ] }, { include_blank: true })
+
+```
 
 
 In case you’re wondering, the authenticity_token hidden field with gibberish up near the top of the form has to do with protection against malicious Cross-Site Request Forgery (CSRF) attacks.
