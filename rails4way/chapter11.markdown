@@ -9,6 +9,14 @@ collection_select(object, method, collection, value_method, text_method, options
 
 option_groups_from_collection_for_select(@continents,:countries, :continent_name, :country_id, :country_name, @selected_country.id)
 
+
+options_from_collection_for_select(Person.all,:id,:name)
+
+
+
+options_for_select({ "Basic" => "20", "Plus" => "40" }, price.to_s) 
+#=><optionvalue="20">Basic</option>
+# <option value="40" selected="selected">Plus</option>
 ```
 
 
