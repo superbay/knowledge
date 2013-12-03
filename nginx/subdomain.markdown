@@ -8,3 +8,22 @@
 2. nginx setting
 
   [sample](./nginx.conf)
+
+
+
+### all subdomain redirect
+
+
+```ruby
+
+if ( $host ~* (\b(?!www\b)\w+)\.\w+\.\w+ ) {
+    set $subdomain /$1;
+}
+location / {
+    root /home/wangyan/public_html$subdomain;
+    index index.html index.php;
+}
+
+```
+
+all should be in server
