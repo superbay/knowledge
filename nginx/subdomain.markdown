@@ -6,4 +6,4 @@
 
 2. nginx setting
 
-[sample](https://github.com/superbay/knowledge/blob/master/nginx/nginx.conf)
+[sample](./nginx.conf)
