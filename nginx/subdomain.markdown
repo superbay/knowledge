@@ -27,3 +27,6 @@ location / {
 ```
 
 all should be in server
+
+
+[another example](http://stackoverflow.com/questions/16087607/how-to-handle-subdomain-in-rails-with-unicorn-and-nginx)
