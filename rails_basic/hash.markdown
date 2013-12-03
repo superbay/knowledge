@@ -16,3 +16,6 @@ rgb['white'] = '#FFFFFF'
 rgb[:white]  # => '#FFFFFF'
 rgb['white'] # => '#FFFFFF'
 ```
+
+
+[official instruction](http://api.rubyonrails.org/classes/ActiveSupport/HashWithIndifferentAccess.html)
