@@ -45,4 +45,12 @@ which ctags
 #/usr/local/bin
 ```
 
+or
+
+
+```
+set fileformat=unix  
+let Tlist_Ctags_Cmd='/usr/local/bin/ctags'  
+```
+
 
