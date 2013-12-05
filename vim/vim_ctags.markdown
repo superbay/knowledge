@@ -53,4 +53,6 @@ set fileformat=unix
 let Tlist_Ctags_Cmd='/usr/local/bin/ctags'  
 ```
 
+[ctags reference](http://blog.stwrt.ca/2012/10/31/vim-ctags)
+
 
