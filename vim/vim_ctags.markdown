@@ -20,3 +20,29 @@ sudo ln -s /usr/bin/ack-grep /usr/local/bin/ack
 
 
 [origin_link](http://hlee.iteye.com/blog/1488865)
+
+
+#### Mac error about link
+
+```
+:!ctags -R .
+ctags: illegal option -- R
+usage: ctags [-BFadtuwvx] [-f tagsfile] file ...
+
+```
+
+The solution:
+
+```
+
+brew install ctags
+
+which ctags
+#/usr/bin/
+
+> PATH=/usr/local/bin:$PATH
+> which ctags
+#/usr/local/bin
+```
+
+
