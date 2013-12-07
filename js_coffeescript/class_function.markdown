@@ -88,7 +88,7 @@ var myCar = new Car("Car");
 ```
 
 [origin reference](http://stackoverflow.com/questions/892595/javascript-prototypal-inheritance)
-
+[related reference](http://phrogz.net/JS/classes/OOPinJS2.html)
 
 
 ```ruby
