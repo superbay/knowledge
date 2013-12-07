@@ -1,4 +1,3 @@
-
 #### Why Postgresql more popular? (2013)
 
 
@@ -28,3 +27,6 @@ you cannot use the table being changed (update/delete/insert) in a sub-select
 transactional DDL
 roles (groups) to manage user privileges
 ```
+
+[reference](http://stackoverflow.com/questions/8181604/postgres-9-1-vs-mysql-5-6-innodb)
+[reference2](http://readwrite.com/2013/09/10/postresql-hits-93-new-levels-of-popularity-with-the-cool-kids#awesm=~opj1dkkrUEzbMD)
