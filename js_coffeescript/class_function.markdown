@@ -1,5 +1,7 @@
-### prototype to shared method
 
+### javasrcipt interview question:
+
+#### How to created instace method
 
 ```javascript
 //Define a functional object to hold employee in JavaScript
@@ -28,7 +30,63 @@ var myManager = new Manager('John Smith');
 myManager.alertMyName();
 ```
 
+#### How to implement javascript inheritance
 
+
+```javascript
+function Car(name){
+    this.Name = name;
+}
+
+Car.prototype.Drive = function(){
+    document.write("My name is " + this.Name + " and I'm driving. <br />");
+}
+
+SuperCar.prototype = new Car();
+SuperCar.prototype.constructor = SuperCar;
+
+function SuperCar(name){
+    Car.call(this, name);
+}
+
+SuperCar.prototype.Fly = function(){
+    document.write("My name is " + this.Name + " and I'm flying! <br />");
+}
+
+var myCar = new Car("Car");
+myCar.Drive();
+
+var mySuperCar = new SuperCar("SuperCar");
+mySuperCar.Drive();
+mySuperCar.Fly();
+Second block:
+
+function Car(name){
+    this.Name = name;
+    this.Drive = function(){ 
+        document.write("My name is " + this.Name + " and I'm driving. <br />");
+    }
+}
+
+SuperCar.prototype = new Car();
+
+function SuperCar(name){
+    Car.call(this, name);
+    this.Fly = function(){
+        document.write("My name is " + this.Name + " and I'm flying! <br />");
+    }
+}
+
+var myCar = new Car("Car");
+myCar.Drive();
+
+var mySuperCar = new SuperCar("SuperCar");
+mySuperCar.Drive();
+mySuperCar.Fly();
+
+var myCar = new Car("Car");
+
+```
 
 
 
