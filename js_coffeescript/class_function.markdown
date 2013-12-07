@@ -1,4 +1,3 @@
-
 ### javasrcipt interview question:
 
 #### How to created instace method
@@ -88,6 +87,7 @@ var myCar = new Car("Car");
 
 ```
 
+[origin reference](http://stackoverflow.com/questions/892595/javascript-prototypal-inheritance)
 
 
 
