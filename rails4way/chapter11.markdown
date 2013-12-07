@@ -57,6 +57,11 @@ date_select("post","written_on",order:[:day,:month,:year]) date_select("user", "
 date_field
 ```
 
+[date_field reference](http://guides.rubyonrails.org/form_helpers.html)
+
+
+
+
 #### content_for && content_for?
 
 ```ruby
