@@ -1,3 +1,38 @@
+### prototype to shared method
+
+
+```javascript
+//Define a functional object to hold employee in JavaScript
+var Employee = function(name) {
+    this.name = name;
+};
+
+//Add dynamically to the already defined object a new getter
+Employee.prototype.getName = function() {
+    return this.name;
+};
+
+//Create a new object of type Manager by defining its constructor. 
+// It's not related to Employee for now.
+var Manager = function(name) {
+    this.name = name;
+};
+
+//Now inherit it from Employee
+
+Manager.prototype = new Employee();     
+
+//Now I can call the methods of Employee on the Manager, let's try,
+//first I need to create a Manager.
+var myManager = new Manager('John Smith');
+myManager.alertMyName();
+```
+
+
+
+
+
+
 ```ruby
 class @CreditCard
   constructor: (number) ->
