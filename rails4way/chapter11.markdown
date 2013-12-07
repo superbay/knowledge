@@ -51,6 +51,11 @@ date_select("post","written_on",order:[:day,:month,:year]) date_select("user", "
 
 ```
 
+### the new date helper with default date picker
+
+```ruby
+date_field
+```
 
 #### content_for && content_for?
 
