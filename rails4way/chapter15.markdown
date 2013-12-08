@@ -11,4 +11,17 @@ def update_params
   params.require(:user).permit(name: true, email: true, tags: [])
 end
 
+
+```
+
+
+#### SQL injection
+
+
+```ruby
+class ProductsController < ApplicationController
+  def search
+    @products = Product.where("name LIKE '%#{params[:search_terms]}%'") end
+  end
+
 ```
