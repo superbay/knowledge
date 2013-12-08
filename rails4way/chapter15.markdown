@@ -2,6 +2,21 @@
 
 #### XSRF (Cross-Site Request Forgery)
 
+client side
+
+`= csrf_meta_tags`
+
+server side
+
+```ruby
+class ApplicationController
+# Prevent CSRF attacks by raising an exception.
+# For APIs, you may want to use :null_session instead. 
+  protect_from_forgery with: :exception
+end
+```
+
+
 Cross-Site Request Forgery (usually abbreviated as CSRF or XSRF) is a type of web application vulnerability that allows an attacker to modify application state on behalf of a user that is logged into the application by luring the user to click on a carefully crafted link, visit a page, or even just open an email with embedded images.
 Lets say that an intern at a banking institution implemented account fund transfer functionality as an HTTP GET method, like so:
 
