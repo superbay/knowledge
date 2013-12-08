@@ -25,3 +25,9 @@ class ProductsController < ApplicationController
   end
 
 ```
+
+while input will be 
+
+```ruby
+SELECT * FROM products WHERE name LIKE'%'; DELETE FROM users; %';
+```
