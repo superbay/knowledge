@@ -1,5 +1,30 @@
 ## security
 
+#### XSRF (Cross-Site Request Forgery)
+
+Cross-Site Request Forgery (usually abbreviated as CSRF or XSRF) is a type of web application vulnerability that allows an attacker to modify application state on behalf of a user that is logged into the application by luring the user to click on a carefully crafted link, visit a page, or even just open an email with embedded images.
+Lets say that an intern at a banking institution implemented account fund transfer functionality as an HTTP GET method, like so:
+
+
+` GET/transfers?from_account_id=123&to_account_id=456&amount=1000`
+
+
+Of course everyone, even interns, know you should authenticate your banking transfers.
+Lets say the intern did learn a little bit of Rails security and properly authenticated and authorized the request.
+Now lets say a user logged into his account on the site, and then went to read his email. An attacker then could send him an HTML email with the following image:
+
+
+`<imgsrc="http://banking-domain/transfers?from_account_id=users_account_id&to_account_id=a\ 2 ttacker_account_id&amount=1000">`
+
+
+This image would be opened by victim’s browser, which is authenticated and authorized to make the transfer because the session cookie from the bank is still valid.
+
+
+Fortunately for the bank, this code went through a code review, and the reviewer pointed out this problem to the intern.
+Attempting to fix the problem the code was modified to use POST instead. Are we safe yet? Well, actually, not quite. An attacker still can “lure” the victim to his innocently looking site, on which he has a javascript that will post to the fund transfer URL from within victim’s browser.
+
+
+
 
 #### Model mass-assignment attributes protection
 
