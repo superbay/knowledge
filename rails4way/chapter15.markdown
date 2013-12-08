@@ -30,4 +30,6 @@ while input will be
 
 ```ruby
 SELECT * FROM products WHERE name LIKE'%'; DELETE FROM users; %';
+@products = Product.where('name LIKE ?',"%#{params[:query]}%")
 ```
+
