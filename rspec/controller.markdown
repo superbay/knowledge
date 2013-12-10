@@ -1,5 +1,42 @@
 ## rspec for controller
 
+
+#### format json
+
+```ruby
+describe ApplicationsController do
+  render_views
+  disconnect_sunspot
+
+  let(:application) { Factory.create(:application) }
+
+  subject { application }
+
+  context "JSON" do
+
+    describe "creating a new application" do
+
+      context "when not authorized" do
+        it "should not allow creation of an application" do
+          json = { :format => 'json', :application => { :name => "foo", :description => "bar" } }
+          post :create, json
+          Application.count.should == 0
+          response.status.should eq(403)
+          JSON.parse(response.body)["status"] == "error"
+          JSON.parse(response.body)["message"] =~ /authorized/
+        end 
+
+
+      end 
+
+      context "authorized" do
+      end 
+    end
+  end
+end
+```
+
+
 #### controller mock
 
 ```ruby
