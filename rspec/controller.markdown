@@ -1,4 +1,3 @@
-
 ## rspec for routing
 
 
@@ -12,6 +11,15 @@ describe "routes for Widgets" do
       should route_to(:controller => "widgets", :action => "foo")
   end
 end
+
+
+
+{ :get => "/articles/2012/11/when-to-use-routing-specs" }.
+  should route_to(
+    :controller => "articles",
+    :month => "2012-11",
+    :slug => "when-to-use-routing-specs"
+  )
 
 ```
 
