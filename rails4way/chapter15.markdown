@@ -4,7 +4,10 @@
 
 client side
 
-`= csrf_meta_tags`
+```ruby
+= csrf_meta_tags
+
+```
 
 server side
 
