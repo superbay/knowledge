@@ -6,7 +6,6 @@ client side
 
 ```ruby
 = csrf_meta_tags
-
 ```
 
 server side
