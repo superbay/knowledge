@@ -1,6 +1,25 @@
 ## rspec for routing
 
 
+
+#### rspec for engine routing
+
+```ruby
+
+require "spec_helper"
+
+describe "routes for Widgets" do
+before(:each) { @routes = Project::Engine.routes }
+  it "routes /widgets to the widgets controller" do
+    get("/widgets").
+      should route_to("widgets#index")
+  end
+end
+```
+
+#### normal routing
+
+
 ```ruby
 
 require "spec_helper"
