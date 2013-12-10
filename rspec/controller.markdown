@@ -1,13 +1,12 @@
 
 
 
-
 ## rspec for controller
 
 
 #### basic example
 
-```
+```ruby
 describe TeamsController do
   describe "GET index" do
     it "assigns @teams" do
@@ -40,3 +39,6 @@ get :show, :id => subcategory.id.to_s, :sort => 'title'
 controller.params[:sort].should_not be_nil
 controller.params[:sort].should eql 'title'
 ```
+
+
+
