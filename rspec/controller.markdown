@@ -1,6 +1,13 @@
 
-
 ## rspec for controller
+
+#### controller mock
+
+```ruby
+
+my_mock.should_receive(:msg).twice
+
+```
 
 
 #### basic example
