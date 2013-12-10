@@ -1,4 +1,3 @@
-
 ## rspec for controller
 
 #### controller mock
@@ -6,6 +5,8 @@
 ```ruby
 
 my_mock.should_receive(:msg).twice
+
+my_mock.should_receive(:msg).exactly(n).times
 
 ```
 
