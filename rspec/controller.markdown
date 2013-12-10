@@ -1,6 +1,14 @@
 ## rspec for controller
 
 
+#### mock with parameter
+
+
+```ruby
+my_mock.should_receive(:msg).with(a, an_instance_of(Fixnum), "b")
+```
+
+
 #### format json
 
 ```ruby
