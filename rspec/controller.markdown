@@ -1,4 +1,25 @@
+
+## rspec for routing
+
+
+```ruby
+
+require "spec_helper"
+
+describe "routes for Widgets" do
+  it "routes /widgets/foo to the /foo action" do
+    { :get => "/widgets/foo" }.
+      should route_to(:controller => "widgets", :action => "foo")
+  end
+end
+
+```
+
+
+
 ## rspec for controller
+
+
 
 
 #### mock with parameter
