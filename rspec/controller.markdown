@@ -37,6 +37,24 @@ end
 ```
 
 
+#### format json II
+
+```ruby
+# api/v1/test_controller_spec.rb
+require 'spec_helper.rb'
+describe Api::V1::TestController do
+  render_views
+  context "when request sets accept => application/json" do
+    it "should return successful response" do
+      request.accept = "application/json"
+      get :test
+      response.should be_success
+    end
+  end
+end
+```
+
+
 #### controller mock
 
 ```ruby
