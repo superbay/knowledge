@@ -1,6 +1,5 @@
 
 
-
 ## rspec for controller
 
 
@@ -40,5 +39,7 @@ controller.params[:sort].should_not be_nil
 controller.params[:sort].should eql 'title'
 ```
 
+
+[reference](http://rubydoc.info/gems/rspec-rails/frames)
 
 
