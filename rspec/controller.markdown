@@ -3,6 +3,8 @@
 
 #### mock with parameter
 
+[mock reference](http://old.rspec.info/documentation/mocks/message_expectations.html)
+
 
 ```ruby
 my_mock.should_receive(:msg).with(a, an_instance_of(Fixnum), "b")
