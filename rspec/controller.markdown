@@ -110,6 +110,21 @@ get :show, :id => subcategory.id.to_s, :sort => 'title'
 
 controller.params[:sort].should_not be_nil
 controller.params[:sort].should eql 'title'
+
+
+describe "post_event" do
+
+  it "should respond with 204" do
+    params = {}
+    params['attachment_id'] = @attachment.uid
+    params['software_id'] = @license.id
+    params['event'] = 'some/event'
+
+    post :post_event, params
+
+    response.code.should eq "204"
+  end
+end
 ```
 
 
