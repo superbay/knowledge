@@ -93,7 +93,6 @@ An attack code can be first saved into the database (like, for example, injectin
 
 Another option is to pass the attack code as one of the URL parameters that are directly rendered into the page, then cause a victim to visit such an ‘infected’ URL.
 
-
 In both cases the victim’s browser is exposed to the attack code which will execute in the browser’s context.
 Now that you understand the problem the solution should be obvious, you need to either “escape” or “sanitize” all unsafe HTML content.
 
