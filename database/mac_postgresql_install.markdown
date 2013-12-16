@@ -1,6 +1,17 @@
 ### Brew install postgresql
 
 
+#### brew restart postgresql
+
+```
+brew services restart postgresql
+
+```
+
+
+[offical reference](http://www.postgresql.org/docs/9.3/static/server-start.html)
+
+
 
 Postgresql version: 9.3.2
 
