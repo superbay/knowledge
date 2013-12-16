@@ -15,3 +15,12 @@ File.open("my/file/path", "r").each_line do |line|
   puts line
 end
 ```
+
+
+#### Write file
+
+```ruby
+File.open(path, 'w') do |file|
+  file.puts lines
+end
+```
