@@ -22,3 +22,16 @@ Postgresql version: 9.3.2
 gem pristine pg
 
 ```
+
+
+#### some other
+
+
+```ruby
+psql -U postgres -h localhost#9.2有一个默认的数据库用户就是，当前系统用户。不注意的话就会很讨厌
+grant all privileges on database postgres to postgres;
+alter user livegamer with superuser;
+\du
+alter user livegamer with encrypted password 'livegamer';
+
+```
