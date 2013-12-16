@@ -35,3 +35,26 @@ alter user livegamer with superuser;
 alter user livegamer with encrypted password 'livegamer';
 
 ```
+
+#### 
+
+
+```ruby
+
+brew install postres
+initdb /usr/local/var/postgres
+mkdir -p ~/Library/LaunchAgents
+cp /usr/local/Cellar/postgresql/9.0.4/org.postgresql.postgres.plist ~/Library/LaunchAgents/
+launchctl load -w ~/Library/LaunchAgents/org.postgresql.postgres.plist
+If you need a gem for posgres do:
+env ARCHFLAGS="-arch x86_64" gem install pg
+Install Instrumentation, in my case (postgres version 9.0.4):
+psql -d postgres < /usr/local/Cellar/postgresql/9.0.4/share/postgresql/contrib/adminpack.sql
+At this moment, you installed postgress (it’s only a note). Ok, let’s create a new role:
+psql -d postgres
+With this command, you’ll see all roles created:
+postgres-# \du
+We create a new user called postgres like this way:
+postgres=# CREATE ROLE postgres SUPERUSER CREATEDB CREATEROLE LOGIN;
+And that’s all. If you list all users again you’ll see that a new user has been created.
+```
