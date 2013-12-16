@@ -36,6 +36,24 @@ alter user livegamer with encrypted password 'livegamer';
 
 ```
 
+#### some permit issue
+
+
+```ruby
+
+ps -ef | grep postmaster
+These two files are the -D directory (maybe /usr/local/pgsql/data).
+
+For the postgresql.conf file, uncomment the listen_address and change it to be:
+
+listen_address = '*'
+For the pg_hba.conf add the line:
+
+host all all 0.0.0.0/0 md5
+
+```
+
+
 #### 
 
 
