@@ -16,3 +16,10 @@ RestClient.proxy = 'some.proxy.com'
 
 RestClient.get 'user:password@your.url.com'
 ```
+
+
+
+```ruby
+#updated to nil, if author is ken
+Video.update_all({author_id: nil}, {author_id: 'ken'})
+```
