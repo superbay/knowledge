@@ -28,3 +28,18 @@ Name: <%= user.name %>
   <%= yield %>
 </div>
 ```
+Here's the administrator:
+```ruby
+<div id="administrator">
+  Budget: $<%= user.budget %>
+  Name: <%= user.name %>
+</div>
+
+Here's the editor:
+<div id="editor">
+  Deadline: <%= user.deadline %>
+  Name: <%= user.name %>
+</div>
+```
+
+
