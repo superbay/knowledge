@@ -6,6 +6,30 @@ git config user.email "ke@me.com"
 
 ```
 
+### most common setting
+
+
+```ruby
+alias ll='ls -all'
+alias g='git'
+alias gst='git status'
+alias gs='git push'
+alias gc='git commit'
+alias gca='git commit -a'
+alias ga='git add'
+alias gco='git checkout'
+alias gb='git branch'
+alias gl='git log'
+alias gm='git merge'
+alias gd="git diff"
+alias gr='git remote'
+alias be='bundle exec'
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM
+
+
+```
+
 #### git default editor
 
 ```ruby
