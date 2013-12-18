@@ -8,7 +8,7 @@ curl --noproxy 127.0.0.1 -w %{http_code} -T etc_review40.xml http://127.0.0.1:30
 
 ```bash
 #.curlrc
-proxy = http://proxy.bloomberg.com:80
+proxy = http://proxy.hideyourass.com:80
 insecure
 ```
 
