@@ -151,6 +151,16 @@ PS1='\[\033]0;$MSYSTEM:\w\007\033[32m\]\u@\h\[\033[33m\w$(__git_ps1 " (%s)")\033
 ```
 
 
+#### other git config
+
+```ruby
+git config --global user.name "Tsung"
+git config --global user.email "username@email.com"
+git config --global color.diff auto # git diff 要顯示顏色
+git config --global color.status auto # git status 要顯示顏色
+git config --global color.branch auto
+```
+
 
 
 
