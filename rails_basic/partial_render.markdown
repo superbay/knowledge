@@ -38,7 +38,7 @@ If you pass arguments to “yield” then this will be passed to the block. One 
 <%= render layout: @users do |user| %>
   Title: <%= user.title %>
 <% end %>
-```ruby
+```
 
 
 This will render the layout for each user and yield to the block, passing the user, each time.
