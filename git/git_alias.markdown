@@ -96,6 +96,61 @@ done
 ```
 
 
+#### alias version 2
+
+```ruby
+#Top ten commands
+function t10 {
+	history |
+		awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' |
+		sort -rn |
+		head
+}
+
+# processes
+alias tu="top -o cpu"
+alias tm="top -o vsize"
+
+# Git
+alias gb="git branch"
+alias gba="git branch -a"
+alias gc="git commit -v"
+alias gd="git diff | mate"
+alias gl="git pull"
+alias gp="git push"
+alias gst="git status"
+alias gco='git checkout'
+
+# Ruby
+# Quicker cd gems directory
+alias cg='cd /usr/local/lib/ruby/gems/1.8/gems'
+alias cg19='cd /usr/local/lib/ruby19/gems/1.9.1/gems'
+
+
+# Rails
+alias ss="script/server"
+alias ss19="ruby19 script/server"
+alias sc="script/console"
+alias sc19="script/console --irb=irb19"
+alias sg="script/generate"
+alias sg19="ruby19 script/generate"
+
+alias r="rake"
+alias r19="rake19"
+alias rmig="rake db:migrate"
+alias rmig19="rake19 db:migrate"
+alias rt="ruby -Itest"
+alias rt19="ruby19 -Itest"
+
+alias cs="RAILS_ENV=selenium cucumber -p selenium"
+alias pgrep="ps -ef | grep $1"
+
+source /usr/local/git/contrib/completion/git-completion.bash
+PS1='\[\033]0;$MSYSTEM:\w\007\033[32m\]\u@\h\[\033[33m\w$(__git_ps1 " (%s)")\033[0m\]\n$'
+
+```
+
+
 
 
 
