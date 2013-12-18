@@ -1,4 +1,3 @@
-
 ### About the alias && shortcut
 
 ```ruby
@@ -17,6 +16,19 @@ export VISUAL=vim
 export EDITOR=vim
 ```
 
+
+#### different between .bash_rc .bash_profile in ubuntu and mac
+
+add link [here](#) later
+
+
+#### terminal color
+
+```ruby
+#.bash_profile 
+export CLICOLOR=1
+export LSCOLORS=gxfxaxdxcxegedabagacad
+```
 
 
 
