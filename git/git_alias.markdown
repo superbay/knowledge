@@ -45,6 +45,11 @@ export EDITOR=vim
 
 add link [here](#) later
 
+for ubuntu
+
+
+Here's some nice reading on it. ".bash_profile is executed for login shells, while .bashrc is executed for interactive non-login shells"
+
 
 #### terminal color
 
