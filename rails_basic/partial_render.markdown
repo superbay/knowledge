@@ -172,3 +172,7 @@ def un_rounded_box(title, options = {}, &block)
 end
 ```
 
+[reference1](http://api.rubyonrails.org/classes/ActionView/PartialRenderer.html)
+
+[reference2](http://www.igvita.com/2007/03/15/block-helpers-and-dry-views-in-rails/)
+
