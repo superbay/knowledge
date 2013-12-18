@@ -4,7 +4,7 @@
 ### Render partial with layouts
 
 
-```html
+```erb
 
 <%# app/views/users/index.html.erb &>
 Here's the administrator:
