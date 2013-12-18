@@ -30,6 +30,33 @@ export CLICOLOR=1
 export LSCOLORS=gxfxaxdxcxegedabagacad
 ```
 
+### setup git branch promote
+
+
+### git config
+```ruby
+#~/.gitconfig
+[user]
+  name = Phoenix
+  email = phoenixtoday@gmail.com
+[alias]
+  co = checkout
+  ci = commit -a
+  st = status
+  br = branch
+  oneline = log --pretty=oneline --since='2 days ago'
+  onelog = log -p -1
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  ui = auto
+[core]
+  editor = vim
+```
+
+
+
 
 
 
