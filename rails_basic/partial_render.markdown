@@ -6,7 +6,7 @@
 
 ```ruby
 
-<%# app/views/users/index.html.erb &>
+# app/views/users/index.html.erb
 Here's the administrator:
 <%= render partial: "user", layout: "administrator", locals: { user: administrator } %>
 
