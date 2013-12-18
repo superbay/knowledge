@@ -56,6 +56,46 @@ export LSCOLORS=gxfxaxdxcxegedabagacad
 ```
 
 
+### alias version 1
+
+```ruby
+
+# ~/.aliases
+# Record how much I've used various Git commands:
+#   http://github.com/icefox/git-achievements
+alias git="git-achievements"
+
+# Working with Git
+alias g='git'
+alias gs='git status'
+alias gc='git commit'
+alias gca='git commit -a'
+alias ga='git add'
+alias gco='git checkout'
+alias gb='git branch'
+alias gm='git merge'
+alias gd="git diff"
+
+# Working with Rails
+alias s='script/server'
+alias c='script/console'
+alias m='rake db:migrate'
+alias r='rake'
+
+# Open the current directory in TextMate
+alias e='mate .'
+
+# Serve the contents of the current directory over HTTP
+alias serve="ruby -rwebrick -e\"s = WEBrick::HTTPServer.new(:Port => 3000, :DocumentRoot => Dir.pwd); trap('INT') { s.shutdown }; s.start\""
+Now source the aliases file from your ~/.profile to use them.
+
+# ~/.profile
+for I in aliases; do
+  [ -f ~/.$I ] && . ~/.$I
+done
+```
+
+
 
 
 
