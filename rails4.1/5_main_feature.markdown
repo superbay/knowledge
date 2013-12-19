@@ -9,6 +9,20 @@ Cross-site request forgery (CSRF) protection now covers GET requests with JavaSc
 
 This means any of your tests that hit .js URLs will now fail CSRF protection unless they use xhr. Upgrade your tests to be explicit about expecting XmlHttpRequests. Instead of post :create, format: :js, switch to the explicit xhr :post, :create, format: :js.
 
+### Spring application preloader
+
+Spring is a Rails application preloader. It speeds up development by keeping your application running in the background so you don't need to boot it every time you run a test, rake task or migration.
+
+New Rails 4.1 applications will ship with "springified" binstubs. This means that bin/rails and bin/rake will automatically take advantage of preloaded spring environments.
+
+
+```ruby
+bin/rake routes
+bin/rake test
+bin/rake test test/models
+bin/rake test test/models/user_test.rb
+bin/rails console
+```
 
 ### config/secrets.yml
 
