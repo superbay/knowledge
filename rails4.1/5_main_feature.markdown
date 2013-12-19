@@ -84,3 +84,12 @@ bug.resolved!          # => update! the bug with status set to :resolved
 bug.status             # => a symbol describing the bug's status
 bug.status = :resolved # => set the bug's status to :resolved
 ```
+
+
+### removals
+
+Removed deprecated threadsafe! from Rails Config.
+
+Removed deprecated ActiveRecord::Generators::ActiveModel#update_attributes in favor of ActiveRecord::Generators::ActiveModel#update.
+
+Removed deprecated config.whiny_nils option.
