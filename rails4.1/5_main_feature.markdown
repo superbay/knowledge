@@ -2,6 +2,13 @@
 
 [release notes](http://weblog.rubyonrails.org/2013/12/18/Rails-4-1-beta1)
 
+### CSRF protection from remote <script> tags
+
+Cross-site request forgery (CSRF) protection now covers GET requests with JavaScript responses, too. That prevents a third-party site from referencing your JavaScript URL and attempting to run it to extract sensitive data.
+
+This means any of your tests that hit .js URLs will now fail CSRF protection unless they use xhr. Upgrade your tests to be explicit about expecting XmlHttpRequests. Instead of post :create, format: :js, switch to the explicit xhr :post, :create, format: :js.
+
+
 ### config/secrets.yml
 
 Rails 4.1 will generate a new secrets.yml file in the config folder for new applications. By default, this file contains the application's secret_key_base, but it could also be used to store other secrets such as access keys for external APIs.
