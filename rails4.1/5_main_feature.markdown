@@ -12,8 +12,9 @@ This means any of your tests that hit .js URLs will now fail CSRF protection unl
 
 ### config/secrets.yml
 
+```
 Rails 4.1 will generate a new secrets.yml file in the config folder for new applications. By default, this file contains the application's secret_key_base, but it could also be used to store other secrets such as access keys for external APIs.
-
+```
 
 ### Action Pack Variants
 
