@@ -5,6 +5,8 @@
 
 ### Action Pack Variants
 
+[official guide](http://edgeapi.rubyonrails.org/classes/ActionController/MimeResponds.html#method-i-respond_to)
+
 ```ruby
 class ApplicationController < ActionController::Base
   before_action :detect_device_variant
