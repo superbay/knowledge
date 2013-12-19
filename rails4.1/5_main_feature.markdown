@@ -1,6 +1,10 @@
-## 5 New Features in Rails 4.1 Beta
+## 5 New Major Features in Rails 4.1 Beta
 
 [release notes](http://weblog.rubyonrails.org/2013/12/18/Rails-4-1-beta1)
+
+### config/secrets.yml
+
+Rails 4.1 will generate a new secrets.yml file in the config folder for new applications. By default, this file contains the application's secret_key_base, but it could also be used to store other secrets such as access keys for external APIs.
 
 
 ### Action Pack Variants
