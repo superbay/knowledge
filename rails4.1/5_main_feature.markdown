@@ -158,6 +158,32 @@ class Notifier < ActionMailer::Base
 end
 ```
 
+### Module#concerning
+
+
+A natural, low-ceremony way to separate responsibilities within a class:
+
+```ruby
+class Todo < ActiveRecord::Base
+  concerning :EventTracking do
+    included do
+      has_many :events
+    end
+ 
+    def latest_event
+      ...
+    end
+ 
+    private
+      def some_internal_method
+        ...
+      end
+  end
+end
+```
+
+This example is equivalent to defining a EventTracking module inline, extending it with ActiveSupport::Concern, then mixing it in to the Todo class.
+
 
 ### removals
 
