@@ -85,6 +85,67 @@ bug.status             # => a symbol describing the bug's status
 bug.status = :resolved # => set the bug's status to :resolved
 ```
 
+### Application Message Verifier
+
+```ruby
+class User < ActiveRecord::Base
+  class << self
+    def verifier_for(purpose)
+      @verifiers ||= {}
+      @verifiers.fetch(purpose) do |p|
+        @verifiers[p] = Rails.application.message_verifier("#{self.name}-#{p.to_s}")
+      end
+    end
+
+    def find_by_password_reset_token!(token)
+      # This raises an exception if the message is modified
+      user_id, timestamp = self.class.verifier_for('password-reset').verify(token)
+
+      if timestamp < 1.day.ago
+        # Token expired, raise an exception
+        ...
+      end
+
+      User.find(user_id)
+    end
+  end
+
+  def password_reset_token
+    verifier = self.class.verifier_for('password-reset') # Unique for each type of messages
+    verifier.generate([id, Time.now])
+  end
+end
+
+class PasswordResetsController < ApplicationController
+  def create
+    user = User.find_by_email!(params[:email])
+    Notifier.reset_password(user).deliver
+    redirect_to root_url, notice: "Check your email for password reset instructions!"
+  end
+
+  def show
+    @user = User.find_by_password_reset_token!(params[:token])
+  end
+
+  def update
+    User.find_by_password_reset_token!(params[:token]).update!(
+      password: params[:new_password],
+      password_confirmation: params[:new_password_confirmation]
+    )
+
+    redirect_to root_url, notice: "Your password has been reset!"
+  end
+end
+
+class Notifier < ActionMailer::Base
+  def reset_password(user)
+    @user = user
+    @reset_password_url = password_reset_url(token: @user.password_reset_token)
+    mail(to: user.email, subject: "Resetting your password")
+  end
+end
+```
+
 
 ### removals
 
