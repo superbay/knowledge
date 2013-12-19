@@ -1,4 +1,4 @@
-## 5 New Major Features in Rails 4.1 Beta
+## New Major Features in Rails 4.1 Beta
 
 [release notes](http://weblog.rubyonrails.org/2013/12/18/Rails-4-1-beta1)
 
