@@ -87,6 +87,18 @@ bug.status = :resolved # => set the bug's status to :resolved
 
 ### Application Message Verifier
 
+
+Create a message verifier that can be used to generate and verify signed messages in the application.
+
+
+```ruby
+
+message = Rails.application.message_verifier('salt').generate('my sensible data')
+
+Rails.application.message_verifier('salt').verify(message)
+# => 'my sensible data'
+```
+
 ```ruby
 class User < ActiveRecord::Base
   class << self
