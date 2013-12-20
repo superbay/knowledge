@@ -10,7 +10,11 @@
 <h1>All messages:</h1>
 <%# renders messages/_message.html.erb %>
 <%= render @messages %>
-1) Form submitting via Ajax.
+```
+
+2. Form submitting via Ajax.
+
+```ruby
 <% form_for @project.messages.new, remote: true do |form| %>
   ...
   <%= form.submit "Send message" %>
@@ -19,7 +23,10 @@
 ```
 
 
-2) Server creates the model object.
+3. Server creates the model object.
+
+
+```ruby
 class MessagesController < ActionController::Base
   def create
     @message = @project.messages.create!(message_params)
@@ -30,7 +37,9 @@ class MessagesController < ActionController::Base
     end
   end
 end
-3) Server generates a JavaScript response with the HTML embedded.
+```
+
+4. Server generates a JavaScript response with the HTML embedded.
 <%# renders messages/_message.html.erb %>
 $('#messages').prepend('<%=j render @message %>');
 $('#<%= dom_id @message %>').highlight();
