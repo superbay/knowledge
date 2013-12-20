@@ -3,7 +3,7 @@
 
 #### Complete example
 
-1. First-use of the message template.
+  1. First-use of the message template.
 
 ```ruby
 
@@ -12,7 +12,7 @@
 <%= render @messages %>
 ```
 
-2. Form submitting via Ajax.
+  2. Form submitting via Ajax.
 
 ```ruby
 <% form_for @project.messages.new, remote: true do |form| %>
@@ -23,7 +23,7 @@
 ```
 
 
-3. Server creates the model object.
+  3. Server creates the model object.
 
 
 ```ruby
