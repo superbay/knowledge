@@ -1,0 +1,1 @@
+## Server-generated JavaScript Responses
