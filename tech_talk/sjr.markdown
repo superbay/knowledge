@@ -64,7 +64,7 @@ Benefit #3: Easy-to-follow execution flow
 
 ### solution 
 
-Russian [Doll-caching](http://37signals.com/svn/posts/3112-how-basecamp-next-got-to-be-so-damn-fast-without-using-much-client-side-ui), [Turbolinks](https://github.com/rails/turbolinks), and SJR 
+[Russian Doll-caching](http://37signals.com/svn/posts/3112-how-basecamp-next-got-to-be-so-damn-fast-without-using-much-client-side-ui), [Turbolinks](https://github.com/rails/turbolinks), and SJR 
 
 
 
