@@ -48,7 +48,7 @@ $('#<%= dom_id @message %>').highlight();
 ```
 
 
-### Why not js + json api
+### Why not json + api
 
 Benefit #1: Reuse templates without sacrificing performance
 
@@ -56,6 +56,8 @@ Benefit #1: Reuse templates without sacrificing performance
 Benefit #2: Less computational power needed on the client
 
 Benefit #3: Easy-to-follow execution flow
+
+### When should We use json 
 
 ### solution 
 
