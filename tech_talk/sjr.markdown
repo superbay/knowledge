@@ -1,9 +1,9 @@
 ## SJR
 
 
-#### What's SJR
+### What's SJR
 
-Server-generated JavaScript Responses
+#### Server-generated JavaScript Responses
 
 
   1.First-use of the message template.
