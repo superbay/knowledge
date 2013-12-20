@@ -53,6 +53,37 @@ def create
 end
 ```
 
+example to use it
+
+```ruby
+respond_to :html, :xml
+
+def create
+  @user = User.new(params[:user])
+  flash[:notice] = 'User was successfully created.' if @user.save
+  respond_with(@user)
+end
+```
+
+is equivalent, in the absence of create.html.erb, to -
+
+
+```ruby
+def create
+  @user = User.new(params[:user])
+  respond_to do |format|
+    if @user.save
+      flash[:notice] = 'User was successfully created.'
+      format.html { redirect_to(@user) }
+      format.xml { render xml: @user }
+    else
+      format.html { render action: "new" }
+      format.xml { render xml: @user }
+    end
+  end
+end
+```
+
   4.Server generates a JavaScript response with the HTML embedded.
 
 ```ruby  
