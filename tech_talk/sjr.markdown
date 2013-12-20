@@ -67,5 +67,6 @@ Russian [Doll-caching](http://37signals.com/svn/posts/3112-how-basecamp-next-got
 
 ### something more
 
+[csrf](../rails4way/chapter15.markdown)
 
 [Rails 4.1 Beta](../rails4.1/major_features.markdown)
