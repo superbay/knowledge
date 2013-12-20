@@ -1,7 +1,10 @@
-## Server-generated JavaScript Responses
+## SJR
 
 
-#### Complete example
+#### What's SJR
+
+Server-generated JavaScript Responses
+
 
   1.First-use of the message template.
 
