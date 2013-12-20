@@ -48,7 +48,7 @@ $('#<%= dom_id @message %>').highlight();
 ```
 
 
-### Be
+### Why not js + json api
 
 Benefit #1: Reuse templates without sacrificing performance
 
