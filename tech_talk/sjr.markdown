@@ -84,6 +84,8 @@ def create
 end
 ```
 
+[refrence](http://edgeapi.rubyonrails.org/classes/ActionController/MimeResponds.html#method-i-respond_to)
+
   4.Server generates a JavaScript response with the HTML embedded.
 
 ```ruby  
