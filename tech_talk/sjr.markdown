@@ -46,3 +46,13 @@ end
 $('#messages').prepend('<%=j render @message %>');
 $('#<%= dom_id @message %>').highlight();
 ```
+
+
+### Be
+
+Benefit #1: Reuse templates without sacrificing performance
+
+
+Benefit #2: Less computational power needed on the client
+
+Benefit #3: Easy-to-follow execution flow
