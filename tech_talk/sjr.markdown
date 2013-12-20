@@ -39,7 +39,10 @@ class MessagesController < ActionController::Base
 end
 ```
 
-4. Server generates a JavaScript response with the HTML embedded.
+  4.Server generates a JavaScript response with the HTML embedded.
+
+```ruby  
 <%# renders messages/_message.html.erb %>
 $('#messages').prepend('<%=j render @message %>');
 $('#<%= dom_id @message %>').highlight();
+```
