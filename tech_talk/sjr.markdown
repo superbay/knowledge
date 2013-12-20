@@ -42,6 +42,17 @@ class MessagesController < ActionController::Base
 end
 ```
 
+something not related
+
+```ruby
+def create
+  @project = Project.find(params[:project_id])
+  @task = @project.comments.build(params[:task])
+  flash[:notice] = 'Task was successfully created.' if @task.save
+  respond_with(@project, @task)
+end
+```
+
   4.Server generates a JavaScript response with the HTML embedded.
 
 ```ruby  
