@@ -8,3 +8,9 @@ twitter app need comsumer key and consumer secret
 ```ruby
 config.omniauth :twitter, ENV["TWITTER_CONSUMER_KEY"], ENV["TWITTER_CONSUMER_SECRET"]
 ```
+
+2.   the twitter app call back 
+
+just need to be the whole site
+
+
