@@ -14,3 +14,11 @@ config.omniauth :twitter, ENV["TWITTER_CONSUMER_KEY"], ENV["TWITTER_CONSUMER_SEC
 just need to be the whole site
 
 
+3 should redirect
+
+    if user.persisted?
+      sign_in_and_redirect user, notice: "Signed in!"
+    else
+      redirect_to new_user_registration_url
+    end
+
