@@ -1,7 +1,7 @@
 ### tips
 
 
-1.   the key and token
+1 the key and token
 
 twitter app need comsumer key and consumer secret 
 
@@ -9,7 +9,7 @@ twitter app need comsumer key and consumer secret
 config.omniauth :twitter, ENV["TWITTER_CONSUMER_KEY"], ENV["TWITTER_CONSUMER_SECRET"]
 ```
 
-2.   the twitter app call back 
+2 the twitter app call back 
 
 just need to be the whole site
 
