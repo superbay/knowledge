@@ -14,6 +14,11 @@ app.project_path(Project.first)
 #=> "/projects/130349783-with-attachments"
 ```
 
+```ruby
+app.user_omniauth_authorize_path(:twitter)
+# => "/users/auth/twitter"
+```
+
 #### trigger a request
 
 ```ruby
