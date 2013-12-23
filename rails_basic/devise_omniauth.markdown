@@ -48,3 +48,22 @@ could be the problem of sandbox, try to recreate the app at facebook to disable 
 try to set your webapp url if not. or just confirm it
 
 
+### How to try your facebook open graph api
+
+find your official code sample: 
+
+```ruby
+https://graph.facebook.com/me/lkvdemo:review?
+access_token=ACCESS_TOKEN&
+method=POST&
+movie=http://samples.ogp.me/453907197960619
+```
+
+parse it to local
+
+```ruby
+
+u = User.last
+u.facebook.put_connections("me", "lkvdemo:review", movie: "http://samples.ogp.me/453907197960619")
+
+```
