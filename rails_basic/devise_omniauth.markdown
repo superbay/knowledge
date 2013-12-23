@@ -21,4 +21,15 @@ just need to be the whole site
     else
       redirect_to new_user_registration_url
     end
+    
+    
+    
+### facebook omniauth authentication
+
+```
+This app is in sandbox mode.  Edit the app configuration at http://developers.facebook.com/apps to make the app publicly visible.
+```
+
+could be the problem of sandbox, try to recreate the app at facebook to disable sanbox
+
 
