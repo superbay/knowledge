@@ -33,3 +33,18 @@ This app is in sandbox mode.  Edit the app configuration at http://developers.fa
 could be the problem of sandbox, try to recreate the app at facebook to disable sanbox
 
 
+### another error while integration
+
+```
+{
+   "error": {
+      "message": "Invalid redirect_uri: Given URL is not allowed by the Application configuration.",
+      "type": "OAuthException",
+      "code": 191
+   }
+}
+```
+
+try to set your webapp url if not. or just confirm it
+
+
