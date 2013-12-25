@@ -3,6 +3,13 @@
 
 ### What's SJR
 
+Main point render
+
+`create.js.erb`
+
+### How to render coffee and still using erb
+
+
 #### Server-generated JavaScript Responses
 
 
