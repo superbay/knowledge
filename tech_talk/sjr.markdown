@@ -13,6 +13,9 @@ Main point render
 #### Server-generated JavaScript Responses
 
 
+render `create.js.coffee.erb`
+
+
   1.First-use of the message template.
 
 ```ruby
