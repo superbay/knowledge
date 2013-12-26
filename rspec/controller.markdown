@@ -1,6 +1,12 @@
 ## rspec for routing
 
 
+### with params 
+
+```ruby
+get :show, :id => subcategory.id.to_s, :sort => 'title'
+```
+
 
 #### rspec for engine routing
 
