@@ -1,6 +1,17 @@
 ## rspec for routing
 
 
+### action controller cache and clear
+
+
+```ruby
+caches_action :index, :cache_path => Proc.new { |c| c.params.delete_if { |k,v| k == 'commit'} }, :expires_in => 300
+
+```
+
+this may bring trouble while running rspec
+
+
 ### with params 
 
 ```ruby
