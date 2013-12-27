@@ -1,3 +1,4 @@
+### OmniAuth::Strategies::OAuth2::CallbackError
 
 ```ruby
 Started GET "/auth/facebook/callback" for 127.0.0.1 at 2012-11-16 15:16:03 -0600
