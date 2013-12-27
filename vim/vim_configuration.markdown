@@ -12,3 +12,12 @@ set vim soft tab to be 2 spaces
 ```ruby
 set tabstop=2 shiftwidth=2 expandtab
 ```
+
+
+
+```ruby
+#.rvmrc.after
+colorscheme vividchalk
+set wrap
+set paste
+```
