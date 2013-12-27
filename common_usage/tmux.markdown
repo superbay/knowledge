@@ -25,7 +25,9 @@ more usage
 ^b s  #list sessions
 
 ^b c  #create another shell/window
-
+^d    #exit current shell
+^b "  #split penal horizontally
+^b %  #split penal vertically
 
 ```
 
