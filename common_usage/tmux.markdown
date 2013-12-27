@@ -12,5 +12,15 @@ Ctrl + b && %  #split
 
 ```
 
+more usage
+
+
+```ruby
+^b , <newname> # rename current session
+^b w  #list windows
+
+
+```
+
 
 
