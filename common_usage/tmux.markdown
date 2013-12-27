@@ -26,8 +26,11 @@ more usage
 
 ^b c  #create another shell/window
 ^d    #exit current shell
-^b "  #split penal horizontally
-^b %  #split penal vertically
+^b "  #split panel horizontally
+^b %  #split panel vertically
+^b o  #switch to another panel
+^b x || ^d #kill the current panel
+
 
 ```
 
