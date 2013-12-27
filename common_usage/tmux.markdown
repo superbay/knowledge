@@ -30,6 +30,12 @@ more usage
 ^b %  #split panel vertically
 ^b o  #switch to another panel
 ^b x || ^d #kill the current panel
+^b !  #kill other panel except the current one
+
+^b ^o #swap location of the panel
+^b t  #show time
+^b q  #show numeric values of panel
+
 
 
 ```
