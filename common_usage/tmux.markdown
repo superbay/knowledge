@@ -18,7 +18,10 @@ more usage
 ```ruby
 ^b , <newname> # rename current session
 ^b w  #list windows
-
+^b #  #goto windows #
+^b l  #goto last window
+^b n  #goto next window
+^b p  #goto previous window
 
 ```
 
