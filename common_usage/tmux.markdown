@@ -25,7 +25,10 @@ more usage
 ^b s  #list sessions
 
 ^b c  #create another shell/window
+^b &  #kill current window/session
 ^d    #exit current shell
+
+
 ^b "  #split panel horizontally
 ^b %  #split panel vertically
 ^b o  #switch to another panel
