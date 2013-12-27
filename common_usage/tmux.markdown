@@ -22,6 +22,10 @@ more usage
 ^b l  #goto last window
 ^b n  #goto next window
 ^b p  #goto previous window
+^b s  #list sessions
+
+^b c  #create another shell/window
+
 
 ```
 
