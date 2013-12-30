@@ -55,6 +55,25 @@ could become:
 </select>
 ```
 
+```ruby
+<%= f.select(:manufacturer_id, Manufacturer.find(:all).collect {|u| [u.name, u.id]}, :prompt => 'Select') %>
+```
+
+could be changed to this:
+
+```ruby
+# in app/helpers/manufacturer_helper.rb
+def manufacturers_for_select
+  Manufacturer.all.collect { |m| [m.name, m.id] }
+end
+
+# in the view
+<%= f.select(:manufacturer_id, manufacturers_for_select, :prompt => 'Select') %>
+#I would look into collection_select though:
+
+<%= f.collection_select(:manufacturer_id, Manufacturer.all, :id, :name, :prompt => 'Select') %>
+
+```
 
 ```html
 
