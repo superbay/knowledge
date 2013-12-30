@@ -3,6 +3,7 @@
 
 ```html
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.9.0.js"></script>
 ```
 [libraries list](https://developers.google.com/speed/libraries/devguide#jquery)
 
