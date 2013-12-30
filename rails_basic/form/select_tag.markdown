@@ -41,6 +41,20 @@ select_tag "credit_card", options_for_select([ "VISA", "MasterCard" ], "MasterCa
 
 ```
 
+### select
+
+```ruby
+select("post", "person_id", Person.all.collect {|p| [ p.name, p.id ] }, {include_blank: 'None'})
+could become:
+
+<select name="post[person_id]">
+  <option value="">None</option>
+  <option value="1">David</option>
+  <option value="2" selected="selected">Sam</option>
+  <option value="3">Tobias</option>
+</select>
+```
+
 
 ```html
 
