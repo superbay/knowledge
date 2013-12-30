@@ -75,6 +75,8 @@ end
 
 ```
 
+[select api reference](http://api.rubyonrails.org/classes/ActionView/Helpers/FormOptionsHelper.html)
+
 ```html
 
 <input type="hidden" name="Language" value="English">
