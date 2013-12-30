@@ -2,7 +2,7 @@
 
 
 
-[other select related]()
+[other select related](../rails_basic/form/select_tag.markdown)
 
 
 
