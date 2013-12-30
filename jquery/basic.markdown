@@ -4,7 +4,7 @@
 ```html
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
-//last version support IE8.0
+<!-- last version support IE8.0 -->
 <script src="http://code.jquery.com/jquery-1.9.0.js"></script>
 
 <script src="http://code.jquery.com/jquery-2.0.3.js"></script>
