@@ -7,7 +7,11 @@
 [libraries list](https://developers.google.com/speed/libraries/devguide#jquery)
 
 
+#### button_to with additonal parameter
 
+```ruby
+$('form').append('<input type="button" value="test" />');
+```
 
 
 ### ready
