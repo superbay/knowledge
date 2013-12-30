@@ -1,6 +1,11 @@
 ## About Helper
 
 
+
+[other select related]()
+
+
+
 #### select && options
 
 ```ruby
@@ -18,6 +23,8 @@ options_for_select({ "Basic" => "20", "Plus" => "40" }, price.to_s)
 #=><optionvalue="20">Basic</option>
 # <option value="40" selected="selected">Plus</option>
 ```
+
+
 
 
 In case you’re wondering, the authenticity_token hidden field with gibberish up near the top of the form has to do with protection against malicious Cross-Site Request Forgery (CSRF) attacks.
