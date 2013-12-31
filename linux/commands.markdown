@@ -11,7 +11,7 @@ tee [OPTION]... [FILE]...
 --version	Display the version.
 ```
 
-Examples
+#### Examples
 
 ```
 ls *.txt | wc -l | tee /dev/tty count.txt
@@ -22,7 +22,7 @@ In the above example, the ls command would list all .txt files in the current di
 Note: Because the above example did not take advantage of the -a (append option) if the count.txt file already existed it would have been overwritten.
 
 
-Example 2: Write the output to two commands
+#### Example 2: Write the output to two commands
 
 You can also use tee command to store the output of a command to a file and redirect the same output as an input to another command.
 
