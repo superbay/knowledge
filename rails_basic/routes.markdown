@@ -9,3 +9,28 @@
     end
   end
 ```
+
+
+The url generate would be
+
+
+```ruby
+<%= link_to "Destroy", [:delete, product], method: :delete, data: {confirm: "Are you sure?"} %>
+#or
+delete_product_path
+
+```
+
+the rake routes
+
+```ruby
+delete_product GET    /products/:id/delete(.:format) products#delete                                                                                                  
+               DELETE /products/:id/delete(.:format) products#destroy                                                                                                 
+      products GET    /products(.:format)            products#index                                                                                                   
+               POST   /products(.:format)            products#create                                                                                                  
+   new_product GET    /products/new(.:format)        products#new                                                                                                     
+  edit_product GET    /products/:id/edit(.:format)   products#edit                                                                                                    
+       product GET    /products/:id(.:format)        products#show                                                                                                    
+               PUT    /products/:id(.:format)        products#update                                                                                                  
+               DELETE /products/:id(.:format)        products#destroy   
+```
