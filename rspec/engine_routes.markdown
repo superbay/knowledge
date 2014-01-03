@@ -1,6 +1,18 @@
 ### how to test engine routes
 
 
+popular solution:
+
+more related:
+
+```ruby
+# spec_helper.rb
+RSpec.configure do |config|
+  config.include MyEngine::Engine.routes.url_helpers
+end
+```
+
+
 after rspec 2.14
 
 ```ruby
