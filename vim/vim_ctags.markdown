@@ -45,6 +45,12 @@ which ctags
 #/usr/local/bin
 ```
 
+ubuntu install as
+
+```ruby
+sudo aptitude install exuberant-ctags  
+```
+
 or
 
 
