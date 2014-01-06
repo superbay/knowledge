@@ -74,6 +74,12 @@ private
 end
 ```
 
+view using ssl
+
+```
+<%= link_to "Log In", login_url(protocol: "https") %>
+```
+
 ### Other ssl certification related
 
 ```
