@@ -22,3 +22,25 @@ def create
 end
 
 ```
+
+While destroy the seesion
+
+```ruby
+def destroy
+  session[:user_id] = nil
+  cookies.delete[:secure_user_id]
+  redirect_to login_url
+end
+```
+
+While check the setting
+
+```ruby
+
+def current_user
+  if !request.ssl? || cookies.signed[:secure_user_id] == "secure#{session[:user_id]}"
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
+end
+
+```
