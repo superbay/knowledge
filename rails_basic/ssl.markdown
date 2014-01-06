@@ -73,3 +73,14 @@ private
   end  
 end
 ```
+
+### Other ssl certification related
+
+```
+openssl req -new -nodes -keyout server.key -out server.csr
+
+openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
+```
+
+20$ certification
+
