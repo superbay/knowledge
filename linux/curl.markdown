@@ -36,4 +36,9 @@ export PATH=$PATH:/local/usr/ruby192/bin
 ```
 sudo tcpdump -i lo0 -A
 
+curl http://todo.dev/
+curl http://todo.dev/ -H 'Cookie:'
+
 ```
+
+
