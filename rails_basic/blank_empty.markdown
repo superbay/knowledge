@@ -6,7 +6,7 @@
 1.9.2p320 :001 > dd = nil
  => nil
 1.9.2p320 :002 > dd.empty?
-NoMethodError: undefined method `empty?' for nil:NilClass
+NoMethodError: undefined method 'empty?' for nil:NilClass
 
 1.9.2p320 :003 > dd.blank?
  => true
