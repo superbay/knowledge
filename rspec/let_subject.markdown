@@ -1,4 +1,6 @@
-### let
+### subject
+
+If you have several tests related to the same subject use subject{} to DRY them up. 
 
 
 ```ruby
