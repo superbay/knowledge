@@ -11,3 +11,8 @@ it "carries a sword" do
 end
 
 ```
+
+
+### Use let and let!
+
+When you have to assign a variable instead of using a before block to create an instance variable, use let. Using let the variable lazy loads only when it is used the first time in the test and get cached until that specific test is finished. A really good and deep description of what let can be found in this [stackoverflow answer](http://stackoverflow.com/questions/5359558/when-to-use-rspec-let/5359979#5359979). 
