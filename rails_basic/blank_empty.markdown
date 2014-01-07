@@ -26,8 +26,16 @@ NoMethodError: undefined method 'empty?' for nil:NilClass
  
 1.9.2p320 :009 > ''.present?
  => false
+
 1.9.2p320 :010 > ''.blank?
  => true
+
+1.9.2p320 :011 > ''.nil?
+ => false
+
+1.9.2p320 :012 > ''.empty?
+ => true
+ 
 ```
 
 empty? only check the [] array. 
