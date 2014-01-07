@@ -23,3 +23,7 @@ NoMethodError: undefined method 'empty?' for nil:NilClass
 1.9.2p320 :008 > dd.present?
  => false
 ```
+
+empty? only check the [] array. 
+
+blank? and present? can check [] array, nil, and ''
