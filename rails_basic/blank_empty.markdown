@@ -10,8 +10,16 @@ NoMethodError: undefined method 'empty?' for nil:NilClass
 
 1.9.2p320 :003 > dd.blank?
  => true
+ 
+1.9.2p320 :006 > dd.present?
+ => false
+
 1.9.2p320 :004 > dd = []
  => []
+
 1.9.2p320 :005 > dd.blank?
  => true
+
+1.9.2p320 :008 > dd.present?
+ => false
 ```
