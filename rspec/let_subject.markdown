@@ -51,3 +51,15 @@ end
 
 Here an example of what let actually is. 
 
+```ruby
+
+# this:
+let(:foo) { Foo.new }
+
+# is very nearly equivalent to this:
+def foo
+  @foo ||= Foo.new
+end
+
+```
+
