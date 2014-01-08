@@ -48,4 +48,4 @@ Observe:
  => nil
 ```
 
-[dynamic call a hash](meta_program.markdown)
+[dynamic call a hash](../ruby_baisc/meta_program.markdown)
