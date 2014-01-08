@@ -129,6 +129,14 @@ class ExampleMigration < ActiveRecord::Migration
   end
 end
 ```
+
+
+### change attribute to default 
+
+```ruby
+change_column :profiles, :show_attribute, :boolean, default: true
+add_column :profiles, :show_attribute, :boolean, default: true
+```
   
 
 
