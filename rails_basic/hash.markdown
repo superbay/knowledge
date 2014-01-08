@@ -47,3 +47,5 @@ Observe:
 > h.try(:[], :a)
  => nil
 ```
+
+[dynamic call a hash](./meta_program.markdown)
