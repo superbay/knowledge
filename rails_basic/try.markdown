@@ -43,4 +43,19 @@ NoMethodError: undefined method `something' for nil:NilClass
  => nil 
 ```
 
+try! will behavior like rails3
+
+```ruby
+2.0.0p353 :002 > Version.create(item_type: 'Laptop', item_id: 1, event: 'nothing', object: 'what')                                                                  
+   (0.2ms)  begin transaction                                                                                                                                       
+  SQL (5.7ms)  INSERT INTO "versions" ("created_at", "event", "item_id", "item_type", "object") VALUES (?, ?, ?, ?, ?)  [["created_at", Wed, 08 Jan 2014 16:41:31 UT
+C +00:00], ["event", "nothing"], ["item_id", 1], ["item_type", "Laptop"], ["object", "what"]]                                                                       
+   (40.5ms)  commit transaction                                                                                                                                     
+ => #<Version id: 1, item_type: "Laptop", item_id: 1, event: "nothing", whodunnit: nil, object: "what", created_at: "2014-01-08 16:41:31">                          
+2.0.0p353 :003 > Version.first.try!(:something)                                                                                                                     
+  Version Load (0.4ms)  SELECT "versions".* FROM "versions" ORDER BY "versions"."id" ASC LIMIT 1                                                                    
+NoMethodError: undefined method `something' for #<Version:0x000000038bc9c0>  
+```
+
+
 [stackoverflow reference](http://stackoverflow.com/questions/7426808/rails-try-method-throwing-nomethoderror)
