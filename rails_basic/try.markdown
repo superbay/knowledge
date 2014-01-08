@@ -14,3 +14,31 @@ NoMethodError: undefined method `abc' for #<User:0x007fe14495c018>
 ```
 
 So, Try only handle the case which is nil
+
+
+### Rails 4 the try behavior changed
+
+
+```ruby
+Loading development environment (Rails 4.0.0)                                                                                                                       
+2.0.0p353 :001 > Version                                                                                                                                            
+ => Version(id: integer, item_type: string, item_id: integer, event: string, whodunnit: string, object: text, created_at: datetime)                                 
+2.0.0p353 :002 > Version.first                                                                                                                                      
+  Version Load (0.5ms)  SELECT "versions".* FROM "versions" ORDER BY "versions"."id" ASC LIMIT 1                                                                    
+ => nil                                                                                                                                                             
+2.0.0p353 :003 > Version.first.try(:something)                                                                                                                      
+  Version Load (0.4ms)  SELECT "versions".* FROM "versions" ORDER BY "versions"."id" ASC LIMIT 1                                                                    
+ => nil                                                                                                                                                             
+2.0.0p353 :004 > Version.first.something                                                                                                                            
+  Version Load (0.4ms)  SELECT "versions".* FROM "versions" ORDER BY "versions"."id" ASC LIMIT 1                                                                    
+NoMethodError: undefined method `something' for nil:NilClass                                                                                                        
+        from (irb):4                                                                                                                                                
+        from /home/action/.rvm/gems/ruby-2.0.0-p353@railscasts/gems/railties-4.0.0/lib/rails/commands/console.rb:90:in `start'                                      
+        from /home/action/.rvm/gems/ruby-2.0.0-p353@railscasts/gems/railties-4.0.0/lib/rails/commands/console.rb:9:in `start'                                       
+        from /home/action/.rvm/gems/ruby-2.0.0-p353@railscasts/gems/railties-4.0.0/lib/rails/commands.rb:64:in `<top (required)>'                                   
+        from script/rails:6:in `require'                                                                                                                            
+        from script/rails:6:in `<main>'                                                                                                                             
+2.0.0p353 :005 > Version.first.try!(:something)                                                                                                                     
+  Version Load (0.4ms)  SELECT "versions".* FROM "versions" ORDER BY "versions"."id" ASC LIMIT 1                                                                    
+ => nil 
+```
