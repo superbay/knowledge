@@ -42,3 +42,5 @@ NoMethodError: undefined method `something' for nil:NilClass
   Version Load (0.4ms)  SELECT "versions".* FROM "versions" ORDER BY "versions"."id" ASC LIMIT 1                                                                    
  => nil 
 ```
+
+[stackoverflow reference](http://stackoverflow.com/questions/7426808/rails-try-method-throwing-nomethoderror)
