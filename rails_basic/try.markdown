@@ -12,3 +12,5 @@ First, Try is rails method, not ruby method
 NoMethodError: undefined method `abc' for #<User:0x007fe14495c018>
 
 ```
+
+So, Try only handle the case which is nil
