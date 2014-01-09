@@ -20,6 +20,7 @@ alias ga='git add'
 alias gco='git checkout'
 alias gb='git branch'
 alias gl='git log'
+alias gg='git grep'
 alias gm='git merge'
 alias gd="git diff"
 alias gr='git remote'
