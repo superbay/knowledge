@@ -5,8 +5,9 @@ A less useful alternative to using Foreman’s .env file is to set these values 
 
 ```ruby
 #~/.bashrc
-export S3_KEY=mykey
-export S3_SECRET=mysecret
+export TWITTER_KEY=mykey
+export TWITTER_SECRET=mysecret
+
 
 ```
 
