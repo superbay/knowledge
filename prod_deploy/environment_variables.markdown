@@ -26,5 +26,7 @@ for heroku setting:
 heroku config:set SECRET_KEY_BASE=value
 ```
 
+[heroku reference](https://devcenter.heroku.com/articles/config-vars)
+
 
 
