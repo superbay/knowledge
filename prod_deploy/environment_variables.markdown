@@ -20,5 +20,11 @@ Rails.application.config.middleware.use OmniAuth::Builder do
 end
 ```
 
+for heroku setting:
+
+```ruby
+heroku config:set SECRET_KEY_BASE=value
+```
+
 
 
