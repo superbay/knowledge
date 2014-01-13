@@ -58,33 +58,47 @@ expect(actual).to be_within(delta).of(expected)
 
 ```
 expect(actual).to match(/expression/)
-#Note: The new expect syntax no longer supports =~ matcher.
 ```
+
+Note: The new expect syntax no longer supports =~ matcher.
 
 ### Types/classes
 
+```
 expect(actual).to be_an_instance_of(expected)
 expect(actual).to be_a_kind_of(expected)
-Truthiness
+```
 
+### Truthiness
+
+```
 expect(actual).to be_true  # passes if actual is truthy (not nil or false)
 expect(actual).to be_false # passes if actual is falsy (nil or false)
 expect(actual).to be_nil   # passes if actual is nil
-Expecting errors
+```
 
+### Expecting errors
+
+```
 expect { ... }.to raise_error
 expect { ... }.to raise_error(ErrorClass)
 expect { ... }.to raise_error("message")
 expect { ... }.to raise_error(ErrorClass, "message")
-Expecting throws
+```
 
+### Expecting throws
+
+```
 expect { ... }.to throw_symbol
 expect { ... }.to throw_symbol(:symbol)
 expect { ... }.to throw_symbol(:symbol, 'value')
-Yielding
+``` 
 
+### Yielding
+
+```ruby
 expect { |b| 5.tap(&b) }.to yield_control # passes regardless of yielded args
-
+```
 expect { |b| yield_if_true(true, &b) }.to yield_with_no_args # passes only if no args are yielded
 
 expect { |b| 5.tap(&b) }.to yield_with_args(5)
