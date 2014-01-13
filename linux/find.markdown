@@ -37,3 +37,11 @@ sed -i "" -e 's/^[[:space:]]\{11\}//g' menu1a.sh
 #Makes sense.
 
 ```
+
+
+### 
+
+```ruby
+#find and delete .svn
+find . -type d -name ".svn"|xargs rm -rf
+```
