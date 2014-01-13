@@ -15,3 +15,12 @@ content_tag("select", options, multiple: true)
  # => <div class="strong">Hello world!</div>
  
 ```
+
+
+```ruby
+content_tag(:li, nil, :class => 'someClass') {
+  arr.reduce('') { |c, x|
+    c << content_tag(:ul, x)
+  }.html_safe
+}
+```
