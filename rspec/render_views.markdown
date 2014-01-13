@@ -26,6 +26,33 @@ end
 
 so render_views means you do want to test view in your controller
 
+
+### render for view test
+
+```ruby
+
+view.should render_template
+
+```
+
+Rails changed the way it renders partials, so to set an expectation that a partial gets rendered, you need
+
+```ruby
+render
+view.should render_template(:partial => "widget/_row")
+``` 
+
+### Stub_template
+
+Introduced in rspec-rails-2.2, simulates the presence of view templates on the
+file system. This supports isolation from partials rendered by the vew template
+that is the subject of a view example:
+
+```ruby
+stub_template "widgets/_widget.html.erb" => "This Content"
+
+```
+
 ```ruby
 require "spec_helper"
 
