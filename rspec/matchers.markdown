@@ -39,16 +39,22 @@ Note: The new expect syntax no longer supports == matcher.
 
 ### Identity
 
+```ruby
 expect(actual).to be(expected)    # passes if actual.equal?(expected)
 expect(actual).to equal(expected) # passes if actual.equal?(expected)
-Comparisons
+```
 
+### Comparisons
+
+```
 expect(actual).to be >  expected
 expect(actual).to be >= expected
 expect(actual).to be <= expected
 expect(actual).to be <  expected
 expect(actual).to be_within(delta).of(expected)
-Regular expressions
+```
+
+### Regular expressions
 
 expect(actual).to match(/expression/)
 Note: The new expect syntax no longer supports =~ matcher.
