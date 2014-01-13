@@ -24,3 +24,24 @@ content_tag(:li, nil, :class => 'someClass') {
   }.html_safe
 }
 ```
+
+```ruby
+arr = ['a','b','c']
+content_tag :div do 
+  arr.collect { |letter| content_tag(:scan, letter) 
+end
+
+arr = ["a", "b", "c"]
+content_tag(:ul, :class => 'a class') do
+  arr.each do |item|
+  concat content_tag(:li, item)
+end
+
+#=> <div>
+#      <scan>a</scan>
+#      <scan>b</scan>
+#      <scan>c</scan>
+#   </div>
+
+
+```
