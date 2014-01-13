@@ -56,10 +56,12 @@ expect(actual).to be_within(delta).of(expected)
 
 ### Regular expressions
 
+```
 expect(actual).to match(/expression/)
-Note: The new expect syntax no longer supports =~ matcher.
+#Note: The new expect syntax no longer supports =~ matcher.
+```
 
-Types/classes
+### Types/classes
 
 expect(actual).to be_an_instance_of(expected)
 expect(actual).to be_a_kind_of(expected)
