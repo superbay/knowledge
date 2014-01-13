@@ -23,3 +23,20 @@ describe WidgetsController do
   end
 end
 ```
+
+so render_views means you do want to test view in your controller
+
+```ruby
+require "spec_helper"
+
+describe WidgetsController do
+  render_views
+
+  describe "GET index" do
+    it "says 'Listing widgets'" do
+      get :index
+      expect(response.body).to match /Listing widgets/m
+    end
+  end
+end
+```
