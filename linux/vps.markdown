@@ -85,3 +85,10 @@ Realistically, there are also other groups your new user should be a member of. 
 
 adm sudo lpadmin sambashare
 Because your system configuration may vary, I suggest taking a look at the output of groups <username> to see what groups are normally in use.
+
+
+### how big 
+
+```
+du -sh `ls .` 
+```
