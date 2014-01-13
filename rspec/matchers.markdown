@@ -2,6 +2,7 @@
 
 Here's an example using rspec-core:
 
+```ruby
 describe Order do
   it "sums the prices of the items in its line items" do
     order = Order.new
@@ -15,16 +16,25 @@ describe Order do
     expect(order.total).to eq(Money.new(5.55, :USD))
   end
 end
+```
+
 The describe and it methods come from rspec-core. The Order, LineItem, Item and Money classes would be from your code. The last line of the example expresses an expected outcome. If order.total == Money.new(5.55, :USD), then the example passes. If not, it fails with a message like:
 
+```
 expected: #<Money @value=5.55 @currency=:USD>
      got: #<Money @value=1.11 @currency=:USD>
+     
+```
+
 ## Built-in matchers
 
 ### Equivalence
 
+```ruby
 expect(actual).to eq(expected)  # passes if actual == expected
 expect(actual).to eql(expected) # passes if actual.eql?(expected)
+```
+
 Note: The new expect syntax no longer supports == matcher.
 
 ### Identity
