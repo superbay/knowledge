@@ -92,3 +92,9 @@ Because your system configuration may vary, I suggest taking a look at the outpu
 ```
 du -sh `ls .` 
 ```
+
+### kill
+
+```
+ps ax |grep master | awk '{print $1}' |xargs kill -9  
+```
