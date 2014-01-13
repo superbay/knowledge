@@ -40,3 +40,55 @@ describe WidgetsController do
   end
 end
 ```
+
+
+
+```ruby
+
+require "spec_helper"
+
+describe WidgetsController do
+  context "with render_views" do
+    render_views
+
+    describe "GET index" do
+      it "renders the actual template" do
+        get :index
+        expect(response.body).to match /Listing widgets/m
+      end
+    end
+
+    context "with render_views(false) nested in a group with render_views" do
+      render_views false
+
+      describe "GET index" do
+        it "renders the RSpec generated template" do
+          get :index
+          expect(response.body).to eq("")
+        end
+      end
+    end
+  end
+
+  context "without render_views" do
+    describe "GET index" do
+      it "renders the RSpec generated template" do
+        get :index
+        expect(response.body).to eq("")
+      end
+    end
+  end
+
+  context "with render_views again" do
+    render_views
+
+    describe "GET index" do
+      it "renders the actual template" do
+        get :index
+        expect(response.body).to match /Listing widgets/m
+      end
+    end
+  end
+end
+
+```
