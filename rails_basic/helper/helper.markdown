@@ -45,3 +45,54 @@ end
 
 
 ```
+
+### one more example
+
+```ruby
+
+module MyHelper
+  def widget
+    content_tag(:p, class: "widget") do
+      link_to("Hello", hello_path) + " " + link_to("Bye", goodbye_path)
+    end
+  end
+end
+#should be
+
+module MyHelper
+  def widget
+    content_tag(:p, class: "widget") do
+      concat link_to("Hello", hello_path)
+      concat " "
+      concat link_to("Bye", goodbye_path)
+    end
+  end
+end
+```
+
+if it display twice
+
+```ruby
+
+module MyHelper
+  def widget
+    concat link_to("Hello", hello_path)
+    concat " "
+    concat link_to("Bye", goodbye_path)
+  end
+end
+
+#to be
+
+module MyHelper
+  def widget
+    capture do
+      concat link_to("Hello", hello_path)
+      concat " "
+      concat link_to("Bye", goodbye_path)
+    end
+  end
+end
+
+```
+
