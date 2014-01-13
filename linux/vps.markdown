@@ -97,4 +97,8 @@ du -sh `ls .`
 
 ```
 ps ax |grep master | awk '{print $1}' |xargs kill -9  
+
+#查询并显示 -v是不包括， sed是选第二个 awk是打印第几个
+ps ax |grep unicorn_rails | grep -v grep | sed -n 2p| awk '{print $1}'
+
 ```
