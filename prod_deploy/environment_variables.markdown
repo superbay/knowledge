@@ -28,7 +28,7 @@ heroku config:set SECRET_KEY_BASE=value
 
 [heroku reference](https://devcenter.heroku.com/articles/config-vars)
 
-[gem solution](https://github.com/bkeepers/dotenv)
+[gem solution dotenv](https://github.com/bkeepers/dotenv)
 
 
 
