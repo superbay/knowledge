@@ -1,7 +1,8 @@
-Message expectations
+== Message expectations
 
-Basics
+### Basics
 
+```ruby
 # create a double
 obj = double()
 
@@ -48,3 +49,4 @@ obj.should_receive(:message) do |arg1, arg2|
   # set expectations about the args in this block
   # and set a return value
 end
+```
