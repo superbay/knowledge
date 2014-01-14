@@ -55,6 +55,9 @@ obj.should_receive(:message).at_most(n).times
 ### Raising/Throwing
 
 ```ruby
+obj.should_receive(:message).and_raise("this error")
+obj.should_receive(:message).and_throw(:this_symbol)
+
 obj.should_receive(:message) { raise "this error" }
 obj.should_receive(:message) { throw :this_symbol }
 ```
