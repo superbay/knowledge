@@ -1,6 +1,6 @@
 Here is example to hack or meta program of active record
 
-### scope generator
+### Scope Generator
 
 
 ```ruby
@@ -80,4 +80,35 @@ call it as below:
 
 ```ruby
 Product.where(id: 1..5) - Product.where(id: 2)
+```
+
+### Match Scope
+
+```ruby
+/config/initializers/match_scope.rb
+module MatchScope
+  def match(matches)
+    clause = matches.map do |attribute, conditions|
+      Array.wrap(conditions).map do |predicates|
+        predicates = predicates.kind_of?(Hash) ? predicates : {eq: predicates}
+        predicates.map do |predicate, value|
+          arel_table[attribute].send(predicate, value)
+        end.reduce(:and)
+      end.reduce(:or)
+    end.reduce(:and)
+    where(clause)
+  end
+end
+
+ActiveSupport.on_load :active_record do
+  extend MatchScope
+end
+```
+
+call it as below:
+
+
+```ruby
+Product.match(stock: [nil, {lt: 3}])
+# => Product Load (0.3ms)  SELECT "products".* FROM "products" WHERE (("products"."stock" IS NULL OR "products"."stock" < 3))
 ```
