@@ -18,7 +18,7 @@ describe "a simple stub with a return value" do
 
   context "specified in the double declaration" do
     it "returns the specified value" do
-      receiver = double("receiver", :message => :return_value)
+      receiver = double("receiver", message: :return_value)
       receiver.message.should eq(:return_value)
     end
   end
