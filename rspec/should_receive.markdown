@@ -77,6 +77,20 @@ obj.should_receive(:message).and_throw(:this_symbol)
 
 obj.should_receive(:message) { raise "this error" }
 obj.should_receive(:message) { throw :this_symbol }
+
+
+# version 3.0 rspec below
+allow(obj).to receive(:message).and_raise("this error")
+allow(obj).to receive(:message).and_throw(:this_symbol)
+
+obj.stub(:message).and_raise("this error")
+obj.stub(:message).and_throw(:this_symbol)
+
+allow(obj).to receive(:message) { raise "this error" }
+allow(obj).to receive(:message) { throw :this_symbol }
+
+obj.stub(:message) { raise "this error" }
+obj.stub(:message) { throw :this_symbol }
 ```
 
 ### Ordering
@@ -89,6 +103,7 @@ obj.should_receive(:two).ordered
 ### Arbitrary handling
 
 ```ruby
+#Fake implementation
 obj.should_receive(:message) do |arg1, arg2|
   # set expectations about the args in this block
   # and set a return value
