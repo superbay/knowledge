@@ -11,6 +11,8 @@ obj.should_receive(:message)
 
 # specify a return value
 obj.should_receive(:message) { 'this is the value to return' }
+
+book = instance_double("Book", :pages => 250)
 ```
 
 ## Argument constraints
