@@ -45,6 +45,21 @@ obj.should_receive(:message).with('more_than', 'one_argument')
 obj.should_receive(:message).with(anything())
 obj.should_receive(:message).with(an_instance_of(Money))
 obj.should_receive(:message).with(hash_including(:a => 'b'))
+# version 3.0 below
+allow(obj).to receive(:message).with(anything()) { ... }
+allow(obj).to receive(:message).with(an_instance_of(Money)) { ... }
+allow(obj).to receive(:message).with(hash_including(:a => 'b')) { ... }
+allow(obj).to receive(:message).with(array_including(1,2,3)) { ... }
+# or
+allow(obj).to receive(:message).with(array_including([1,2,3])) { ... }
+
+obj.stub(:message).with(anything()) { ... }
+obj.stub(:message).with(an_instance_of(Money)) { ... }
+obj.stub(:message).with(hash_including(:a => 'b')) { ... }
+obj.stub(:message).with(array_including(1,2,3)) { ... }
+# or
+obj.stub(:message).with(array_including([1,2,3])) { ... }
+
 ```
 
 ### Regular expressions
