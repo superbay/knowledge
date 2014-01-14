@@ -34,7 +34,7 @@ end
 ```
 
 
-stub chain
+### stub chain
 
 ```ruby
 describe "stubbing a chain of methods" do
