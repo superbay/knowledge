@@ -66,6 +66,9 @@ obj.stub(:message).with(array_including([1,2,3])) { ... }
 
 ```ruby
 obj.should_receive(:message).with(/abc/)
+allow(obj).to receive(:message).with(/abc/) { ... }
+
+obj.stub(:message).with(/abc/) { ... }
 ```
 
 ### Counts
