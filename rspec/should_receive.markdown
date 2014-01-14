@@ -15,6 +15,21 @@ obj.should_receive(:message) { 'this is the value to return' }
 book = instance_double("Book", :pages => 250)
 ```
 
+```ruby
+#3.0 version
+# create a double
+obj = double()
+
+# specify a return value using `:expect` syntax
+allow(obj).to receive(:message) { :value }
+allow(obj).to receive(:message).and_return(:value)
+
+# specify a return value using `:should` syntax
+obj.stub(:message) { :value }
+obj.stub(:message => :value)
+obj.stub(:message).and_return(:value)
+```
+
 ## Argument constraints
 
 ### Explicit arguments
