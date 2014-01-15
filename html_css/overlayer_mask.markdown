@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <!--[if lt IE 7]> <html class="ie6 no-js light_layout" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="ie7 no-js light_layout" lang="en"> <![endif]-->
@@ -79,3 +80,5 @@
           </div>
       </body>
 </html>
+
+```
