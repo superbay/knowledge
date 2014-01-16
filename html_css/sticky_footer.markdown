@@ -1,5 +1,16 @@
 ### sticky footer
 
+### normal
+
+From IE7, simply use:
+
+```css
+#footer {
+    position:fixed;
+    bottom:0;
+}
+```
+
 ### solution one
 
 ```css
