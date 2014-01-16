@@ -8,6 +8,7 @@ div {
   border-radius: 7px;
 }
 ```
+[several nice rounded border example](http://www.css3.info/preview/rounded-border/)
 
 
 ### box shadow
@@ -19,3 +20,5 @@ div {
   box-shadow:         3px 3px 5px 6px #ccc;
 }
 ```
+
+[several example](http://www.css3.info/preview/box-shadow/)
