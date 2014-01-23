@@ -218,6 +218,33 @@ $ git config --global
 ```
 
 
+### other config
+
+```ruby
+[user]  
+  name = Ken Lu
+  email = ken@me.com
+[alias]  
+  co = checkout  
+  ci = commit -a  
+  st = status  
+  br = branch  
+  oneline = log --pretty=oneline --since='2 days ago'  
+  onelog = log -p -1  
+[color]  
+  diff = auto  
+  status = auto  
+  branch = auto  
+  ui = auto  
+[http]
+  proxy = http://proxy.me.com:80
+  sslVerify = false
+[core]
+	editor = /usr/bin/vim
+[url "https://github.com/"]
+	insteadOf = git://github.com/
+```
+
 
 
 
