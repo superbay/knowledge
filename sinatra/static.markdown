@@ -92,3 +92,4 @@ A string specifying the directory where view templates are located. By default, 
 set :views, Proc.new { File.join(root, "templates") }
 ```
 
+[more reference](http://www.sinatrarb.com/configuration.html)
