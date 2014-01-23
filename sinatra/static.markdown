@@ -46,11 +46,16 @@ end
 
 
 
-
+```ruby
 require 'sinatra'
 
 get '/' do
   send_file File.join(settings.public_folder, 'index.html')
 end
+
+   get '/static_file' do
+      send_file('my_static_file')
+   end 
+
 
 ```
