@@ -30,6 +30,20 @@ get "/" do
 end
 
 
+solution3
+
+
+```ruby
+get "/subdirectory/:file" do 
+  file = params[:file] + "index.html"
+  if File.exists?(params[:file])
+    return File.open("subdirectory/" + file)
+  else
+   return "error"
+  end
+end
+```
+
 
 
 
