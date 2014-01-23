@@ -7,6 +7,8 @@
 ```ruby
 caches_action :index, :cache_path => Proc.new { |c| c.params.delete_if { |k,v| k == 'commit'} }, :expires_in => 300
 
+cache_path => Proc.new { |c| c.params.delete_if { |k,v| k.starts_with?('utm_') } }
+
 ```
 
 this may bring trouble while running rspec
