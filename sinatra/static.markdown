@@ -59,3 +59,36 @@ end
 
 
 ```
+
+
+### some related settings
+
+#### :static - enable/disable static file routes
+
+Boolean that determines whether static files should be served from the application’s public directory (see the :public_folder setting). When :static is truthy, Sinatra will check if a static file exists and serve it before checking for a matching route.
+
+The :static setting is enabled by default when the public directory exists.
+
+#### :public_folder - static files directory
+
+
+A string specifying the directory where static files should be served from. By default, this is assumed to be a directory named “public” within the root directory (see the :root setting). You can set the public directory explicitly with:
+
+```ruby
+set :public_folder, '/var/www'
+```
+
+The best way to specify an alternative directory name within the root of the application is to use a deferred value that references the :root setting:
+
+```ruby
+set :public_folder, Proc.new { File.join(root, "static") }
+```
+
+#### :views - view template directory
+
+A string specifying the directory where view templates are located. By default, this is assumed to be a directory named “views” within the application’s root directory (see the :root setting). The best way to specify an alternative directory name within the root of the application is to use a deferred value that references the :root setting:
+
+```ruby
+set :views, Proc.new { File.join(root, "templates") }
+```
+
