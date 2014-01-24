@@ -38,3 +38,36 @@ before :each do
   assign(:current_user, @user)
 end
 ```
+
+### Isolating partials
+
+```ruby
+before do
+  stub(view).render 'partial/1'
+  stub(view).render 'partial/2' # etc, one stub for each partial
+  stub.proxy(view).render       # let the main "render" call through
+end
+
+
+# in view
+render 'foo/bar', :thing => '2', :other_thing => 'bar'
+
+# in spec
+stub(view).render 'foo/bar', :thing => '2', :other_thing => 'bar'
+
+
+render
+view.should render_template(:partial => 'foo', :local1 => 'bar', :local2 => 'baz')
+```
+
+
+
+```ruby
+#For partials with locals, the render call should resemble:
+
+render 'shared/errors', :model => model
+#
+This is equivalent to the more verbose:
+
+render :partial => 'shared/errors', :locals => { :model => model }
+```
