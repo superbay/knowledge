@@ -1,4 +1,3 @@
-
 ```ruby
 
 require 'spec_helper'
@@ -12,4 +11,14 @@ describe "api/v1/users/create.json.jbuilder" do
     end
 end
 
+```
+
+
+### stub local variable
+
+
+```ruby
+before(:each) do
+  view.stub(:current_user) { User.new }
+end
 ```
