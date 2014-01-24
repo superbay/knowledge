@@ -71,3 +71,16 @@ This is equivalent to the more verbose:
 
 render :partial => 'shared/errors', :locals => { :model => model }
 ```
+
+
+### controller
+
+```ruby
+describe TestController do
+  it "test some_method"
+    phone = Phone.new(...)
+    controller.stub(:some_method).and_return(true)
+    controller.send(:some_method).should be_true
+  end
+end
+```
