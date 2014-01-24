@@ -20,5 +20,21 @@ end
 ```ruby
 before(:each) do
   view.stub(:current_user) { User.new }
+  
+  view.stub(:current_user).and_return(@user)
+end
+```
+
+
+```ruby
+before :each do
+  @user = stub_model(User, is_welcome: true)
+  assign(:current_user, @user)
+end
+Then to test the conditionality, just ran another spec in a context with a different before block:
+
+before :each do
+  @user = stub_model(User, is_welcome: false)
+  assign(:current_user, @user)
 end
 ```
