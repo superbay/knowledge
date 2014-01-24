@@ -84,3 +84,6 @@ describe TestController do
   end
 end
 ```
+
+
+[email spec](https://github.com/bmabey/email-spec)
