@@ -1,11 +1,12 @@
 
 
-
 ### Tab navigation
 
-open new tab Cmd + t
-next tab Cmd + Shift + ]
-previous tab Cmd + Shift + [
+open new tab `Cmd + t`
+
+next tab `Cmd + Shift + ]`
+
+previous tab `Cmd + Shift + [`
 
 
 ### Pane navigation
