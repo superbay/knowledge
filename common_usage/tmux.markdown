@@ -121,3 +121,10 @@ Resources:
 
 * [cheat sheet](http://cheat.errtheblog.com/s/tmux/)
 
+
+
+<kbd>⌘</kbd>+<kbd>⌥</kbd>+<kbd>←</kbd>/<kbd>↑</kbd>/<kbd>→</kbd>/<kbd>↓</kbd> will let you navigate split panes in the direction of the arrow, i.e. when using <kbd>⌘</kbd>+<kbd>D</kbd> to split panes vertically, <kbd>⌘</kbd>+<kbd>⌥</kbd>+<kbd>←</kbd> and <kbd>⌘</kbd>+<kbd>⌥</kbd>+<kbd>→</kbd> will let you switch between the panes. 
+
+
+
+
