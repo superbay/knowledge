@@ -1,5 +1,7 @@
 ### hack your route
 
+should added two more routes
+
 ```ruby
 module DeleteResourceRoute
   def resources(*args, &block)
