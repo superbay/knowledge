@@ -1,5 +1,23 @@
 # Message expectations
 
+
+### should receive with times and verify params
+
+
+```ruby
+Project.should_receive(:find).twice.with(@project).and_return(@project)
+
+#for exactly n times:
+
+Project.should_receive(:find).exactly(n).times.with(@project).and_return(@project)
+
+#for at least n times:
+
+Project.should_receive(:msg).at_least(n).times.with(@project).and_return(@project)
+
+```
+
+
 ### Basics
 
 ```ruby
