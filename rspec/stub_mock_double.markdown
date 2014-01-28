@@ -1,3 +1,23 @@
+### stub helper method
+
+
+```ruby
+
+describe SomeHelper
+  before :each do
+    @helper = Object.new.extend SomeHelper
+  end
+
+  it "why cant i stub a helper method?!" do
+    @helper.stub!(:current_user).and_return(@user)
+    # ...
+  end
+end
+
+```
+
+
+
 ### the way to double
 
 ```ruby
