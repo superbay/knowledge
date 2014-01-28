@@ -16,3 +16,17 @@ doorkeeper is the oauth2 provider
 oauth2 gem is the console client
 
 omniauth is the client
+
+
+### rails app configuration
+
+https://github.com/laserlemon/figaro
+
+
+What is this for?
+
+Figaro is for configuring Rails (3 and 4) apps, especially open source Rails apps.
+
+Open sourcing a Rails app can be a little tricky when it comes to sensitive configuration information like Pusher or Stripe credentials. You don't want to check private credentials into the repo but what other choice is there?
+
+Figaro provides a clean and simple way to configure your app and keep the private stuff… private.
