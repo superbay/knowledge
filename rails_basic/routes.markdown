@@ -1,4 +1,3 @@
-
 ### about nested routes
 
 
@@ -27,9 +26,39 @@ but edit will be
 edit_polymorphic_path([@parent, @review]) 
 #or
 link_to 'Edit Review', [:edit, @parent, @review]
+
+link_to 'Edit Review', edit_review_path([@reviewable, :reviews])
 ```
 
+However, That dose not include shallow and more customized nested resource
 
+```ruby
+    resources :blood_drives do 
+       post 'add_donor', on: :member
+       get 'add_donor', on: :member
+       delete 'delete_donor', on: :member
+       resources :donors, only: [:destroy]
+     end
+     
+```   
+
+and
+
+### shallow nesting
+
+http://edgeguides.rubyonrails.org/routing.html
+
+```ruby
+shallow do
+  resources :posts do
+    resources :comments
+    resources :quotes
+    resources :drafts
+  end
+end
+```
+
+http://rails-bestpractices.com/posts/11-needless-deep-nesting
 
 ### hack your route
 
