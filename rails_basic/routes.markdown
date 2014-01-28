@@ -1,3 +1,36 @@
+
+### about nested routes
+
+
+```ruby
+resources :cars do
+  resources :reviews
+end
+
+resources :motorcycles do
+  resources :reviews
+end
+```
+
+the path should be
+
+
+```ruby
+
+link_to "Show", [@parent, @review]
+
+```
+
+but edit will be
+
+```ruby
+edit_polymorphic_path([@parent, @review]) 
+#or
+link_to 'Edit Review', [:edit, @parent, @review]
+```
+
+
+
 ### hack your route
 
 should added two more routes
