@@ -1,5 +1,4 @@
-
-
+### example of how ajax with remote true and SJR
 
 ```ruby
 <%= form_for(@post, remote: true) do |f| %>
