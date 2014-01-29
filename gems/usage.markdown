@@ -20,6 +20,8 @@ omniauth is the client
 
 ### rails app configuration
 
+configuration out of version control
+
 solution for sensitive credentials configuration
 
 [figaro](https://github.com/laserlemon/figaro)
