@@ -5,6 +5,10 @@
   ...
 <% end %>
 
+<%= form_tag('/posts', remote: true) %>
+
+<%= link_to "a post", @post, remote: true %>
+
 ```
 
 
@@ -16,4 +20,11 @@ $(document).ready ->
   ).bind "ajax:error", (e, xhr, status, error) ->
     $("#new_post").append "<p>ERROR</p>"
     
+$ ->
+  $("a[data-remote]").on "ajax:success", (e, data, status, xhr) ->
+    alert "The post was deleted."    
+    
 ```
+
+
+
