@@ -1,5 +1,13 @@
 ### find and exclude all permission denied message
 
+
+like this
+
+```
+find: /./proc/1731/fdinfo: Permission denied
+find: /./proc/2032/task/2032/fd: Permission denied
+```
+
 Those errors are printed out to the standard error output (fd 2). To filter them out, simply redirect all errors to /dev/null:
 
 ```bash
