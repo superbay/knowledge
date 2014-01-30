@@ -30,3 +30,10 @@ def restrict_access
 end
 
 ```
+
+local test:
+
+
+```bash
+$ curl http://localhost:3000/api/products -H 'Authorization: Token token="afbadb4ff8485c0adcba486b4ca90cc4"'
+```
