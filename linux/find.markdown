@@ -1,6 +1,3 @@
-### search all file and all content
-
-
 ### find and exclude all permission denied message
 
 Those errors are printed out to the standard error output (fd 2). To filter them out, simply redirect all errors to /dev/null:
@@ -15,6 +12,10 @@ or first join stderr and stdout and then grep out those specific errors:
 ````bash
 find . 2>&1 | grep -v 'Permission denied' > some_file
 ```
+
+
+
+### search all file and all content
 
 
 
