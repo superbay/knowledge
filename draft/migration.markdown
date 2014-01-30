@@ -65,6 +65,23 @@ class ActsAsTaggableOnMigration < ActiveRecord::Migration
 end
 ```
 
+also old rails 3 way used belongs_to
+
+```ruby
+class CreateComments < ActiveRecord::Migration
+  def change
+    create_table :comments do |t|
+      t.text :content
+      t.belongs_to :commentable, polymorphic: true
+
+      t.timestamps
+    end
+    add_index :comments, [:commentable_id, :commentable_type]
+  end
+end
+```
+
+
 #### support type
 
 ```bash
