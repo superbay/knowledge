@@ -14,6 +14,9 @@ normal active record solution
 
 ```ruby
 Speaker.where("name like ?", "%yson%")
+
+q = "%#{params[:query]}%"
+User.where("name like ? or description like ?", q, q).to_sql
 ```
 
 Here is example to hack or meta program of active record
