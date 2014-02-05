@@ -23,6 +23,7 @@ manually expire should be
 
 
 ActionController::Base.new.expire_fragment(key)
+#key = [@article, 'body']
 ```
 
 [reference](http://api.rubyonrails.org/classes/ActionController/Caching/Fragments.html#M000438)
