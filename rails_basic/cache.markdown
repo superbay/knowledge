@@ -8,7 +8,20 @@ response = Rails.cache.fetch("blog_#{blog_id}", :expire_in => 15.minutes){client
 
 ### How to clear fragment cache
 
+if you have fragment cache like:
+
+```ruby
+cache [@article, 'body'] do
+  = render 'article' content: @article.content
+end
+
 ```
+
+manually expire should be
+
+```
+
+
 ActionController::Base.new.expire_fragment(key)
 ```
 
