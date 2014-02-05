@@ -1,3 +1,21 @@
+### like query 
+
+
+arel_table solution
+
+```ruby
+
+User.where(User.arel_table[:name].matches("%#{user_name}%"))
+
+```
+
+
+normal active record solution
+
+```ruby
+Speaker.where("name like ?", "%yson%")
+```
+
 Here is example to hack or meta program of active record
 
 ### Scope Generator
