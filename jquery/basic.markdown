@@ -34,3 +34,12 @@ $( document ).ready(function() {
   // Handler for .ready() called.
 });
 ```
+
+
+### parse to get table
+
+
+```javascript
+
+$('#similar_errors td:contains("bmmr_id") a').each(function(i,value){ console.log($(value).text()); })
+```
