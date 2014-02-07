@@ -41,5 +41,5 @@ $( document ).ready(function() {
 
 ```javascript
 
-$('#similar_errors td:contains("bmmr_id") a').each(function(i,value){ console.log($(value).text()); })
+$('#similar_errors td:contains("bmmr_id") a').each(function(i,value){ console.log($(value).text().match(/=.*/i).toString().substring(1)); })
 ```
