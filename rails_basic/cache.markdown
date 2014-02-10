@@ -5,6 +5,14 @@
 response = Rails.cache.fetch("blog_#{blog_id}", :expires_in => 15.minutes){client.get_blog(blog_id)}
 ```
 
+### How to clear the cache
+
+```ruby
+
+Rails.cache.delete("blog_#{blog_id}")
+
+```
+
 
 ### How to clear fragment cache
 
