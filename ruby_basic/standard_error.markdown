@@ -3,6 +3,24 @@
 
 ```ruby
 class MyCustomError < StandardError
+end
+```
+
+This allows you to raise it using:
+
+```ruby
+raise MyCustomError, "A message"
+```
+
+and later, get that message when rescuing
+
+```ruby
+rescue Exception => e
+  puts e.message # => "A message"
+```
+
+```ruby
+class MyCustomError < StandardError
   attr_reader :object
 
   def initialize(object)
