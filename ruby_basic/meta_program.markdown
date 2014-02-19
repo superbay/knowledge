@@ -26,3 +26,9 @@ call the hash
 1.9.2p320 :015 > hash.send :[], co.to_sym
  => "blue"
 ```
+
+### alias
+
+```ruby
+alias_method "memoized_#{name}", name
+```
