@@ -1,3 +1,26 @@
+### more convenient way
+
+
+```ruby
+define Hash#with_indifferent_access
+
+```
+
+Note that core extensions 
+
+```ruby
+rgb = { black: '#000000', white: '#FFFFFF' }.with_indifferent_access
+
+```
+which may be handy.
+
+### require 
+
+
+```ruby
+require 'active_support/core_ext/hash/indifferent_access'
+```
+
 ### hash with symbole and array
 
 
