@@ -19,6 +19,8 @@ rescue Exception => e
   puts e.message # => "A message"
 ```
 
+full example
+
 ```ruby
 class MyCustomError < StandardError
   attr_reader :object
