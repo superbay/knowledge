@@ -36,3 +36,19 @@ puts thing.inspect
 
 #{"javascripts"=>[{"fo_global"=>["lazyload-min", "holla-min"]}]}
 ```
+
+
+```
+
+
+cnf = YAML::load_file(File.join(File.dirname(File.expand_path(__FILE__)), 'config.yml')
+#EDIT:
+
+#Since Ruby 2.0 you can simplify that and use:
+
+nf = YAML::load_file(File.join(__dir__, 'config.yml'))
+
+```
+
+
+
