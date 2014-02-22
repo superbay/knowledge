@@ -24,3 +24,15 @@ File.open(path, 'w') do |file|
   file.puts lines
 end
 ```
+
+
+### Yaml load
+
+after ruby 2.0
+```
+require 'yaml'
+thing = YAML.load_file('some.yml')
+puts thing.inspect
+
+#{"javascripts"=>[{"fo_global"=>["lazyload-min", "holla-min"]}]}
+```
