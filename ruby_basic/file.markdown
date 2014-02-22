@@ -28,6 +28,13 @@ end
 
 ### Yaml load
 
+before ruby 2.0
+
+```ruby
+APP_CONFIG = HashWithIndifferentAccess.new(YAML.load(File.read(File.expand_path('../app.yml', __FILE__))))
+```
+
+
 after ruby 2.0
 ```ruby
 require 'yaml'
