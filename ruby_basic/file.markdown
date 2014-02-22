@@ -29,7 +29,7 @@ end
 ### Yaml load
 
 after ruby 2.0
-```
+```ruby
 require 'yaml'
 thing = YAML.load_file('some.yml')
 puts thing.inspect
@@ -38,7 +38,7 @@ puts thing.inspect
 ```
 
 
-```
+```ruby
 
 
 cnf = YAML::load_file(File.join(File.dirname(File.expand_path(__FILE__)), 'config.yml')
