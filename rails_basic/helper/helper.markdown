@@ -1,3 +1,14 @@
+### titleize
+
+
+
+```ruby
+require "active_support/inflector"
+
+'man from the boondocks'.titleize   # => "Man From The Boondocks"
+```
+
+
 ### content_tag
 
 ```ruby
