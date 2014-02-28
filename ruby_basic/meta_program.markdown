@@ -32,3 +32,34 @@ call the hash
 ```ruby
 alias_method "memoized_#{name}", name
 ```
+
+### Singleton
+
+```ruby
+class Klass
+   include Singleton
+   # ...
+end
+
+a,b  = Klass.instance, Klass.instance
+
+a == b
+# => true
+
+Klass.new
+# => NoMethodError - new is private ...
+
+#The instance is created at upon the first call of Klass.instance().
+
+class OtherKlass
+  include Singleton
+  # ...
+end
+
+ObjectSpace.each_object(OtherKlass){}
+# => 0
+
+OtherKlass.instance
+ObjectSpace.each_object(OtherKlass){}
+# => 1
+```
