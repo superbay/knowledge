@@ -1,3 +1,21 @@
+### How to verify Hash should not have key
+
+```ruby
+
+[ ~/work/mobile_server (master)]$ irb
+>> require 'rspec'
+true
+>> include RSpec::Matchers
+Object < BasicObject
+>> {a: 1}.should have_key(:a)
+true
+
+>> {a: 1}.should_not have_key(:b)
+true
+
+```
+
+
 ### Basic usage
 
 Here's an example using rspec-core:
