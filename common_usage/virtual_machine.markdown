@@ -31,3 +31,16 @@ $ sudo /etc/init.d/ssh start
 OR
 $ sudo service ssh start
 
+
+### virtual box proxy
+
+Ok, extend this a bit:
+Proxy support for the CLI
+Add the following lines to the file /etc/environment
+
+```
+export http_proxy="http://username:password@host:port/"
+```
+
+This will also apply to apt at the CLI. Some applications may pick this up, too. If it doesn't work for you, add the line to /etc/bash.bashrc and /etc/profile, too.
+
