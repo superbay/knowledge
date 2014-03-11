@@ -18,3 +18,16 @@ ssh -p 2222 root@127.0.0.1
 
 I haven't tried it because I don't have a 2nd computer, but I think ssh -p 2222 root@192.168.21.121 would also work.
 
+
+### ssh enable
+
+```
+sudo apt-get install ssh
+```
+
+Type the following command:
+$ sudo /etc/init.d/ssh start
+
+OR
+$ sudo service ssh start
+
