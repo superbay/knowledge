@@ -91,6 +91,19 @@ match '*pages' => 'pages#show', :format => false
 
 you can get more explain [here](http://guides.rubyonrails.org/routing.html#request-based-constraints)
 
+#### constrains
+
+```ruby
+get 'photos', constraints: {subdomain: 'admin'}
+
+
+namespace :admin do
+  constraints subdomain: 'admin' do
+    resources :photos
+  end
+end
+```
+
 
 ### nested route
 
