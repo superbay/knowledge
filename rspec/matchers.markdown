@@ -15,6 +15,24 @@ true
 
 ```
 
+### the expect format of not have key
+
+
+```ruby
+describe Object, "#public_instance_methods" do
+  it "should not raise" do
+    expect{Object.public_instance_methods}.to_not raise_error(NameError)
+  end
+end
+
+#deliberate failure
+describe Object, "#non_existent_message" do
+  it "should not raise" do
+    expect{Object.non_existent_message}.to_not raise_error(NameError)
+  end
+end
+```
+
 
 ### Basic usage
 
