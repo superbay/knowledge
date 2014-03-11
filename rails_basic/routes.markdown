@@ -82,6 +82,13 @@ ActionDispatch::Routing::Mapper.send(:include, DeleteResourceRoute)
 
 ```
 
+### If you want use format to distinguish the route
+
+
+```ruby
+match '*pages' => 'pages#show', :format => false
+```
+
 
 ### nested route
 
@@ -105,6 +112,8 @@ The url generate would be
 delete_product_path
 
 ```
+
+
 
 the rake routes
 
