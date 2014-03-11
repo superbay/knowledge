@@ -89,6 +89,8 @@ ActionDispatch::Routing::Mapper.send(:include, DeleteResourceRoute)
 match '*pages' => 'pages#show', :format => false
 ```
 
+you can get more explain [here](http://guides.rubyonrails.org/routing.html#request-based-constraints)
+
 
 ### nested route
 
