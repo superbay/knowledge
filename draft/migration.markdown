@@ -56,6 +56,26 @@ $ rails console
 ```
 
 
+If you want to run a [specific migration](http://guides.rubyonrails.org/migrations.html#running-specific-migrations), do
+
+```ruby
+$ rake db:migrate:up VERSION=20080906120000
+```
+
+If you want to run migrations [multiple times](http://guides.rubyonrails.org/migrations.html#rolling-back), do
+
+
+$ # use the STEP parameter if you need to go more than one version back
+```ruby
+$ rake db:migrate:redo STEP=3
+```
+If you want to run a single migration multiple times, do
+
+$ # this is super usefull
+```ruby
+$ rake db:migrate:redo VERSION=20080906120000
+```
+
 #### one more reference example
 
 ```ruby
