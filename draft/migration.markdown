@@ -29,6 +29,24 @@ end
 ```
 
 
+#### rails run specific migration
+
+```ruby
+ails console
+>> require "db/migrate/20090408054532_add_foos.rb"
+>> AddFoos.up
+
+script/runner 'require("db/migrate/20090408054532_add_foos.rb").first.constantize.
+```
+
+An alternative way (without IRB) which relies on the fact that require returns an array of class names:
+
+
+```ruby
+
+```
+
+
 #### one more reference example
 
 ```ruby
