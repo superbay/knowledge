@@ -36,7 +36,7 @@ ails console
 >> require "db/migrate/20090408054532_add_foos.rb"
 >> AddFoos.up
 
-script/runner 'require("db/migrate/20090408054532_add_foos.rb").first.constantize.
+script/runner 'require("db/migrate/20090408054532_add_foos.rb").first.constantize.up'
 ```
 
 An alternative way (without IRB) which relies on the fact that require returns an array of class names:
