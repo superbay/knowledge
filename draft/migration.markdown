@@ -43,7 +43,16 @@ An alternative way (without IRB) which relies on the fact that require returns a
 
 
 ```ruby
+class AddPartNumberToProducts < ActiveRecord::Migration
+  def change
+    add_column :products, :part_number, :string
+  end
+end
+#You can create an instance of the migration and run migrate(:up) or migrate(:down) on an instance, like this:
 
+$ rails console
+>> require "db/migrate/20090408054532_add_part_number_to_products.rb"
+>> AddPartNumberToProducts.new.migrate(:down)
 ```
 
 
