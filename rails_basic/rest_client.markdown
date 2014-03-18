@@ -56,3 +56,18 @@ doc.css("div.to-replace").each do |div|
     div.replace new_node
 end
 ```
+
+#### builder
+
+```ruby
+builder = Nokogiri::HTML::Builder.new do |doc|
+doc.html {
+  doc.body(:onload => 'some_func();') {
+    doc.span.bold {
+      doc.text "Hello world"
+    }
+  }
+}
+end
+puts builder.to_html
+```
