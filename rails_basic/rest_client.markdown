@@ -23,3 +23,11 @@ RestClient.get 'user:password@your.url.com'
 #updated to nil, if author is ken
 Video.update_all({author_id: nil}, {author_id: 'ken'})
 ```
+
+### Nokogiri
+
+```ruby
+  doc.css('div[@class="title"]').each do |div|
+      div.children.first.replace Nokogiri::HTML::DocumentFragment.parse(div.text).children
+  end
+```
