@@ -45,3 +45,14 @@ begin
 end until node == root
 path.map {|n| n.name}.join " > "
 ```
+
+
+#### replace a element
+
+```ruby
+doc.css("div.to-replace").each do |div|
+    new_node = doc.create_element "span"
+    new_node.inner_html = self.get_html_text
+    div.replace new_node
+end
+```
