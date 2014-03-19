@@ -71,3 +71,25 @@ sed -i "" -e 's/^[[:space:]]\{11\}//g' menu1a.sh
 #find and delete .svn
 find . -type d -name ".svn"|xargs rm -rf
 ```
+
+### find the top 10 large file
+
+```ruby
+du -ah . | sort -n -r | head -n 10
+## Warning: only works with GNU find ##
+find /path/to/dir/ -printf '%s %p\n'| sort -nr | head -10
+find . -printf '%s %p\n'| sort -nr | head -10
+
+#You can skip directories and only display files, type:
+
+ 
+find /path/to/search/ -type f -printf '%s %p\n'| sort -nr | head -10
+ 
+#OR
+
+ 
+find /path/to/search/ -type f -iname "*.mp4" -printf '%s %p\n'| sort -nr | head -10
+ 
+
+
+```
