@@ -74,6 +74,8 @@ find . -type d -name ".svn"|xargs rm -rf
 
 ### find the top 10 large file
 
+
+
 ```ruby
 du -ah . | sort -n -r | head -n 10
 ## Warning: only works with GNU find ##
@@ -92,4 +94,10 @@ find /path/to/search/ -type f -iname "*.mp4" -printf '%s %p\n'| sort -nr | head 
  
 
 
+```
+
+like this version
+
+```ruby
+du -sh `ls .` 
 ```
