@@ -1,6 +1,20 @@
 ### view partial 
 
 
+#### using css
+
+verify which have css, such as span with class
+
+```ruby
+render partial: 'shared/footer'
+rendered.should have_css('a span[class*="icons"]')
+
+```
+
+
+#### general sample
+
+
 ```ruby
 require 'spec_helper'
 
