@@ -12,6 +12,28 @@ rendered.should have_css('a span[class*="icons"]')
 ```
 
 
+### reference 
+Examples:
+
+The following selector represents an HTML object, referencing an image:
+
+```ruby
+object[type^="image/"]
+```
+
+The following selector represents an HTML anchor a with an href attribute whose value ends with ".html".
+
+```css
+a[href$=".html"]
+```
+
+The following selector represents an HTML paragraph with a title attribute whose value contains the substring "hello"
+
+```css
+p[title*="hello"]
+```
+[more definition](http://www.w3.org/TR/css3-selectors/#attribute-substrings)
+
 #### general sample
 
 
