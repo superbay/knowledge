@@ -8,6 +8,7 @@ verify which have css, such as span with class
 ```ruby
 render partial: 'shared/footer'
 rendered.should have_css('a span[class*="icons"]')
+rendered.should have_selector('a', {href: 'http://www.icons.com', class: 'icons'})
 
 ```
 
