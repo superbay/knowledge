@@ -1,5 +1,11 @@
 # Message expectations
 
+### new syntax
+
+```ruby
+expect(DeskCase).to receive(:fetch_case_list).and_return([])
+```
+
 
 ### should receive with times and verify params
 
