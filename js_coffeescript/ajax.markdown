@@ -24,3 +24,5 @@ $(document).ready ->
         success: (data, textStatus, jqXHR) ->
             $('body').append "Successful AJAX call: #{data}"
 ```
+
+[reference](http://coffeescriptcookbook.com/chapters/jquery/ajax)
