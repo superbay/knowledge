@@ -1,5 +1,12 @@
 ### Some basic usage
 
+working for local macbook air
+
+```ruby
+psql -d postgres
+```
+
+
 ```ruby
 mysql: SHOW TABLES
 postgresql: \d
