@@ -25,4 +25,4 @@ $(document).ready ->
             $('body').append "Successful AJAX call: #{data}"
 ```
 
-[reference](http://coffeescriptcookbook.com/chapters/jquery/ajax)
+[reference book should read](http://coffeescriptcookbook.com/chapters/jquery/ajax)
