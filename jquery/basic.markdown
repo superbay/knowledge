@@ -35,6 +35,14 @@ $( document ).ready(function() {
 });
 ```
 
+### get options selected value
+
+```coffeescript
+$(document).ready ->
+  desk_case_ids = $('desk_case').val()
+
+```
+
 
 ### parse to get table
 
