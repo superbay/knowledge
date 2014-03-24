@@ -1,3 +1,24 @@
+### curl as ftp 
+
+
+```bash
+curl --user 'ftp_user:ftp_password' --disable-epsv --proxytunnel -x 'yourproxy.com:port' -T 'your.localfile' 'ftp://remote.ftp.org:port/path' -v
+```
+
+#### regular ftp
+
+```bash
+
+$ ftp -n <<EOF
+open ftp.example.com
+user user secret
+put my-local-file.txt
+EOF
+
+```
+
+http://stackoverflow.com/questions/9165594/curl-pycurl-ftp-over-http-proxy
+
 ### upload file 
 
 ```bash
