@@ -37,8 +37,7 @@ in your controller.
 
 controller
 
-```
-
+```ruby
 [1] pry(#<HomeController>)> params
 => {"utf8"=>"✓",
  "desklabel"=>{"name"=>"abc"},
