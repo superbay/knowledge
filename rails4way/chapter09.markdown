@@ -258,6 +258,30 @@ class MarkDeleted
 end
 ```
 
+### more callback
+
+callback without method
+
+```ruby
+class Firm < ActiveRecord::Base
+  # Destroys the associated clients and people when the firm is destroyed
+  before_destroy { |record| Person.destroy_all "firm_id = #{record.id}"   }
+  before_destroy { |record| Client.destroy_all "client_of = #{record.id}" }
+end
+```
+
+callback with proc check
+
+```ruby
+class User < ActiveRecord::Base
+
+  after_create :send_welcome_email, unless: :is_celebrant?
+  after_create :send_welcome_email, unless: "is_celebrant?"
+  after_create :send_welcome_email, unless: Proc.new { self.role == "Celebrant" }
+
+end
+```
+
 #### Paranoia with before destroy
 
 ```ruby
