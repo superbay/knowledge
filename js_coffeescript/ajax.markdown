@@ -26,3 +26,21 @@ $(document).ready ->
 ```
 
 [reference book should read](http://coffeescriptcookbook.com/chapters/jquery/ajax)
+
+
+```javascript
+
+(document).ready ->
+    if $('form').attr('action') == '/cards'
+        $('#add_card').click (e) ->
+            e.preventDefault()
+            $.ajax '/cards',
+                type: 'POST'
+                dataType: 'json'
+                data: { code: $("#code").val() }
+                error: (jqXHR, textStatus, errorThrown) ->
+                    alert textStatus
+                success: (data, textStatus, jqXHR) ->
+                    console.log "Card name: " +
+                                data.card.code + "\nPoints: " + data.points
+```
