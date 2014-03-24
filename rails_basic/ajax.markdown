@@ -19,8 +19,33 @@ $(document).ready ->
     $("#new_post").append xhr.responseText
   ).bind "ajax:error", (e, xhr, status, error) ->
     $("#new_post").append "<p>ERROR</p>"
-    
+ 
+   
 
+```
+
+### send back array using json
+
+```javascript
+var dataToSend = { 
+    page: location.href, 
+    data: []
+};
+var dataindex = 0;
+jQuery(".myclass").each(function(){
+    var temp = unique_selector(jQuery(this), "");
+    dataToSend.data[dataindex++] = {
+        selector: temp,
+        contents: jQuery(temp).html()
+    };
+});
+jQuery.ajax({
+    type: 'POST',
+    url: "/main/save.php",
+    data: JSON.stringify(dataToSend),
+    dataType: "json",
+    success: function(data){ alert(data); }
+});
 ```
 
 
