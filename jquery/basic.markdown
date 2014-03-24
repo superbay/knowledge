@@ -43,6 +43,49 @@ $(document).ready ->
 
 ```
 
+### set options selected for dropdown list
+
+how to select options in Multiple select list with jQuery?
+
+```html
+<select name='strings' id="strings" multiple style="width:100px;">
+    <option value="Test">Test</option>
+    <option value="Prof">Prof</option>
+    <option value="Live">Live</option>
+    <option value="Off">Off</option>
+    <option value="On">On</option>
+</select>
+
+```
+
+#### solution:
+
+```
+var values = "Test,Prof,Off";
+$('#strings').val(values.split(','));
+
+$('#strings option[value=' + objValue + ']').attr('selected', true);
+
+$.each values, (index, value) ->
+  $("#desk_labels option[value=" + value + "]").attr("selected", "selected")
+
+```
+
+in jQuery:
+
+```javascript
+$("#strings").val(["Test", "Prof", "Off"]);
+```
+
+
+or in pure javascript:
+
+
+```javascript
+
+document.getElementById('strings').value = ["Test", "Prof", "Off"];
+```
+
 
 ### parse to get table
 
