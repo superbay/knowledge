@@ -71,7 +71,7 @@ psql -U postgres -h localhost#9.2有一个默认的数据库用户就是，当�
 grant all privileges on database postgres to postgres;
 alter user livegamer with superuser;
 \du
-alter user livegamer with encrypted password 'livegamer';
+alter user postgres with encrypted password 'postgres';
 
 ```
 
