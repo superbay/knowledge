@@ -52,6 +52,19 @@ class MessagesController < ActionController::Base
 end
 ```
 
+```ruby
+respond_to do |format|
+
+  format.html # show.html.erb
+  format.json { render json: @user }
+
+ end
+ 
+respond_to do |format|
+  format.js { render :json { :only => :name }.to_json }
+end
+```
+
 something not related
 
 ```ruby
