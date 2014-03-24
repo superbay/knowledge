@@ -2,7 +2,8 @@
 
 
 ```bash
-curl --user 'ftp_user:ftp_password' --disable-epsv --proxytunnel -x 'yourproxy.com:port' -T 'your.localfile' 'ftp://remote.ftp.org:port/path' -v
+curl --user 'ftp_user:ftp_password' --disable-epsv --proxytunnel -x 'yourproxy.com:port'
+-T 'your.localfile' 'ftp://remote.ftp.org:port/path' -v
 ```
 
 #### regular ftp
