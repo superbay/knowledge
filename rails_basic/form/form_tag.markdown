@@ -1,4 +1,3 @@
-
 ### nested params
 
 append a text_field_tag to a form_for?
@@ -22,6 +21,31 @@ in your form, will result in
    params[:user][:firstname]
 ```
 in your controller.
+
+
+### another example
+
+```ruby
+    = form_tag create_label_path, remote: true do
+      = label_tag :name, 'add label'
+      .label
+        = text_field_tag 'desk_label[name]'
+      .label
+        = submit_tag 'Submit'
+```
+
+
+controller
+
+```
+
+[1] pry(#<HomeController>)> params
+=> {"utf8"=>"✓",
+ "desklabel"=>{"name"=>"abc"},
+ "commit"=>"Submit",
+ "action"=>"create_label",
+ "controller"=>"home"}
+```
 
 
 
