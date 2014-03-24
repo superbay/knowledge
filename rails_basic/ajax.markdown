@@ -46,6 +46,29 @@ jQuery.ajax({
     dataType: "json",
     success: function(data){ alert(data); }
 });
+
+
+//second one
+
+$.ajax({
+  url: _saveDeviceUrl
+, type: 'POST'
+, contentType: 'application/json'
+, dataType: 'json'
+, data: {'myArray': postData}
+, success: _madeSave.bind(this)
+//, processData: false //Doesn't help
+});
+
+//normally need JSON.stringify
+
+$.ajax({
+    url: _saveAllDevicesUrl
+,   type: 'POST'
+,   contentType: 'application/json'
+,   data: JSON.stringify(postData) //stringify is important
+,   success: _madeSave.bind(this)
+});
 ```
 
 
