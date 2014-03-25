@@ -1,3 +1,9 @@
+
+
+```coffeescript
+$('#test').is(':visible')
+```
+
 ### select and move
 
 ```coffeescript
