@@ -32,3 +32,5 @@ move_remaining_links_to_end = () ->
 paragraph = (page_index, paragraph_index) ->
   $('div.page').eq(page_index).children('p:not(:has(img))').eq(paragraph_index)
 ```
+
+[good resource](http://coffeescriptcookbook.com)
