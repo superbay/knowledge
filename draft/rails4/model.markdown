@@ -26,4 +26,6 @@ end
 ```ruby
 Question.where(Question.arel_table[:content].matches("%#{string}%"))
 
+Question.where("content LIKE ?" , "%#{farming}%")
+
 ```
