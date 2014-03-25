@@ -1,6 +1,6 @@
 ### select and move
 
-```ruby
+```coffeescript
   $('#related_items').find('div.related_item').each( (index, element) ->
     if $('.full_width').length
       target_paragraph = $('#article_body').children('p:not(:has(img))').eq(index * interval + 2)
