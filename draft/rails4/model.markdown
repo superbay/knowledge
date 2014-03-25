@@ -20,3 +20,10 @@ class Blog < ActiveRecord::Base
   has_many :published_posts, -> { where published: true }, class_name: 'Post'
 end
 ```
+
+### like function 
+
+```ruby
+Question.where(Question.arel_table[:content].matches("%#{string}%"))
+
+```
