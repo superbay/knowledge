@@ -62,3 +62,5 @@ end
   <%= render :partial => @projects %> 
 <% end %> 
 ```
+
+[old reference resource](http://guides.rubyonrails.org/v2.3.11/performance_testing.html)
