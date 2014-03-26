@@ -19,3 +19,20 @@
    end 
 end 
 ```
+
+
+```ruby
+require 'test_helper' 
+require 'performance_test_help' 
+class PostModelTest < ActionController::PerformanceTest 
+  def test_creation 
+    Post.create :body => 'still fooling you', :cost => '100' 
+  end 
+  
+  def test_slow_method 
+    # Using posts(:awesome) fixture 
+    posts(:awesome).slow_method 
+  end 
+end
+ 
+```
