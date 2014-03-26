@@ -36,3 +36,29 @@ class PostModelTest < ActionController::PerformanceTest
 end
  
 ```
+
+```bash
+rake test:benchmark
+```
+
+
+#### Controller profile
+
+```ruby
+def process_projects 
+  self.class.benchmark("Processing projects") do
+    Project.process(params[:project_ids]) 
+    Project.update_cached_projects 
+  end 
+end
+
+```
+
+
+#### View profile
+
+```ruby
+<% benchmark("Showing projects partial") do %> 
+  <%= render :partial => @projects %> 
+<% end %> 
+```
