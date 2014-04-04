@@ -67,3 +67,24 @@ u = User.last
 u.facebook.put_connections("me", "lkvdemo:review", movie: "http://samples.ogp.me/453907197960619")
 
 ```
+
+
+#### OmniAuth::Strategies::OAuth2::CallbackError
+
+Ruby on Rails Devise Oauth-facebook OmniAuth::Strategies::OAuth2::CallbackError
+
+```ruby
+require "omniauth-facebook"
+config.omniauth :facebook, ENV["FACEBOOK_APP_ID"], ENV['FACEBOOK_SECRET'],{provider_ignores_state: true}
+  
+```
+
+or 
+
+```ruby
+
+Rails.application.config.middleware.use OmniAuth::Builder do
+  provider :facebook, ENV['FACEBOOK_KEY'], ENV['FACEBOOK_SECRET'],
+           :scope => 'email,user_birthday,read_stream', :display => 'popup'
+end
+```
