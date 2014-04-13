@@ -26,9 +26,31 @@ for heroku setting:
 heroku config:set SECRET_KEY_BASE=value
 ```
 
+
+
+
 [heroku reference](https://devcenter.heroku.com/articles/config-vars)
 
 [gem solution dotenv](https://github.com/bkeepers/dotenv)
+
+
+### heroku rename
+
+```ruby
+$ heroku apps:rename newname
+#http://newname.heroku.com/ | git@heroku.com:newname.git
+#Git remote heroku updated
+```
+
+
+You can rename an app while outside a git checkout by passing an explicit --app argument:
+
+```ruby
+$ heroku apps:rename newname --app oldname
+#http://newname.heroku.com/ | git@heroku.com:newname.git
+```
+
+
 
 
 
