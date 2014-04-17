@@ -63,4 +63,19 @@ resque-web
 resque-web
 ```
 
+6) for heroku deployment
+
+```ruby
+ENV["REDISTOGO_URL"] ||= "redis://username:password@host:1234/"
+
+uri = URI.parse(ENV["REDISTOGO_URL"])
+Resque.redis = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password, :thread_safe => true)
+
+## special for rails 4 or later
+uri = URI.parse(ENV["REDISTOGO_URL"])
+REDIS = Redis.new(:url => ENV['REDISTOGO_URL'])
+```
+
+
+
 
