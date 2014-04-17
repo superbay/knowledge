@@ -66,6 +66,8 @@ resque-web
 6) for heroku deployment
 
 ```ruby
+#config/initializers/resque.rb
+
 ENV["REDISTOGO_URL"] ||= "redis://username:password@host:1234/"
 
 uri = URI.parse(ENV["REDISTOGO_URL"])
