@@ -16,6 +16,17 @@ Just two step
 require "resque/tasks"
 
 task "resque:setup" => :environment
+
+## for heroku
+
+require 'resque/tasks'
+
+task "resque:setup" => :environment do
+  ENV['QUEUE'] = '*'
+end
+
+desc "Alias for resque:work (To run workers on Heroku)"
+task "jobs:work" => "resque:work"
 ```
 
 2)  create a job for perform
