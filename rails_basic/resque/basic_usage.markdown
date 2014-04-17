@@ -27,6 +27,29 @@ class SomeJob
   @queue = :high
   
   def self.perform(some_id)
+    debugger
   end
 end
 ```
+
+3) Run work
+
+```
+rake resque:work QUEUE='*'
+```
+
+4) you can try it by rails console
+
+```ruby
+Resque.redis
+Resque.enqueue SomeJob, some_id
+
+```
+
+5) You can confirm it running well, if you get debugger at rake task or check 
+resque-web
+```
+resque-web
+```
+
+
