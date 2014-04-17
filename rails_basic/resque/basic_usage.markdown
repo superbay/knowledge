@@ -9,7 +9,7 @@ Currently There are two versions of resque according to the official home page
 
 Just two step
 
-1.  create a rails environment rake task
+1  create a rails environment rake task
 
 ```ruby
 #lib/tasks/resque.rake
@@ -18,7 +18,7 @@ require "resque/tasks"
 task "resque:setup" => :environment
 ```
 
-2.  create a job for perform
+2  create a job for perform
 
 
 ```ruby
