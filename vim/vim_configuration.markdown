@@ -16,7 +16,7 @@ set tabstop=2 shiftwidth=2 expandtab
 
 
 ```ruby
-#.rvmrc.after
+#.vimrc.after
 colorscheme vividchalk
 set wrap
 set paste
