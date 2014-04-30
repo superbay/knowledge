@@ -102,3 +102,10 @@ ps ax |grep master | awk '{print $1}' |xargs kill -9
 ps ax |grep unicorn_rails | grep -v grep | sed -n 2p| awk '{print $1}'
 
 ```
+
+
+### digital ocean swap file
+
+https://www.digitalocean.com/community/articles/how-to-add-swap-on-ubuntu-12-04
+
+
