@@ -109,3 +109,28 @@ ps ax |grep unicorn_rails | grep -v grep | sed -n 2p| awk '{print $1}'
 https://www.digitalocean.com/community/articles/how-to-add-swap-on-ubuntu-12-04
 
 
+
+```ruby
+#add file
+sudo dd if=/dev/zero of=/swapfile bs=1024 count=256k
+
+sudo mkswap /swapfile
+
+sudo swapon /swapfile
+
+swapon -s
+
+sudo vim /etc/fstab
+#add following line
+/swapfile swap swap defaults 0 0
+
+
+echo 10 | sudo tee /proc/sys/vm/swappiness
+echo vm.swappiness = 10 | sudo tee -a /etc/sysctl.conf
+
+#Swappiness in the file should be set to 10. Skipping this step may cause both poor performance, whereas setting it to 10 will cause swap to act as an emergency buffer, preventing out-of-memory crashes.
+
+
+```
+
+
