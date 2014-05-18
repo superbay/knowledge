@@ -1,3 +1,9 @@
+https://github.com/pat/thinking-sphinx
+
+please use byebug to replace debugger
+
+https://github.com/deivid-rodriguez/byebug
+
 ### problem with install debugger-linecache
 
 
