@@ -133,4 +133,10 @@ echo vm.swappiness = 10 | sudo tee -a /etc/sysctl.conf
 
 ```
 
+install sphinx
+
+```
+sudo aptitude install sphinxsearch
+
+```
 
