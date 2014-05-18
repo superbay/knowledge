@@ -23,3 +23,15 @@ pid "#{RAILS_ROOT}/tmp/pids/unicorn.pid"
 stderr_path "#{RAILS_ROOT}/log/unicorn.err.log"
 stdout_path "#{RAILS_ROOT}/log/unicorn.out.log"
 ```
+
+
+restart nginx at ubuntu
+
+```ruby
+sudo service restart nginx
+
+brew services list
+
+brew services restart redis
+
+```
