@@ -140,3 +140,10 @@ sudo aptitude install sphinxsearch
 
 ```
 
+#mysql2 lib
+
+```
+sudo aptitude install libmysqlclient-dev
+```
+
+
