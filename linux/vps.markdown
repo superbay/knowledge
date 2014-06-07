@@ -133,6 +133,23 @@ echo vm.swappiness = 10 | sudo tee -a /etc/sysctl.conf
 
 ```
 
+
+and also 
+
+
+```ruby
+#edit 
+
+#sudo vim /etc/sysctl.conf
+vm.vfs_cache_pressure = 50
+
+
+```
+
+check [ detail ](https://www.digitalocean.com/community/articles/how-to-add-swap-on-ubuntu-14-04) 
+
+add swap for ubuntu 14.04 lts
+
 install sphinx
 
 ```
