@@ -29,6 +29,24 @@ end
 ```
 
 
+For instance, running:
+
+```
+$ rails generate migration AddDetailsToProducts 'price:decimal{5,2}' supplier:references{polymorphic}
+```
+
+will produce a migration that looks like this
+
+```ruby
+class AddDetailsToProducts < ActiveRecord::Migration
+  def change
+    add_column :products, :price, :decimal, precision: 5, scale: 2
+    add_reference :products, :supplier, polymorphic: true, index: true
+  end
+end
+```
+
+
 #### rails run specific migration
 
 ```ruby
