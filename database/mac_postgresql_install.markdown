@@ -140,3 +140,20 @@ We create a new user called postgres like this way:
 postgres=# CREATE ROLE postgres SUPERUSER CREATEDB CREATEROLE LOGIN;
 And that’s all. If you list all users again you’ll see that a new user has been created.
 ```
+
+
+Getting hands on postgres terminal 
+1. Login onto terminal 
+```
+psql -U DB_USERNAME -d DB_NAME -W DB_PASSWORD 
+
+```
+2. List databases 
+
+\l 
+3. Display tables 
+
+\dt 
+4. Exit from terminal 
+
+\q
