@@ -1,5 +1,30 @@
 ### Some basic usage
 
+
+```ruby
+
+sudo -u postgres psql template1
+
+template1=# CREATE USER tom WITH PASSWORD 'myPassword';
+
+ALTER USER postgres with encrypted password 'your_password';
+
+grant all privileges on database postgres to postgres; 
+
+alter user livegamer with superuser; 
+
+sudo nano /etc/postgresql/9.1/main/postgresql.conf
+
+#localhost
+
+
+listen_addresses = 'localhost'  
+```
+
+
+
+
+
 working for local macbook air
 
 ```ruby
