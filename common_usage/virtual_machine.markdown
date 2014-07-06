@@ -44,3 +44,13 @@ export http_proxy="http://username:password@host:port/"
 
 This will also apply to apt at the CLI. Some applications may pick this up, too. If it doesn't work for you, add the line to /etc/bash.bashrc and /etc/profile, too.
 
+
+### Generate ssh Key
+
+```ruby
+
+ssh-keygen -t rsa -C "your_email@example.com"
+
+```
+
+
