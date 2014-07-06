@@ -246,6 +246,24 @@ $ git config --global
 ```
 
 
+### rvm error
+
+```
+RVM is not a function, selecting rubies with 'rvm use ...' will not work.
+
+```
+
+
+How to solve the problem.
+
+
+```
+source ~/.rvm/scripts/rvm
+
+```
+
+
+
 
 
 
