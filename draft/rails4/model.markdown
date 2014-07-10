@@ -1,3 +1,29 @@
+### has_many uniq
+
+
+generate sql without an ORDER.
+
+```ruby
+has_many :comments, :order => :updated_at
+has_many :users, :uniq => true, :through => :comments
+```
+
+In Rails 4, ORDER is preserved (breaking postgresql).
+
+```ruby
+has_many :comments, -> {order(:updated_at)}
+has_many :users, -> {uniq}, :through => :comments
+```
+
+
+```ruby
+has_many :users, -> { unscope(:order).uniq }, :through => :comments
+
+
+```
+
+
+
 ### scope with includes
 
 ```ruby
