@@ -21,4 +21,40 @@ class CreateGuitars < ActiveRecord::Migration
     end
   end
 end
+
+
+class CreateMerchants < ActiveRecord::Migration
+  def change
+    create_table "merchants" do |t|
+      t.string "name", :null => false
+      t.string "city", :null => false
+      t.string "state"
+      t.string "email"
+      t.string "phone"
+    end
+  end
+end
 ```
+
+Say you need a query
+
+
+
+```ruby
+#solution1
+
+
+@guitars = Guitar.limit(25).includes( [:merchants] ).order( "#{params[:order] || 'price'} #{params[:sort] || 'DESC'}" )
+
+@guitars = @guitars.where('type', params[:type]) if params[:type]
+@guitars = @guitars.where('make', params[:make]) if params[:make]
+@guitars = @guitars.where('model', params[:model]) if params[:model]
+@guitars = @guitars.where('color', params[:color]) if params[:color]
+@guitars = @guitars.where('price < ?', params[:price]) if params[:price]
+@guitars = @guitars.where('merchants.city', params[:city]) if params[:city]
+
+render :json => @guitars.as_json(:include => :merchants )
+
+
+```
+
