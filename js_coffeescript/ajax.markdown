@@ -62,3 +62,22 @@ $.ajax({
 });
 
 ```
+
+
+```javascript
+
+info = {};
+info['first'] = 'hi';
+info['second'] = 'hello';
+
+
+$.ajax({
+   type: "POST",
+   data: {info:info},
+   url: "index.php",
+   success: function(msg){
+     $('.answer').html(msg);
+   }
+});
+
+```
