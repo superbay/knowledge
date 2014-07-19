@@ -82,6 +82,14 @@ $('select[id^="begin"],select[id$="end"]').each(function () {
 });
 ```
 
+```javascript
+
+$( "input[name!='newsletter']" ).next().append( "<b>; not newsletter</b>" );
+
+```
+
+
+
 ```html
 
 <!doctype html>
