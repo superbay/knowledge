@@ -44,3 +44,21 @@ $(document).ready ->
                     console.log "Card name: " +
                                 data.card.code + "\nPoints: " + data.points
 ```
+
+### data as json
+
+```javascript
+
+
+$.ajax({
+  url: '/create_lead',
+  data: {
+    name: $('#lead_gen_name').val(),
+    'lead_gen[email]': $('#lead_gen_email').val(),  
+  },
+  type: 'POST',
+  dataType: 'json',
+  success: function(data) { }
+});
+
+```
