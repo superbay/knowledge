@@ -82,7 +82,7 @@ $('select[id^="begin"],select[id$="end"]').each(function () {
 });
 ```
 
-```javascript
+```html
 
 <!doctype html>
 <html lang="en">
