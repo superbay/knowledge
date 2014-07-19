@@ -24,4 +24,67 @@ $("#ctl00_MainContent_MyUserControl tr").each(function(i,row) { ... }
 ```
 
 
+### selected options
+
+```javascript
+
+$('select[name="thegivenname"] option:selected').val();
+
+```
+
+
+
+Try this with [attribute-starts-with-selector](http://api.jquery.com/attribute-starts-with-selector)
+
+```javascript
+$('select[id^="begin"]').each(function () {
+    console.log(this.id);
+});
+
+```
+or you could use [attribute-ends-with-selector](http://api.jquery.com/attribute-ends-with-selector)
+
+```javascript
+$('select[id$="end"]').each(function () {
+    console.log(this.id);
+});
+
+```
+
+To select the first 3 you can use :lt(3) like this
+
+```javascript
+$('select[id^="begin"]:lt(3)').each(function () {
+    console.log(this.id);
+});
+```
+
+[DEMO](http://jsfiddle.net/Alfie/jZN8D)
+
+
+To combine the selectors you can do this
+
+```javascript
+$('select[id^="begin"][id$="end"]').each(function () {
+    console.log(this.id);
+});
+
+```
+
+[DEMO](http://jsfiddle.net/Alfie/3zwcj/1/)
+
+If you want to select an element with id that starts with begin OR end you can do this using , to get two different selectors
+
+```javascript
+$('select[id^="begin"],select[id$="end"]').each(function () {
+    //                ^
+    console.log(this.id);
+});
+```
+
+[DEMO](http://jsfiddle.net/Alfie/3zwcj/2/)
+
+
+
+
 ![screen shot 2014-07-11 at 1 49 10 pm](https://cloud.githubusercontent.com/assets/83296/3556416/bccba592-0923-11e4-9dff-3396af0bdf6d.png)
