@@ -34,6 +34,8 @@ javascript:
 
 ```
 
+rails slim javascript embed ruby code,
+
 
 just raw array in slim
 
