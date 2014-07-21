@@ -33,3 +33,14 @@ javascript:
 
 
 ```
+
+
+just raw array in slim
+
+or 
+
+```ruby
+
+<%= raw array.to_json%>
+
+```
