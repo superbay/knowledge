@@ -17,6 +17,7 @@ sudo gdebi google-chrome-stable_current_i386.deb
 
 ```
 
+
 For 64-bit Chrome:
 
 ```
