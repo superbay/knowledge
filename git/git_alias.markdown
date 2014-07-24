@@ -70,6 +70,7 @@ export LSCOLORS=gxfxaxdxcxegedabagacad
 ### git config
 ```ruby
 #~/.gitconfig
+#or .git/config
 [user]
   name = Phoenix
   email = phoenixtoday@gmail.com
