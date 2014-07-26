@@ -23,6 +23,12 @@ in your form, will result in
 in your controller.
 
 
+```ruby
+f.hidden_field :task_id, :value => task.id
+
+```
+
+
 ### another example
 
 ```ruby
