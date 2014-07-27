@@ -13,6 +13,15 @@ end
 ```
 
 
+### dynamic assign hash 
+
+```ruby
+hash.send(:[]=, week_day.to_sym, row.send(week_day))
+
+```
+
+
+
 call the hash
 
 
