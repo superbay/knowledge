@@ -67,4 +67,6 @@ class User < ActiveRecord::Base
 end
 
 
+before_save { |user| user.username = user.username.downcase }
+
 ```
