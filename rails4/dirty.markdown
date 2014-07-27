@@ -52,3 +52,19 @@ end
 
 
 ```
+
+
+or
+
+
+```ruby
+
+
+class User < ActiveRecord::Base
+  def username=(val)
+    write_attribute(:username, val.downcase)
+  end
+end
+
+
+```
