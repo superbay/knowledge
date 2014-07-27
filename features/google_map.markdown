@@ -10,7 +10,7 @@ google_map
 ### Custom markers
 
 https://developers.google.com/maps/tutorials/customizing/custom-markers
-
+https://developers.google.com/maps/documentation/javascript/markers
 
 ```javascript
 var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
