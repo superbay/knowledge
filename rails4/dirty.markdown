@@ -70,3 +70,20 @@ end
 before_save { |user| user.username = user.username.downcase }
 
 ```
+
+
+
+
+```ruby
+
+
+person = Person.find_by_name('Uncle Bob')
+person.changed?       # => false
+
+person.name = 'Bob'
+person.changed?       # => true
+person.name_changed?  # => true
+person.name_was       # => 'Uncle Bob'
+person.name_change    # => ['Uncle Bob', 'Bob']
+
+```
