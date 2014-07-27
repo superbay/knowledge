@@ -33,3 +33,22 @@ class User < ActiveRecord::Base
 end
 
 ```
+
+
+### before_save loop
+
+
+```ruby
+
+before_save do
+  self.update(username: self.username.downcase)
+end
+
+
+#should be 
+before_save do
+  self.username = self.username.downcase
+end
+
+
+```
