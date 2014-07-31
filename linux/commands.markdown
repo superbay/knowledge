@@ -1,3 +1,12 @@
+### SSH login without password
+
+```
+
+cat .ssh/id_rsa.pub | ssh b@B 'cat >> .ssh/authorized_keys'
+
+```
+
+
 ## tee
 
 
