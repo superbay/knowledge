@@ -40,6 +40,21 @@ function addMarker(feature) {
 http://www.iconarchive.com/show/vista-map-markers-icons-by-icons-land/Map-Marker-Bubble-Pink-icon.html
 
 
+http://icons.iconarchive.com/icons/icons-land/vista-map-markers/24/Map-Marker-Marker-Outside-Chartreuse-icon.png
+
+http://icons.iconarchive.com/icons/icons-land/vista-map-markers/24/Map-Marker-Marker-Outside-Pink-icon.png
+
+http://icons.iconarchive.com/icons/icons-land/vista-map-markers/24/Map-Marker-Marker-Outside-Azure-icon.png
+
+
+### other group
+
+http://icons.iconarchive.com/icons/icons-land/vista-map-markers/24/Map-Marker-Marker-Inside-Pink-icon.png
+
+http://icons.iconarchive.com/icons/icons-land/vista-map-markers/24/Map-Marker-Marker-Inside-Azure-icon.png
+
+http://icons.iconarchive.com/icons/icons-land/vista-map-markers/24/Map-Marker-Marker-Inside-Chartreuse-icon.png
+
 
 ```ruby
 
