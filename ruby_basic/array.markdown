@@ -9,3 +9,10 @@
 
 
 ```
+
+
+
+
+```ruby
+('This is a test string'.scan(/\w+/).map(&:downcase) & ['test', 'is']).length
+```
