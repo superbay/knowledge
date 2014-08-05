@@ -1,4 +1,14 @@
-Delete all lines containing a pattern
+### count how many lines, match that pattern
+
+
+```ruby
+:%s/pattern//gn
+```
+
+
+
+
+### Delete all lines containing a pattern
 
 The ex command g is very useful for acting on lines that match a pattern. You can use it with the d command, to delete all lines that contain a particular pattern, or all lines that do not contain a pattern.
 For example, to delete all lines containing "profile" (the first command is optional; it shows the lines that the second command will delete):
