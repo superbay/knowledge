@@ -33,6 +33,9 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 ## this resolved the problem of RVM is not function
 ```
 
+[rvm is not function](http://stackoverflow.com/questions/9336596/rvm-installation-not-working-rvm-is-not-a-function)
+
+
 #### git default editor
 
 ```ruby
