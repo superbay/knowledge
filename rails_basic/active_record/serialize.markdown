@@ -27,6 +27,7 @@ serialize :mycode, Array
  ```ruby
  MyModel.all.select { |m| m.mycode.include? 43402 }
  
- 
+ MyModel.where("mycode = ?", [43565, 43402].to_yaml)
+#=> [#<MyModel id:...]
  
  ```
