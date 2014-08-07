@@ -1,3 +1,19 @@
+
+
+
+
+
+#### migration with rake task invoke
+
+```ruby
+def up
+  Rake::Task['your_task'].invoke
+end
+
+```
+
+
+
 #### migration with references
 
 
