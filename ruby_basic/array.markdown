@@ -36,3 +36,16 @@ end
 longest                                        #=> "sheep"
 
 ```
+
+
+```ruby
+# iterate over ChangeLog entries.
+open("ChangeLog") { |f|
+  f.slice_before(/\A\S/).each { |e| pp e }
+}
+
+# same as above.  block is used instead of pattern argument.
+open("ChangeLog") { |f|
+  f.slice_before { |line| /\A\S/ === line }.each { |e| pp e }
+}
+```
