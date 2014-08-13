@@ -1,6 +1,9 @@
 
 Vim provides the :s (substitute) command for search and replace; this tip shows examples of how to substitute. 
 
+
+[references](http://vim.wikia.com/wiki/Search_and_replace)
+
 ### count how many lines, match that pattern
 
 
@@ -58,4 +61,4 @@ The next example shows use of \| ("or") to delete all lines except those that co
 ```
 
 
-[references](http://vim.wikia.com/wiki/Search_and_replace)
+
