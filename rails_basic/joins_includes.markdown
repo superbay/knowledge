@@ -11,6 +11,16 @@ Product.joins(:category).where('category = :name', name: name)
 ```
 
 
+
+
+.joins will just joins the tables and brings selected fields in return. if you call associations on joins query result, it will fire database queries again
+
+:include will eager load the included associations and add them in memory. :include loads all the included tables attributes. If you call associations on include query result, it will not fire any queries
+
+
+
+
+
 rails 4
 ### includes with select
 
