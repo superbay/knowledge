@@ -1,3 +1,6 @@
+
+Vim provides the :s (substitute) command for search and replace; this tip shows examples of how to substitute. 
+
 ### count how many lines, match that pattern
 
 
