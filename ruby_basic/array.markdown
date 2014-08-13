@@ -37,6 +37,7 @@ longest                                        #=> "sheep"
 
 ```
 
+#### slice_before
 
 ```ruby
 # iterate over ChangeLog entries.
@@ -48,4 +49,13 @@ open("ChangeLog") { |f|
 open("ChangeLog") { |f|
   f.slice_before { |line| /\A\S/ === line }.each { |e| pp e }
 }
+```
+
+#### flat_map
+
+```ruby
+
+[1, 2, 3, 4].flat_map { |e| [e, -e] } #=> [1, -1, 2, -2, 3, -3, 4, -4]
+[[1, 2], [3, 4]].flat_map { |e| e + [100] } #=> [1, 2, 100, 3, 4, 100]
+
 ```
