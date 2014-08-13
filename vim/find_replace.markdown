@@ -56,3 +56,6 @@ The next example shows use of \| ("or") to delete all lines except those that co
 :v/error\|warn\|fail/d
 
 ```
+
+
+[references](http://vim.wikia.com/wiki/Search_and_replace)
