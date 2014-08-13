@@ -5,6 +5,20 @@
 :%s/pattern//gn
 ```
 
+```
+#all lines
+:%s/foo/bar/g
+```
+
+Find each occurrence of 'foo' (in all lines), and replace it with 'bar'.
+
+```
+#current line only
+:s/foo/bar/g
+```
+
+Find each occurrence of 'foo' (in the current line only), and replace it with 'bar'.
+
 
 
 
