@@ -70,3 +70,13 @@ open("ChangeLog") { |f|
 (1..100).detect { |i| i % 5 == 0 and i % 7 == 0 }   #=> 35
 
 ```
+
+
+### drop & drop_while
+
+
+```ruby
+a = [1, 2, 3, 4, 5, 0]
+a.drop_while { |i| i < 3 }   #=> [3, 4, 5, 0]
+
+```
