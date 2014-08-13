@@ -80,3 +80,6 @@ a = [1, 2, 3, 4, 5, 0]
 a.drop_while { |i| i < 3 }   #=> [3, 4, 5, 0]
 
 ```
+
+
+[references](http://ruby-doc.org/core-2.1.2/Enumerable.html#method-i-collect)
