@@ -1,0 +1,27 @@
+```ruby
+
+class Person
+  cattr_accessor :hair_colors
+end
+
+Person.hair_colors = [:brown, :black, :blonde, :red]
+Person.hair_colors     # => [:brown, :black, :blonde, :red]
+Person.new.hair_colors # => [:brown, :black, :blonde, :red]
+
+
+```
+
+
+
+same as
+
+
+```ruby
+
+class Bar
+  class << self
+    attr_accessor :greeting
+  end
+end
+
+```
