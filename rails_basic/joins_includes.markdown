@@ -13,9 +13,9 @@ Product.joins(:category).where('category = :name', name: name)
 
 
 
-.joins will just joins the tables and brings selected fields in return. if you call associations on joins query result, it will fire database queries again
+.joins will just joins the tables and brings selected fields in return. if you call associations on joins query result, it will fire database queries again.   inner join 
 
-:include will eager load the included associations and add them in memory. :include loads all the included tables attributes. If you call associations on include query result, it will not fire any queries
+:include will eager load the included associations and add them in memory. :include loads all the included tables attributes. If you call associations on include query result, it will not fire any queries. left outer join
 
 
 
