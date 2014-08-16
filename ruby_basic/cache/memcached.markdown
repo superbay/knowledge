@@ -28,5 +28,8 @@ service memcached restart
 ```
 
 
-
+```
+config.cache_store = :dalli_store, 'cache-1.example.com', 'cache-2.example.com',
+  { :namespace => NAME_OF_RAILS_APP, :expires_in => 1.day, :compress => true }
+```
 
