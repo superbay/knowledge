@@ -3,6 +3,7 @@
 
 ```ruby
 sudo aptitude install postgresql
+sudo aptitude install libpq-dev#the library for pg gem
 
 sudo -u postgres psql template1 
 
