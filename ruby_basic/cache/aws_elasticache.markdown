@@ -19,3 +19,17 @@ for EC2 you just need secrety group
 
 
 [referece for VPC and Elasticache](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/ManagingVPC.html)
+
+
+more resource:
+
+
+http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/ManagingVPC.Connecting.html
+
+http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/ManagingVPC.CreatingCacheCluster.html
+
+http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/ManagingVPC.CreatingSubnetGroup.html
+
+http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/ManagingVPC.CreatingVPC.html
+
+http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/ManagingVPC.html
