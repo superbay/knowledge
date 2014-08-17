@@ -3,7 +3,7 @@
 example of fat controller
 
 
-![fat_controller1](https://cloud.githubusercontent.com/assets/83296/3944544/8f4bb950-260a-11e4-99b1-49067573fc2d.PNG)
+![fat_controller1](https://cloud.githubusercontent.com/assets/83296/3944549/c7c717c0-260a-11e4-91c3-ca16a1667158.PNG)
 
 the problem is 
 
