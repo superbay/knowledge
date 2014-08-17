@@ -11,3 +11,8 @@ the problem is
 2. business logic not encapsulated
 3. more conflicts in code
 4. new features hard to implement
+5. 
+
+will need to refactor to
+
+![fat_controller2](https://cloud.githubusercontent.com/assets/83296/3944552/ee623446-260a-11e4-8c6a-4b728bf50433.PNG)
