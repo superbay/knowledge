@@ -16,11 +16,13 @@ $('ul>')
 ```
 
 
-### append before after preppend
+### append before after prepend
 
 
 ```javascript
 var price = $("<p>Price: 399</p>")
 $("ul").before(price);
+
+$("ul").prepend(price);
 
 ```
