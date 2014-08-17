@@ -4,20 +4,6 @@ When do you think you need a non active record model
 ### UserRegistration
 
 
-```ruby
-class UserRegistration
-  attr_reader :user
-  def initialize(user_params)
-    @user = User.new(user_params)
-  end
-  private
-  def valid_background_check?
-    !!(@user.valid_ssn? || @user.valid_address?)
-  end
-  # private methods go here
-end
-
-```
 
 
 
@@ -49,4 +35,22 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email, :ssn, :address)
   end
 end
+```
+
+
+
+```ruby
+class UserRegistration
+  attr_reader :user
+  def initialize(user_params)
+    @user = User.new(user_params)
+  end
+  
+  private
+  def valid_background_check?
+    !!(@user.valid_ssn? || @user.valid_address?)
+  end
+  
+end
+
 ```
