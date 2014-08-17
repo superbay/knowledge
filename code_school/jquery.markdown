@@ -25,4 +25,7 @@ $("ul").before(price);
 
 $("ul").prepend(price);
 
+price.appendTo($("ul"));
+//same as prependTo insertAfter insertBefore
+
 ```
