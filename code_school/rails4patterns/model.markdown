@@ -16,3 +16,9 @@ the problem is
 will need to refactor to
 
 ![fat_controller2](https://cloud.githubusercontent.com/assets/83296/3944552/ee623446-260a-11e4-8c6a-4b728bf50433.PNG)
+
+### scope vs class methods
+
+![scope1](https://cloud.githubusercontent.com/assets/83296/3945247/6e6cb49c-2636-11e4-87de-0ec99ecf4621.PNG)
+
+
