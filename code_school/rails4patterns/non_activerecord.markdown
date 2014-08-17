@@ -38,6 +38,26 @@ end
 ```
 
 
+will refactor to 
+
+
+```ruby
+class UsersController < ApplicationController
+  def create
+
+    registration = UserRegistration.new(user_params)
+    @user = registration.user
+
+    if registration.create
+      redirect_to @user
+    else
+      render :new
+    end
+  end
+end
+
+```
+which will be much clean
 
 ```ruby
 class UserRegistration
