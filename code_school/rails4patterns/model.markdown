@@ -22,3 +22,15 @@ will need to refactor to
 ![scope1](https://cloud.githubusercontent.com/assets/83296/3945247/6e6cb49c-2636-11e4-87de-0ec99ecf4621.PNG)
 
 
+
+### deal with nil and blank
+
+![scope2](https://cloud.githubusercontent.com/assets/83296/3945265/4748d322-2637-11e4-9bd8-cc7942501792.PNG)
+
+
+same as 
+
+![scope3](https://cloud.githubusercontent.com/assets/83296/3945266/4bcf2e32-2637-11e4-8ea2-181083612874.PNG)
+
+
+
