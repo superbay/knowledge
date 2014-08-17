@@ -14,3 +14,13 @@ $('ul').childrent('li');
 $('ul>')
 
 ```
+
+
+### append before after preppend
+
+
+```javascript
+var price = $("<p>Price: 399</p>")
+$("ul").before(price);
+
+```
