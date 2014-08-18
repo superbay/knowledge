@@ -58,3 +58,88 @@ $(this).parents('span') - Empty jQuery object, the span has no ancestor spans.
 $(this).closest('span') - jQuery object with the span that was clicked.
 
 ```
+
+
+### append vs prepend
+
+
+suppose:
+```html
+<div class='a'> //<---you want div c to append in this
+  <div class='b'>b</div>
+</div>
+```
+
+
+when .append() executes it will look like this:
+
+
+```javascript
+$('.a').append($('.c'));
+```
+
+after execution:
+
+```html
+<div class='a'> //<---you want div c to append in this
+  <div class='b'>b</div>
+  <div class='c'>c</div>
+</div>
+```
+
+when .prepend() executes it will look like this:
+
+```javacript
+$('.a').prepend($('.c'));
+```
+
+after execution:
+
+```html
+<div class='a'> //<---you want div c to append in this
+  <div class='c'>c</div>
+  <div class='b'>b</div>
+</div>
+```
+.prepend() in execution.
+
+
+### after vs before
+
+
+.after() puts the element after the element
+.before() puts the element before the element
+
+
+using after:
+
+```javascript
+$('.a').after($('.c'));
+```
+
+after execution:
+
+```html
+<div class='a'>
+  <div class='b'>b</div>
+</div>
+<div class='c'>c</div> //<----this will be placed here
+```
+
+Fiddle with .after() in execution.
+
+using before:
+
+```javascript
+$('.a').before($('.c'));
+```
+
+after execution:
+
+```html
+<div class='c'>c</div> //<----this will be placed here
+<div class='a'>
+  <div class='b'>b</div>
+</div>
+```
+
