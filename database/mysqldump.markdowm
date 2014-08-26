@@ -2,14 +2,12 @@
 
 
 ```
-mysqldump -u root -p -t reptile usings -w "down_time = '2010-06-04'" > backup_using.sql 
-
--t -w 
+mysqldump -u root -p -t reptile usings -w "down_time = '2010-06-04'" > backup_using.sql -t -w 
 ```
 
 #### remote dump
 
-```
+```ruby
 
 mysqldump -P 3310 -h localhost -u mysql_user -p database_name table_name
 
