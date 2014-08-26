@@ -7,6 +7,18 @@ mysqldump -u root -p -t reptile usings -w "down_time = '2010-06-04'" > backup_us
 -t -w 
 ``
 
+#### remote dump
+
+```
+
+mysqldump -P 3310 -h localhost -u mysql_user -p database_name table_name
+
+
+```
+
+
+
+
 
 #### 备份数据库 
 
