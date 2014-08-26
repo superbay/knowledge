@@ -1,7 +1,7 @@
 ### mysqldump
 
 
-```
+```ruby
 mysqldump -u root -p -t reptile usings -w "down_time = '2010-06-04'" > backup_using.sql -t -w 
 ```
 
