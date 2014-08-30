@@ -31,3 +31,32 @@ sudo nano /etc/postgresql/9.1/main/postgresql.conf
 listen_addresses = 'localhost'  
 
 ```
+
+
+
+Getting error: Peer authentication failed for user “postgres”, when trying to get pgsql working with rails
+
+```
+sudo vim /etc/postgresql/9.3/main/pg_hba.conf 
+```
+
+If you intend to use password authentication over Unix sockets instead of the peer method, try changing the following pg_hba.conf* line:
+
+from
+```ruby
+# TYPE DATABASE USER ADDRESS METHOD
+local  all      all          peer
+
+```
+
+to
+
+```ruby
+# TYPE DATABASE USER ADDRESS METHOD
+local  all      all          md5
+```
+(Of course you can also create more specific rules for a specific database or user.)
+
+You'll need to restart PostgreSQL if it's running. E.g. sudo service postgresql restart
+
+* The file pg_hba.conf will most likely be at /etc/postgresql/9.1/main/pg_hba.conf
