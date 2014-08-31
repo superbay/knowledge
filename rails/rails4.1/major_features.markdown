@@ -99,6 +99,12 @@ bug.status             # => a symbol describing the bug's status
 bug.status = :resolved # => set the bug's status to :resolved
 ```
 
+
+```ruby
+Conversation.where("status <> ?", Conversation.statuses[:archived])
+```
+
+
 ### Application Message Verifier
 
 
