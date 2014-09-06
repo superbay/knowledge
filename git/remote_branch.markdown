@@ -11,6 +11,8 @@ git reset --hard origin/feature/annotations
 ```
 git pull origin refs/heads/feature/annotations
 
+git checkout -b migration/new-branch origin/migration/new-branch
+
 ```
 
 
