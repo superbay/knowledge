@@ -4,7 +4,7 @@ In Terminal, type one of the following. There may be other flags you’d like to
 
 #### Uncompressed:
 ```
-$ pg_dump -h IP_ADDRESS -p 5432 -U app -N postgis -N topology -d DATABASE_NAME > your_file_name.sql
+$ pg_dump -h IP_ADDRESS -p 5432 -U app -c -N postgis -N topology -d DATABASE_NAME > your_file_name.sql
 ```
 #### Compressed:
 
@@ -44,7 +44,7 @@ WARNING: This will override your database! If unsure, backup your database befor
 #### Uncompressed:
 
 ```
-$ psql -h IP_ADDRESS -p 5432 -U app -f your_file_name.sql
+$ psql -h IP_ADDRESS -p 5432 -d database_name -U app -f your_file_name.sql
 ```
 
 #### Compressed:
