@@ -26,3 +26,17 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo gdebi google-chrome-stable_current_amd64.deb
 
 ```
+
+
+### install google pinyin
+
+```
+
+sudo apt-get install im-switch fcitx fcitx-config-gtk2 fcitx-googlepinyin fcitx-frontend-gtk2 fcitx-ui-classic fcitx-ui-light fcitx-rime
+
+im-switch -s fcitx
+
+fcitx
+
+```
+need to reboot
