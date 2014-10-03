@@ -34,3 +34,4 @@ need to find the seq name
 ALTER SEQUENCE sequence_name RESTART WITH next_id_in_line;.
 
 ```
+![screen shot 2014-10-03 at 11 29 27 am](https://cloud.githubusercontent.com/assets/83296/4508037/1ffafce6-4b12-11e4-9ed7-0c38be258eb3.png)
