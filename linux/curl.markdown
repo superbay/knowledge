@@ -9,6 +9,9 @@ curl -X POST --data "param1=value1&param2=value2" http://example.com/resource.cg
 so far the best way to trigger post call to api. or jason call
 
 
+http://www.hurl.it/
+
+
 ### curl as ftp 
 
 
