@@ -31,3 +31,10 @@ require "#{Rails.root}/lib/extensions"
 
 
 http://stackoverflow.com/questions/19098663/auto-loading-lib-files-in-rails-4
+
+
+
+require File.expand_path('../../../lib/editorial.rb', __FILE__)  
+
+
+#require_relative '../../lib/editorial.rb'    
