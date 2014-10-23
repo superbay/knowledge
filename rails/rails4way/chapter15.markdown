@@ -63,8 +63,10 @@ end
 ```ruby
 class ProductsController < ApplicationController
   def search
-    @products = Product.where("name LIKE '%#{params[:search_terms]}%'") end
+    @products = Product.where("name LIKE '%#{params[:search_terms]}%'") 
+    
   end
+end
 
 ```
 
@@ -73,6 +75,18 @@ while input will be
 ```ruby
 SELECT * FROM products WHERE name LIKE'%'; DELETE FROM users; %';
 @products = Product.where('name LIKE ?',"%#{params[:query]}%")
+```
+
+#### solution
+
+```ruby
+class ProductsController < ApplicationController
+  def search
+    @products = Product.where("name LIKE '%?%'", name: params[:search_terms]) 
+    
+  end
+end
+
 ```
 
 #### Cross-Site Scripting (XSS)
