@@ -20,3 +20,11 @@ heroku keys:add ~/.ssh/id_rsa.pub
 
 heroku keys:add
 ```
+
+
+### reset database
+
+```
+heroku pg:reset DATABASE_URL --confirm {the name of your app}
+
+```
