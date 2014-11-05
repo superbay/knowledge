@@ -221,6 +221,12 @@ Person.having('min(age) > 17').group(:last_name).minimum(:age)
 
 `where.not` is a new usage, and the `Person.having.group.minimum` also not use all
 
+
+```ruby
+Order.select("date(created_at) as ordered_date, sum(price) as total_price").group("date(created_at)")
+
+```
+
 #### Test 
 
 ```ruby
