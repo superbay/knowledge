@@ -67,6 +67,28 @@ end
 will not work with through or polymorphic
 
 
+### :touch
+If true, the associated object will be touched (the updated_at/on attributes set to now) when this record is either saved or destroyed. If you specify a symbol, that attribute will be updated with the current time in addition to the updated_at/on attribute.
+
+### :inverse_of
+Specifies the name of the has_one or has_many association on the associated object that is the inverse of this belongs_to association. Does not work in combination with the :polymorphic options. See ActiveRecord::Associations::ClassMethods's overview on Bi-directional associations for more detail.
+
+Option examples:
+
+```ruby
+belongs_to :firm, foreign_key: "client_of"
+belongs_to :person, primary_key: "name", foreign_key: "person_name"
+belongs_to :author, class_name: "Person", foreign_key: "author_id"
+belongs_to :valid_coupon, ->(o) { where "discounts > ?", o.payments_count },
+                          class_name: "Coupon", foreign_key: "coupon_id"
+belongs_to :attachable, polymorphic: true
+belongs_to :project, readonly: true
+belongs_to :post, counter_cache: true
+belongs_to :company, touch: true
+belongs_to :company, touch: :employees_last_updated_at
+```
+
+
 #### polymorphic associations
 
 ```ruby
