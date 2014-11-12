@@ -190,3 +190,75 @@ actual.should be > 3
 
 See detailed information on [the should syntax and its usage](https://github.com/rspec/rspec-expectations/blob/master/Should.md).
 
+
+
+some thing not exactly 
+
+
+
+```ruby
+# Model
+
+expect(@user).to have(1).error_on(:username) # checks whether there is an error in username
+expect(@user.errors[:username]).to include("can't be blank") # check for the error message
+
+# Rendering
+
+expect(response).to render_template(:index)
+
+# Redirecting
+
+expect(response).to redirect_to(movies_path)
+
+# Capybara Matchers
+
+expect(response.body).to have_content("Hello world")
+expect(response.body).to_not have_content("Hello world")
+
+expect(response.body).to have_css("input#movie_title")
+expect(response.body).to have_css("input", count: 3) # true if there are 3 input tags in response
+expect(response.body).to have_css("input", maximum: 3) # true if there or fewer or equal to 3 input tags
+expect(response.body).to have_css("input", minimum: 3) # true if there are minimum of 3 input tags
+expect(response.body).to have_css("input", between: 1..3) # true if there 1 to 3 input tags
+expect(response.body).to have_css("p a", text: "hello") # true if there is a anchor tag with text hello
+expect(response.body).to have_css("p a", text: /[hH]ello(.+)/i) # true if there is a anchor tag with text matching regex
+
+expect(response.body).to have_xpath("//a")
+expect(response.body).to have_xpath("//a", href: "google.com")
+expect(response.body).to have_xpath("//a[@href='google.com']")
+expect(response.body).to have_xpath("//a[contains(.,'some string')]")
+expect(response.body).to have_xpath("//p//a", text: /re[dab]i/i, count: 1)
+
+# Can take both xpath and css as input and can take arguments similar to both have_css and have_xpath
+
+expect(response.body).to have_selector(:xpath, "//p/h1")
+expect(response.body).to have_selector(:css, "p a#movie_edit_path")
+
+# For making capybara to take css as default selector
+
+Capybara.default_selector = :css
+expect(response.body).to have_selector("input") # checks for the presence of the input tag
+expect(response.body).to have_selector("input", value: "Twelve Angry Men") # checks for input tag with value
+expect(response.body).to_not have_selector("input")
+
+# For making capybara to take xpath as default selector
+
+Capybara.default_selector = :xpath
+expect(response.body).to have_selector("//input") # checks for the presence of the input tag
+expect(response.body).to have_selector("//input", value: "Twelve Angry Men") # checks for input tag with value
+
+# To access elements inside form
+
+expect(response.body).to have_field("FirstName") # checks for presence of a input field named FirstName in a form
+expect(response.body).to have_field("FirstName", value: "Rambo")
+expect(response.body).to have_field("FirstName", with: "Rambo")
+
+# Checking for a link
+
+expect(response.body).to have_link("Foo")
+expect(response.body).to have_link("Foo", href: "google.com")
+expect(response.body).to_not have_link("Foo", href: "google.com")
+
+
+
+```
