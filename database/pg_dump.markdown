@@ -53,3 +53,13 @@ $ psql -h IP_ADDRESS -p 5432 -d database_name -U app -f your_file_name.sql
 $ pg_restore -h IP_ADDRESS -p 5432 -U app -d DATABASE_NAME your_file_name.dump
 ```
 A word on importing. Running the import command most likely will produce errors, such as “Error: role app already exists.” This is expected behavior as the database that you’re importing into already has been created; tables, keys, and roles will already exist. However the data should transfer amicably. It is a good idea to confirm that your actual data (not tables or schema) has been transferred properly.
+
+
+### ninefold working
+
+```ruby
+pg_dump -h hostname -p 5432 -U app -N postgis -N topology -d database -c > backup11_29.sql
+
+psql -h localhost -p 5432 -U app -d database -f backup11_29.sql
+
+```
