@@ -40,3 +40,12 @@ fcitx
 
 ```
 need to reboot
+
+
+### How to kill a process on port 80 on ubuntu
+ 
+```
+sudo kill `sudo lsof -t -i:9001`
+```
+
+http://stackoverflow.com/questions/9346211/how-to-kill-a-process-on-a-port-on-ubuntu
