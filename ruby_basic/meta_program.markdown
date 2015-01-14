@@ -42,6 +42,21 @@ call the hash
 alias_method "memoized_#{name}", name
 ```
 
+
+```ruby
+class MethodLogger
+  def log_method(klass, method_name)
+    klass.class_eval do
+      alias_method "#{method_name}_original", method_name
+      define_method method_name do
+        puts "#{Time.now}: Called #{method_name}"
+        send "#{method_name}_original"
+    end
+  end
+end
+```
+end
+
 ### Singleton
 
 ```ruby
