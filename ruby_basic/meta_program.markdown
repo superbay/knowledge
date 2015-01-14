@@ -75,6 +75,16 @@ ObjectSpace.each_object(OtherKlass){}
 
 ### tap
 
+```ruby
+class Object
+  def tap
+    yield self
+    self
+  end
+end
+```
+
+
 When readers encounter:
 
 ```ruby
