@@ -72,3 +72,24 @@ OtherKlass.instance
 ObjectSpace.each_object(OtherKlass){}
 # => 1
 ```
+
+### tap
+
+When readers encounter:
+
+```ruby
+user = User.new
+user.username = "foobar"
+user.save!
+```
+they would have to follow all the three lines and then recognize that is is just creating an instance named user.
+
+If it were:
+
+```ruby
+user = User.new.tap do |u|
+  u.username = "foobar"
+  u.save!
+end
+```
+then that would be immediately clear. A reader would not have to read what is inside the block to know that an instance user is created.
