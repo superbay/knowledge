@@ -103,3 +103,22 @@ user = User.new.tap do |u|
 end
 ```
 then that would be immediately clear. A reader would not have to read what is inside the block to know that an instance user is created.
+
+
+### eval with binding
+
+```ruby
+class Foo
+  def create_block
+    Proc.new {}
+  end
+end
+
+```
+In the example the Foo class has a method, create_block, that simply creates and returns a block. Despite the fact that this doesn't look very interesting, it actually provides you with the ability to evaluate any string of ruby code in the scope of the block. This gives you the power to evaluate ruby code in the context of an object without directly having reference to it.
+
+```ruby
+proc = Foo.new.create_block
+
+eval "self.class", proc.binding    #=> Foo
+```
