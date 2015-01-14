@@ -48,9 +48,9 @@ class MethodLogger
   def log_method(klass, method_name)
     klass.class_eval do
       alias_method "#{method_name}_original", method_name
-      define_method method_name do
+      define_method method_name do |*args, &blk|
         puts "#{Time.now}: Called #{method_name}"
-        send "#{method_name}_original"
+        send "#{method_name}_original", *args, &blk
     end
   end
 end
