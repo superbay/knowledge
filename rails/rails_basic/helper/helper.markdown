@@ -136,3 +136,20 @@ class MyController < ApplicationController
 end
 ```
 
+
+```ruby
+module EventsHelper
+  def do_something
+  end
+end
+Then, in the controller just include it
+
+class BadgeController < ApplicationController
+  include EventHelper
+
+  ...
+end
+```
+
+
+
