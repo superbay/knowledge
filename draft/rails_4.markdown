@@ -51,6 +51,13 @@ class Article < ActiveRecord::Base
   scope :sorted, -> { order(:name) }
 end
 
+# and also
+
+class Article < ActiveRecord::Base
+  scope :sorted, ->(order_type) { order_type == 'up' ? order(name: :up) : order(name: :down) }
+end
+
+
 class User < ActiveRecord::Base
   # Added scopes and associations for fetching account information using status
   has_many :accounts_with, class_name: 'Account' do 
