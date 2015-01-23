@@ -107,3 +107,32 @@ end
 
 ```
 
+### use helper method in model
+
+```ruby
+ApplicationController.helpers.your_helper_methord 
+#or 
+YourController.helpers.your_helper_method
+#example
+ActionController::Base.helpers.number_to_currency(read_attribute :oprice)
+
+Rails.application.routes.url_helpers.page_path(@page)
+```
+
+### helper in controller
+Using Rails Helpers inside a Controller
+
+```ruby
+include HelperName
+```
+
+which is same
+```ruby
+
+class MyController < ApplicationController
+  def action
+    @url = UrlHelper.generate_url(current_user)
+  end
+end
+```
+
