@@ -152,4 +152,24 @@ end
 ```
 
 
+### use method on view
 
+Declare a controller method as a helper. For example, the following makes the current_user controller method available to the view:
+```ruby
+
+class ApplicationController < ActionController::Base
+  helper_method :current_user, :logged_in?
+
+  def current_user
+    @current_user ||= User.find_by(id: session[:user])
+  end
+
+  def logged_in?
+    current_user != nil
+  end
+end
+```
+In a view:
+```
+<% if logged_in? -%>Welcome, <%= current_user.name %><% end -%>
+```
