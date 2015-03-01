@@ -288,3 +288,5 @@ Value of local variable is 1
 Value of local variable is 2
 ............................
 ```
+
+reference: http://www.tutorialspoint.com/ruby/ruby_loops.htm
