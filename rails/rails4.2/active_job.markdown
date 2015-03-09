@@ -159,23 +159,7 @@ Source code can be downloaded as part of the Rails project on GitHub
 
 * https://github.com/rails/rails/tree/master/activejob
 
-## License
-
-Active Job is released under the MIT license:
-
-* http://www.opensource.org/licenses/MIT
 
 
-## Support
 
-API documentation is at:
 
-* http://api.rubyonrails.org
-
-Bug reports can be filed for the Ruby on Rails project here:
-
-* https://github.com/rails/rails/issues
-
-Feature requests should be discussed on the rails-core mailing list here:
-
-* https://groups.google.com/forum/?fromgroups#!forum/rubyonrails-core
