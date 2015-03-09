@@ -233,6 +233,7 @@ end
 ### source code
 
 https://github.com/rails/rails/blob/master/activesupport/lib/active_support/concern.rb
+http://api.rubyonrails.org/classes/ActiveSupport/Concern.html
 
 
 
