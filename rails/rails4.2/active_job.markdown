@@ -47,3 +47,22 @@ http://dev.mikamai.com/post/96343027199/rails-4-2-new-gems-active-job-and-global
 
 https://blog.engineyard.com/2014/getting-started-with-active-job
 
+
+### How to start the delayed job
+
+```ruby
+RAILS_ENV=production script/delayed_job stop
+RAILS_ENV=production script/delayed_job start
+
+# execute job synch during tests and dev
+# or pass arg for async in those environments
+delayed_execution = if ENV['DELAY_JOBS']
+  true
+else
+  !(Rails.env.test? or Rails.env.development?)
+end
+
+Delayed::Worker.delay_jobs = delayed_execution
+```
+
+http://stackoverflow.com/questions/19958133/delayed-job-rails-4
