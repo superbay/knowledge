@@ -67,6 +67,26 @@ Delayed::Worker.delay_jobs = delayed_execution
 
 http://stackoverflow.com/questions/19958133/delayed-job-rails-4
 
+### How to start worker 
+
+normally
+`rake jobs:work`
+
+
+Start a standard rails console
+
+```ruby
+
+ruby script/console
+```
+
+
+And start a worker inside here, this will see and trigger the debugger statement.
+```ruby
+worker = Delayed::Worker.new
+worker.start
+
+```
 
 ## Usage
 
