@@ -1,3 +1,51 @@
+### NGINX Redirect http to https and non-www to ww
+
+
+```
+server{
+  listen 443 ssl;
+  server_name www.mydomain.com;
+  root /www/mydomain.com/;
+
+  ssl    on;
+  ssl_certificate /ssl/domain.crt;
+  ssl_certificate /ssl/domain.key;
+  .
+  . 
+  .
+}
+
+server{
+  listen 80;
+  server_name www.mydomain.com mydomain.com;
+  return 301 https://www.$server_name$request_uri;
+}
+
+server{
+  listen 443;
+  server_name mydomain.com;
+  return 301 https://www.$server_name$request_uri;
+}
+```
+
+redirect 
+
+```
+
+server {
+  listen 80 443;
+  server_name mydomain.com;
+  # add ssl settings
+  return 301 https://www.mydomain.com$request_uri;
+}
+
+```
+
+
+
+`sudo service nginx reload`
+
+
 ### how to set up two rails app under nginx
 
 
