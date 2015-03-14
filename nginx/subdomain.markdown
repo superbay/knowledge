@@ -46,6 +46,8 @@ server {
 `sudo service nginx reload`
 
 
+reference: http://serverfault.com/questions/67316/in-nginx-how-can-i-rewrite-all-http-requests-to-https-while-maintaining-sub-dom
+
 ### how to set up two rails app under nginx
 
 
