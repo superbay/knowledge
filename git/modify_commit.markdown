@@ -51,3 +51,10 @@ git filter-branch --tree-filter 'rm filename' HEAD
 ```ruby
 find . -name *.DS_Store -type f -exec git-rm {} \;
 ```
+
+
+### git commit with different user
+
+```
+git commit --author="Name <email>" -m "whatever"
+```
