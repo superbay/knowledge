@@ -79,5 +79,30 @@ REDIS = Redis.new(:url => ENV['REDISTOGO_URL'])
 ```
 
 
+### redis basic
 
+```ruby
+
+# config/initializers/redis.rb 
+ 
+$redis = Redis::Namespace.new("site_point", :redis => Redis.new)
+
+$redis.set("test_key", "Hello World!")
+
+$redis.get("test_key")
+
+# app/helpers/category_helper.rb
+ 
+module CategoryHelper
+  def fetch_categories
+    categories =  $redis.get("categories")
+    if categories.nil?
+      categories = Category.all.to_json
+      $redis.set("categories", categories)
+    end
+    @categories = JSON.load categories
+  end
+end
+
+```
 
