@@ -1,3 +1,20 @@
+### get all instance create 
+
+
+```ruby
+class Project
+  # ...
+
+  def self.all
+    ObjectSpace.each_object(self).to_a
+  end
+
+  def self.count
+    all.count
+  end
+end
+```
+
 ### How to dynamic call a hash
 
 
