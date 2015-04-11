@@ -62,6 +62,11 @@ Client.includes(users: [:avatar, { timesheets: :billable_weeks }] )
 # User has_many :avatar
 # User has_many :timesheets
 # Timesheet has_many billable_weeks
+
+Post.includes(:authors).where("authors.name" => "alice").first
+Author.joins(:articles).where(articles: { author: author })
+Article.includes(:comments).where(comments: { visible: true })
+Article.includes(:comments).where("articles.published_at <= ? and comments.created_at >= ?", Time.now, Time.now - 1.month)
 ```
 So, same level will be `Array`, lower one level will be `Hash`
 
