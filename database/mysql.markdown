@@ -31,3 +31,9 @@ mysql> flush privileges;
 Query OK, 0 rows affected (0.00 sec)
 ```
 
+
+
+```
+GRANT ALL ON *.* TO 'root'@'%' IDENTIFIED BY 'm117988' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+```
