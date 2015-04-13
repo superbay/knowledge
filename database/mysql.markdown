@@ -17,6 +17,9 @@ grant
 ```
 GRANT ALL ON *.* TO 'myuser'@'localhost';
 GRANT ALL ON *.* TO 'myuser'@'%';
+
+
+mysql> GRANT ALL PRIVILEGES ON *.* TO 'USERNAME'@'%' IDENTIFIED BY 'PASSWORD' WITH GRANT OPTION;
 ```
 
 
@@ -37,3 +40,8 @@ Query OK, 0 rows affected (0.00 sec)
 GRANT ALL ON *.* TO 'root'@'%' IDENTIFIED BY 'm117988' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 ```
+
+
+https://rtcamp.com/tutorials/mysql/remote-access/
+
+http://www.cyberciti.biz/tips/how-do-i-enable-remote-access-to-mysql-database-server.html
