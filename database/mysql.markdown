@@ -1,3 +1,7 @@
+### force ssl
+
+http://aws.amazon.com/rds/faqs/#53
+
 
 ### change my.cnf
 ```
