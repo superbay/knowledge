@@ -19,6 +19,9 @@
 
 https://devcenter.heroku.com/articles/heroku-postgres-import-export
 
+
+http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/PostgreSQL.Procedural.Importing.html
+
 ### Exporting
 
 In Terminal, type one of the following. There may be other flags you’d like to append; put those in before the > sign.
