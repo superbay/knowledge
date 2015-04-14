@@ -10,6 +10,10 @@
  PGPASSWORD=mypassword pg_dump -Fc --no-acl --no-owner -h localhost -U myuser mydb > mydb.dump
  
  heroku pg:backups restore 'https://s3.amazonaws.com/me/items/3H0q/mydb.dump' DATABASE -a sushi
+ 
+ 
+ heroku pg:psql
+
 
 ```
 
