@@ -204,3 +204,5 @@ end
 [reference](http://rubydoc.info/gems/rspec-rails/frames)
 
 
+https://speakerdeck.com/skmetz/magic-tricks-of-testing-railsconf
+
