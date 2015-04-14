@@ -1,3 +1,20 @@
+### dump from heroku
+
+```ruby
+ heroku pg:backups capture
+ curl -o latest.dump `heroku pg:backups public-url -a sushi`
+
+ pg_restore --verbose --clean --no-acl --no-owner -h localhost -U myuser -d mydb latest.dump
+ 
+ 
+ PGPASSWORD=mypassword pg_dump -Fc --no-acl --no-owner -h localhost -U myuser mydb > mydb.dump
+ 
+ heroku pg:backups restore 'https://s3.amazonaws.com/me/items/3H0q/mydb.dump' DATABASE -a sushi
+
+```
+
+https://devcenter.heroku.com/articles/heroku-postgres-import-export
+
 ### Exporting
 
 In Terminal, type one of the following. There may be other flags you’d like to append; put those in before the > sign.
