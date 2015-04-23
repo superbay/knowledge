@@ -1,3 +1,12 @@
+### install postgresql client only
+
+
+```
+sudo apt-get install postgresql
+sudo apt-get install libpq-dev
+```
+
+
 ### install postgresql in ubuntu 14.04
 
 
