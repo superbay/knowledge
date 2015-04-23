@@ -15,4 +15,9 @@ source ~/.bashrc
 
 ```
 apt-get install autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev
+
+
+#or
+
+sudo apt-get -y install build-essential zlib1g-dev libssl-dev libreadline-gplv2-dev
 ```
