@@ -4,7 +4,7 @@
  heroku pg:backups capture
  curl -o latest.dump `heroku pg:backups public-url -a sushi`
 
- pg_restore --verbose --clean --no-acl --no-owner -h localhost -U myuser -d mydb latest.dump
+ PGPASSWORD=mypassword pg_restore --verbose --clean --no-acl --no-owner -h localhost -U myuser -d mydb latest.dump
  
  
  PGPASSWORD=mypassword pg_dump -Fc --no-acl --no-owner -h localhost -U myuser mydb > mydb.dump
