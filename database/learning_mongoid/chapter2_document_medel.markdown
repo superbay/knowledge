@@ -7,4 +7,4 @@
   field :t, as: :title, type: String
 end”
 
-````
+```
