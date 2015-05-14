@@ -1,4 +1,23 @@
 ```ruby
+class Post
+end
+
+Object.const_get("Post")
+
+
+Use Module.const_get
+
+string = "Fixnum"
+clazz = Object.const_get(string)
+clazz.name # => "Fixnum"
+#If you are in a rails context, you can also use the `#constantize method on string
+
+clazz = string.constantize # => Fixnum
+
+```
+
+
+```ruby
 
 def error_messages_for(*params)
   options = params.extract_options!.symbolize_keys
