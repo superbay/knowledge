@@ -36,6 +36,21 @@ binding.eval("#{symbol}")
 
 ```ruby
 
+objs = {
+  'foo' => ...,
+  'key' => Item.new( :name => "Key", :description => "a key" )
+}
+objs['jim'] = ...
+case some_str
+  when /^read (.+)$/
+    puts "Reading #{$1}:"
+    puts objs[$1].description.downcase
+end
+
+```
+
+```ruby
+
 def error_messages_for(*params)
   options = params.extract_options!.symbolize_keys
   
