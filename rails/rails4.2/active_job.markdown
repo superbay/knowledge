@@ -9,6 +9,8 @@ class NewsletterJob < Struct.new(:text, :emails)
   end  
   
   Delayed::Job.enqueue NewsletterJob.new('lorem ipsum...', Customers.find(:all).collect(&:email))
+  
+  Delayed::Job.enqueue Note.new(parameter_hash), :priority => 10
   ```
 
 suggeted, since it is rails version
