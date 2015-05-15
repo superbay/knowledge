@@ -85,3 +85,11 @@ irb> b.save
 irb> Book.where("currency.hi" => 'INR').first
  => #<Book _id: 515c634c45db7c9233000001, t(title): nil, price: nil, page_count: nil, published_date: 2013-25-06 00:00:00 UTC, is_best_seller: false, awards: ["Booker Prize", "Pulitzer Prize"], reviews: nil, currency: {"en"=>"GBP", "hi"=>"INR"}, author_id: nil>
 ```
+
+### find_and_modify
+
+```ruby
+irb> Book.where(title: "Aristortle").find_and_modify({"$set" => { reserved: true, reserved_by: "Willie G. Bach" } }, new: true)
+
+ => #<Book _id: 516e7ab045db7cd86a000001, t(title): "Aristortle", price: nil, page_count: nil, published_date: 2012-05-20 00:00:00 UTC, is_best_seller: true, reserved: true, reserved_on: nil, reserved_by: "Willie G. Bach", currency: nil, author_id: nil>
+```
