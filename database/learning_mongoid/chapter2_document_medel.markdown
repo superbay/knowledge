@@ -47,3 +47,34 @@ excute the index
 bundle exec rake db:mongoid:create_indexes
 
 ```
+
+### Localization
+
+```ruby
+class Book
+  include Mongoid::Document
+
+  #...
+  field :currency, localize: true
+end
+
+```
+
+Now we can play around with this localized field.
+
+```
+irb> b = Book.first
+ => #<Book _id: 515c634c45db7c9233000001, t(title): nil, price: nil, page_count: nil, published_date: 2013-25-06 00:00:00 UTC, is_best_seller: false, awards: ["Booker Prize", "Pulitzer Prize"], reviews: nil, currency: nil, author_id: nil>
+irb> I18n.locale
+ => :en 
+irb> b.currency = "GBP"
+ => "GBP" 
+irb> b.save
+ => true 
+irb> I18n.locale = :hi
+ => :hi 
+irb> b.currency = 'INR'
+ => "INR" 
+irb> b.save
+ => true”
+```
