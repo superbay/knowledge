@@ -93,3 +93,21 @@ irb> Book.where(title: "Aristortle").find_and_modify({"$set" => { reserved: true
 
  => #<Book _id: 516e7ab045db7cd86a000001, t(title): "Aristortle", price: nil, page_count: nil, published_date: 2012-05-20 00:00:00 UTC, is_best_seller: true, reserved: true, reserved_on: nil, reserved_by: "Willie G. Bach", currency: nil, author_id: nil>
 ```
+
+
+### nested attributes
+
+The :reject_if object allows us to reject nested attributes; for example, the following example will reject the address attribute if all the fields are blank.
+
+
+```ruby
+
+accepts_nested_attributes_for :address, reject_if: :all_blank
+
+```
+
+We can also specify specific constraints to reject the nested attributes; for example, reject the address if the country field is blank.
+
+```ruby
+accepts_nested_attributes_for :address, reject_if: ->(attrs) { attrs[:country].blank? }
+```
