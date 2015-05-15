@@ -13,7 +13,7 @@ end
 better way to create alias and index
 
 ```ruby
-“class Contact
+class Contact
   include Mongoid::Document
 
   field :ln, as: :last_name, type: String
@@ -37,7 +37,7 @@ better way to create alias and index
           org_name: 1, occupation: 1, prefix: 1,
           suffix: 1, telephone: 1, street_1: 1, 
           street_2: 1, city: 1, state: 1, zip_code: 1})
-end”
+end
  
 ```
 
