@@ -78,3 +78,10 @@ irb> b.currency = 'INR'
 irb> b.save
  => true”
 ```
+
+#### Query
+
+```ruby
+irb> Book.where("currency.hi" => 'INR').first
+ => #<Book _id: 515c634c45db7c9233000001, t(title): nil, price: nil, page_count: nil, published_date: 2013-25-06 00:00:00 UTC, is_best_seller: false, awards: ["Booker Prize", "Pulitzer Prize"], reviews: nil, currency: {"en"=>"GBP", "hi"=>"INR"}, author_id: nil>
+```
