@@ -34,3 +34,9 @@ Now, if we want to search inside an array of hashes or embedded documents, we ca
 > Book.where('reviews.content' => /awesome/).first
 => #<Book _id: 51b75aaf45db7cc8b4000001, t(title): "How to deal?", ,,, author_id: BSON::ObjectId('5143678345db7ca255000001')>
 ```
+
+###scope
+
+```ruby
+scope :latest, gte(published_date: (Date.today – rand(10).years).beginning_of_year)
+```
