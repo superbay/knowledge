@@ -16,3 +16,21 @@ Book.in(awards: ['second place']).first
 Book.where(awards: /second plac[e/E]/).first
 
 ```
+
+search embeded documents will be same as hash or array
+
+```ruby
+irb> b = Book.all.sample
+=> #<Book _id: 51b75aaf45db7cc8b4000001, t(title): "How to deal?", ... author_id: BSON::ObjectId('5143678345db7ca255000001')>
+
+irb> b.reviews << Review.new(content: 'awesome')
+ => [#<Review _id: 527aa81433352d01f0000000, content: "awesome">]
+ 
+irb> b.reviews << Review.new(content: 'sucks!')
+ => [#<Review _id: 527aa81433352d01f0000000, content: "awesome">, #<Review _id: 527aa81a33352d01f0010000, content: "sucks!">]
+Now, if we want to search inside an array of hashes or embedded documents, we can fire the query as follows:
+
+
+> Book.where('reviews.content' => /awesome/).first
+=> #<Book _id: 51b75aaf45db7cc8b4000001, t(title): "How to deal?", ,,, author_id: BSON::ObjectId('5143678345db7ca255000001')>
+```
