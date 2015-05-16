@@ -42,3 +42,21 @@ class Author
 
 end
 ```
+
+```ruby
+irb> a.following << b
+ => [BSON::ObjectId('4ef5ab6ffed0eb89bf000001')]
+When this is done, we can see that the follower_ids object of a and the following_ids of b are updated together! This is shown in the following code:
+
+
+irb> a.following
+ => [#<Author _id: 4ef5ab6ffed0eb89bf000001, _type: nil, name: "Mark Twain", 
+follower_ids: [BSON::ObjectId('4e86e4b6fed0eb0be0000011')], 
+following_ids: []>]
+
+irb> b.followers
+ => [#<Author _id: 4e86e4b6fed0eb0be0000011, _type: nil, name: "Charles Dickens", 
+follower_ids: [], 
+following_ids: [BSON::ObjectId('4ef5ab6ffed0eb89bf000001')]>] 
+
+```
