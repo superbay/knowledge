@@ -12,4 +12,7 @@ search in array attributes
 
 ```ruby
 Book.in(awards: ['second place']).first 
+#or
+Book.where(awards: /second plac[e/E]/).first
+
 ```
