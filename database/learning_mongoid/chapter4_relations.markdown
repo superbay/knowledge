@@ -24,3 +24,21 @@ irb> a = Author.last
 Send email: #<Book _id: 51b2ffbe45db7cb20d000001, t(title): nil, published_date: nil, is_best_seller: false, awards: [], reviews: nil, currency: nil, author_id: "519ba17d45db7c5ac9000005">
 
 ```
+
+
+### inverse_of
+
+```ruby
+class Author
+  include Mongoid::Document
+
+  has_and_belongs_to_many :followers, 
+                          class_name: "Author",
+                          inverse_of: :following
+
+  has_and_belongs_to_many :following, 
+           class_name: "Author",
+           inverse_of: :followers
+
+end
+```
