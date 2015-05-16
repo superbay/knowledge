@@ -60,3 +60,37 @@ follower_ids: [],
 following_ids: [BSON::ObjectId('4ef5ab6ffed0eb89bf000001')]>] 
 
 ```
+
+
+
+```ruby
+class Author
+  include Mongoid::Document
+
+  embeds_many :child_authors, class_name: "Author", cyclic: true
+  embedded_in :parent_author, class_name: "Author", cyclic: true
+
+end
+```
+
+```ruby
+irb> a = Author.first
+ => #<Author _id: 4e86e4b6fed0eb0be0000011, _type: nil, name: "Charles Dickens">
+
+irb> a.child_authors << Author.last
+ => true
+
+irb> a.child_authors.first.parent_author
+ => #<Author _id: 4ef5ab6ffed0eb89bf000001, _type: nil, name: "Mark Twain"> 
+```
+
+We now embed an array called child_authors into the Author document, and then reference the parent using the parent_author field. We can also do the exact same thing we just saw using the following code:
+
+```ruby
+class Author
+  include Mongoid::Document
+
+  recursively_embeds_many
+
+end
+```
