@@ -47,3 +47,13 @@ Now, if we want to search inside an array of hashes or embedded documents, we ca
 ```ruby
 scope :latest, gte(published_date: (Date.today – rand(10).years).beginning_of_year)
 ```
+
+### find_and_modify
+
+```ruby
+
+Queue.
+  where(pending: true).
+  asc(:created_at).
+  find_and_modify({ "$set" => { pending: false }}, new: true)
+```
