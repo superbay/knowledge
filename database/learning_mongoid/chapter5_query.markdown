@@ -1,4 +1,9 @@
 
+```ruby
+Person.where('$or' => [{first_name: "Soren"}, {last_name: "White"}])
+Person.any_of({first_name: "Soren"}, {last_name: "White"}).to_a
+Person.or({first_name: "Soren"}, {last_name: "White"})
+
 
 ```ruby
 Book.where(:published_date.lte => Date.today)
