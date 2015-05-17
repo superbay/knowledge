@@ -97,3 +97,21 @@ I went with the second option, because our developers have coded for dates in th
 If you specifically want to delete this is a quick way to do it. If you need to some other command you can always replace the ecex rm {} \ ; with some thing else.
 
 http://stackoverflow.com/questions/8962477/logrotate-files-with-date-in-the-file-name
+
+
+
+###logging.properties
+
+ To achieve this, in the logging.properties, add: 
+
+```
+.handlers = 1catalina.java.util.logging.FileHandler 
+.level=FINE 
+ 
+1catalina.java.util.logging.FileHandler.level = FINE 
+1catalina.java.util.logging.FileHandler.pattern = ${catalina.base}/logs/${catalina.appserver.instance}.%g.log 
+1catalina.java.util.logging.FileHandler.limit = 2000000 
+1catalina.java.util.logging.FileHandler.count = 5 
+1catalina.java.util.logging.FileHandler.formatter = java.util.logging.SimpleFormatter
+
+```
