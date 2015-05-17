@@ -97,6 +97,7 @@ find /path/to/search/ -type f -iname "*.mp4" -printf '%s %p\n'| sort -nr | head 
 ```
 
 like this version
+works well to help with find the largest file or folder
 
 ```ruby
 du -sh `ls .` 
