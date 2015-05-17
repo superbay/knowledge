@@ -21,3 +21,52 @@ Modified the /usr/share/tomcat7/bin/setenv.sh file as the following (giving it a
 ```
 export JAVA_OPTS="$JAVA_OPTS -Xmx4000m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/mnt/data/tomcat_dump
 ```
+
+
+### tomcat daily log rotation
+
+If you would like to setup Tomcat logrotation you can do the following:
+
+```
+# vi /etc/logrotate.d/qm-tomcat6
+```
+
+This will create the logriotate file, that you will have to set up as follows:
+
+```sh
+/usr/local/queuemetrics/tomcat/logs/*.log {
+  notifempty
+  copytruncate
+  daily
+  rotate 10
+  compress
+  missingok
+}
+
+
+/usr/local/queuemetrics/tomcat/logs/catalina.out {
+  notifempty
+  copytruncate
+  dateext
+  daily
+  rotate 10
+  compress
+  missingok
+}
+```
+If you want to, you can make it take care of cleaning out temp files as well (or just do it from cron as you would normally)
+
+```sh
+/usr/local/queuemetrics/tomcat/logs/catalina.out {
+  notifempty
+  copytruncate
+  dateext
+  daily
+  rotate 10
+  compress
+  missingok
+  postrotate
+    /bin/nice /usr/bin/find /usr/local/queuemetrics/tomcat/temp -type f -mtime +10 -exec /bin/rm {} \; > /dev/null
+  endscript
+}
+```
