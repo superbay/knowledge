@@ -114,6 +114,7 @@ compress
 ### remove
 ```
 find /pathtologs/* -mtime +5 -exec rm {} \;
+find tomcat/logs/ -mtime +7 -print0 | xargs -r -0 rm -rf
 ```
 
 I went with the second option, because our developers have coded for dates in the files names. So it needs to stay that way. The -mtime +5 sets find to only look for files who are older then 5 days.
@@ -124,7 +125,13 @@ If you specifically want to delete this is a quick way to do it. If you need to 
 
 http://stackoverflow.com/questions/8962477/logrotate-files-with-date-in-the-file-name
 
+```
+find -name "*.tif" -size -160k -delete
+```
 
+To verify that the correct files are found run the command without -delete first.
+
+Note the - at -160k. Just 160k means exactly 160 kilobytes. -160k means smaller than 160 kilobytes. +160k means larger than 160 kilobytes.
 
 ###logging.properties
 
