@@ -71,6 +71,19 @@ If you want to, you can make it take care of cleaning out temp files as well (or
 }
 ```
 
+```
+/var/log/rsync/dummy {
+        daily
+        rotate 0
+        create
+        ifempty
+        lastaction
+                /usr/bin/find /var/log/rsync/ -mtime +7 -delete
+                /usr/bin/find /var/log/rsync/ -mtime +1 -exec gzip -q {} \;
+        endscript
+}
+```
+
 
 ### remove
 ```
