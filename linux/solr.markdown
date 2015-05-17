@@ -70,3 +70,15 @@ If you want to, you can make it take care of cleaning out temp files as well (or
   endscript
 }
 ```
+
+
+### remove
+```
+find /pathtologs/* -mtime +5 -exec rm {} \;
+```
+
+I went with the second option, because our developers have coded for dates in the files names. So it needs to stay that way. The -mtime +5 sets find to only look for files who are older then 5 days.
+
+
+
+If you specifically want to delete this is a quick way to do it. If you need to some other command you can always replace the ecex rm {} \ ; with some thing else.
