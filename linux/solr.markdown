@@ -131,6 +131,7 @@ http://stackoverflow.com/questions/8962477/logrotate-files-with-date-in-the-file
  To achieve this, in the logging.properties, add: 
 
 ```
+#/etc/tomcat6/logging.properties
 .handlers = 1catalina.java.util.logging.FileHandler 
 .level=FINE 
  
@@ -141,3 +142,5 @@ http://stackoverflow.com/questions/8962477/logrotate-files-with-date-in-the-file
 1catalina.java.util.logging.FileHandler.formatter = java.util.logging.SimpleFormatter
 
 ```
+
+http://www.vineetmanohar.com/2010/03/howto-rotate-tomcat-catalina-out/
