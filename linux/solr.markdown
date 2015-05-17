@@ -95,3 +95,5 @@ I went with the second option, because our developers have coded for dates in th
 
 
 If you specifically want to delete this is a quick way to do it. If you need to some other command you can always replace the ecex rm {} \ ; with some thing else.
+
+http://stackoverflow.com/questions/8962477/logrotate-files-with-date-in-the-file-name
