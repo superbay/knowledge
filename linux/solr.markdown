@@ -133,6 +133,26 @@ To verify that the correct files are found run the command without -delete first
 
 Note the - at -160k. Just 160k means exactly 160 kilobytes. -160k means smaller than 160 kilobytes. +160k means larger than 160 kilobytes.
 
+The find command available in GNU/Linux shells is a versatile tool for finding files matching the given conditions in a folder and performing a specific action on the files found. The following command will find all files greater than 1M size in your current folder and ask you if you would like to delete the file
+
+```
+find . -size +1M -exec rm -i {} \;
+```
+
+The following command will find all tar.gz files greater than 1M size and ask you whether you wish to delete them.
+
+```
+find . -size +1M -name "*.tar.gz" -exec rm -i {} \;
+```
+
+The following command will find all tar.gz files greater than 1M size and less than 20M size and ask you whether you wish to delete them.
+
+```
+find . -size +1M -name -size -20M "*.tar.gz" -exec rm -i {} \;
+```
+
+Find is an extremely powerful tool. To know more check out man find and read through the full set of offerings.
+
 ###logging.properties
 
  To achieve this, in the logging.properties, add: 
