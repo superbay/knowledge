@@ -85,6 +85,32 @@ If you want to, you can make it take care of cleaning out temp files as well (or
 ```
 
 
+another version
+
+```
+#/etc/logrotate.d/confluence
+compress
+/u/app/confluence/confluence-data/logs/atlassian-confluence.log {
+    # rotate weekly
+    weekly
+    # keep up to 4 logs
+    rotate 4
+    # do not rotate empty log
+    notifempty
+    # make new blank log
+    create
+    # run this once before rotating any logs (if if logs need rotating)
+    firstaction
+      /u/app/confluence/confluence-current/bin/shutdown.sh
+      sleep 30
+    endscript
+    # run this once after rotating any logs (if if logs needed rotating)
+    lastaction
+      /u/app/confluence/confluence-current/bin/startup.sh
+    endscript
+}
+```
+
 ### remove
 ```
 find /pathtologs/* -mtime +5 -exec rm {} \;
