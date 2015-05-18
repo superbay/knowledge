@@ -13,7 +13,6 @@ git config user.email "ke@me.com"
 alias ll='ls -all'
 alias g='git'
 alias gst='git status'
-alias gs='git push'
 alias gc='git commit'
 alias gca='git commit -a'
 alias ga='git add'
