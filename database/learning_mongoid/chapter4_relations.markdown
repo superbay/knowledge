@@ -61,6 +61,9 @@ following_ids: [BSON::ObjectId('4ef5ab6ffed0eb89bf000001')]>]
 
 ```
 
+using active record as below:
+
+![screen shot 2015-05-18 at 9 33 40 pm](https://cloud.githubusercontent.com/assets/83296/7693868/32974eee-fda6-11e4-809a-edb907b0279f.png)
 
 
 ```ruby
