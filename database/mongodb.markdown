@@ -1,5 +1,5 @@
 
-
+http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu
 ```
 # mongoid 3.x
 #
