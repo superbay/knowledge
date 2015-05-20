@@ -1,4 +1,10 @@
 
+
+```
+sudo apt-get install -y mongodb-org=3.0.3 mongodb-org-server=3.0.3 mongodb-org-shell=3.0.3 mongodb-org-mongos=3.0.3 mongodb-org-tools=3.0.3
+```
+
+
 http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu
 ```
 # mongoid 3.x
