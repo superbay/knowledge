@@ -30,6 +30,9 @@ db.shelf.findOne({$or: [{age: {$gt: 14}}, {name: /ege3/}, {passion: {$in: [/Ruby
 sudo apt-get install -y mongodb-org=3.0.3 mongodb-org-server=3.0.3 mongodb-org-shell=3.0.3 mongodb-org-mongos=3.0.3 mongodb-org-tools=3.0.3
 ```
 
+![operator](https://cloud.githubusercontent.com/assets/83296/7784794/71ff3d06-0140-11e5-855f-a325c05e5954.PNG)
+
+
 
 http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu
 ```
