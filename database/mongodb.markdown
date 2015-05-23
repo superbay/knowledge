@@ -1,5 +1,11 @@
 ### Basic query
 
+```ruby
+db.books.find({ $or : [ { name: "Oliver Twist"} , {publisher : "Dover
+Publications"} ] })
+```
+
+
 search from array and match
 ```
 db.shelf.findOne({passion: {"$in": [ /Ruby/ ]}})
