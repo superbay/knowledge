@@ -1,9 +1,15 @@
 ### Basic query
 
+```ruby
+
 
 ```
 #and relation
 db.shelf.findOne({age: {$gt: 10, $lt: 90}})
+db.shelf.findOne({age: {$gt: 14}, name: /ege3/})
+
+#or relation
+db.shelf.findOne({$or: [{age: {$gt: 14}}, {name: /ege3/}, {passion: {$in: [/Ruby/]}}]})
 
 
 ```
