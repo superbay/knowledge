@@ -1,8 +1,7 @@
 ### Basic query
 
 ```ruby
-db.books.find({ $or : [ { name: "Oliver Twist"} , {publisher : "Dover
-Publications"} ] })
+db.books.find({ $or : [ { name: "Oliver Twist"} , {publisher : "Dover Publications"} ] })
 ```
 
 
