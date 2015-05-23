@@ -2,6 +2,7 @@
 
 ![screen shot 2015-05-23 at 11 23 58 am](https://cloud.githubusercontent.com/assets/83296/7784730/456c7706-013e-11e5-987e-addd523c7e5b.png)
 
+```
 #and relation
 db.shelf.findOne({age: {$gt: 10, $lt: 90}})
 db.shelf.findOne({age: {$gt: 14}, name: /ege3/})
