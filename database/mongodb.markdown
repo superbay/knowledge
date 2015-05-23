@@ -2,6 +2,8 @@
 
 ```ruby
 db.books.find({ $or : [ { name: "Oliver Twist"} , {publisher : "Dover Publications"} ] })
+
+db.books.find({ published_on: ISODate("2002-12-30"), $or : [ { name: "Oliver Twist"} , {publisher : "Dover Publications"} ] })
 ```
 
 
