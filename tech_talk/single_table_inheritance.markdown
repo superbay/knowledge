@@ -314,5 +314,5 @@ https://github.com/T-Dnzt/sti-with-rails4
 
 Just play around with your new STI models and see everything you can do. As you can see, it can be pretty useful. In the second part, we will see how we can present our inherited models to the world through a single controller and how to configure the routes to do so.
 
-http://samurails.com/tutorial/single-table-inheritance-with-rails-4-part-2/
-http://samurails.com/tutorial/single-table-inheritance-with-rails-4-part-3/
+[next part](http://samurails.com/tutorial/single-table-inheritance-with-rails-4-part-2/)
+[third part](http://samurails.com/tutorial/single-table-inheritance-with-rails-4-part-3/)
