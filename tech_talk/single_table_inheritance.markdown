@@ -140,3 +140,176 @@ classTimesheet<ActiveRecord::Base
 end
 ```
 
+
+###What is Single Table Inheritance ?
+
+Single Table Inheritance is, as the name suggests it, a way to add inheritance to your models. STI lets you save different models inheriting from the same model inside a single table.
+
+For example, let’s say you have an employee model. The employees can be of two types : manager or developer. They pretty much share the same attributes and columns. However, their behavior should be different. Creating two tables having the exact same fields would be bad.
+
+But here comes STI ! With STI, you can just keep your employee model and simply subclass it with your two types of employee. The only thing to do at the database level is to add a type column to the employees table that ActiveRecord will automatically use to identify the submodel. If you want to know more about STI and see a real example, keep reading !
+
+With great power comes great responsibility
+
+STI should be used if your submodels will share the same attributes but need different behavior. If you plan to add 10 columns only used by one submodel, using different tables might be a better solution.
+
+###Creating the rails app
+
+Time to create our rails app. If you already have a running app, jump to the next part. Else run the following commands.
+
+Generate a rails app without tests and start the server
+
+`rails new sti --no-test-framework`     
+Generating the models and migrations
+
+Now, we are going to generate our models and the related migrations.
+
+Generate the Tribe model
+
+`rails g model tribe name:string`
+
+Generate the Animal model
+
+rails g model animal name:string age:integer race:string
+The race column is going to be used by Active Record to save the submodel name. By default, AR will search for a column named type but you can use anything as long as you tell AR about it.
+
+Then you can either add the column tribe_id to the Animal migration file or create a new migration :
+
+```ruby
+class AddTribeIdToAnimal < ActiveRecord::Migration
+  def change
+    add_column :animals, :tribe_id, :integer
+  end
+end
+```
+
+Run the migrations
+
+`rake db:migrate`
+
+Our models are still empty, we should give them some life !
+
+```ruby
+# app/models/tribe.rb
+class Tribe < ActiveRecord::Base 
+    has_many :animals 
+end
+
+# app/models/animal.rb
+class Animal < ActiveRecord::Base 
+    belongs_to :tribe 
+    self.inheritance_column = :race 
+
+    # We will need a way to know which animals
+    # will subclass the Animal model
+    def self.races
+      %w(Lion WildBoar Meerkat)
+    end
+
+end
+
+class Lion < Animal; end 
+class Meerkat < Animal; end 
+class WildBoar < Animal; end
+```
+
+Nothing complicated here. We setup the relation between the tribe and the animals and create three empty submodels. Note that self.inheritance_column = :race is used to specify the column for STI and is not necessary if you are using the default column type.
+
+If you want to disable Single Table Inheritance or use the type column for something else, you can use 
+
+`self.inheritance_column = :fake_column.`
+
+
+### Rails Auto-loading
+
+Fire up a console and test that you can create each of the above models. You will see a NameError: uninitialized constant if you call a sub model (like Lion) before making a call to the parent model (Animal). This is due to Rails auto-loading system. To load a model, Rails is looking for a file called model_name.rb inside the app/models folder. There are a few solutions to fix this but we will use the simpliest one : just split each model declaration in its own file.
+
+```ruby
+# app/models/lion.rb 
+class Lion < Animal; end
+
+# app/models/meerkat.rb
+class Meerkat < Animal; end
+
+# app/models/wild_boar.rb 
+class WildBoar < Animal; end
+```
+
+You can test again and everything will work just fine ! If you want to know about the other solutions, check this article.
+
+###STI Tips
+
+The basic setup is now completed. Here are some tips that can be useful with Single Table Inheritance.
+
+Add scopes to the parent models for each child model
+
+```ruby
+scope :lions, -> { where(race: 'Lion') } 
+scope :meerkats, -> { where(race: 'Meerkat') } 
+scope :wild_boars, -> { where(race: 'WildBoar') }
+```
+
+Add delegates in the Tribe model
+
+```
+delegate :lions, :meerkats, :wild_boars, to: :animals
+```
+These are not mandatory but make the navigation between models easier.
+
+### Fill the database
+
+Before proceding to the next part, we are going to create some objects in the database and play with our models. For now, we will use the console rails c. Thanks to STI, we can now use the models Lion, WildBoar and Meerkar to create the corresponding animal. The column race will be automatically filled by Active Record.
+
+###Create a tribe
+
+```
+tribe = Tribe.create(name: 'LionTribe')
+Create some animals and add them to the tribe
+
+tribe.animals << Lion.new(name: "Simba", age: 10) 
+tribe.animals << WildBoar.new(name: "Pumba", age: 30) 
+tribe.animals << Meerkat.new(name: "Timon", age: 30)
+```
+
+Note that you can use any of the following methods if you added the two tips about scopes and delegates :
+
+```
+tribe.wild_boars, tribe.lions, tribe.meerkats, tribe.animals 
+Animal.lions, Animal.meerkats, Animal.wild_boars 
+Animal.all, Lion.all, Meerkat.all, WildBoar.all
+```
+
+Our different animals (Simba, Pumba and Timon) all live in the table animals but are independant models. Now, we can give them some specific behavior, like talking (more like singing!).
+
+
+```ruby
+#app/models/animal.rb
+def talk 
+    raise 'Abstract Method' 
+end
+
+#app/models/meerkat.rb 
+def talk 
+    "Hakuna Matata, what a wonderful phrase !" 
+end
+
+#app/models/wild_boar.rb 
+def talk 
+    "Hakuna Matata! Ain't no passing craze" 
+end
+
+#app/models/lion.rb 
+def talk 
+    "It means no worries for the rest of your days" 
+end
+```
+We also defined the talk method on animal as an “abstract method” (Since ruby doesn’t have abstract methods, we simply raise an exception if the model is called from Animal or from a submodel which doesn’t defines it). Indeed, we don’t know what a random animal have to sing !
+
+Source Code
+
+The code is available on Github.
+https://github.com/T-Dnzt/sti-with-rails4
+
+### Warm up
+
+Just play around with your new STI models and see everything you can do. As you can see, it can be pretty useful. In the second part, we will see how we can present our inherited models to the world through a single controller and how to configure the routes to do so.
