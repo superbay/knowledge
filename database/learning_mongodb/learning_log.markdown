@@ -11,3 +11,9 @@ Chapter 5
 
 * need to undersand and practice Embeded Document Poliymorphic
 
+### discussion list of MongoDB in action
+
+* page 88 about $elemMatch and search in array attribute
+
+* 
+
