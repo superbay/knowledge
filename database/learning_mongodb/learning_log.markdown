@@ -15,10 +15,11 @@ Chapter 5
 
 * page 88 about $elemMatch and search in array attribute
 
-* javascript function query 
-* 
+* javascript function query
+
+* projections
 
 ```javascript
 db.reviews.find({$where: "function() { return this.helpful_votes > 3; }"})
 ```
-
+* group function mongodb 3?
