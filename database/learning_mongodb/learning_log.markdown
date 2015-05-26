@@ -24,4 +24,21 @@ db.reviews.find({$where: "function() { return this.helpful_votes > 3; }"})
 ```
 * group function mongodb 3?
 * how to use push while updating 
+* 
+
+
+
+
+
+
+
+
+
+
+```
+
+
+db.people.find({addresses: {$elemMatch: {state: "DC", zip: "20002"}}})
+
+```
 
