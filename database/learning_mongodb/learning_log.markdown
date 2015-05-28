@@ -42,3 +42,10 @@ db.people.find({addresses: {$elemMatch: {state: "DC", zip: "20002"}}})
 
 ```
 
+Questions about mongodb replication
+
+* how commit and rollback with 
+* arbitor work
+* explain heartbeat and oplog 
+
+
