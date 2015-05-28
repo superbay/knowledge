@@ -48,4 +48,10 @@ Questions about mongodb replication
 * arbitor work
 * explain heartbeat and oplog 
 
+Master Slave Replication
+
+
+ There are a couple reasons for this. First, failover is completely manual.
+If the master node fails, then an administrator must shut down a slave and restart it as
+a master node.
 
