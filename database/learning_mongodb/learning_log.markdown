@@ -51,6 +51,11 @@ Questions about mongodb replication
 Master Slave Replication
 
 
+Questions about mongoDB sharding
+
+* what is problem of 'Lack of locality'
+
+
  There are a couple reasons for this. First, failover is completely manual.
 If the master node fails, then an administrator must shut down a slave and restart it as
 a master node.
