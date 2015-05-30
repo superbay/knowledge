@@ -24,7 +24,8 @@ db.reviews.find({$where: "function() { return this.helpful_votes > 3; }"})
 ```
 * group function mongodb 3?
 * how to use push while updating 
-* 
+* b.1.8 257 locality and precomputation need more explanation 
+* Anti-patterns after 258
 
 
 
