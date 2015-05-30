@@ -53,13 +53,14 @@ Master Slave Replication
 Questions about mongoDB sharding
 
 * what is problem of 'Lack of locality'
-* 
+
 
 mongoDB Webconsole how to use?
 
 * how to use push while updating 
 * b.1.8 257 locality and precomputation need more explanation 
 * Anti-patterns after 258
+* what is gridFS, what is the benefit
 
  There are a couple reasons for this. First, failover is completely manual.
 If the master node fails, then an administrator must shut down a slave and restart it as
