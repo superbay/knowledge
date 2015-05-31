@@ -73,4 +73,5 @@ a master node.
 mongodb books need to read:
 
 http://docs.mongodb.org/manual/tutorial/perform-two-phase-commits/
+http://docs.mongodb.org/manual/core/replica-set-elections/
 http://learnmongodbthehardway.com
