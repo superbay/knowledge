@@ -47,6 +47,10 @@ Questions about mongodb replication
 * arbitor work
 * explain heartbeat and oplog 
 
+```
+db.people.update({"_id": ObjectId("54a43cc0c403b677f5000018")}, {$push: {addresses: {address_2: 'df', city: 'New York'}}})
+```
+
 Master Slave Replication
 
 
