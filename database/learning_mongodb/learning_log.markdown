@@ -35,9 +35,9 @@ db.reviews.find({$where: "function() { return this.helpful_votes > 3; }"})
 
 
 ```
-
-
 db.people.find({addresses: {$elemMatch: {state: "DC", zip: "20002"}}})
+# which is same
+db.people.findOne({'addresses.state': 'DC'})
 
 ```
 
