@@ -44,7 +44,7 @@ db.people.findOne({'addresses.state': 'DC'})
 Questions about mongodb replication
 
 * how commit and rollback with 
-* arbitor work
+* arbiter work
 * explain heartbeat and oplog 
 
 ```
@@ -70,3 +70,7 @@ mongoDB Webconsole how to use?
 If the master node fails, then an administrator must shut down a slave and restart it as
 a master node.
 
+mongodb books need to read:
+
+http://docs.mongodb.org/manual/tutorial/perform-two-phase-commits/
+http://learnmongodbthehardway.com
