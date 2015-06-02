@@ -1,3 +1,10 @@
+
+
+```ruby
+#mock params pass to that view
+controller.request.path_parameters[:some_param] = 'a value'
+```
+
 ```ruby
 
 require 'spec_helper'
