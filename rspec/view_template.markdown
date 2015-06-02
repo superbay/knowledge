@@ -1,8 +1,27 @@
 
 
+the way to mock
+
 ```ruby
 #mock params pass to that view
 controller.request.path_parameters[:some_param] = 'a value'
+```
+
+If its a controller test then it would be
+```ruby
+controller.stub!(:params).and_return {}
+```
+
+If its a helper test then it would be:
+
+```ruby
+helper.stub!(:params).and_return {}
+```
+
+And its a view test it would be:
+
+```ruby
+view.stub!(:params).and_return {}
 ```
 
 ```ruby
