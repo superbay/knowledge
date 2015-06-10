@@ -14,4 +14,19 @@ $( "#datepicker" ).datepicker({
       }, 200);
     }
 });
+
+  el.datepicker({
+	  changeMonth: true,
+	  changeYear: true,
+	  dateFormat: 'mm/dd/yy',
+	  altFormat: 'yy-mm-dd',
+	  altField: otherFieldSelector,
+	  yearRange: yearMin + ":" + yearMax,
+          onSelect: function(dateText, dpInstance) {
+	    $(this).datepicker("hide");
+      $(this).trigger('change');
+	  }
+  });
+  el.datepicker("refresh");
+}
 ```
