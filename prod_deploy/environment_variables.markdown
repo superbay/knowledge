@@ -32,6 +32,27 @@ heroku config:set SECRET_KEY_BASE=value
 [heroku reference](https://devcenter.heroku.com/articles/config-vars)
 
 [gem solution dotenv](https://github.com/bkeepers/dotenv)
+### heroku config
+
+heroku-config is a plugin for the Heroku CLI that makes it easy to grab your application’s config vars, and place them in your local .env, and vice versa.
+
+```
+ heroku plugins:install git://github.com/ddollar/heroku-config.git
+heroku-config installed
+```
+
+
+```
+ heroku config:pull --overwrite --interactive
+```
+
+
+```
+heroku config:push
+```
+ 
+
+
 
 
 ### heroku rename
