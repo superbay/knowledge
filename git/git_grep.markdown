@@ -8,3 +8,5 @@ git grep -e '#define' --and \( -e MAX_PATH -e PATH_MAX \)
 git grep --all-match -e NODE -e Unexpected
 #Looks for a line that has NODE or Unexpected in files that have lines that match both.
 ```
+
+[reference1](http://travisjeffery.com/b/2012/02/search-a-git-repo-like-a-ninja/)
