@@ -9,5 +9,5 @@ git grep --all-match -e NODE -e Unexpected
 #Looks for a line that has NODE or Unexpected in files that have lines that match both.
 ```
 
-[reference1](http://travisjeffery.com/b/2012/02/search-a-git-repo-like-a-ninja/)
+[reference1](http://travisjeffery.com/b/2012/02/search-a-git-repo-like-a-ninja/)<br/>
 [reference2](https://www.kernel.org/pub/software/scm/git/docs/git-grep.html)
