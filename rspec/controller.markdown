@@ -1,9 +1,9 @@
 ## rspec for routing
 
 
-### 
+### set instance variable while controller rspec test
 
-```
+```ruby
 controller.instance_variable_get("@my_var")
 controller.instance_variable_set("@my_var", value)
 #you can use my_object.instance_variable_get("@my_var") and my_object.instance_variable_set("@my_var", value) to manipulate the variable.
