@@ -173,3 +173,22 @@ In a view:
 ```
 <% if logged_in? -%>Welcome, <%= current_user.name %><% end -%>
 ```
+
+### use view helper in controller
+
+use any view helper in a rails controller by using the view_context object:
+
+  
+```ruby
+    # app/controllers/phones_controller.rb
+    def confirm
+      if current_user.confirmed_phone?
+        redirect_to edit_phone_path,
+          notice: \
+            "The phone number #{view_context.format_phone(current_user.phone)}
+            is already confirmed."
+      end
+    end
+```
+
+You can see more about the view_context object in the api dock.
