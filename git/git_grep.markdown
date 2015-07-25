@@ -11,3 +11,17 @@ git grep --all-match -e NODE -e Unexpected
 
 [reference1](http://travisjeffery.com/b/2012/02/search-a-git-repo-like-a-ninja/)<br/>
 [reference2](https://www.kernel.org/pub/software/scm/git/docs/git-grep.html)
+
+
+### Regular Expression
+
+
+```
+git grep -E 'plan.{1}years-list' 
+```
+
+### git log --grep 
+
+```
+git log --grep=frotz --grep=nitfol --since=1.month
+```
