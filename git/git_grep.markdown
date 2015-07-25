@@ -24,4 +24,5 @@ git grep -E 'plan.{1}years-list'
 
 ```
 git log --grep=frotz --grep=nitfol --since=1.month
+git log --grep=frotz --and --author=Linus
 ```
