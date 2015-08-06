@@ -1,11 +1,17 @@
 ### baisc tools
 
-```timing = Benchmark.measure { Post.all }
+```ruby
+timing = Benchmark.measure { Post.all }
 
 ```
 
 
 ### Gem
+
+https://github.com/MiniProfiler/rack-mini-profiler
+
+
+
 
 ### performance and profiler
 
