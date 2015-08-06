@@ -1,3 +1,12 @@
+### baisc tools
+
+```timing = Benchmark.measure { Post.all }
+
+```
+
+
+### Gem
+
 ### performance and profiler
 
 
