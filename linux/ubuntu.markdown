@@ -49,3 +49,10 @@ sudo kill `sudo lsof -t -i:9001`
 ```
 
 http://stackoverflow.com/questions/9346211/how-to-kill-a-process-on-a-port-on-ubuntu
+
+
+### change ubuntu timezone
+
+```
+sudo dpkg-reconfigure tzdata
+```
