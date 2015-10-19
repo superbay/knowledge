@@ -19,7 +19,13 @@
 Where <Ctrl-V><Ctrl-M> means type Ctrl+V then Ctrl+M. 
 
 
+sometimes
 
+On Linux and Mac OS, the following works,
+
+```ruby
+:%s/^V^M/^V^M/g
+```
 
 
 
