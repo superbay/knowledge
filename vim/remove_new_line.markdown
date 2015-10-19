@@ -8,6 +8,21 @@
 :%s/\r//g  
 ```
 
+
+### change ^M to new line
+
+
+```ruby
+:%s/<Ctrl-V><Ctrl-M>/\r/g
+```
+
+Where <Ctrl-V><Ctrl-M> means type Ctrl+V then Ctrl+M. 
+
+
+
+
+
+
 other tools
 
 ```ruby
