@@ -26,7 +26,7 @@ Or you can also use git-rev-list to search for a specific commit:
 
 ```
 git rev-list origin/master | grep <commit-hash>
-
+```
 
 [reference](http://stackoverflow.com/questions/2016901/viewing-unpushed-git-commits)
-```
+
