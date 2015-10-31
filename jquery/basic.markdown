@@ -97,3 +97,25 @@ $('#similar_errors td:contains("bmmr_id") a').each(function(i,value){ console.lo
 
 $('#similar_errors td:contains("bmmr_id") a').each(function(i,value){ console.log($(value).text().match(/bmmr_id=.*/i).toString()); })
 ```
+
+
+### how to validate zip code
+
+```javascript
+
+$('#create_membership').click(function()
+{
+    var zip = $('#zip').val();
+
+    var zipRegex = /^\d{5}$/;
+
+    if (!zipRegex.test(zip))
+    {
+        // trigger error
+    }
+    else
+    {
+        // success!
+    }
+});
+```
