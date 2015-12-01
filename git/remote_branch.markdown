@@ -26,3 +26,14 @@ git push origin head:feature/newbranch_name
 git push origin :newbranch_name  
 
 ```
+
+
+
+As of Git v1.7.0, you can delete a remote branch using
+```
+git push origin --delete <branchName>
+```
+which is easier to remember than
+```
+git push origin :<branchName>
+```
