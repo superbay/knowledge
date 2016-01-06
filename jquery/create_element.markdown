@@ -1,3 +1,15 @@
+```
+$('<div />', {
+        "class": 'test',
+        text: "a div",
+        click: function(e){
+            e.preventDefault();
+            alert("test")
+        }})
+```
+
+
+
 ```html
 <html>
 <head>
