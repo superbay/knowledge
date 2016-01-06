@@ -120,6 +120,8 @@ $('#<%= dom_id @message %>').highlight();
 
 ```
 $('#comments ul.comments').append("<%= escape_javascript render(:partial => 'comments/single', :locals => { :c => @comment }) %>");
+
+$(".commentvotecount<%= params[:commentid]%>").html("<%= escape_javascript link_to('About', '/about') %>");
 ```
 
 
