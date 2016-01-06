@@ -118,6 +118,12 @@ $('#<%= dom_id @message %>').highlight();
 ```
 
 
+```
+$('#comments ul.comments').append("<%= escape_javascript render(:partial => 'comments/single', :locals => { :c => @comment }) %>");
+```
+
+
+
 ### Why not json + api
 
 Benefit #1: Reuse templates without sacrificing performance
