@@ -27,5 +27,7 @@ if match = string.match(/(^.*)(:)(.*)/i)
 end
 ```
 
-Although scan does make little sense for this. It does still do the job, you just need to flatten the returned Array first. one, two, three = string.scan(/(^.*)(:)(.*)/i).flatten
-
+Although scan does make little sense for this. It does still do the job, you just need to flatten the returned Array first.
+```ruby
+one, two, three = string.scan(/(^.*)(:)(.*)/i).flatten
+```
