@@ -84,3 +84,53 @@ app.method(:get).source_location
 http_proxy=http://yourproxy.com bundle install
 ```
 
+
+
+####controller 
+
+```ruby
+> app.get '/posts/1'
+> response = app.response
+# you now have a rails response object much like the integration tests
+
+> response.body            # get you the HTML
+> response.cookies         # hash of the cookies
+```
+
+
+controller method
+
+```ruby
+foo = ActionController::Base::ApplicationController.new
+foo.some_method 
+
+
+#Route Helpers:
+
+app.myresource_path
+app.myresource_url
+
+
+#View Helpers:
+
+foo = ActionView::Base.new
+foo.javascript_include_tag 'myscript'
+<or>
+helper.link_to "foo", "bar"
+<or>
+ActionController::Base.helpers.image_tag('logo.png')
+
+#Render:
+
+views = Rails::Application::Configuration.new(Rails.root).paths["app/views"]
+views_helper = ActionView::Base.new views
+views_helper.render 'myview/mytemplate'
+views_helper.render file: 'myview/_mypartial', locals: {my_var: "display:block;"}
+
+
+
+```
+
+
+
+
