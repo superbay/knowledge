@@ -27,6 +27,15 @@ if match = string.match(/(^.*)(:)(.*)/i)
 end
 ```
 
+
+
+```ruby
+if ryan_string =~ /(^.*)(:)(.*)/i
+   first = $1
+   third = $3
+end
+```
+
 Although scan does make little sense for this. It does still do the job, you just need to flatten the returned Array first.
 ```ruby
 one, two, three = string.scan(/(^.*)(:)(.*)/i).flatten
