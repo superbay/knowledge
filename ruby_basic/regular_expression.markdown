@@ -31,3 +31,21 @@ Although scan does make little sense for this. It does still do the job, you jus
 ```ruby
 one, two, three = string.scan(/(^.*)(:)(.*)/i).flatten
 ```
+
+
+
+
+
+scan() will find all non-overlapping matches of the regex in your string, so instead of returning an array of your groups like you seem to be expecting, it is returning an array of arrays.
+
+You are probably better off using match(), and then getting the array of captures using MatchData#captures:
+
+```ruby
+g1, g2, g3 = ryan_string.match(/(^.*)(:)(.*)/i).captures
+```
+
+However you could also do this with scan() if you wanted to:
+
+```ruby
+g1, g2, g3 = ryan_string.scan(/(^.*)(:)(.*)/i)[0]
+```
