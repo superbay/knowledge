@@ -1,5 +1,26 @@
 
 
+
+
+
+
+
+The method should return the creation date, possibly as string.
+
+```ruby
+def group_by_criteria
+  created_at.to_date.to_s(:db)
+end
+```
+
+Then, group by that method.
+
+```ruby
+list.group_by(&:group_by_criteria).map {|k,v| [k, v.length]}.sort
+```
+
+
+
 ```ruby
 
 
