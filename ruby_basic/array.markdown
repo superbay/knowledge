@@ -1,7 +1,9 @@
 
 
 
-
+```ruby
+list.group_by{|x| x.created_at.strftime("%Y-%m-%d")} 
+```
 
 
 
