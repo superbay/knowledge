@@ -70,3 +70,6 @@ GIT_COMMITTER_DATE="`date`" git commit --amend --date "`date`"
 
 git commit --amend --date "Thu May 28 18:21:46 2015 +0530"
 ```
+
+
+[reference](http://stackoverflow.com/questions/454734/how-can-one-change-the-timestamp-of-an-old-commit-in-git)
