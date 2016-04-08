@@ -58,3 +58,15 @@ find . -name *.DS_Store -type f -exec git-rm {} \;
 ```
 git commit --author="Name <email>" -m "whatever"
 ```
+
+
+### only update the commit date
+
+
+
+```
+GIT_COMMITTER_DATE="`date`" git commit --amend --date "`date`"
+
+
+git commit --amend --date "Thu May 28 18:21:46 2015 +0530"
+```
