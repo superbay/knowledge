@@ -72,4 +72,18 @@ git commit --amend --date "Thu May 28 18:21:46 2015 +0530"
 ```
 
 
+### commit with other user
+
+```
+
+
+git commit --author="Ken Lu<ken@ken.com>" -m "my commit"
+
+Override the commit author. Specify an explicit author using the standard A U Thor <author@example.com> 
+
+```
+
+
+
+
 [reference](http://stackoverflow.com/questions/454734/how-can-one-change-the-timestamp-of-an-old-commit-in-git)
