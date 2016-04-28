@@ -103,3 +103,16 @@ works well to help with find the largest file or folder, fast and easy
 ```ruby
 du -sh `ls .` 
 ```
+
+
+
+#### find and rename
+
+```
+find . -name "*.andnav" | rename "s/\.andnav$/.tile/"
+```
+
+At least on Ubuntu derivations rename takes a list of files from STDIN if none are on the command line. And this can be tested easily with:
+```
+find . -name "*.andnav" | rename -vn "s/\.andnav$/.tile/"
+```
