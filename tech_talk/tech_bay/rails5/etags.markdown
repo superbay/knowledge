@@ -1,4 +1,4 @@
-### 3 minutes rails 5
+## 3 minutes rails 5
 
 
 ### Rails 5 switches from strong etags to weak etags
