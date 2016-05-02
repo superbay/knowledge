@@ -143,6 +143,132 @@ As we can see, no new notifications were created when product is launched inside
 Checkout the pull request to gain better understanding of how suppress works.
 
 
+has_secure_token to generate unique random token in Rails 5
+March 23, 2016 - Abhishek Jain
+
+This blog is part of our Rails 5 series.
+
+We sometimes need unique and random tokens in our web apps. Here is how we typically build it.
+
+```
+class User < ActiveRecord::Base
+
+  before_create :set_access_token
+
+  private
+
+  def set_access_token
+    self.access_token = generate_token
+  end
+
+  def generate_token
+    loop do
+      token = SecureRandom.hex(10)
+      break token unless User.where(access_token: token).exists?
+    end
+  end
+end
+```
+
+### has_secure_token in Rails 5
+
+Rails 5 has added has_secure_token method to generate a random alphanumeric token for a given column.
+
+```ruby
+class User < ApplicationRecord
+  has_secure_token
+end
+``
+
+By default, Rails assumes that the attribute name is `token`. We can provide a different name as a parameter to `has_secure_token` if the attribute name is not `token`.
+
+```
+class User < ApplicationRecord
+  has_secure_token :password_reset_token
+end
+```
+
+The above code assumes that we already have `password_reset_token` attribute in our model.
+
+```
+>> user = User.new
+>> user.save
+=> true
+
+>> user.password_reset_token
+=> 'qjCbex522DfVEVd5ysUWppWQ'
+```
+The generated tokens are URL safe and are of fixed length strings.
+Migration helper for generating token
+
+We can also generate migration for token similar to other data types.
+
+
+`$ rails g migration add_auth_token_to_user auth_token:token`
+
+```ruby
+class AddAuthTokenToUser < ActiveRecord::Migration[5.0]
+  def change
+    add_column :users, :auth_token, :string
+    add_index :users, :auth_token, unique: true
+  end
+end
+```
+
+Notice that migration automatically adds index on the generated column with unique constraint.
+
+We can also generate a model with the token attribute.
+
+`$ rails g model Product access_token:token`
+
+```ruby
+
+class CreateProducts < ActiveRecord::Migration[5.0]
+  def change
+    create_table :products do |t|
+      t.string :access_token
+
+      t.timestamps
+    end
+    add_index :products, :access_token, unique: true
+  end
+end
+```
+
+Model generator also adds `has_secure_token` method to the model.
+
+```
+class Product < ApplicationRecord
+  has_secure_token :access_token
+end
+```
+
+### Regenerating tokens
+
+Sometimes we need to regenerate the tokens based on some expiration criteria.
+
+In order to do that, we can simply call regenerate_#{token_attribute_name} which would regenerate the token and save it to its respective attribute.
+
+```
+>> user = User.first
+=> <User id: 11, name: 'John', email: 'john@example.com',
+         token: "jRMcN645BQyDr67yHR3qjsJF",
+         password_reset_token: "qjCbex522DfVEVd5ysUWppWQ">
+
+>> user.password_reset_token
+=> "qjCbex522DfVEVd5ysUWppWQ"
+
+>> user.regenerate_password_reset_token
+=> true
+
+>> user.password_reset_token
+=> "tYYVjnCEd1LAXvmLCyyQFzbm"
+```
+
+### Beware of race condition
+
+It is possible to generate a race condition in the database while generating the tokens. So it is advisable to add a unique index in the database to deal with this unlikely scenario.
+
 
 ## Support for left outer join in Rails 5
 
