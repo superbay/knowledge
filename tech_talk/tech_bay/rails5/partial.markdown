@@ -24,10 +24,11 @@ Gem [multi_fetch_fragments](https://github.com/n8/multi_fetch_fragments) fixed t
 
 In a single call to cache, this gem fetches all the cache fragments for a collection. The author of the gem saw [78% speed improvement](http://ninjasandrobots.com/rails-faster-partial-rendering-and-caching) by using this gem.
 
-The features of this gem have been folded into Rails 5.
+The features of this gem [have been folded into Rails 5](https://github.com/rails/rails/pull/18948).
 
-To get benefits of collection caching, just add cached: true as shown below.
+To get benefits of collection caching, just add `cached: true` as shown below.
 
+```ruby
 # index.html.erb
 <%= render partial: 'todo', collection: @todos, cached: true %>
 
@@ -35,11 +36,14 @@ To get benefits of collection caching, just add cached: true as shown below.
 <% cache todo do %>
   <%= todo.name %>
 <% end %>
+```
 
-With cached: true present, Rails will use read_multi to the cache store instead of reading from it every partial.
+With `cached: true` present, Rails will use read_multi to the cache store instead of reading from it every partial.
 
 Rails will also log cache hits in the logs as below.
 
+```
   Rendered collection of todos/_todo.html.erb [100 / 100 cache hits] (339.5ms)
+```
 
 Checkout the pull request to gain better understanding about how collection caching works.
