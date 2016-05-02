@@ -5,3 +5,9 @@
 * [etags](etags.markdown)
 
 * [rendering collection partial faster](partial.markdown)
+
+* [Suppress save events in Rails 5]()
+
+* 
+
+
