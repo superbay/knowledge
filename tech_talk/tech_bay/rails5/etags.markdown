@@ -134,7 +134,7 @@ Rails does not perform strong validation of ETags as implied by strong ETags spe
 
 This was true even before Rails 5. So this change is more of a course correction. Rack also [generates weak ETags](https://github.com/rack/rack/issues/681) by default because of similar reasons.
 
-Mark Notthingham is chair of HTTP Working Group and he has written about etags which has some useful links to other ETag resources.
+Mark Notthingham is chair of HTTP Working Group and he has [written about etags](https://www.mnot.net/blog/2007/08/07/etags) which has some useful links to other ETag resources.
 
 
 
