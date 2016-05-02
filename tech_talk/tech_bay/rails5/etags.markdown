@@ -132,7 +132,7 @@ Connection: Keep-Alive
 
 Rails does not perform strong validation of ETags as implied by strong ETags spec. Rails just checks whether the incoming ETag from the request headers matches with the ETag of the generated response. It does not do byte by byte comparison of the response.
 
-This was true even before Rails 5. So this change is more of a course correction. Rack also generates weak ETags by default because of similar reasons.
+This was true even before Rails 5. So this change is more of a course correction. Rack also [generates weak ETags](https://github.com/rack/rack/issues/681) by default because of similar reasons.
 
 Mark Notthingham is chair of HTTP Working Group and he has written about etags which has some useful links to other ETag resources.
 
