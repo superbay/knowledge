@@ -47,3 +47,40 @@ Rails will also log cache hits in the logs as below.
 ```
 
 Checkout the pull request to gain better understanding about how collection caching works.
+
+
+
+## Support for left outer join in Rails 5
+
+Suppose in a blog application there are authors and posts. A post belongs to an author, while author has many posts.
+
+The app needs to show a list of all the authors along with a number of posts that they have written.
+
+For this, we need to join author and posts table with “left outer join”. More about “left outer join” here, here and here .
+
+In Rails 4.x, we need to write the SQL for left outer join manually as Active Record does not have support for outer joins.
+
+```
+authors = Author.join('LEFT OUTER JOIN "posts" ON "posts"."author_id" = "authors"."id"')
+                .uniq
+                .select("authors.*, COUNT(posts.*) as posts_count")
+                .group("authors.id")
+```
+
+Rails 5 has added [left_outer_joins](https://github.com/rails/rails/pull/12071) method.
+
+```
+authors = Author.left_outer_joins(:posts)
+                .uniq
+                .select("authors.*, COUNT(posts.*) as posts_count")
+                .group("authors.id")
+```
+
+It also allows to perform the left join on multiple tables at the same time.
+
+```
+>> Author.left_joins :posts, :comments
+  Author Load (0.1ms)  SELECT "authors".* FROM "authors" LEFT OUTER JOIN "posts" ON "posts"."author_id" = "authors"."id" LEFT OUTER JOIN "comments" ON "comments"."author_id" = "authors"."id"
+```
+
+If you feel `left_outer_joins` is too long to type, then Rails 5 also has an alias method `left_joins`.
