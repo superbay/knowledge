@@ -7,13 +7,13 @@ ETag, short for entity tag, is a part of HTTP header and is used for web cache v
 
 Strong v/s Weak ETags
 
-ETag supports [strong and weak validation](strong and weak validation ) of the resource.
+ETag supports [strong and weak validation](https://tools.ietf.org/html/rfc2616#section-13.3.3 ) of the resource.
 
 Strong ETag indicates that resource content is same for response body and the response headers.
 
 Weak ETag indicates that the two representations are semantically equivalent. It compares only the response body.
 
-Weak ETags are prefixed with W\ and thus one can easily distinguish between Weak ETags and Strong ETags.
+Weak ETags are [prefixed with](https://github.com/rails/rails/blob/a61bf5f5b63780a3e0b4c2d4339967df82b370de/actionpack/lib/action_dispatch/http/cache.rb#L91-L94) W\ and thus one can easily distinguish between Weak ETags and Strong ETags.
 
 ```
 "543b39c23d8d34c232b457297d38ad99"    – Strong ETag
