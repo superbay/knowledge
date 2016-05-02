@@ -4,4 +4,4 @@
 
 * [etags](etags.markdown)
 
-* []
+* [rendering collection partial faster](partial.markdown)
