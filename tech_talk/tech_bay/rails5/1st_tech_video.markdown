@@ -1,3 +1,3 @@
 
 
-* [etags](etags)
+* [etags](etags.markdown)
