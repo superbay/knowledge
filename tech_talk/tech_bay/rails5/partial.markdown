@@ -178,11 +178,11 @@ Rails 5 has added has_secure_token method to generate a random alphanumeric toke
 class User < ApplicationRecord
   has_secure_token
 end
-``
+```
 
 By default, Rails assumes that the attribute name is `token`. We can provide a different name as a parameter to `has_secure_token` if the attribute name is not `token`.
 
-```
+```ruby
 class User < ApplicationRecord
   has_secure_token :password_reset_token
 end
