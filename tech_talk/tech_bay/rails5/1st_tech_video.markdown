@@ -8,6 +8,6 @@
 
 * [Suppress save events in Rails 5]()
 
-* 
+* [has_secure_token in Rails 5]()
 
 
