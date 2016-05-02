@@ -48,6 +48,100 @@ Rails will also log cache hits in the logs as below.
 
 Checkout the pull request to gain better understanding about how collection caching works.
 
+## Suppress save events in Rails 5
+
+Rails 5 added [suppress](https://github.com/rails/rails/pull/18910) method which is used to prevent the receiver from being saved during the given block.
+Use case for suppress method
+
+Let’s say, we have an E-commerce application, which has many products. Whenever new product is launched then subscribed customers are notified about it.
+
+```
+class Product < ApplicationRecord
+  has_many :notifications
+  belongs_to :seller
+
+  after_save :send_notification
+
+  def launch!
+    update_attributes!(launched: true)
+  end
+
+  private
+
+  def send_notification
+    notifications.create(message: 'New product Launched', seller: seller)
+  end
+end
+
+class Notification < ApplicationRecord
+  belongs_to :product
+  belongs_to :seller
+
+  after_create :send_notifications
+
+  private
+
+  def send_notifications
+    # Sends notification about product to customers.
+  end
+end
+
+class Seller < ApplicationRecord
+  has_many :products
+end
+```
+
+
+This creates a notification record every time we launch a product.
+
+```
+>> Notification.count
+=> 0
+
+>> seller = Seller.last
+=> <Seller id: 6, name: "John">
+
+>> product = seller.products.create(name: 'baseball hat')
+=> <Product id: 4, name: "baseball hat", seller_id: 6>
+
+>> product.launch!
+
+>> Notification.count
+=> 1
+```
+
+Now, we have a situation where we need to launch a product but we don’t want to send notifications about it.
+
+Before Rails 5, this was possible only by adding more conditions.
+ActiveRecord::Base.Suppress in Rails 5
+
+In Rails 5, we can use ActiveRecord::Base.suppress method to suppress creating of notifications as shown below.
+
+```
+class Product < ApplicationRecord
+  def launch_without_notifications
+    Notification.suppress do
+      launch!
+    end
+  end
+end
+
+>> Notification.count
+=> 0
+
+>> product = Product.create!(name: 'tennis hat')
+=> <Event id: 1, name: "tennis hat">
+
+>> product.launch_without_notifications
+
+>> Notification.count
+=> 0
+```
+
+As we can see, no new notifications were created when product is launched inside Notification.suppress block.
+
+Checkout the pull request to gain better understanding of how suppress works.
+
 
 
 ## Support for left outer join in Rails 5
