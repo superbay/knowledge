@@ -55,7 +55,7 @@ Use case for suppress method
 
 Let’s say, we have an E-commerce application, which has many products. Whenever new product is launched then subscribed customers are notified about it.
 
-```
+```ruby
 class Product < ApplicationRecord
   has_many :notifications
   belongs_to :seller
@@ -94,7 +94,7 @@ end
 
 This creates a notification record every time we launch a product.
 
-```
+```ruby
 >> Notification.count
 => 0
 
@@ -117,7 +117,7 @@ ActiveRecord::Base.Suppress in Rails 5
 
 In Rails 5, we can use ActiveRecord::Base.suppress method to suppress creating of notifications as shown below.
 
-```
+```ruby
 class Product < ApplicationRecord
   def launch_without_notifications
     Notification.suppress do
@@ -150,7 +150,7 @@ This blog is part of our Rails 5 series.
 
 We sometimes need unique and random tokens in our web apps. Here is how we typically build it.
 
-```
+```ruby
 class User < ActiveRecord::Base
 
   before_create :set_access_token
@@ -190,7 +190,7 @@ end
 
 The above code assumes that we already have `password_reset_token` attribute in our model.
 
-```
+```ruby
 >> user = User.new
 >> user.save
 => true
