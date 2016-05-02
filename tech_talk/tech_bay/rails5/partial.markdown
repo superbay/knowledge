@@ -222,7 +222,6 @@ We can also generate a model with the token attribute.
 `$ rails g model Product access_token:token`
 
 ```ruby
-
 class CreateProducts < ActiveRecord::Migration[5.0]
   def change
     create_table :products do |t|
@@ -237,7 +236,7 @@ end
 
 Model generator also adds `has_secure_token` method to the model.
 
-```
+```ruby
 class Product < ApplicationRecord
   has_secure_token :access_token
 end
@@ -249,7 +248,7 @@ Sometimes we need to regenerate the tokens based on some expiration criteria.
 
 In order to do that, we can simply call regenerate_#{token_attribute_name} which would regenerate the token and save it to its respective attribute.
 
-```
+```ruby
 >> user = User.first
 => <User id: 11, name: 'John', email: 'john@example.com',
          token: "jRMcN645BQyDr67yHR3qjsJF",
@@ -280,7 +279,7 @@ For this, we need to join author and posts table with “left outer join”. Mor
 
 In Rails 4.x, we need to write the SQL for left outer join manually as Active Record does not have support for outer joins.
 
-```
+```ruby
 authors = Author.join('LEFT OUTER JOIN "posts" ON "posts"."author_id" = "authors"."id"')
                 .uniq
                 .select("authors.*, COUNT(posts.*) as posts_count")
@@ -289,7 +288,7 @@ authors = Author.join('LEFT OUTER JOIN "posts" ON "posts"."author_id" = "authors
 
 Rails 5 has added [left_outer_joins](https://github.com/rails/rails/pull/12071) method.
 
-```
+```ruby
 authors = Author.left_outer_joins(:posts)
                 .uniq
                 .select("authors.*, COUNT(posts.*) as posts_count")
@@ -298,7 +297,7 @@ authors = Author.left_outer_joins(:posts)
 
 It also allows to perform the left join on multiple tables at the same time.
 
-```
+```ruby
 >> Author.left_joins :posts, :comments
   Author Load (0.1ms)  SELECT "authors".* FROM "authors" LEFT OUTER JOIN "posts" ON "posts"."author_id" = "authors"."id" LEFT OUTER JOIN "comments" ON "comments"."author_id" = "authors"."id"
 ```
