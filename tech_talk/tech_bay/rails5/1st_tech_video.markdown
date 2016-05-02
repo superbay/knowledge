@@ -10,4 +10,6 @@
 
 * [has_secure_token in Rails 5]()
 
+* [Support for left outer join in Rails 5]()
+
 
