@@ -39,6 +39,10 @@ Let’s see it in action.
 
 ![how-etags-work](https://cloud.githubusercontent.com/assets/83296/15085097/1a90c3fe-13a6-11e6-9616-6fb658719f32.png)
 
+```ruby
+header[‘Etag’] = Digest::MD5.hexdigest(body)
+```
+
 
 
 Rails 4.x generates strong ETags by default i.e without W/ prefix.
