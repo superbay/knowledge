@@ -8,6 +8,8 @@ ETag, short for entity tag, is a part of HTTP header and is used for web cache v
 
 [key based cache expiration](https://signalvnoise.com/posts/3113-how-key-based-cache-expiration-works)
 
+[caching with rails *guides*](http://edgeguides.rubyonrails.org/caching_with_rails.html)
+
 Strong v/s Weak ETags
 
 ETag supports [strong and weak validation](https://tools.ietf.org/html/rfc2616#section-13.3.3 ) of the resource.
