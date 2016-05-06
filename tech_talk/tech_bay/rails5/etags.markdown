@@ -190,3 +190,4 @@ Important: If the Cache-Control header is set to public, and the Age value is le
 [.](http://www.bootyard.com/programming/etags-in-rails-4.html)
 [.](http://blog.remarkablelabs.com/2012/12/russian-doll-caching-cache-digests-rails-4-countdown-to-2013)
 [.](https://www.slatestudio.com/blog/p/caching-in-rails-4-applications)
+[.](https://devcenter.heroku.com/articles/caching-strategies)
