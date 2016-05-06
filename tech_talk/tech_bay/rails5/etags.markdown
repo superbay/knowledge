@@ -37,7 +37,7 @@ Let’s see it in action.
 ### ETags in Rails 4.x
 
 
-![how-etags-work](https://cloud.githubusercontent.com/assets/83296/15085043/aa4fd6b6-13a5-11e6-8980-683e21f546cd.png)
+![how-etags-work](https://cloud.githubusercontent.com/assets/83296/15085097/1a90c3fe-13a6-11e6-9616-6fb658719f32.png)
 
 
 
