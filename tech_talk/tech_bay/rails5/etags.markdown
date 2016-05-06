@@ -41,6 +41,9 @@ Let’s see it in action.
 
 ```ruby
 header[‘Etag’] = Digest::MD5.hexdigest(body)
+
+# instead of
+headers['Etag'] = Digest::MD5.hexdigest(@item.cache_key)
 ```
 
 
