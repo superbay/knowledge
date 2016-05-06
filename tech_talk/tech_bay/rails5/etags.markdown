@@ -176,3 +176,17 @@ Mark Notthingham is chair of HTTP Working Group and he has [written about etags]
 
 
 
+### other related
+
+
+Etag - is an object digest. It is set with fresh_when etag: @user rails helper, and adds header ETag:"0f842cb67189f534601db515e0ca5b55" to the response. If we make a request to the same URL twice and the etags are identical, the client will get "304 Not Modified".
+
+Last-Modified - indicates the most recent modification date of an object. E.g. Rails statement fresh_when last_modified: @users.max(:updated_at) adds header Last-Modified:Tue, 20 May 2014 19:59:38 GMT to the response. If Last-Modified value of a request is the same as value of Last-Modified produced in your controller action, the client will get "304 Not Modified".
+
+Important: If the Cache-Control header is set to public, and the Age value is less than max-age, the browser won't hit the Rails server, and will instead use its local cache, or cache located on the Varnish server. The presence of Etagand/or Last-Modified headers could cause server hits, but "304 - Not modified" will be returned if these values are identical to the values produced in your controller actions.
+
+
+
+[.](http://www.bootyard.com/programming/etags-in-rails-4.html)
+[.](http://blog.remarkablelabs.com/2012/12/russian-doll-caching-cache-digests-rails-4-countdown-to-2013)
+[.](https://www.slatestudio.com/blog/p/caching-in-rails-4-applications)
