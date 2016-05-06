@@ -36,6 +36,11 @@ Let’s see it in action.
 
 ### ETags in Rails 4.x
 
+
+![how-etags-work](https://cloud.githubusercontent.com/assets/83296/15085043/aa4fd6b6-13a5-11e6-8980-683e21f546cd.png)
+
+
+
 Rails 4.x generates strong ETags by default i.e without W/ prefix.
 
 ```ruby
