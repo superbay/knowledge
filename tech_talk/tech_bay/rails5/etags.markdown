@@ -5,6 +5,9 @@
 
 ETag, short for entity tag, is a part of HTTP header and is used for web cache validation. ETag is a digest of the resource that uniquely identifies specific version of the resource. This helps browser and web servers determine if resource in the browser’s cache is exactly same as the resource on the server.
 
+
+[key based cache expiration](https://signalvnoise.com/posts/3113-how-key-based-cache-expiration-works)
+
 Strong v/s Weak ETags
 
 ETag supports [strong and weak validation](https://tools.ietf.org/html/rfc2616#section-13.3.3 ) of the resource.
