@@ -84,3 +84,26 @@ So we should use this option very carefully.
 
 
 
+belongs_to association dependent options
+If you set the :dependent option to:
+
+    :destroy, when the object is destroyed, destroy will be called on its associated objects.
+    :delete, when the object is destroyed, all its associated objects will be deleted directly from the database without calling their destroy method.
+
+
+
+has_on or has_many association dependent options
+
+Controls what happens to the associated objects when their owner is destroyed:
+
+    :destroy causes all the associated objects to also be destroyed
+    :delete_all causes all the associated objects to be deleted directly from the database (so callbacks will not execute)
+    :nullify causes the foreign keys to be set to NULL. Callbacks are not executed.
+    :restrict_with_exception causes an exception to be raised if there are any associated records
+    :restrict_with_error causes an error to be added to the owner if there are any associated objects
+
+
+
+
+
+
