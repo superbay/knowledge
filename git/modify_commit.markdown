@@ -1,3 +1,11 @@
+ ## change system date
+ 
+ 
+ sudo date -s "5/24/2016 09:42:00" 
+ 
+ 
+
+
 ## change the author of a commit in git
 
 #### Change all commits information
