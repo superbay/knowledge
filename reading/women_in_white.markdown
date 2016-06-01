@@ -10,7 +10,13 @@
 　　失意的哈姆雷特游荡在街上，意外的邂逅了一位疯疯癫癫的神秘白衣女子（塔拉·菲茨杰拉德 Tara Fitzgerald 饰），女子的样貌竟然和劳拉有几分相似，这吸引了哈姆雷特的注意。让哈姆雷特震惊的是，白衣女子竟然向自己揭露了帕斯维尔男爵所犯下的一桩严重罪行，这也就意味着，即将成为伯爵夫人的劳拉亦身处危险之中。
 　　
 　　
+　　
+　　
 　　https://en.wikipedia.org/wiki/The_Woman_in_White_(novel)
 
+
+good review
+
+http://literarycornercafe.blogspot.com/2011/11/book-review-classics-woman-in-white-by.html
 
 
