@@ -1,4 +1,4 @@
-#### ：Ruby实用技巧 之 Stay Positive 
+#### Ruby实用技巧 之 Stay Positive 
 
 coding skill
 
