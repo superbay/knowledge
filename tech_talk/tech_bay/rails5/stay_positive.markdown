@@ -1,4 +1,6 @@
-#### Stay Positive 
+#### ruby实用技巧 之 Stay Positive 
+
+coding skill
 
 ```ruby
 def average(collection)
@@ -141,3 +143,4 @@ end
 # => nil
 ```
 So there you have it. By striving to put the happy path first, and to avoid negative logic, we've both shortened and simplified this method. Staying positive doesn't just improve our lives, it improves our code as well! Happy hacking!
+
