@@ -7,3 +7,5 @@ Look at some of the new goodies in RSpec 3. This repo is part of a tutorial for 
 [RSpec Best Practices: How to Write Better Tests](http://betterspecs.org)
 
 [RSpec Style Guide](./style.markdown)
+
+[RSpec Practices](practice.markdown)
