@@ -146,6 +146,18 @@ We’ll define it exactly the same way Rake’s built-in task and file methods a
 def post(*args, &block)
   PostTask.define_task(*args, &block)
 end
+
+desc "Create or update a blog post"
+post "my-blog-post" => ["post_content.html"] do |t|
+
+  if t.post_exists?
+    puts "Update post ID #{t.post_id}..."
+    
+  else
+    puts "Create new post..."
+  end
+end
+
 ```
 ![rake_custom1](https://cloud.githubusercontent.com/assets/83296/17273925/4407f83c-5696-11e6-8be9-bbf975665f6b.PNG)
 ![rake_custom2](https://cloud.githubusercontent.com/assets/83296/17273926/4618fb12-5696-11e6-9e96-1e7f86602aa6.PNG)
