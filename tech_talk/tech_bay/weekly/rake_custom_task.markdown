@@ -30,7 +30,87 @@ task "blogpost" do
       post_title: "Hello World" })
 end
 ```
- 
- 
 
+
+raw ruby script, real power of Rake `handling of dependencies`
+
+The real power of Rake lies in its smart handling of dependencies. When we’re working with local files, Rake is able to determine whether a file needs to be re-built or not, by tracing the dependency graph and working out if a prerequisite has been updated.
+
+Wouldn’t it be nice if we could have the same power here? If we could have rake only submit the blog post if it either doesn’t already exist, or if the local file has been updated?
+
+
+```ruby
+
+class PostTask < Rake::Task
+ 
+def timestamp
+  post_info["post_modified_gmt"].to_time
+end
+ 
+def post_id
+  post_info && post_info["post_id"]
+end
+ 
+def post_info
+  post_list.detect{|post| post["post_name"] == name}
+end
+ 
+def post_list
+  @post_list ||= WPCLIENT.getPosts(
+    fields: %w[post_id post_name post_modified_gmt])
+end
+end
+
+```
+ 
+ 
+Working from bottom to top: first we have a method which fetches and caches a list of blog posts, requesting just a small set of metadata for each post.
+
+Next we have a post_info method which looks up info for the specific post this task pertains to, if it exists.
+
+WordPress posts have an internal “name” string, and for simplicity we’ll be matching up the name of a Rake task with the name of the blog post. If you’re not sure what I mean by the “name of the task”, hang in there. It’ll become more clear shortly.
+
+Building on this info method, we have a convenience method for pulling out the blog post’s ID.
+
+And another helper for getting the blog post’s modification timestamp.
+
+
+
+### needed?
+
+It turns out that to customize the dependency calculation for our rake task, we only need to provide a single method.
+
+The #needed? method is what Rake uses to determine if a task needs to be invoked or not.
+
+How do we determine if the blog post needs to be created or updated? We need to check if it doesn’t exist, or if it is out of date compared to its dependencies.
+
+```ruby
+def needed?
+  !post_exists? || out_of_date?
+end
+ 
+```
+
+
+The post_exists? predicate is simple enough. We’ll just check to see if we have are able to find any post info.
+
+
+
+```ruby
+def post_exists?
+  !!post_info
+end
+
+```
+
+Calculating if the post is out of date with regard to prerequisites is a little more tricky. Fortunately, we can cheat.
+
+Let’s check out the implementation of this method in Rake’s FileTask class.
+
+
+```ruby
+def out_of_date?(stamp)
+  @prerequisites.any? { |n| application[n, @scope].timestamp > stamp }
+end
+```
 
