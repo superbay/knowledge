@@ -114,3 +114,38 @@ def out_of_date?(stamp)
 end
 ```
 
+### swipe 
+
+This code goes through the task’s list of prerequisites. That is, the list of other tasks that it depends on. For each prerequisite, it looks up the corresponding task object, and then checks the timestamp to see whether it is newer than this file’s timestamp.
+
+Let’s just swipe this code.
+
+Then we’ll simplify it by removing the parameter and using the timestamp method we defined earlier.
+
+Remember, our timestamp method uses the blog post timestamp as reported by the remote blog server.
+
+The only other change we make is to ensure that the prerequisite timestamps are converted to UTC before the comparison.
+
+
+```ruby
+def out_of_date?
+  @prerequisites.any? { |n|
+    application[n, @scope].timestamp.utc > timestamp
+  }
+end
+```
+
+
+### declaring post tasks
+
+We’ll define it exactly the same way Rake’s built-in task and file methods are written, forwarding the arguments and block to the define_task class method.
+
+
+
+```ruby
+def post(*args, &block)
+  PostTask.define_task(*args, &block)
+end
+```
+
+
