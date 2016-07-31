@@ -147,6 +147,8 @@ def post(*args, &block)
   PostTask.define_task(*args, &block)
 end
 ```
+![rake_custom1](https://cloud.githubusercontent.com/assets/83296/17273925/4407f83c-5696-11e6-8be9-bbf975665f6b.PNG)
+![rake_custom2](https://cloud.githubusercontent.com/assets/83296/17273926/4618fb12-5696-11e6-9e96-1e7f86602aa6.PNG)
 
 
 ### result
