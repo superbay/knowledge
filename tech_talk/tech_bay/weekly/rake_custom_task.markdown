@@ -149,3 +149,6 @@ end
 ```
 
 
+### result
+
+![rake_custom](https://cloud.githubusercontent.com/assets/83296/17273857/9c94170e-5693-11e6-8f3f-7566b317287a.PNG)
