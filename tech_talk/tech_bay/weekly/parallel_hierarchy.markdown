@@ -86,6 +86,53 @@ template :course_form do
   end
 end
 ```
+
+### deal with error
+
+```ruby
+Course = Struct.new(:name, :duration) do
+  def duration=(new_duration)
+    unless self[:duration] = Duration(new_duration)
+      self[:duration] = new_duration
+      errors[:duration] = "Unrecognized duration"
+    end
+  end
+ 
+  def errors
+    (@errors ||= {})
+  end
+end
+```
+
+
+```ruby
+template :course_form do
+  <<~EOF
+  <h1>Add a course</h1>
+  <form action="/" method="POST">
+    <% course.errors.each do |field, problem| %>
+      <div class="toast toast-danger"><%= field %>: <%= problem %></div>
+    <% end %>
+    <div class="form-group">
+      <label class="form-label" for="name">Name</label>
+      <input class="form-input" type="text" name="name"
+             value="<%= course.name %>"/>
+    </div>
+    <div class="form-group<%= course.errors[:duration] && ' has-danger' %>">
+      <label class="form-label" for="duration">Duration</label>
+      <input class="form-input" type="text" name="duration"
+             value="<%= course.duration %>"/>
+    </div>
+    <div class="form-group">
+      <input class="btn btn-primary" name="Create" type="submit"/>
+    </div>
+  </form>
+  EOF
+end
+```
+
+
+
   
 
  
