@@ -48,5 +48,29 @@ end
 
 ```
 
+### Fixed the display bad UE problem
+
+```ruby
+template :course_form do
+  <<~EOF
+  <h1>Add a course</h1>
+  <form action="/" method="POST">
+    <div class="form-group">
+      <label class="form-label" for="name">Name</label>
+      <input class="form-input" type="text" name="name"
+             value="<%= course.name %>"/>
+    </div>
+    <div class="form-group<%= course.duration.nil? && ' has-danger' %>">
+      <label class="form-label" for="duration">Duration</label>
+      <input class="form-input" type="text" name="duration"
+             value="<%= course.duration %>"/>
+    </div>
+    <div class="form-group">
+      <input class="btn btn-primary" name="Create" type="submit"/>
+    </div>
+  </form>
+  EOF
+  ```
+  
 
  
