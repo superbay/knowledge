@@ -132,7 +132,20 @@ end
 ```
 
 
-
+```ruby
+ 
+post "/" do
+  course = Course.new
+  course.name     = params.fetch("name")
+  course.duration = params.fetch("duration")
+  if course.errors.any?
+    erb :course_form, locals: {course: course}
+  else
+    course_list << course
+    redirect to("/")
+  end
+end
+```
   
 
  
