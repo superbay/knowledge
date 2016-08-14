@@ -147,5 +147,9 @@ post "/" do
 end
 ```
   
+And in the process, we’ve introduced a code smell. It’s what I think of as the parallel hierarchy smell. The book Refactoring by Martin Fowler talks about a parallel inheritance hierarchy smell. But it’s possible to have other kinds of parallel hierarchies that are equally smelly.
 
+For every field in this model, there is now, potentially, also an entry in the errors list. This smell is a red flag, telling us that we’re forcing the model object to manage information on behalf of its collaborators. Information that, perhaps, would be better off pushed down into the field values.
+
+Parallel hierarchies introduce new kinds of coupling into our code. Like a child that’s too young to be left alone without its parent, now our field values cannot be left alone without their parent model object. They don’t have complete information on their own.
  
