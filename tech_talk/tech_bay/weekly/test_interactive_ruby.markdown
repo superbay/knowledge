@@ -14,11 +14,21 @@ end
 
 ### pipe 
 
+```ruby
+pipe = open("|ruby shout.rb", File::RDWR|File::NONBLOCK)
+pipe.read                       # =>
 
+pipe = open("|ruby shout.rb", File::RDWR|File::NONBLOCK)
+pipe.close_write
+pipe.read                       # => "> "
 
+```
+Only after we close the “write” end of the pipe can we read anything out of it.
+I believe this behavior is related to pipe buffering, which can be difficult to control.
 
 ### PTY
 
+On UNIX-like operating systems, it’s possible to create something called a pseudo-terminal, or PTY. A PTY is just like a real terminal from the point of view of a process running inside it. It just isn’t connected to any terminal window.
 
 ```ruby
 require "pty"
