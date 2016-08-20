@@ -50,5 +50,181 @@ br = BadRandom.new(0xFFFF)
 "%032b" % br.rand               # => "11111111111111100000000000000001"
 ```
 
+### display the diff
 
+```ruby
+require "gnuplot"
+ 
+class BadRandom
+  def initialize(seed)
+    @last = seed & 0xFFFFFFFF
+  end
+ 
+  def rand(max = nil)
+    shifted = @last << 1
+    highbit = @last >> 31
+    @last = (shifted | highbit) & 0xFFFFFFFF
+    max ? (@last % max) : @last
+  end
+end
+ 
+br = BadRandom.new(Time.now.to_i)
+ 
+xs = []
+ys = []
+1000.times do
+  xs << br.rand(100)
+  ys << br.rand(100)
+end
+ 
+Gnuplot.open do |gp|
+  Gnuplot::Plot.new( gp ) do |plot|
+ 
+    plot.title  "Bad Random"
+ 
+    plot.data << Gnuplot::DataSet.new( [xs, ys] ) do |ds|
+      ds.with = "points"
+      ds.notitle
+    end
+  end
+end
+```
+
+### updated 
+
+
+```ruby
+require "gnuplot"
+ 
+class BadRandom
+  def initialize(seed)
+    @last = seed & 0xFFFFFFFF
+  end
+ 
+  def rand(max = nil)
+    shifted = @last << 1
+    highbit = @last >> 31
+    @last = (shifted | highbit) & 0xFFFFFFFF
+    max ? (@last % max) : @last
+  end
+end
+ 
+br = BadRandom.new(Time.now.to_i)
+ 
+xs = []
+ys = []
+1000.times do
+  xs << br.rand(100)
+  ys << br.rand(100)
+end
+ 
+Gnuplot.open do |gp|
+  Gnuplot::Plot.new( gp ) do |plot|
+ 
+    plot.title  "Bad Random"
+ 
+    plot.data << Gnuplot::DataSet.new( [xs.map{|n| n + rand}, ys.map{|n| n+ rand}] ) do |ds|
+      ds.with = "points"
+      ds.notitle
+    end
+  end
+end
+```
+
+
+
+### system version
+
+```ruby
+require "gnuplot"
+ 
+xs = []
+ys = []
+1000.times do
+  xs << rand(100)
+  ys << rand(100)
+end
+ 
+Gnuplot.open do |gp|
+  Gnuplot::Plot.new( gp ) do |plot|
+ 
+    plot.title  "Ruby Random"
+ 
+    plot.data << Gnuplot::DataSet.new( [xs, ys] ) do |ds|
+      ds.with = "points"
+      ds.notitle
+    end
+  end
+end
+
+
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+ 
+require "gnuplot"
+require "securerandom"
+ 
+xs = []
+ys = []
+1000.times do
+  xs << SecureRandom.random_number(100)
+  ys << SecureRandom.random_number(100)
+end
+ 
+Gnuplot.open do |gp|
+  Gnuplot::Plot.new( gp ) do |plot|
+ 
+    plot.title  "Secure Random"
+ 
+    plot.data << Gnuplot::DataSet.new( [xs, ys] ) do |ds|
+      ds.with = "points"
+      ds.notitle
+    end
+  end
+end
+```
+
+
+### How to use SecureRandom 
+
+
+
+SecureRandom is a module in the Ruby standard library, not the core libraries. So we have to require it in order to make it available.
+
+### vs system rand
+
+
+```ruby
+require "securerandom"
+ 
+SecureRandom.random_number      # => 0.6578788068017444
+SecureRandom.random_number(100) # => 99
+SecureRandom.random_number(1..6) # => ArgumentError: comparison of Fixnum wit...
+ 
+# ~> ArgumentError
+# ~> comparison of Fixnum with Range failed
+# ~>
+# ~> /home/avdi/.rubies/ruby-2.1.3/lib/ruby/2.1.0/securerandom.rb:210:in `<'
+# ~> /home/avdi/.rubies/ruby-2.1.3/lib/ruby/2.1.0/securerandom.rb:210:in `ran...
+# ~> xmptmp-in34708kR.rb:5:in `<main>'
+```
 
