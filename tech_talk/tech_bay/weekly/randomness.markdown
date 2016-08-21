@@ -91,7 +91,8 @@ end
 ```
 
 
-![random2](https://cloud.githubusercontent.com/assets/83296/17834507/521d671e-6711-11e6-92b7-c699229a162f.PNG)
+![random1](https://cloud.githubusercontent.com/assets/83296/17834506/4e6d4ce2-6711-11e6-8229-d07e5a7ceee2.PNG)
+
 ### updated 
 
 
@@ -134,10 +135,9 @@ end
 ```
 
 
-![random1](https://cloud.githubusercontent.com/assets/83296/17834506/4e6d4ce2-6711-11e6-8229-d07e5a7ceee2.PNG)
 
 
-
+![random2](https://cloud.githubusercontent.com/assets/83296/17834507/521d671e-6711-11e6-92b7-c699229a162f.PNG)
 
 
 ### system version
