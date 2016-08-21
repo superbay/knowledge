@@ -90,6 +90,8 @@ Gnuplot.open do |gp|
 end
 ```
 
+
+![random2](https://cloud.githubusercontent.com/assets/83296/17834507/521d671e-6711-11e6-92b7-c699229a162f.PNG)
 ### updated 
 
 
@@ -130,6 +132,11 @@ Gnuplot.open do |gp|
   end
 end
 ```
+
+
+![random1](https://cloud.githubusercontent.com/assets/83296/17834506/4e6d4ce2-6711-11e6-8229-d07e5a7ceee2.PNG)
+
+
 
 
 
@@ -179,7 +186,7 @@ Gnuplot.open do |gp|
   end
 end
 ```
-
+![random3](https://cloud.githubusercontent.com/assets/83296/17834509/55aa21f6-6711-11e6-8fa8-c2f41a5041af.PNG)
 
 ### How to use SecureRandom 
 
