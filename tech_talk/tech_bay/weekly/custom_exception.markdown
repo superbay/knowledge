@@ -60,6 +60,98 @@ error = begin
 error # => #<RuntimeError: Something bad happened>
 ```
 
-
+But we can change this with an extra leading argument. For instance, here we raise ArgumentError, which is a built-in exception type that Ruby uses when calling some methods with the wrong kinds of arguments.
  
+```ruby
+error = begin
+          fail ArgumentError, "Something bad happened"
+        rescue => error
+          error
+        end
+ 
+error # => #<ArgumentError: Something bad happened>
+```
+
+### own exception classes
+
+```ruby
+class FurnaceLightingError
+end
+ 
+begin
+  raise FurnaceLightingError
+rescue => error
+  error
+end
+ 
+error                           # => #<TypeError: exception class/object expected>
+
+
+##Instead of our error being raised, we see a TypeError instead. This is because Ruby has a rule that only objects which inherit from the Exception base class can be raised as exceptions.
+
+class FurnaceLightingError < Exception
+end
+```
+
+
+```ruby
+
+ObjectSpace.each_object(Class).select{|klass| klass.ancestors[1] == Exception}
+# => [SystemStackError, NoMemoryError, SecurityError, ScriptError, StandardEr...
+```
+
+
+Instead, I normally inherit my custom error classes from StandardError. This is the class that the Ruby’s non-fatal exceptions generally inherit from.
+
+
+```ruby
+class FurnaceLightingError < StandardError
+end
+```
+
+
+Once we start creating our own error classes, it’s easy to go nuts and make a custom exception classes for every possible error. But in practice I haven’t found this to be a helpful habit. In fact, I usually start with just a single error type for a given application or library.
+
+Let’s say our Thermostat code lives inside a larger ClimateControl module. In this case, I would normally create a single custom exception class, called Error, inside that namespace.
+
+```ruby
+require "rspec/autorun"
+ 
+module ClimateControl
+ 
+  class Error < StandardError
+  end
+ 
+  class Thermostat
+    def initialize(thermometer:,furnace:)
+      @thermometer = thermometer
+      @furnace     = furnace
+    end
+ 
+    def check_temperature
+      temp = @thermometer.temp_f
+      if temp <= 67
+        @furnace.turn_onor fail "Furnace could not be lit"
+      end
+    end
+  end
+ 
+  RSpec.describe Thermostat do
+    # ...
+ 
+    it "raises an exception when the furnace fails to light" do
+      thermometer = double(temp_f: 67)
+      furnace     = double(turn_on: false)
+      thermostat  = Thermostat.new(thermometer: thermometer, furnace: furnace)
+ 
+      expect { thermostat.check_temperature }.to raise_error(/furnace could not be lit/i)
+    end
+ 
+  end
+end
+# >> .
+# >>
+# >> Finished in 0.00114 seconds (files took 0.08665 seconds to load)
+# >> 1 example, 0 failures
+# >>
 ```
