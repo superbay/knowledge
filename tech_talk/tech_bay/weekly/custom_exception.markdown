@@ -155,3 +155,77 @@ end
 # >> 1 example, 0 failures
 # >>
 ```
+
+
+I give it the generic-seeming name Error because, since it is inside a namespace, it is implicitly a ClimateControl::Error.
+
+```ruby
+module ClimateControl
+  class Error
+  end
+end
+ 
+ClimateControl::Error           # => ClimateControl::Error
+```
+With a custom error class in place, we can now raise it instead of a generic RuntimeError. And we can specify it as the type of error we expect to be raised when the furnace won’t turn on. Note that since the RSpec example is written inside the ClimateControl module, we don’t have to spell out the fully-qualified name of the error type.
+
+```ruby
+require "rspec/autorun"
+ 
+module ClimateControl
+ 
+  class Error < StandardError
+  end
+ 
+  class Thermostat
+    def initialize(thermometer:,furnace:)
+      @thermometer = thermometer
+      @furnace     = furnace
+    end
+ 
+    def check_temperature
+      temp = @thermometer.temp_f
+      if temp <= 67
+        @furnace.turn_onor fail Error, "Furnace could not be lit"
+      end
+    end
+  end
+ 
+  RSpec.describe Thermostat do
+    # ...
+ 
+    it "raises an exception when the furnace fails to light" do
+      thermometer = double(temp_f: 67)
+      furnace     = double(turn_on: false)
+      thermostat  = Thermostat.new(thermometer: thermometer, furnace: furnace)
+ 
+      expect { thermostat.check_temperature }.to raise_error(Error)
+    end
+ 
+  end
+end
+ 
+# >> .
+# >>
+# >> Finished in 0.00142 seconds (files took 0.13485 seconds to load)
+# >> 1 example, 0 failures
+# >>
+```
+
+
+### rspec test
+
+
+```ruby
+
+expect { thermostat.check_temperature }
+  .to raise_error(Error, /furnace could not be lit/i)
+  
+begin
+  # some code...
+rescue ClimateControl::Error => error
+  # ...
+rescue => error # other kinds of error
+  # ...
+end
+```
