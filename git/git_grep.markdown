@@ -25,4 +25,10 @@ git grep -E 'plan.{1}years-list'
 ```
 git log --grep=frotz --grep=nitfol --since=1.month
 git log --grep=frotz --and --author=Linus
+
+### git search log from merge commits
+
+```
+ git log -m -S 'search_term' app/models/path_file.rb
+```
 ```
