@@ -30,5 +30,5 @@ git log --grep=frotz --and --author=Linus
 ### git search log from merge commits
 
 ```
- git log -m -S 'search_term' app/models/path_file.rb
+git log -m -S 'search_term' app/models/path_file.rb
 ```
