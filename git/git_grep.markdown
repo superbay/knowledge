@@ -31,4 +31,3 @@ git log --grep=frotz --and --author=Linus
 ```
  git log -m -S 'search_term' app/models/path_file.rb
 ```
-```
