@@ -28,5 +28,14 @@ Or you can also use git-rev-list to search for a specific commit:
 git rev-list origin/master | grep <commit-hash>
 ```
 
+
+
+### git search log from merge commits
+
+```
+git log -m -S 'search_term' app/models/path_file.rb
+```
+
+
 [reference](http://stackoverflow.com/questions/2016901/viewing-unpushed-git-commits)
 
