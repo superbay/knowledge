@@ -116,3 +116,18 @@ At least on Ubuntu derivations rename takes a list of files from STDIN if none a
 ```
 find . -name "*.andnav" | rename -vn "s/\.andnav$/.tile/"
 ```
+
+
+### zip
+
+```
+ mkdir -p playground/dir-{00{1..9},0{10..99},100} 
+
+ touch playground/dir-{00{1..9},0{10..99},100}/file-{A-Z}
+
+ find playground -name 'file-A' | tar czf playground.tgz -T -
+ 
+ find playground -name 'file-A' | tar cf - --files-from=- | gzip > playground.tgz
+ 
+ 
+```
