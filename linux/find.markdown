@@ -65,6 +65,13 @@ sed -i "" -e 's/^[[:space:]]\{11\}//g' menu1a.sh
 ```
 
 
+search and add
+
+```
+find . -type f -name "*.py" -exec sh -c 'cat somecode.txt >> "$1"' -- {} \;
+```
+
+
 ### 
 
 ```ruby
