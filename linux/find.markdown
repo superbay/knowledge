@@ -134,6 +134,9 @@ find . -name "*.andnav" | rename -vn "s/\.andnav$/.tile/"
 
 
 ```
+#Quercus_laceyi.shp_poly
+#to
+#Quercus_laceyi_poly.shp
 for i in ` find /root/test/ -name "*.shp" ` ;
 do
   mv $i ` echo $i | sed 's/.shp$/_poly.shp/g' ` ;
