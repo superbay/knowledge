@@ -123,6 +123,8 @@ sed -z 's/^[^ ]* //' | tr '\0' '\n' | head -n 10
 
 ```
 find . -printf "%T@ %Tc %p\n" | sort -n
+find . your-options -printf "%T+\t%p\n" | sort
+
 printf arguments from man find:
 
 %Tk: File's last modification time in the format specified by k.
@@ -158,6 +160,16 @@ find . -type f -ls | awk '{print $(NF-3), $(NF-2), $(NF-1), $NF}' | sort
 find . -type f -exec stat -f "%Sm %N" -t "%Y%y%m%d%H%M" {} \; | sort -r
 #Without timestamp:
 find . -type f -exec stat -f "%Sm %N" -t "%Y%y%m%d%H%M" {} \; | sort -r | awk -F' ' '{ print substr($0, length($1) + 2) }'
+```
+
+
+#### find and sort by 
+
+```
+find . -name "*.ear" -exec du -a {} \;
+$ find . -name "test*" -exec du -sh {} \;
+find . -type f -iname "*.ear" -exec du -ah {} \; | awk '{print $2"\t", $1}'
+
 ```
 
 
