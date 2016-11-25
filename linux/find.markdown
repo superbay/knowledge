@@ -131,3 +131,11 @@ find . -name "*.andnav" | rename -vn "s/\.andnav$/.tile/"
  
  
 ```
+
+
+```
+for i in ` find /root/test/ -name "*.shp" ` ;
+do
+  mv $i ` echo $i | sed 's/.shp$/_poly.shp/g' ` ;
+done
+```
