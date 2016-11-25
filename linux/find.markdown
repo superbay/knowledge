@@ -112,6 +112,54 @@ du -sh `ls .`
 ```
 
 
+#### find and sort by modify date
+
+```
+find -type f -printf '%T@ %p\0' |
+sort -zk 1nr |
+sed -z 's/^[^ ]* //' | tr '\0' '\n' | head -n 10
+```
+
+
+```
+find . -printf "%T@ %Tc %p\n" | sort -n
+printf arguments from man find:
+
+%Tk: File's last modification time in the format specified by k.
+@: seconds since Jan. 1, 1970, 00:00 GMT, with fractional part.
+c: locale's date and time (Sat Nov 04 12:02:33 EST 1989).
+%p: File's name.
+```
+
+
+
+```
+man ls:
+-t     sort by modification time
+-r,    reverse order while sorting (--reverse )
+-1     list one file per line
+
+find /wherever/your/files/hide -type f -exec ls -1rt "{}" +;
+```
+
+
+```
+find . -type f -printf "%T@\t%Tc %6k KiB %p\n" | sort -n | cut -f 2-
+```
+
+
+for mac
+```
+find . -type f -ls | awk '{print $(NF-3), $(NF-2), $(NF-1), $NF}' | sort
+```
+
+```
+#With timestamp:
+find . -type f -exec stat -f "%Sm %N" -t "%Y%y%m%d%H%M" {} \; | sort -r
+#Without timestamp:
+find . -type f -exec stat -f "%Sm %N" -t "%Y%y%m%d%H%M" {} \; | sort -r | awk -F' ' '{ print substr($0, length($1) + 2) }'
+```
+
 
 #### find and rename
 
