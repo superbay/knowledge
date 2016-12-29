@@ -85,7 +85,7 @@ git commit --amend --date "Thu May 28 18:21:46 2015 +0530"
 ```
 
 
-git commit --author="Ken Lu<ken@ken.com>" -m "my commit"
+git commit --author="Ken Lu <ken@ken.com>" -m "my commit"
 
 Override the commit author. Specify an explicit author using the standard A U Thor <author@example.com> 
 
