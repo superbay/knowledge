@@ -148,6 +148,10 @@ vm.vfs_cache_pressure = 50
 
 check [ detail ](https://www.digitalocean.com/community/articles/how-to-add-swap-on-ubuntu-14-04) 
 
+https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04
+
+https://www.digitalocean.com/community/tutorials/how-to-add-swap-space-on-ubuntu-16-04
+
 add swap for ubuntu 14.04 lts
 
 install sphinx
