@@ -1,3 +1,30 @@
+### updated on 01/09/2021
+
+#### support amazon linux 2
+
+
+
+
+Moreover, if you think PostgreSQL v10 can resolve your issues. You can try these commands:
+
+```
+sudo yum update -y
+
+sudo amazon-linux-extras enable postgresql11
+
+```
+
+After having PostgreSQL in your repository, now you can install:
+
+
+```
+yum clean metadata
+
+yum install postgresql
+```
+
+
+
 ### install postgresql client only
 
 
@@ -5,6 +32,13 @@
 sudo apt-get install postgresql
 sudo apt-get install libpq-dev
 ```
+
+could be 
+
+```
+sudo yum install postgresql postgresql-server postgresql-devel postgresql-contrib
+```
+
 
 
 ### install postgresql in ubuntu 14.04
