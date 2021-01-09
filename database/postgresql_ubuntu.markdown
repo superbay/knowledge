@@ -150,3 +150,5 @@ sudo vim /etc/postgresql/9.3/main/pg_hba.conf
 
 
 参考：https://www.hostinger.com/tutorials/how-to-install-postgresql-on-centos-7/
+
+https://serverfault.com/questions/406606/postgres-error-message-fatal-ident-authentication-failed-for-user
