@@ -49,8 +49,14 @@ Next, you can switch to the PostgreSQL prompt and change the password for the Po
 su - postgres
 ```
 
+如果没有直接登录psql的话，不要修改pg_hba.conf
 
 
+
+
+```
+psql -d template1 -c "ALTER USER postgres WITH PASSWORD 'NewPassword';"
+```
 
 
 ### install postgresql client only
@@ -107,6 +113,15 @@ Getting error: Peer authentication failed for user “postgres”, when trying t
 If you intend to use password authentication over Unix sockets instead of the peer method, try changing the following pg_hba.conf* line:
 
 from
+
+如果找不到配置文件的话
+
+```
+sudo find / -name 'pg_hba.conf' 2>/dev/null
+```
+
+下面是修改让postgres可以本地用密码登录，默认是不行的
+
 ```ruby
 # TYPE DATABASE USER ADDRESS METHOD
 local  all      all          peer
@@ -132,3 +147,6 @@ and the pg_hba.conf
 ```
 sudo vim /etc/postgresql/9.3/main/pg_hba.conf 
 ```
+
+
+参考：https://www.hostinger.com/tutorials/how-to-install-postgresql-on-centos-7/
