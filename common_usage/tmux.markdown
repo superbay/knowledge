@@ -16,6 +16,8 @@ more usage
 
 
 ```ruby
+^b [  #scroll in the windows 
+
 ^b , <newname> # rename current session
 ^b w  #list windows
 ^b #  #goto windows #
