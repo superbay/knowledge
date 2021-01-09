@@ -23,6 +23,34 @@ yum clean metadata
 yum install postgresql
 ```
 
+could be 
+
+```ruby
+sudo yum install postgresql postgresql-server postgresql-devel postgresql-contrib
+
+#and init
+
+sudo postgresql-setup initdb
+```
+
+### PostgreSQL Basic Setup
+
+In Linux by default, a user named postgres is created once PostgreSQL is installed. You can change the user’s password with the following command:
+
+```
+sudo passwd postgres
+```
+
+You will be prompted to enter the new password twice.
+
+Next, you can switch to the PostgreSQL prompt and change the password for the PostgreSQL postgres user using:
+
+```
+su - postgres
+```
+
+
+
 
 
 ### install postgresql client only
@@ -33,11 +61,6 @@ sudo apt-get install postgresql
 sudo apt-get install libpq-dev
 ```
 
-could be 
-
-```
-sudo yum install postgresql postgresql-server postgresql-devel postgresql-contrib
-```
 
 
 
