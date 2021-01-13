@@ -1,5 +1,6 @@
 ### how to install new dotvimv2
 
+https://github.com/vitaly/dotvim2
 
 ### how to install cmake for amazon linux 2
 Amazon has a guide: Preparing to Compile Software, which proposes the following command to install a C compiler.
