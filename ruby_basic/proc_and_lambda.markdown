@@ -155,3 +155,10 @@ my_array.each {|letter| puts letter }
 # => "c"
 ```
 We iterate the items in the array, and call the block — yield — for every item in the array. When we yield, we pass the current array iteration to the block.
+
+
+### Proc.new {} vs proc {}
+
+From Metaprogamming Ruby Page 113.
+
+In Ruby 1.8, Kernel#proc() is actually a synonym for Kernel#lambda(). Because of loud protest from programmers, Ruby 1.9 made proc() a synonym for Proc.new() instead.
