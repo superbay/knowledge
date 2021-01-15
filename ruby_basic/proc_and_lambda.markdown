@@ -37,3 +37,25 @@ ArgumentError (wrong number of arguments (given 1, expected 2))
 ```
 
 
+### different deal with return
+
+```ruby
+2.6.3 :038 > def call_1; puts 'b'; mp = -> () {return 2}; mp[]; puts 'a'; end;                                               
+ => :call_1 
+2.6.3 :039 > call_1
+b
+a
+ => nil 
+2.6.3 :040 > mp = -> (x) {puts x * 5; return 5; }
+ => #<Proc:0x0000000001c81238@(irb):40 (lambda)> 
+2.6.3 :041 > mp[]
+2.6.3 :043 > mp[3]                                                                                                           
+15
+ => 5 
+2.6.3 :044 > mp = -> (x) {puts x * 5; return 5; }                                                                            
+ => #<Proc:0x00000000019c4900@(irb):44 (lambda)> 
+2.6.3 :045 > mp[3]
+15
+ => 5 
+```
+
