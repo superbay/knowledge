@@ -62,15 +62,16 @@ a
 #### full example
 
 ```ruby
-2.6.5 :001 > def call_l; puts 'b'; mp = -> () {return 2}; mp[]; puts 'a'; end;                                                                                                                   
+2.6.5 :005 > def call_l; puts 'b'; mp = -> () {return 2}; puts mp[]; puts 'a'; end;                                                                                                              
  => :call_l 
-2.6.5 :002 > call_l
+2.6.5 :006 > call_l
 b
+2
 a
  => nil 
-2.6.5 :003 > def call_p; puts 'b'; mp = Proc.new {return 2}; mp[]; puts 'a'; end;                                                                                                                
+2.6.5 :007 > def call_p; puts 'b'; mp = Proc.new {return 2}; puts mp[]; puts 'a'; end;                                                                                                           
  => :call_p 
-2.6.5 :004 > call_p
+2.6.5 :008 > call_p
 b
  => 2 
  
