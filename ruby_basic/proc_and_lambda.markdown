@@ -110,3 +110,48 @@ end
 time { code_here }
 time { more_code_here }
 ```
+
+
+###Passing arguments to procs and blocks
+When you yield or call, you can pass arguments to the proc or block at the same time. A dumb example:
+
+```ruby
+def dumb_hello_world_test
+  yield(5)
+end
+
+dumb_hello_world_test {|i| puts i * 2 }
+# => 10
+
+my_silly_proc = Proc.new {|name| puts name.upcase }
+my_silly_proc.call("August Lilleaas")
+# => "AUGUST LILLEAAS"
+```
+
+You have probably seen blocks taking arguments before: each, map and other enumerable methods does this.
+
+```ruby
+[1, 2, 3].map {|i| puts i * 2 }
+# => 2
+# => 4
+# => 6
+
+#That’s right: map takes a block. The block gets an argument: the number in the array. Now, for something hardcore. Let’s play with an implementation of Array#each.
+
+class Array
+  def each
+    i = 0
+    while(i < self.length) do
+      yield(self[i])
+      i += 1
+    end
+  end
+end
+
+my_array = ["a", "b", "c"]
+my_array.each {|letter| puts letter }
+# => "a"
+# => "b"
+# => "c"
+```
+We iterate the items in the array, and call the block — yield — for every item in the array. When we yield, we pass the current array iteration to the block.
