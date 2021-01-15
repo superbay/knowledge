@@ -157,6 +157,16 @@ my_array.each {|letter| puts letter }
 We iterate the items in the array, and call the block — yield — for every item in the array. When we yield, we pass the current array iteration to the block.
 
 
+### way to excute
+
+```ruby
+my_lambda = -> { puts "Lambda called" }
+my_lambda.call
+my_lambda.()
+my_lambda[]
+my_lambda.===
+```
+
 ### Proc.new {} vs proc {}
 
 From Metaprogamming Ruby Page 113.
