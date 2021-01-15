@@ -77,3 +77,36 @@ b
  
  ```
 
+
+###Organizing your code with procs
+
+Procs are useful code organization tools. Let’s say that you want to calculate the running time for a few code snippets, in order to benchmark them. To do this elegantly, you want to be able to call a method and pass some code to it, and have the execution time returned.
+
+Here’s how you can use procs to do just that:
+
+```ruby
+def time(a_proc)
+  start = Time.now
+  a_proc.call
+  puts Time.now - start
+end
+ 
+time(Proc.new { code_here })
+time(Proc.new { more_code_here })
+```
+
+The execution times of the code inside the procs will be neatly displayed as you run this code. Try it yourself, right now! You can use sleep(2), 1000.times { 5 + 5 }, or anything else you might want to speed test.
+
+###Blocks!
+In addition to method arguments, a method can also take a block. Passing a block is essentially the same as passing a proc, except that the syntax is different (and nicer), and you don’t have to type as much. Other than that, procs and blocks are essential the same thing: code that you can call later on.
+
+```ruby
+def time
+  start = Time.now
+  yield
+  puts Time.now - start
+end
+ 
+time { code_here }
+time { more_code_here }
+```
