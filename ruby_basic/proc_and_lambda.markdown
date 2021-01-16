@@ -11,6 +11,16 @@ times_two = ->(x) { x * 2 }
 ### good example call block
 
 ```ruby
+
+squared = lambda {|x| x**2}# or {|x| x*x}
+[1, 2, 3, 4, 7].map(&squared)
+#=> [1, 4, 9, 16, 49]
+
+```
+
+
+
+```ruby
 class Greater
   def initialize(greating)
     @greating = greating
