@@ -8,6 +8,27 @@ times_two = ->(x) { x * 2 }
 ```
 
 
+### good example call block
+
+```ruby
+class Greater
+  def initialize(greating)
+    @greating = greating
+  end
+
+  def to_proc
+    proc {|name| "#{@greating}, #{name}!" }
+  end
+end
+
+hi = Greater.new("Hi")
+hey = Greater.new("Hey")
+["Bob", "Jane"].map(&hi)    #=> ["Hi, Bob!", "Hi, Jane!"]
+["Bob", "Jane"].map(&hey)   #=> ["Hey, Bob!", "Hey, Jane!"]
+
+```
+
+
 #### Proc can accept arguments
 ```ruby
 t = Proc.new{ |x, y| x * 2 + y.to_i }
